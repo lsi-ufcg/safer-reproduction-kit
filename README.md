@@ -17,13 +17,33 @@ To set up the project locally, follow these steps:
 
 ### 1. Unzip Safer
 
+```bash
+unzip safer.zip
+```
 
-It's divided in 5 steps:
+### 2. Install required dependencies
+
+```bash
+cd safer
+npm install
+cd ..
+```
 
 
+## Clone Test Repositories
 
+TODO: Ajustar
 
-- Clone safer  
-- Clone 
-- 
+```bash
+bash clone-test-repositories.sh
+```
 
+## Run Experiments
+
+```bash
+bash run-experiments.sh
+```
+
+## Results
+
+The results of our experiments can be found in the `results/analysis.ipynb` directory
