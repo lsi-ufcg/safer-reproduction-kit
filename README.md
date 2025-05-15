@@ -44,4 +44,5 @@ cd ..
 
 ## Results
 
-The results of our experiments can be found in the `results/analysis.ipynb` directory
+The dataset of the experiments is saved as `results/dataset.csv`.  
+You can execute the `analysis.ipynb` notebook to visualize result charts from the dataset  

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-CSV_FILE="results.csv"
-echo "id,Project Name,Number of Dependencies Analyzed,Number of Dependencies with Vulnerabilities,Number of dependencies with vulnerabilities (Before),Number of dependencies with vulnerabilities (After),Number of vulnerabilities (Before),Number of vulnerabilities (After),Low vulnerabilities (Before),Low vulnerabilities (After),Medium vulnerabilities (Before),Medium vulnerabilities (After),High vulnerabilities (Before),High vulnerabilities (After),Critical vulnerabilities (Before),Critical vulnerabilities (After),Execution Time (s),Build Tool,Project Type" > $CSV_FILE
+dataset_path="results/dataset.csv"
 
 mkdir -p outputs
 
@@ -14,6 +13,6 @@ id=1
 for project_path in workstation/*; do
     echo "Running safer for: $project_path"
     csv_line=$(./bash/run-experiment.sh $project_path $id)
-    echo $csv_line >> $CSV_FILE
+    echo $csv_line >> $dataset_path
     id=$(($id + 1))
 done
