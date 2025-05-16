@@ -19,8 +19,9 @@ execution_time=$((end_time - start_time))
 csv_line=$(cat outputs/stdout/$project_name.txt | grep -A2 '^CSV:' | tail -n1)
 
 if [ -z "$csv_line" ]; then
-  echo "Falha na execução do projeto: $project_name". Consultar stderr >&2
+  echo "Safer failed to execute in the project $project_name". See stderr >&2
 else
   entire_csv_line="$id,$project_name,$csv_line,open source"
   echo $entire_csv_line >> $dataset_path
+  echo "Safer executed succesfully in the project $project_name".
 fi
