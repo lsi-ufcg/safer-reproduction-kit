@@ -6,6 +6,8 @@ id=$2
 
 project_root_path=$(pwd)/$project_path
 
+echo "Running safer for: $project_path"
+
 project_name=$(basename $project_path)
 cd safer/src
 
@@ -24,4 +26,5 @@ else
   entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time"
   echo $entire_csv_line >> $dataset_path
   echo "Safer executed succesfully in the project $project_name".
+  ./bash/comit-dependencies-file.sh $project_root_path pom.xml
 fi

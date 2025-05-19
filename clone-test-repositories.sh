@@ -1,6 +1,7 @@
 #!/bin/bash
-mkdir -p workstation
-cd workstation
+mkdir -p workstation/maven
+mkdir -p workstation/gradle
+cd workstation/maven
 
 # Maven
 
@@ -31,6 +32,8 @@ git clone https://github.com/ZJU-ACES-ISE/chatunitest-maven-plugin.git
 git clone https://github.com/syqu22/spring-boot-shop-sample.git
 
 # Gradle
+
+cd ../gradle
 
 git clone https://github.com/square/retrofit.git
 git clone https://github.com/Netflix/zuul.git
