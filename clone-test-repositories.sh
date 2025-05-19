@@ -29,3 +29,18 @@ git clone https://github.com/facebookincubator/CP4M.git
 git clone https://github.com/ajaynegi45/LibraryMan-API.git
 git clone https://github.com/ZJU-ACES-ISE/chatunitest-maven-plugin.git
 git clone https://github.com/syqu22/spring-boot-shop-sample.git
+
+# Gradle
+
+git clone https://github.com/square/retrofit.git
+git clone https://github.com/Netflix/zuul.git
+git clone https://github.com/junit-team/junit5.git
+git clone https://github.com/Discord4J/Discord4J.git
+git clone https://github.com/google/ExoPlayer.git
+git clone https://github.com/spring-projects/spring-boot.git
+git clone https://github.com/libgdx/libgdx.git
+git clone https://github.com/mendhak/gpslogger.git
+git clone https://github.com/elastic/elasticsearch.git
+git clone https://github.com/LINBIT/linstor-server.git
+git clone https://github.com/CatimaLoyalty/Android.git
+git clone https://github.com/federicoiosue/Omni-Notes.git
