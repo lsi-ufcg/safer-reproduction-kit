@@ -34,7 +34,6 @@ csv_line=$(cat outputs/stdout/$project_name.txt | grep -A2 '^CSV:' | tail -n1)
 
 if [ -z "$csv_line" ]; then
   pretty_print red "Safer failed to execute in the project $project_name.\nSee outputs/stderr/$project_name.txt" >&2
-  # echo "Safer failed to execute in the project $project_name. See stderr" >&2
   echo ""
 else
   entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time"
