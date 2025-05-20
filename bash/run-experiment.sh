@@ -1,5 +1,17 @@
 #!/bin/bash
 
+pretty_print() {
+  local DEFAULT="\e[0m"
+  local RED="\e[1;31m"
+  local YELLOW="\e[1;33m"
+  local BLUE="\e[1;34m"
+  local GREEN="\e[1;92m"
+
+  local color_uppercase="${1^^}"
+  local message="$2"
+  echo -e "${!color_uppercase}${message}${DEFAULT}"
+}
+
 dataset_path="results/dataset.csv"
 project_path=$1
 id=$2
@@ -21,10 +33,13 @@ execution_time=$((end_time - start_time))
 csv_line=$(cat outputs/stdout/$project_name.txt | grep -A2 '^CSV:' | tail -n1)
 
 if [ -z "$csv_line" ]; then
-  echo "Safer failed to execute in the project $project_name". See stderr >&2
+  pretty_print red "Safer failed to execute in the project $project_name.\nSee outputs/stderr/$project_name.txt" >&2
+  # echo "Safer failed to execute in the project $project_name. See stderr" >&2
+  echo ""
 else
   entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time"
   echo $entire_csv_line >> $dataset_path
-  echo "Safer executed succesfully in the project $project_name".
-  ./bash/comit-dependencies-file.sh $project_root_path pom.xml
+  pretty_print green "Safer executed succesfully in the project $project_name.\nSee outputs/stdout/$project_name.txt and $dataset_path"
+  echo ""
+  # ./bash/comit-dependencies-file.sh $project_root_path pom.xml
 fi

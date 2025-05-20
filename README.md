@@ -14,20 +14,10 @@ To run Safer, ensure you have the following installed:
 
 ## Setup and Installation
 
-To set up the project locally, follow these steps:
-
-### 1. Unzip Safer
+Unzip Safer and install its dependencies  
 
 ```bash
-unzip safer.zip
-```
-
-### 2. Install required dependencies
-
-```bash
-cd safer
-npm install
-cd ..
+./setup-safer.sh
 ```
 
 ## Clone Test Repositories
@@ -37,6 +27,8 @@ cd ..
 ```
 
 ## Run Experiments
+
+If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run
 
 ```bash
 ./run-experiments.sh
