@@ -14,7 +14,7 @@ To run Safer, ensure you have the following installed:
 
 ## Setup and Installation
 
-Unzip Safer and install its dependencies  
+Unzip Safer and install its dependencies
 
 ```bash
 ./setup-safer.sh
@@ -37,4 +37,14 @@ If you don't want to run the experiments for all projects open this bash script 
 ## Results
 
 The dataset of the experiments is saved as `results/dataset.csv`.  
-You can execute the `analysis.ipynb` notebook to visualize result charts from the dataset  
+You can execute the `analysis.ipynb` notebook to visualize result charts from the dataset
+
+# Creating Issues and PRs
+
+`gh config set git_protocol ssh`
+
+`./fork-test-repositories.sh`
+
+`./run-experiments.sh`
+
+`./create-github-artifacts.sh`
