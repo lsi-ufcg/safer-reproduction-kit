@@ -20,7 +20,7 @@ tail -n +2 $dataset | while IFS=',' read -r c1 project_name c3 c4 c5 c6 c7 c8 c9
   pretty_print blue "Creating github artifacts for $project_name"
   project_root_path=$project_base_path/$type/$project_name
 
-  file = ""
+  file=""
   if [ "$type" == "maven" ]; then
     file="pom.xml"
   elif [ "$type" == "gradle" ]; then
