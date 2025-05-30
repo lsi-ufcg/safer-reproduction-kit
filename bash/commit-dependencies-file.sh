@@ -5,7 +5,7 @@ dependencies_file=$2
 
 cd $project_path
 main_branch=$(git rev-parse --abbrev-ref HEAD)
-git checkout safer-result || git checkout -b safer-result
+git checkout safer-result 2>/dev/null || git checkout -b safer-result
 
 git add $dependencies_file
 
