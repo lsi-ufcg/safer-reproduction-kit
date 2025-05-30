@@ -40,5 +40,4 @@ else
   echo $entire_csv_line >> $dataset_path
   pretty_print green "Safer executed succesfully in the project $project_name.\nSee outputs/stdout/$project_name.txt and $dataset_path"
   echo ""
-  # ./bash/comit-dependencies-file.sh $project_root_path pom.xml
 fi
