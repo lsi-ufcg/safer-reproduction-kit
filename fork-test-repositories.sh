@@ -50,7 +50,7 @@ cd workstation/maven
 # Maven
 
 for repo in "${maven_repos[@]}"; do
-  gh repo fork "$repo"
+  gh repo fork "$repo" --clone
 done
 
 # Gradle
