@@ -18,9 +18,8 @@ id=$2
 
 project_root_path=$(pwd)/$project_path
 
-echo "Running safer for: $project_path"
-
 project_name=$(basename $project_path)
+echo "Running safer for: $project_path, See outputs/stdout/$project_name.txt"
 cd safer/src
 
 start_time=$(date +%s)
