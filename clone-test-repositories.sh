@@ -1,7 +1,6 @@
 #!/bin/bash
 mkdir -p workstation/maven
 mkdir -p workstation/gradle
-cd workstation/maven
 
 maven_repos=(
   "green-code-initiative/creedengo-python"
@@ -47,15 +46,14 @@ gradle_repos=(
 )
 
 # Maven
+cd workstation/maven
 
 for repo in "${maven_repos[@]}"; do
   git clone "https://github.com/$repo.git"
 done
 
 # Gradle
-
 cd ../gradle
-
 
 for repo in "${gradle_repos[@]}"; do
   git clone "https://github.com/$repo.git"
