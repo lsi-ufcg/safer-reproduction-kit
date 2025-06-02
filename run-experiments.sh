@@ -16,8 +16,8 @@ for project_path in workstation/maven/*; do
 done
 
 # Gradle
-id=1
-for project_path in workstation/gradle/*; do
-  ./bash/run-experiment.sh $project_path $id
-  id=$(($id + 1))
-done
+# id=1
+# for project_path in workstation/gradle/*; do
+#   ./bash/run-experiment.sh $project_path $id
+#   id=$(($id + 1))
+# done

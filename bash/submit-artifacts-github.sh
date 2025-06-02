@@ -41,5 +41,3 @@ EOF
   --base $main_branch
 
 cd $current_path
-
-# Usage: ./bash/submit-artifacts-github.sh /home/cristovao/codes/playground/github-cli-playground /home/cristovao/codes/lsi/security/safer-reproduction-kit/outputs/stdout/antikythera.txt
