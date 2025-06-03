@@ -30,20 +30,20 @@ maven_repos=(
   "syqu22/spring-boot-shop-sample"
 )
 
-gradle_repos=(
-  "square/retrofit"
-  "Netflix/zuul"
-  "junit-team/junit5"
-  "Discord4J/Discord4J"
-  "google/ExoPlayer"
-  "spring-projects/spring-boot"
-  "libgdx/libgdx"
-  "mendhak/gpslogger"
-  "elastic/elasticsearch"
-  "LINBIT/linstor-server"
-  "CatimaLoyalty/Android"
-  "federicoiosue/Omni-Notes"
-)
+# gradle_repos=(
+#   "square/retrofit"
+#   "Netflix/zuul"
+#   "junit-team/junit5"
+#   "Discord4J/Discord4J"
+#   "google/ExoPlayer"
+#   "spring-projects/spring-boot"
+#   "libgdx/libgdx"
+#   "mendhak/gpslogger"
+#   "elastic/elasticsearch"
+#   "LINBIT/linstor-server"
+#   "CatimaLoyalty/Android"
+#   "federicoiosue/Omni-Notes"
+# )
 
 # Maven
 cd workstation/maven
@@ -52,9 +52,9 @@ for repo in "${maven_repos[@]}"; do
   git clone "https://github.com/$repo.git"
 done
 
-# Gradle
-cd ../gradle
+# # Gradle
+# cd ../gradle
 
-for repo in "${gradle_repos[@]}"; do
-  git clone "https://github.com/$repo.git"
-done
+# for repo in "${gradle_repos[@]}"; do
+#   git clone "https://github.com/$repo.git"
+# done
