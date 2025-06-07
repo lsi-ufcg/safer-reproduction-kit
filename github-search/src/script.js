@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 import pLimit from 'p-limit';
 import dotenv from 'dotenv';
+import fs from 'fs';
 dotenv.config();
 
 const TOKEN = process.env.GITHUB_TOKEN;
@@ -15,7 +16,7 @@ const HEADERS = {
 };
 
 const SEARCH_API = 'https://api.github.com/search/repositories';
-const MAX_PAGES = 8;
+const MAX_PAGES = 1;
 const PER_PAGE = 100;
 const SEARCH_QUERY = 'language:Java stars:>=5';
 const CONCURRENT_TREE_REQUESTS = 1; // to avoid spamming API
@@ -95,6 +96,8 @@ async function main() {
 
   console.log(`\nFound ${reposWithPom.length} repositories with pom.xml in root matching criteria.`);
   console.log('Results:', reposWithPom);
+  const result = reposWithPom.map(repo => repo.url).join("\n");
+  fs.writeFileSync("output.txt", result);
 }
 
 main().catch(err => {
