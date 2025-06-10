@@ -16,26 +16,21 @@ const HEADERS = {
 };
 
 const SEARCH_API = "https://api.github.com/search/repositories";
-const MAX_PAGES = 500;
+const MAX_PAGES = 10; // up to 1000 results per month (GitHub limit)
 const PER_PAGE = 100;
-const SEARCH_QUERY = "language:Java stars:>=5";
-const CONCURRENT_TREE_REQUESTS = 8; // to avoid spamming API
-const SEARCH_RATE_LIMIT_PER_MINUTE = 30; // max search requests/min
+const CONCURRENT_TREE_REQUESTS = 1;
+const SEARCH_RATE_LIMIT_PER_MINUTE = 30;
 
-// Simple delay function
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
-// Function to respect search API rate limits (30 req/min)
 async function rateLimitedSearchFetch(url) {
-    // You could add a smarter token bucket or leaky bucket here.
-    // For now, just wait 2100ms between calls (~28.5 req/min)
     await delay(2100);
     return fetch(url, { headers: HEADERS });
 }
 
-async function fetchReposPage(page) {
+async function fetchReposPage(query, page) {
     const url = `${SEARCH_API}?q=${encodeURIComponent(
-        SEARCH_QUERY
+        query
     )}&sort=stars&order=desc&per_page=${PER_PAGE}&page=${page}`;
     const response = await rateLimitedSearchFetch(url);
     if (!response.ok) {
@@ -52,10 +47,12 @@ async function checkPomInRoot(owner, repo, branch) {
     try {
         const response = await fetch(treeUrl, { headers: HEADERS });
         if (!response.ok) {
-            // Some repos may have weird branches or permissions, ignore errors
             console.warn(
                 `Failed to fetch tree for ${owner}/${repo}: ${response.status}`
             );
+            console.log("Waiting for one hour...");
+            await delay(60 * 60 * 1000);
+            console.log("One hour has passed!");
             return false;
         }
         const data = await response.json();
@@ -65,60 +62,79 @@ async function checkPomInRoot(owner, repo, branch) {
         );
     } catch (err) {
         console.warn(`Failed to fetch tree for ${owner}/${repo}`);
+        console.log("Waiting for one hour...");
+        await delay(60 * 60 * 1000);
+        console.log("One hour has passed!");
         return false;
     }
 }
 
+function* generateMonthRanges(startYear = 2018) {
+    const now = new Date();
+    for (let year = startYear; year <= now.getFullYear(); year++) {
+        const endMonth = year === now.getFullYear() ? now.getMonth() + 1 : 12;
+        for (let month = 1; month <= endMonth; month++) {
+            const start = `${year}-${String(month).padStart(2, "0")}-01`;
+            const endDate = new Date(year, month, 0).getDate(); // last day of the month
+            const end = `${year}-${String(month).padStart(2, "0")}-${endDate}`;
+            yield { start, end };
+        }
+    }
+}
+
 async function main() {
-    console.log("Starting repo search and filtering...");
+    console.log("Starting repo search and filtering by month...");
 
     const limit = pLimit(CONCURRENT_TREE_REQUESTS);
     const reposWithPom = [];
 
-    for (let page = 1; page <= MAX_PAGES; page++) {
-        console.log(`Fetching page ${page} of repos...`);
-        let repos;
-        try {
-            repos = await fetchReposPage(page);
-        } catch (err) {
-            console.error("Error fetching repos:", err);
-            break;
-        }
-        if (repos.length === 0) {
-            console.log("No more repos found.");
-            break;
-        }
+    for (const { start, end } of generateMonthRanges(2018)) {
+        console.log(`\n🔍 Searching from ${start} to ${end}`);
+        const searchQuery = `language:Java stars:>=5 created:${start}..${end}`;
+        let page = 0;
+        while (true) {
+            page++;
+            console.log(`Fetching page ${page} for ${start}..${end}`);
+            let repos;
+            try {
+                repos = await fetchReposPage(searchQuery, page);
+            } catch (err) {
+                console.error("Error fetching repos:", err);
+                break;
+            }
+            if (repos.length === 0) {
+                console.log("No more repos in this range.");
+                break;
+            }
 
-        // Check pom.xml presence with concurrency limit
-        const checkPromises = repos.map((repo) =>
-            limit(async () => {
-                const hasPom = await checkPomInRoot(
-                    repo.owner.login,
-                    repo.name,
-                    repo.default_branch
-                );
-                if (hasPom) {
-                    console.log(
-                        `✔ ${repo.full_name} stars: ${repo.stargazers_count}`
+            const checkPromises = repos.map((repo) =>
+                limit(async () => {
+                    const hasPom = await checkPomInRoot(
+                        repo.owner.login,
+                        repo.name,
+                        repo.default_branch
                     );
-                    reposWithPom.push({
-                        full_name: repo.full_name,
-                        stars: repo.stargazers_count,
-                        url: repo.html_url,
-                    });
-                }
-            })
+                    if (hasPom) {
+                        console.log(
+                            `✔ ${repo.full_name} stars: ${repo.stargazers_count}`
+                        );
+                        reposWithPom.push({
+                            full_name: repo.full_name,
+                            stars: repo.stargazers_count,
+                            url: repo.html_url,
+                        });
+                    }
+                })
+            );
+
+            await Promise.all(checkPromises);
+        }
+        console.log(
+            `\n🎉 Found ${reposWithPom.length} repositories with pom.xml from ${start} to ${end}.`
         );
-
-        await Promise.all(checkPromises);
+        const result = reposWithPom.map((repo) => repo.url).join("\n");
+        fs.appendFileSync("output.txt", result);
     }
-
-    console.log(
-        `\nFound ${reposWithPom.length} repositories with pom.xml in root matching criteria.`
-    );
-    console.log("Results:", reposWithPom);
-    const result = reposWithPom.map((repo) => repo.url).join("\n");
-    fs.writeFileSync("output.txt", result);
 }
 
 main().catch((err) => {
