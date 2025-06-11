@@ -131,13 +131,6 @@ async function main() {
                         repo.default_branch
                     );
 
-                    if (commitCount <= 2000) {
-                        console.log(
-                            `Skipping ${repo.full_name} (only ${commitCount} commits)`
-                        );
-                        return;
-                    }
-
                     const hasPom = await checkPomInRoot(
                         repo.owner.login,
                         repo.name,
@@ -165,7 +158,7 @@ async function main() {
             `\n🎉 Found ${reposWithPom.length} repositories with >2000 commits and pom.xml from ${start} to ${end}.`
         );
 
-        const result = reposWithPom.map((repo) => repo.url).join("\n");
+        const result = reposWithPom.map((repo) => `${repo.full_name},${repo.stars},${repo.commits},${repo.url}`).join("\n");
         fs.appendFileSync("output.txt", result + "\n");
 
         reposWithPom = []; // Reset for next month
