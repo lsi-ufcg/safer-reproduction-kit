@@ -28,23 +28,23 @@ maven_repos=(
   "syqu22/spring-boot-shop-sample"
 )
 
-gradle_repos=(
-  "square/retrofit"
-  "Netflix/zuul"
-  "junit-team/junit5"
-  "Discord4J/Discord4J"
-  "google/ExoPlayer"
-  "spring-projects/spring-boot"
-  "libgdx/libgdx"
-  "mendhak/gpslogger"
-  "elastic/elasticsearch"
-  "LINBIT/linstor-server"
-  "CatimaLoyalty/Android"
-  "federicoiosue/Omni-Notes"
-)
+# gradle_repos=(
+#   "square/retrofit"
+#   "Netflix/zuul"
+#   "junit-team/junit5"
+#   "Discord4J/Discord4J"
+#   "google/ExoPlayer"
+#   "spring-projects/spring-boot"
+#   "libgdx/libgdx"
+#   "mendhak/gpslogger"
+#   "elastic/elasticsearch"
+#   "LINBIT/linstor-server"
+#   "CatimaLoyalty/Android"
+#   "federicoiosue/Omni-Notes"
+# )
 
 mkdir -p workstation/maven
-mkdir -p workstation/gradle
+# mkdir -p workstation/gradle
 
 cd workstation/maven
 # Maven
@@ -55,8 +55,8 @@ done
 
 # Gradle
 
-cd ../gradle
+# cd ../gradle
 
-for repo in "${gradle_repos[@]}"; do
-  gh repo fork "$repo"
-done
+# for repo in "${gradle_repos[@]}"; do
+#   gh repo fork "$repo"
+# done
