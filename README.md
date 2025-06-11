@@ -20,12 +20,6 @@ Unzip Safer and install its dependencies
 ./setup-safer.sh
 ```
 
-## Clone Test Repositories
-
-```bash
-./clone-test-repositories.sh
-```
-
 ## Run Experiments
 
 If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run
