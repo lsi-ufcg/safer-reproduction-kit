@@ -16,10 +16,9 @@ const HEADERS = {
 };
 
 const SEARCH_API = "https://api.github.com/search/repositories";
-const MAX_PAGES = 10; // up to 1000 results per month (GitHub limit)
+const MAX_PAGES = 10; // GitHub search API max = 1000 results
 const PER_PAGE = 100;
-const CONCURRENT_TREE_REQUESTS = 1;
-const SEARCH_RATE_LIMIT_PER_MINUTE = 30;
+const CONCURRENT_REQUESTS = 1;
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -41,6 +40,25 @@ async function fetchReposPage(query, page) {
     }
     const data = await response.json();
     return data.items || [];
+}
+
+async function getCommitCount(owner, repo, branch) {
+    const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=1&sha=${branch}`;
+    const response = await fetch(commitsUrl, { headers: HEADERS });
+    if (!response.ok) {
+        console.warn(`Failed to get commits for ${owner}/${repo}`);
+        return 0;
+    }
+
+    const linkHeader = response.headers.get("link");
+    if (!linkHeader) return 1;
+
+    const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
+    if (match) {
+        return parseInt(match[1], 10);
+    }
+
+    return 1;
 }
 
 async function checkPomInRoot(owner, repo, branch) {
@@ -65,9 +83,6 @@ async function checkPomInRoot(owner, repo, branch) {
         );
     } catch (err) {
         console.warn(`Failed to fetch tree for ${owner}/${repo}`);
-        // console.log("Waiting for one hour...");
-        // await delay(61 * 60 * 1000);
-        // console.log("One hour has passed!");
         return false;
     }
 }
@@ -88,10 +103,10 @@ function* generateMonthRanges(startYear = 2018) {
 async function main() {
     console.log("Starting repo search and filtering by month...");
 
-    const limit = pLimit(CONCURRENT_TREE_REQUESTS);
+    const limit = pLimit(CONCURRENT_REQUESTS);
     let reposWithPom = [];
 
-    for (const { start, end } of generateMonthRanges(2018)) {
+    for (const { start, end } of generateMonthRanges(2015)) {
         console.log(`\n🔍 Searching from ${start} to ${end}`);
         const searchQuery = `language:Java stars:>=5 created:${start}..${end}`;
         for (let page = 1; page < MAX_PAGES; page++) {
@@ -110,18 +125,33 @@ async function main() {
 
             const checkPromises = repos.map((repo) =>
                 limit(async () => {
+                    const commitCount = await getCommitCount(
+                        repo.owner.login,
+                        repo.name,
+                        repo.default_branch
+                    );
+
+                    if (commitCount <= 2000) {
+                        console.log(
+                            `Skipping ${repo.full_name} (only ${commitCount} commits)`
+                        );
+                        return;
+                    }
+
                     const hasPom = await checkPomInRoot(
                         repo.owner.login,
                         repo.name,
                         repo.default_branch
                     );
+
                     if (hasPom) {
                         console.log(
-                            `✔ ${repo.full_name} stars: ${repo.stargazers_count}`
+                            `✔ ${repo.full_name} stars: ${repo.stargazers_count}, commits: ${commitCount}`
                         );
                         reposWithPom.push({
                             full_name: repo.full_name,
                             stars: repo.stargazers_count,
+                            commits: commitCount,
                             url: repo.html_url,
                         });
                     }
@@ -130,12 +160,15 @@ async function main() {
 
             await Promise.all(checkPromises);
         }
+
         console.log(
-            `\n🎉 Found ${reposWithPom.length} repositories with pom.xml from ${start} to ${end}.`
+            `\n🎉 Found ${reposWithPom.length} repositories with >2000 commits and pom.xml from ${start} to ${end}.`
         );
+
         const result = reposWithPom.map((repo) => repo.url).join("\n");
-        fs.appendFileSync("output.txt", result);
-        reposWithPom = [];
+        fs.appendFileSync("output.txt", result + "\n");
+
+        reposWithPom = []; // Reset for next month
     }
 }
 
