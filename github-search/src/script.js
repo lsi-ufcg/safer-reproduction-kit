@@ -32,6 +32,7 @@ async function fetchReposPage(query, page) {
     const url = `${SEARCH_API}?q=${encodeURIComponent(
         query
     )}&sort=stars&order=desc&per_page=${PER_PAGE}&page=${page}`;
+    console.log(url);
     const response = await rateLimitedSearchFetch(url);
     if (!response.ok) {
         console.error(
@@ -50,9 +51,11 @@ async function checkPomInRoot(owner, repo, branch) {
             console.warn(
                 `Failed to fetch tree for ${owner}/${repo}: ${response.status}`
             );
-            console.log("Waiting for one hour...");
-            await delay(60 * 60 * 1000);
-            console.log("One hour has passed!");
+            if (response.status === 403) {
+                console.log("Waiting for 20 minutes...");
+                await delay(20 * 60 * 1000);
+                console.log("20 minutes has passed!");
+            }
             return false;
         }
         const data = await response.json();
@@ -62,9 +65,9 @@ async function checkPomInRoot(owner, repo, branch) {
         );
     } catch (err) {
         console.warn(`Failed to fetch tree for ${owner}/${repo}`);
-        console.log("Waiting for one hour...");
-        await delay(60 * 60 * 1000);
-        console.log("One hour has passed!");
+        // console.log("Waiting for one hour...");
+        // await delay(61 * 60 * 1000);
+        // console.log("One hour has passed!");
         return false;
     }
 }
@@ -86,14 +89,12 @@ async function main() {
     console.log("Starting repo search and filtering by month...");
 
     const limit = pLimit(CONCURRENT_TREE_REQUESTS);
-    const reposWithPom = [];
+    let reposWithPom = [];
 
     for (const { start, end } of generateMonthRanges(2018)) {
         console.log(`\n🔍 Searching from ${start} to ${end}`);
         const searchQuery = `language:Java stars:>=5 created:${start}..${end}`;
-        let page = 0;
-        while (true) {
-            page++;
+        for (let page = 1; page < MAX_PAGES; page++) {
             console.log(`Fetching page ${page} for ${start}..${end}`);
             let repos;
             try {
@@ -134,6 +135,7 @@ async function main() {
         );
         const result = reposWithPom.map((repo) => repo.url).join("\n");
         fs.appendFileSync("output.txt", result);
+        reposWithPom = [];
     }
 }
 
