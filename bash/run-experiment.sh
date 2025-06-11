@@ -40,5 +40,6 @@ else
   entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time"
   echo $entire_csv_line >> $dataset_path
   pretty_print green "Safer executed succesfully in the project $project_name.\nSee outputs/stdout/$project_name.txt and $dataset_path"
+  echo "Safer executed succesfully in the project $project_name." >> $logs_path
   echo ""
 fi
