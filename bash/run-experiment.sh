@@ -24,6 +24,8 @@ echo "Running safer for: $project_path, See outputs/stdout/$project_name.txt"
 cd safer/src
 
 start_time=$(date +%s)
+# Use this line to create log files
+# PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts > ../../outputs/stdout/$project_name.txt 2> ../../outputs/stderr/$project_name.txt
 output=$(PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts | tee /dev/tty)
 cd ../../
 
@@ -31,6 +33,8 @@ end_time=$(date +%s)
 execution_time=$((end_time - start_time))
 
 csv_line=$(echo "$output" | grep -A2 '^CSV:' | tail -n1)
+# Use this line to create log files
+# csv_line=$(cat outputs/stdout/$project_name.txt | grep -A2 '^CSV:' | tail -n1)
 
 if [ -z "$csv_line" ]; then
   pretty_print red "Safer failed to execute in the project $project_name.\nSee outputs/stderr/$project_name.txt" >&2

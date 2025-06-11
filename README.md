@@ -22,10 +22,11 @@ Unzip Safer and install its dependencies
 
 ## Run Experiments
 
-If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run
+If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run  
+Sudo privileges are required to delete the repository directory after Safer execution  
 
 ```bash
-./run-experiments.sh
+sudo ./run-experiments.sh
 ```
 
 ## Results
