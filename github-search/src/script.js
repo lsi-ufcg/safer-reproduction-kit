@@ -18,7 +18,7 @@ const HEADERS = {
 const SEARCH_API = "https://api.github.com/search/repositories";
 const MAX_PAGES = 10; // GitHub search API max = 1000 results
 const PER_PAGE = 100;
-const CONCURRENT_REQUESTS = 1;
+const CONCURRENT_REQUESTS = 10;
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -44,21 +44,26 @@ async function fetchReposPage(query, page) {
 
 async function getCommitCount(owner, repo, branch) {
     const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=1&sha=${branch}`;
-    const response = await fetch(commitsUrl, { headers: HEADERS });
-    if (!response.ok) {
-        console.warn(`Failed to get commits for ${owner}/${repo}`);
-        return 0;
+    try {
+        const response = await fetch(commitsUrl, { headers: HEADERS });
+        if (!response.ok) {
+            console.warn(`Failed to get commits for ${owner}/${repo}`);
+            return 0;
+        }
+    
+        const linkHeader = response.headers.get("link");
+        if (!linkHeader) return 1;
+    
+        const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
+        if (match) {
+            return parseInt(match[1], 10);
+        }
+    
+        return 1;
+    } catch(err) {
+        console.warn(`Failed to fetch tree for ${owner}/${repo}`);
+        return false;
     }
-
-    const linkHeader = response.headers.get("link");
-    if (!linkHeader) return 1;
-
-    const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
-    if (match) {
-        return parseInt(match[1], 10);
-    }
-
-    return 1;
 }
 
 async function checkPomInRoot(owner, repo, branch) {
@@ -155,10 +160,10 @@ async function main() {
         }
 
         console.log(
-            `\n🎉 Found ${reposWithPom.length} repositories with >2000 commits and pom.xml from ${start} to ${end}.`
+            `\n🎉 Found ${reposWithPom.length} repositories with pom.xml from ${start} to ${end}.`
         );
 
-        const result = reposWithPom.map((repo) => `${repo.full_name},${repo.stars},${repo.commits},${repo.url}`).join("\n");
+        const result = reposWithPom.map((repo) => `${repo.full_name},${repo.url},${repo.stars},${repo.commits}`).join("\n");
         fs.appendFileSync("output.txt", result + "\n");
 
         reposWithPom = []; // Reset for next month
