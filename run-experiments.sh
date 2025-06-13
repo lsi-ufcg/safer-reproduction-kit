@@ -114,12 +114,17 @@ maven_repos=(
 mkdir -p workstation/maven
 
 id=1
-for repo in "${maven_repos[@]}"; do
+for repo_url in "${maven_repos[@]}"; do
   cd workstation/maven
   git clone --depth 1 "$repo.git"
+  # group=$(basename "$(dirname "$repo_url")")
+  # repo=$(basename "$repo_url")
+  # gh repo fork "$group/$repo" --remote=false
+  # git clone --depth 1 https://github.com/cristovao-n/$(basename $repo_url).git
+  
   cd ../../
-  ./bash/run-experiment.sh workstation/maven/$(basename $repo) $id
-  rm -rf workstation/maven/$(basename $repo)
+  ./bash/run-experiment.sh workstation/maven/$(basename $repo_url) $id
+  rm -rf workstation/maven/$(basename $repo_url)
   id=$(($id + 1))
 done
 

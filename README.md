@@ -23,10 +23,9 @@ Unzip Safer and install its dependencies
 ## Run Experiments
 
 If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run  
-Sudo privileges are required to delete the repository directory after Safer execution  
 
 ```bash
-sudo ./run-experiments.sh
+./run-experiments.sh
 ```
 
 ## Results
@@ -38,7 +37,7 @@ You can execute the `analysis.ipynb` notebook to visualize result charts from th
 
 `gh config set git_protocol ssh`
 
-`./fork-test-repositories.sh`
+Comment out the lines of `run-experiments.sh`
 
 `./run-experiments.sh`
 
