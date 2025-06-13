@@ -32,9 +32,9 @@ cd ../../
 end_time=$(date +%s)
 execution_time=$((end_time - start_time))
 
-csv_line=$(echo "$output" | grep -A2 '^CSV:' | tail -n1)
 # Use this line to create log files
 # csv_line=$(cat outputs/stdout/$project_name.txt | grep -A2 '^CSV:' | tail -n1)
+csv_line=$(echo "$output" | grep -A2 '^CSV:' | tail -n1)
 
 if [ -z "$csv_line" ]; then
   pretty_print red "Safer failed to execute in the project $project_name.\nSee outputs/stderr/$project_name.txt" >&2
