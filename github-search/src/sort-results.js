@@ -24,7 +24,7 @@ fs.createReadStream(inputFile)
 
         const output = stringify(results, {
             header: true,
-            columns: ["full_name", "url", "stars", "commits"],
+            columns: ["full_name", "stars", "commits", "url"],
         });
 
         fs.writeFileSync(outputFile, output);
