@@ -22,7 +22,7 @@ Unzip Safer and install its dependencies
 
 ## Run Experiments
 
-If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run  
+If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run
 
 ```bash
 ./run-experiments.sh
@@ -34,6 +34,9 @@ The dataset of the experiments is saved as `results/dataset.csv`.
 You can execute the `analysis.ipynb` notebook to visualize result charts from the dataset
 
 # Creating Issues and PRs
+
+`ssh-add -D`  
+`ssh-add ~/.ssh/safer-bot-github`
 
 `gh config set git_protocol ssh`
 
