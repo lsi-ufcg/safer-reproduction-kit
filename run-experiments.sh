@@ -113,19 +113,36 @@ maven_repos=(
 
 mkdir -p workstation/maven
 
+MAX_JOBS=4 # adjust based on your CPU/network capability
 id=1
-for repo_url in "${maven_repos[@]}"; do
+job_count=0
+
+run_repo() {
+  repo_url="$1"
+  id="$2"
+  repo_name=$(basename "$repo_url")
+
   cd workstation/maven
-  git clone --depth 1 "$repo_url.git"
+  git clone --depth 1 "$repo_url.git" "$repo_name"
   # group=$(basename "$(dirname "$repo_url")")
   # repo=$(basename "$repo_url")
   # gh repo fork "$group/$repo" --remote=false
   # git clone --depth 1 https://github.com/cristovao-n/$(basename $repo_url).git
-  
   cd ../../
-  ./bash/run-experiment.sh workstation/maven/$(basename $repo_url) $id
-  rm -rf workstation/maven/$(basename $repo_url)
-  id=$(($id + 1))
+  ./bash/run-experiment.sh "workstation/maven/$repo_name" "$id"
+  rm -rf "workstation/maven/$repo_name"
+}
+
+for repo_url in "${maven_repos[@]}"; do
+  run_repo "$repo_url" "$id" &
+  job_count=$((job_count + 1))
+  id=$((id + 1))
+
+  # Wait if max jobs are running
+  if ((job_count >= MAX_JOBS)); then
+    wait -n # wait for one job to finish
+    job_count=$((job_count - 1))
+  fi
 done
 
 # Gradle
