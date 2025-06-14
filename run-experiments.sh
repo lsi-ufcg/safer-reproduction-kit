@@ -116,7 +116,7 @@ mkdir -p workstation/maven
 id=1
 for repo_url in "${maven_repos[@]}"; do
   cd workstation/maven
-  git clone --depth 1 "$repo.git"
+  git clone --depth 1 "$repo_url.git"
   # group=$(basename "$(dirname "$repo_url")")
   # repo=$(basename "$repo_url")
   # gh repo fork "$group/$repo" --remote=false
