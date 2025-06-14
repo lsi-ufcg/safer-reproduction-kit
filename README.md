@@ -36,9 +36,10 @@ You can execute the `analysis.ipynb` notebook to visualize result charts from th
 # Creating Issues and PRs
 
 `ssh-add -D`  
-`ssh-add ~/.ssh/safer-bot-github`
+`ssh-add ~/.ssh/github-safer-bot`
 
-`gh config set git_protocol ssh`
+`gh config set git_protocol ssh`  
+`gh auth login`
 
 Comment out the lines of `run-experiments.sh`
 

@@ -47,6 +47,6 @@ else
   echo "[$id] Success - $project_name." >> $logs_path
   echo ""
   # Create github artifacts
-  # ./bash/commit-dependencies-file.sh $project_root_path "pom.xml"
-  # ./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt
+  ./bash/commit-dependencies-file.sh $project_root_path "pom.xml"
+  ./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt
 fi
