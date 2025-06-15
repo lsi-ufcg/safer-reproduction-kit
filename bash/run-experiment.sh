@@ -25,28 +25,39 @@ cd safer/src
 
 start_time=$(date +%s)
 # Use this line to create log files
-# PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts > ../../outputs/stdout/$project_name.txt 2> ../../outputs/stderr/$project_name.txt
-output=$(PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts | tee /dev/tty)
+PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts > ../../outputs/stdout/$project_name.txt 2> ../../outputs/stderr/$project_name.txt
+# output=$(PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts | tee /dev/tty)
 cd ../../
 
 end_time=$(date +%s)
 execution_time=$((end_time - start_time))
 
 # Use this line to create log files
-# csv_line=$(cat outputs/stdout/$project_name.txt | grep -A2 '^CSV:' | tail -n1)
-csv_line=$(echo "$output" | grep -A2 '^CSV:' | tail -n1)
+csv_line=$(cat outputs/stdout/$project_name.txt | grep -A2 '^CSV:' | tail -n1)
+# csv_line=$(echo "$output" | grep -A2 '^CSV:' | tail -n1)
 
 if [ -z "$csv_line" ]; then
   pretty_print red "Safer failed to execute in the project $project_name.\nSee outputs/stderr/$project_name.txt" >&2
-  echo "[$id] Failure - $project_name." >> $logs_path
+  echo "[$id] Failure - $project_name." >>$logs_path
+  gh repo delete safer-bot/$project_name --yes
   echo ""
 else
-  entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time"
-  echo $entire_csv_line >> $dataset_path
   pretty_print green "Safer executed succesfully in the project $project_name.\nSee outputs/stdout/$project_name.txt and $dataset_path"
-  echo "[$id] Success - $project_name." >> $logs_path
+  echo "[$id] Success - $project_name." >>$logs_path
   echo ""
-  # Create github artifacts
-  # ./bash/commit-dependencies-file.sh $project_root_path "pom.xml"
-  # ./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt
+
+  IFS=',' read -r c1 c2 vulnerabilities_before vulnerabilities_after c5 <<<$csv_line
+
+  if [[ $vulnerabilities_after -lt $vulnerabilities_before ]]; then
+    # Create github artifacts
+    ./bash/commit-dependencies-file.sh $project_root_path "pom.xml"
+    issue_link=$(./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt)
+    entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,$issue_link"
+    # entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,-"
+    echo $entire_csv_line >>$dataset_path
+  else
+    entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,no improvement"
+    echo $entire_csv_line >>$dataset_path
+    gh repo delete safer-bot/$project_name --yes
+  fi
 fi
