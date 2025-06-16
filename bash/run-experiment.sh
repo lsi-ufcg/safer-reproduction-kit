@@ -51,7 +51,7 @@ else
   if ((low_after * 1 + medium_after * 2 + high_after * 3 + critical_after * 5 < low_before * 1 + medium_before * 2 + high_before * 3 + critical_before * 5)); then
     # Create github artifacts
     ./bash/commit-dependencies-file.sh $project_root_path "pom.xml"
-    issue_link=$(./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt)
+    issue_link=$(./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt) $vulnerabilities_before $vulnerabilities_after
     entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,$issue_link"
     # entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,-"
     echo $entire_csv_line >>$dataset_path
