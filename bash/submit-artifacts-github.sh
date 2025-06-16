@@ -39,7 +39,7 @@ Safer Team
 EOF
 )"
 )
-echo $issue_link
+echo $issue_link $commit
 issue_number=$(basename $issue_link)
 main_branch=$(git rev-parse --abbrev-ref HEAD)
 git checkout safer-result > /dev/null 2>&1
