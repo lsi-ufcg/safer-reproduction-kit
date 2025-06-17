@@ -35,10 +35,12 @@ You can execute the `analysis.ipynb` notebook to visualize result charts from th
 
 # Creating Issues and PRs
 
+`eval "$(ssh-agent -s)"` 
 `ssh-add -D`  
 `ssh-add ~/.ssh/github-safer-bot`
 
 `gh config set git_protocol ssh`  
+`gh auth refresh -h github.com -s delete_repo`  
 `gh auth login`
 
 Comment out the lines of `run-experiments.sh`
