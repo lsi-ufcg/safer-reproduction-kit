@@ -35211,14 +35211,18 @@ run_repo() {
   repo_name="$group"_"$repo"
   cd workstation/maven
   # git clone --depth 1 "$repo_url.git" "$repo_name"
-  gh repo fork "$group/$repo" --clone=true --fork-name=$repo_name
+  gh repo fork "$group/$repo" --clone=false --fork-name=$repo_name
   echo "Waiting for fork to be available..."
-  while ! gh repo view "safer-bot/$repo_name" > /dev/null 2>&1; do
+  while ! gh repo view "safer-bot/$repo_name" >/dev/null 2>&1; do
     sleep 2
   done
-
   echo "Fork available. Proceeding..."
-  cd ../../
+
+  git clone --depth=1 "git@github.com:safer-bot/$repo_name.git"
+  cd $repo_name
+  git remote add upstream git@github.com:$group/$repo.git
+  gh repo set-default $group/$repo
+  cd ../../../
   ./bash/run-experiment.sh "workstation/maven/$repo_name" "$id"
   rm -rf "workstation/maven/$repo_name"
 }
