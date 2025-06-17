@@ -25,7 +25,7 @@ cd safer/src
 
 start_time=$(date +%s)
 # Use this line to create log files
-PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts > ../../outputs/stdout/$project_name.txt 2> ../../outputs/stderr/$project_name.txt
+PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts >../../outputs/stdout/$project_name.txt 2>../../outputs/stderr/$project_name.txt
 # output=$(PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts | tee /dev/tty)
 cd ../../
 
@@ -46,12 +46,12 @@ else
   echo "[$id] Success - $project_name." >>$logs_path
   echo ""
 
-  IFS=',' read -r c1 c2 vulnerabilities_before vulnerabilities_after c5 <<<$csv_line
+  IFS=',' read -r c1 c2 vulnerabilities_before vulnerabilities_after low_before low_after medium_before medium_after high_before high_after critical_before critical_after c13 <<<$csv_line
 
-  if [[ $vulnerabilities_after -lt $vulnerabilities_before ]]; then
+  if ((low_after * 1 + medium_after * 2 + high_after * 3 + critical_after * 5 < low_before * 1 + medium_before * 2 + high_before * 3 + critical_before * 5)); then
     # Create github artifacts
     ./bash/commit-dependencies-file.sh $project_root_path "pom.xml"
-    issue_link=$(./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt)
+    issue_link=$(./bash/submit-artifacts-github.sh $project_root_path $(pwd)/outputs/stdout/$project_name.txt $vulnerabilities_before $vulnerabilities_after)
     entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,$issue_link"
     # entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,-"
     echo $entire_csv_line >>$dataset_path

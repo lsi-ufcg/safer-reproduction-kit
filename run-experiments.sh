@@ -35199,7 +35199,7 @@ maven_repos=(
 
 mkdir -p workstation/maven
 
-MAX_JOBS=2 # adjust based on your CPU/network capability
+MAX_JOBS=$1 # adjust based on your CPU/network capability
 id=1
 job_count=0
 
