@@ -20,6 +20,18 @@ Unzip Safer and install its dependencies
 ./setup-safer.sh
 ```
 
+## Setup dependencies proxy
+
+`./setup-nexus.sh`
+
+Go to `localhost:8081`  
+Login as admin  
+
+Get password:  
+`docker exec -it nexus bash`  
+`cat /nexus-data/admin.password`
+
+
 ## Run Experiments
 
 If you don't want to run the experiments for all projects open this bash script and comment the projects you don't want to run
@@ -35,7 +47,7 @@ You can execute the `analysis.ipynb` notebook to visualize result charts from th
 
 # Creating Issues and PRs
 
-`eval "$(ssh-agent -s)"` 
+`eval "$(ssh-agent -s)"`
 `ssh-add -D`  
 `ssh-add ~/.ssh/github-safer-bot`
 
