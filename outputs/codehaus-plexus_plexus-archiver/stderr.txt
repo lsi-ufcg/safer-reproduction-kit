@@ -1,0 +1,378 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+[main] INFO org.codehaus.plexus.archiver.war.WarArchiver - Building war: /app/target/wartest/test.war
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/duplicateFiles.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /app/target/output/duplicateFiles.tar into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/output/duplicateFiles.dir
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 1 files copied to /app/target/output/duplicateFiles.dir
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/duplicateFiles.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pom.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForbz2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/unzip/utf8-default.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pasymlinks-fileset.zip
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/zip-non-concurrent.tar
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-non-concurrent.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/src.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/src2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/utf8-default.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archive1.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pasymlinks.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/utf8-with_utf.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pasymlinks-archivedFileset.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/all3bytes.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/forced-file-mode.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/forced-file-mode-from-zip.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/forced-file-mode-from-zip2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-overriden-modes.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/recompress-added-zips.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/dont-recompress-added-zips.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-implicit-dirmode.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archive2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archive2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/last-modified-time.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-fixed-entry-modification-times.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/withZip.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-modes.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-modes-L2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pomxz.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForxz.zip
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - All files are uptodate in /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_force
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack_force
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_force
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack_force
+Jun 17, 2025 5:22:57 PM java.util.jar.Attributes read
+WARNING: Duplicate name in Manifest: Class-Path.
+Ensure that the manifest does not have duplicate entries, and
+that blank lines separate individual sections in both your
+manifest and in the META-INF/MANIFEST.MF entry in the jar file.
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive1.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive3.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive2.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive1.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive2.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarToolModularJarArchiver - Building jar: /app/target/output/testJar.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarToolModularJarArchiver - Building jar: /app/target/output/modular.jar
+String: test:\s\tA\r\n\sB\r\n\s\t\sC\r\n\s\s\tD\r\n
+String: test:\s123456789\r\n\s123456789\r\n
+Jun 17, 2025 5:22:57 PM java.util.jar.Attributes read
+WARNING: Duplicate name in Manifest: Class-Path.
+Ensure that the manifest does not have duplicate entries, and
+that blank lines separate individual sections in both your
+manifest and in the META-INF/MANIFEST.MF entry in the jar file.
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/testJar.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/jarArchiveNonCompressed.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Managua-1867929617393543347.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-New_York-4902170855848552679.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Buenos_Aires-4239256843928058361.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Sao_Paulo-37606422209756137.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Los_Angeles-5096740045263893569.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Cairo-2437178620996845157.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Lagos-8311981415204225710.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Nairobi-6740185625773192051.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Lisbon-6704298569091571855.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Madrid-5926322827254784793.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Moscow-960602462931268879.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Oslo-1511039179243775729.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Sydney-976606334453930369.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Tokyo-3564546077774547120.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Singapore-5815160306643584079.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Qatar-1127858166234137405.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Seoul-5681341685599511295.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-Bermuda-6225066188607982111.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-UTC-579744188028027015.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-GMT-2264534556315854844.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7003652572418543645/JarArchiverTest-GMT-14-2373277102906601402.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-4996705420020941392/JarArchiverTest-umask2699517888589037313.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-7164472152031848045/JarArchiverTest.2170017943852857482.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/veryLargeJar.jar
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pom.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForSnappy.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pomxz.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForxz.zip
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-3480554949484840043/tar-file.106939337574885796.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-3480554949484840043/tar-file.106939337574885796.tar into /tmp/junit-3480554949484840043/tar-test.9204903853315166
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-5134905645408243090/tar-file.846431921828140865.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-5134905645408243090/tar-file.846431921828140865.tar into /tmp/junit-5134905645408243090/tar-test.2368330877717775807
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-5467357311785466213/tar-file.3722890726220334337.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-5467357311785466213/tar-file.1681653467570765323.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-5467357311785466213/tar-file.1681653467570765323.tar into /tmp/junit-5467357311785466213/tar-test.3654808938189556355
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-4147269563812754557/tar-file.1705561636592006230.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-4147269563812754557/tar-file.1705561636592006230.tar into /tmp/junit-4147269563812754557/tar-test.1827703012871547363
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarSnappyUnArchiver - Expanding: /app/target/output/archive.tar.snappy into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TGZUnArchiver - Expanding: /app/target/output/archive.tar.gz into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarXZUnArchiver - Expanding: /app/target/output/archive.tar.xz into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/TarFileTest.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/TarFileTest.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/TarFileTest.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TBZ2UnArchiver - Expanding: /app/target/output/archive.tar.bz2 into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/symlinkarchive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/tar-with-longFileName.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/pasymlinks-archivedFileset.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/tar-with-modes.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/tar-with-modes-L2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarZstdUnArchiver - Expanding: /app/target/output/archive.tar.zst into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/emptyDirArchive.zip
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /app/target/output/emptyDirArchive.zip into /app/target/output/emptyTest
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/emptyDirArchive.zip
+[main] INFO org.codehaus.plexus.archiver.rar.RarArchiver - Building jar: /app/target/rartest/test.rar
+[main] INFO org.codehaus.plexus.archiver.rar.RarArchiver - Building jar: /app/target/output/pom.xml.rar
+[main] INFO org.codehaus.plexus.archiver.rar.RarArchiver - Building jar: /app/target/output/pom.xml.rar
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pom.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForGzip.zip
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/output/dirarchiver-symlink
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 5 files copied to /app/target/output/dirarchiver-symlink
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/symlinks.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: target/output/symlinks.tar into /app/target/output/untaredSymlinks
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: target/output/symlinks.tar into /app/target/output/untaredSymlinks
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/symlinks.zip
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/default-dotfiles.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/dotfiles.jar
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-2428150680678249746/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-1355780555018852251/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-1355780555018852251/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-5317047534312279392/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-5317047534312279392/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+Dependency javax.inject:javax.inject not found in POM.
+Dependency org.codehaus.plexus:plexus-utils not found in POM.
+Dependency org.codehaus.plexus:plexus-io not found in POM.
+Dependency commons-io:commons-io not found in POM.
+Dependency org.apache.commons:commons-compress not found in POM.
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/codehaus-plexus_plexus-archiver false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1228347,
+  stdout: null,
+  stderr: null
+}
+[main] INFO org.codehaus.plexus.archiver.war.WarArchiver - Building war: /app/target/wartest/test.war
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/duplicateFiles.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /app/target/output/duplicateFiles.tar into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/output/duplicateFiles.dir
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 1 files copied to /app/target/output/duplicateFiles.dir
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/duplicateFiles.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pom.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForbz2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/unzip/utf8-default.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pasymlinks-fileset.zip
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/zip-non-concurrent.tar
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-non-concurrent.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/src.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/src2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/utf8-default.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archive1.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pasymlinks.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/utf8-with_utf.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pasymlinks-archivedFileset.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/all3bytes.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/forced-file-mode.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/forced-file-mode-from-zip.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/forced-file-mode-from-zip2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-overriden-modes.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/recompress-added-zips.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/dont-recompress-added-zips.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-implicit-dirmode.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archive2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archive2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/last-modified-time.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-fixed-entry-modification-times.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/withZip.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-modes.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/zip-with-modes-L2.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pomxz.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForxz.zip
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - All files are uptodate in /app/target/depset_unpack_dont_override
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_force
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack_force
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/depset_unpack_force
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 4 files copied to /app/target/depset_unpack_force
+Jun 17, 2025 5:23:51 PM java.util.jar.Attributes read
+WARNING: Duplicate name in Manifest: Class-Path.
+Ensure that the manifest does not have duplicate entries, and
+that blank lines separate individual sections in both your
+manifest and in the META-INF/MANIFEST.MF entry in the jar file.
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive1.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive3.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive2.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive1.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/archive2.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarToolModularJarArchiver - Building jar: /app/target/output/testJar.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarToolModularJarArchiver - Building jar: /app/target/output/modular.jar
+String: test:\s\tA\r\n\sB\r\n\s\t\sC\r\n\s\s\tD\r\n
+String: test:\s123456789\r\n\s123456789\r\n
+Jun 17, 2025 5:23:51 PM java.util.jar.Attributes read
+WARNING: Duplicate name in Manifest: Class-Path.
+Ensure that the manifest does not have duplicate entries, and
+that blank lines separate individual sections in both your
+manifest and in the META-INF/MANIFEST.MF entry in the jar file.
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/testJar.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/jarArchiveNonCompressed.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Managua-453627281612855121.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-New_York-7545907710730217468.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Buenos_Aires-1479776363589496048.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Sao_Paulo-5164001828964882890.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Los_Angeles-79474851993678634.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Cairo-4374755283798359343.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Lagos-4341929982133968790.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Nairobi-6274528574052833330.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Lisbon-7837169244516752069.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Madrid-5566884228893910924.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Moscow-3383226692235727351.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Oslo-7856819600841507669.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Sydney-1881396793216275471.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Tokyo-7214310444493575092.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Singapore-4400843231293390291.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Qatar-2711028647536689615.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Seoul-4817526236392674657.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-Bermuda-6151388052436610049.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-UTC-784414369873537398.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-GMT-4487168291177908765.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-3879216479494036098/JarArchiverTest-GMT-14-4225085370347353653.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-2131859723056405567/JarArchiverTest-umask6711251389620033991.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /tmp/junit-1016391599402772529/JarArchiverTest.7622370837215834649.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/output/veryLargeJar.jar
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pom.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForSnappy.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pomxz.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForxz.zip
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-6903665338717127335/tar-file.7366085271343391741.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-6903665338717127335/tar-file.7366085271343391741.tar into /tmp/junit-6903665338717127335/tar-test.8173373537424067446
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-7383567146259990283/tar-file.5500457506104503205.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-7383567146259990283/tar-file.5500457506104503205.tar into /tmp/junit-7383567146259990283/tar-test.5975570631436226417
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-8955271953527380977/tar-file.6754755344843954139.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-8955271953527380977/tar-file.4982347201485119905.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-8955271953527380977/tar-file.4982347201485119905.tar into /tmp/junit-8955271953527380977/tar-test.2374918838255596838
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /tmp/junit-5630695353719153053/tar-file.1147915207514726538.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /tmp/junit-5630695353719153053/tar-file.1147915207514726538.tar into /tmp/junit-5630695353719153053/tar-test.9205250592901276564
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarSnappyUnArchiver - Expanding: /app/target/output/archive.tar.snappy into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TGZUnArchiver - Expanding: /app/target/output/archive.tar.gz into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarXZUnArchiver - Expanding: /app/target/output/archive.tar.xz into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/TarFileTest.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/TarFileTest.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/TarFileTest.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarGZipUnArchiver - Expanding: /app/src/test/jars/test.tar.gz into /app/target/tar-unarchiver-tests
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TBZ2UnArchiver - Expanding: /app/target/output/archive.tar.bz2 into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/symlinkarchive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/tar-with-longFileName.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/pasymlinks-archivedFileset.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/src2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/tar-with-modes.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/tar-with-modes-L2.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/archive.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarZstdUnArchiver - Expanding: /app/target/output/archive.tar.zst into /app/target/output
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/emptyDirArchive.zip
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: /app/target/output/emptyDirArchive.zip into /app/target/output/emptyTest
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/emptyDirArchive.zip
+[main] INFO org.codehaus.plexus.archiver.rar.RarArchiver - Building jar: /app/target/rartest/test.rar
+[main] INFO org.codehaus.plexus.archiver.rar.RarArchiver - Building jar: /app/target/output/pom.xml.rar
+[main] INFO org.codehaus.plexus.archiver.rar.RarArchiver - Building jar: /app/target/output/pom.xml.rar
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/pom.zip
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/archiveForGzip.zip
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - Copying files to /app/target/output/dirarchiver-symlink
+[main] INFO org.codehaus.plexus.archiver.dir.DirectoryArchiver - 5 files copied to /app/target/output/dirarchiver-symlink
+[main] INFO org.codehaus.plexus.archiver.tar.TarArchiver - Building tar: /app/target/output/symlinks.tar
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: target/output/symlinks.tar into /app/target/output/untaredSymlinks
+[main] INFO org.codehaus.plexus.archiver.tar.TarUnArchiver - Expanding: target/output/symlinks.tar into /app/target/output/untaredSymlinks
+[main] INFO org.codehaus.plexus.archiver.zip.ZipArchiver - Building zip: /app/target/output/symlinks.zip
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/default-dotfiles.jar
+[main] INFO org.codehaus.plexus.archiver.jar.JarArchiver - Building jar: /app/target/dotfiles.jar
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-422867391890995911/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-7356578945950798449/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-7356578945950798449/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-4034051621326597187/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+[main] WARN org.codehaus.plexus.archiver.AbstractUnArchiverTest$1 - Archive entry 'WHATEVER.TXT' and existing file '/tmp/junit-4034051621326597187/whatever.txt' names differ only by case. This may lead to an unexpected outcome on case-insensitive filesystems.
+Dependency org.tukaani:xz not found in POM.
+Dependency com.github.luben:zstd-jni not found in POM.
+Dependency com.google.code.findbugs:jsr305 not found in POM.
+Dependency org.junit.jupiter:junit-jupiter-params not found in POM.
+Dependency com.google.inject:guice not found in POM.
+Dependency org.assertj:assertj-core not found in POM.

@@ -1,0 +1,102 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:6801c663ee4b0db7e74573402ac8ef55bc10e4933db39a3b94019cabad25e6a9
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:b843511158dd8df9396e372cecafda684c43442b4e287b9056e2317edde506b3 done
+#7 naming to docker.io/library/java-setup-17 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-core.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-auth.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-workflow.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-search.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-search-sql.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-discovery.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-model.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search-sql.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search-sql.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-workflow.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-workflow.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-discovery.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-discovery.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-core.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-core.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-auth.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-auth.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-model.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-model.json
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-core.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-auth.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-workflow.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-search.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-search-sql.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-discovery.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-model.yaml
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/Alfresco_rest-api-explorer false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3485354,
+  stdout: null,
+  stderr: null
+}
+Dependency junit:junit not found in POM.
+Dependency org.apache.httpcomponents:httpclient not found in POM.
+Dependency commons-io:commons-io not found in POM.
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-core.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-auth.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-workflow.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-search.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-search-sql.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-discovery.yaml
+[org.alfresco.api.YamlToJson.main()] INFO io.swagger.parser.Swagger20Parser - reading from /app/src/main/webapp/definitions/alfresco-model.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search-sql.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-search-sql.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-workflow.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-workflow.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-discovery.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-discovery.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-core.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-core.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-auth.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-auth.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-model.yaml
+[main] INFO io.swagger.parser.Swagger20Parser - reading from http://localhost:8085/api-explorer/definitions/alfresco-model.json
+Dependency org.slf4j:slf4j-api not found in POM.
+Dependency org.slf4j:slf4j-simple not found in POM.

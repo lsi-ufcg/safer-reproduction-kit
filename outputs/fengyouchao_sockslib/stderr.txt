@@ -1,0 +1,156 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.8s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+javax.net.ssl.SSLHandshakeException: No available authentication scheme
+	at sun.security.ssl.Alert.createSSLException(Alert.java:131)
+	at sun.security.ssl.Alert.createSSLException(Alert.java:117)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:318)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:274)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.CertificateMessage$T13CertificateProducer.onProduceCertificate(CertificateMessage.java:972)
+	at sun.security.ssl.CertificateMessage$T13CertificateProducer.produce(CertificateMessage.java:961)
+	at sun.security.ssl.SSLHandshake.produce(SSLHandshake.java:421)
+	at sun.security.ssl.ClientHello$T13ClientHelloConsumer.goServerHello(ClientHello.java:1141)
+	at sun.security.ssl.ClientHello$T13ClientHelloConsumer.consume(ClientHello.java:1077)
+	at sun.security.ssl.ClientHello$ClientHelloConsumer.onClientHello(ClientHello.java:714)
+	at sun.security.ssl.ClientHello$ClientHelloConsumer.consume(ClientHello.java:682)
+	at sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:377)
+	at sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:444)
+	at sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:422)
+	at sun.security.ssl.TransportContext.dispatch(TransportContext.java:182)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:152)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1401)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1309)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:440)
+	at sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:822)
+	at sun.security.ssl.SSLSocketImpl.access$200(SSLSocketImpl.java:73)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:913)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:873)
+	at sockslib.common.net.MonitorInputStreamWrapper.read(MonitorInputStreamWrapper.java:66)
+	at sockslib.server.msg.MethodSelectionMessage.read(MethodSelectionMessage.java:59)
+	at sockslib.server.SocksSession.read(SocksSession.java:114)
+	at sockslib.server.Socks5Handler.handle(Socks5Handler.java:83)
+	at sockslib.server.Socks5Handler.run(Socks5Handler.java:321)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:93)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:242)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:299)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:271)
+	at sockslib.test.quickstart.SampleUDPServer.run(SampleUDPServer.java:48)
+	at java.lang.Thread.run(Thread.java:750)
+javax.net.ssl.SSLHandshakeException: No available authentication scheme
+	at sun.security.ssl.Alert.createSSLException(Alert.java:131)
+	at sun.security.ssl.Alert.createSSLException(Alert.java:117)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:318)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:274)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.CertificateMessage$T13CertificateProducer.onProduceCertificate(CertificateMessage.java:972)
+	at sun.security.ssl.CertificateMessage$T13CertificateProducer.produce(CertificateMessage.java:961)
+	at sun.security.ssl.SSLHandshake.produce(SSLHandshake.java:421)
+	at sun.security.ssl.ClientHello$T13ClientHelloConsumer.goServerHello(ClientHello.java:1141)
+	at sun.security.ssl.ClientHello$T13ClientHelloConsumer.consume(ClientHello.java:1077)
+	at sun.security.ssl.ClientHello$ClientHelloConsumer.onClientHello(ClientHello.java:714)
+	at sun.security.ssl.ClientHello$ClientHelloConsumer.consume(ClientHello.java:682)
+	at sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:377)
+	at sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:444)
+	at sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:422)
+	at sun.security.ssl.TransportContext.dispatch(TransportContext.java:182)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:152)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1401)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1309)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:440)
+	at sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:822)
+	at sun.security.ssl.SSLSocketImpl.access$200(SSLSocketImpl.java:73)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:913)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:873)
+	at sockslib.common.net.MonitorInputStreamWrapper.read(MonitorInputStreamWrapper.java:66)
+	at sockslib.server.msg.MethodSelectionMessage.read(MethodSelectionMessage.java:59)
+	at sockslib.server.SocksSession.read(SocksSession.java:114)
+	at sockslib.server.Socks5Handler.handle(Socks5Handler.java:83)
+	at sockslib.server.Socks5Handler.run(Socks5Handler.java:321)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+javax.net.ssl.SSLHandshakeException: No available authentication scheme
+	at sun.security.ssl.Alert.createSSLException(Alert.java:131)
+	at sun.security.ssl.Alert.createSSLException(Alert.java:117)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:318)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:274)
+	at sun.security.ssl.TransportContext.fatal(TransportContext.java:265)
+	at sun.security.ssl.CertificateMessage$T13CertificateProducer.onProduceCertificate(CertificateMessage.java:972)
+	at sun.security.ssl.CertificateMessage$T13CertificateProducer.produce(CertificateMessage.java:961)
+	at sun.security.ssl.SSLHandshake.produce(SSLHandshake.java:421)
+	at sun.security.ssl.ClientHello$T13ClientHelloConsumer.goServerHello(ClientHello.java:1141)
+	at sun.security.ssl.ClientHello$T13ClientHelloConsumer.consume(ClientHello.java:1077)
+	at sun.security.ssl.ClientHello$ClientHelloConsumer.onClientHello(ClientHello.java:714)
+	at sun.security.ssl.ClientHello$ClientHelloConsumer.consume(ClientHello.java:682)
+	at sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:377)
+	at sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:444)
+	at sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:422)
+	at sun.security.ssl.TransportContext.dispatch(TransportContext.java:182)
+	at sun.security.ssl.SSLTransport.decode(SSLTransport.java:152)
+	at sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1401)
+	at sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1309)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:440)
+	at sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:822)
+	at sun.security.ssl.SSLSocketImpl.access$200(SSLSocketImpl.java:73)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:913)
+	at sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:873)
+	at sockslib.common.net.MonitorInputStreamWrapper.read(MonitorInputStreamWrapper.java:66)
+	at sockslib.server.msg.MethodSelectionMessage.read(MethodSelectionMessage.java:59)
+	at sockslib.server.SocksSession.read(SocksSession.java:114)
+	at sockslib.server.Socks5Handler.handle(Socks5Handler.java:83)
+	at sockslib.server.Socks5Handler.run(Socks5Handler.java:321)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/fengyouchao_sockslib false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 722737,
+  stdout: null,
+  stderr: null
+}

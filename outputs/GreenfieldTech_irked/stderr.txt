@@ -1,0 +1,465 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:11-jdk-jammy
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:11-jdk-jammy@sha256:e76884f585036b97226325114719591f0d564ab4702548b746d90a206d8b491f
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:9a223c677387980f1ca87a98a4e509620f8c97742f8b8a62936bef90a0504a19 done
+#7 naming to docker.io/library/java-setup-11 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+Generated HTTP status codes classes
+[vert.x-eventloop-thread-0] ERROR io.vertx.ext.web.RoutingContext - Unhandled exception in router
+[vert.x-eventloop-thread-0] ERROR tech.greenfield.vertx.irked.RouteConfigurationMethod - Handler method void tech.greenfield.vertx.irked.TestWebSocket$TestMessageHandlingFailure.pinger(tech.greenfield.vertx.irked.websocket.WebSocketMessage) threw an unexpected exception
+java.lang.RuntimeException: Unexpected exception
+	at tech.greenfield.vertx.irked.TestWebSocket$TestMessageHandlingFailure.pinger(TestWebSocket.java:196)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at tech.greenfield.vertx.irked.RouteConfigurationMethod$2.handle(RouteConfigurationMethod.java:222)
+	at tech.greenfield.vertx.irked.RouteConfigurationMethod$2.handle(RouteConfigurationMethod.java:207)
+	at tech.greenfield.vertx.irked.websocket.WebSocketConnection.lambda$new$1(WebSocketConnection.java:37)
+	at io.vertx.core.http.impl.WebSocketImplBase$FrameAggregator.handleTextFrame(WebSocketImplBase.java:651)
+	at io.vertx.core.http.impl.WebSocketImplBase$FrameAggregator.handle(WebSocketImplBase.java:617)
+	at io.vertx.core.http.impl.WebSocketImplBase$FrameAggregator.handle(WebSocketImplBase.java:606)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
+	at io.vertx.core.http.impl.WebSocketImplBase.receiveFrame(WebSocketImplBase.java:551)
+	at io.vertx.core.streams.impl.InboundBuffer.handleEvent(InboundBuffer.java:279)
+	at io.vertx.core.streams.impl.InboundBuffer.write(InboundBuffer.java:157)
+	at io.vertx.core.http.impl.WebSocketImplBase.handleFrame(WebSocketImplBase.java:492)
+	at io.vertx.core.impl.ContextImpl.execute(ContextImpl.java:327)
+	at io.vertx.core.impl.DuplicatedContext.execute(DuplicatedContext.java:158)
+	at io.vertx.core.http.impl.Http1xConnectionBase.handleWsFrame(Http1xConnectionBase.java:66)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleOther(Http1xServerConnection.java:191)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:176)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestAuthDigest - Authorization header: Digest realm="irked", qop="auth, auth-int", algorithm="MD5", nonce="MTc1MDUyNjI2OTo6NjFlYjZkZTYxOTEzZDUwZg==", opaque="opaque-value"
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestAuthDigest - Authorization header: Digest realm="irked", qop="auth, auth-int", algorithm="MD5", nonce="MTc1MDUyNjI2OTo6OTU1ZWIwOGMyM2QwNTJhZQ==", opaque="opaque-value"
+[vert.x-eventloop-thread-0] ERROR tech.greenfield.vertx.irked.RouteConfigurationField - Handler field tech.greenfield.vertx.irked.Controller$WebHandler tech.greenfield.vertx.irked.TestExceptionFailController$TestController.wrongFail1 threw an unexpected exception
+java.lang.IllegalStateException
+	at tech.greenfield.vertx.irked.TestExceptionFailController$TestController.lambda$new$1(TestExceptionFailController.java:55)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:97)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:89)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:52)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1283)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:151)
+	at io.vertx.ext.web.impl.RoutingContextImpl.route(RoutingContextImpl.java:100)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:69)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:344)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:24)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:150)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:42)
+	at io.vertx.core.impl.ContextImpl.emit(ContextImpl.java:342)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:163)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.onHttpRequestChannelRead(WebSocketServerExtensionHandler.java:158)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:82)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xUpgradeToH2CHandler.channelRead(Http1xUpgradeToH2CHandler.java:124)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.end(Http1xOrH2CHandler.java:61)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.channelRead(Http1xOrH2CHandler.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[vert.x-eventloop-thread-0] ERROR tech.greenfield.vertx.irked.RouteConfigurationField - Handler field tech.greenfield.vertx.irked.Controller$WebHandler tech.greenfield.vertx.irked.TestExceptionFailController$SubFailController.throwIllegal threw an unexpected exception
+java.lang.IllegalArgumentException
+	at tech.greenfield.vertx.irked.TestExceptionFailController$SubFailController.lambda$new$0(TestExceptionFailController.java:29)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:97)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:89)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:52)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1283)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:151)
+	at io.vertx.ext.web.impl.RoutingContextImpl.route(RoutingContextImpl.java:100)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:69)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:344)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:24)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:150)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:42)
+	at io.vertx.core.impl.ContextImpl.emit(ContextImpl.java:342)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:163)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.onHttpRequestChannelRead(WebSocketServerExtensionHandler.java:158)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:82)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xUpgradeToH2CHandler.channelRead(Http1xUpgradeToH2CHandler.java:124)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.end(Http1xOrH2CHandler.java:61)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.channelRead(Http1xOrH2CHandler.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[vert.x-eventloop-thread-0] ERROR tech.greenfield.vertx.irked.RouteConfigurationField - Handler field tech.greenfield.vertx.irked.Controller$WebHandler tech.greenfield.vertx.irked.TestExceptionFailController$SubFailController.throwDecode threw an unexpected exception
+io.vertx.core.json.DecodeException
+	at tech.greenfield.vertx.irked.TestExceptionFailController$SubFailController.lambda$new$1(TestExceptionFailController.java:34)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:97)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:89)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:52)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1283)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:151)
+	at io.vertx.ext.web.impl.RoutingContextImpl.route(RoutingContextImpl.java:100)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:69)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:344)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:24)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:150)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:42)
+	at io.vertx.core.impl.ContextImpl.emit(ContextImpl.java:342)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:163)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.onHttpRequestChannelRead(WebSocketServerExtensionHandler.java:158)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:82)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xUpgradeToH2CHandler.channelRead(Http1xUpgradeToH2CHandler.java:124)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.end(Http1xOrH2CHandler.java:61)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.channelRead(Http1xOrH2CHandler.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[vert.x-eventloop-thread-0] ERROR tech.greenfield.vertx.irked.RouteConfigurationField - Handler field tech.greenfield.vertx.irked.Controller$WebHandler tech.greenfield.vertx.irked.TestStatusFailController$TestController.wrongFail1 threw an unexpected exception
+java.lang.RuntimeException: wrong
+	at tech.greenfield.vertx.irked.TestStatusFailController$TestController.lambda$new$3(TestStatusFailController.java:46)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:97)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:89)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:52)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1283)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:151)
+	at io.vertx.ext.web.impl.RoutingContextImpl.route(RoutingContextImpl.java:100)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:69)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:344)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:24)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:150)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:42)
+	at io.vertx.core.impl.ContextImpl.emit(ContextImpl.java:342)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:163)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.onHttpRequestChannelRead(WebSocketServerExtensionHandler.java:158)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:82)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xUpgradeToH2CHandler.channelRead(Http1xUpgradeToH2CHandler.java:124)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.end(Http1xOrH2CHandler.java:61)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.channelRead(Http1xOrH2CHandler.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[vert.x-eventloop-thread-0] ERROR tech.greenfield.vertx.irked.RouteConfigurationField - Handler field tech.greenfield.vertx.irked.Controller$WebHandler tech.greenfield.vertx.irked.TestFailController$TestController.index threw an unexpected exception
+java.lang.RuntimeException
+	at tech.greenfield.vertx.irked.TestFailController$TestController.lambda$new$1(TestFailController.java:30)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:97)
+	at tech.greenfield.vertx.irked.RouteConfigurationField$FieldHandler.handle(RouteConfigurationField.java:89)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:52)
+	at tech.greenfield.vertx.irked.RequestWrapper.handle(RequestWrapper.java:10)
+	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1283)
+	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:177)
+	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:151)
+	at io.vertx.ext.web.impl.RoutingContextImpl.route(RoutingContextImpl.java:100)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:69)
+	at io.vertx.ext.web.impl.RouterImpl.handle(RouterImpl.java:37)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:344)
+	at tech.greenfield.vertx.irked.Router.handle(Router.java:24)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:150)
+	at io.vertx.core.http.impl.Http1xServerRequestHandler.handle(Http1xServerRequestHandler.java:42)
+	at io.vertx.core.impl.ContextImpl.emit(ContextImpl.java:342)
+	at io.vertx.core.impl.DuplicatedContext.emit(DuplicatedContext.java:163)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:174)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:159)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.onHttpRequestChannelRead(WebSocketServerExtensionHandler.java:158)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:82)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xUpgradeToH2CHandler.channelRead(Http1xUpgradeToH2CHandler.java:124)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.end(Http1xOrH2CHandler.java:61)
+	at io.vertx.core.http.impl.Http1xOrH2CHandler.channelRead(Http1xOrH2CHandler.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing invalid ctor
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing throwing ctor
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing get extended ID
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing get with preset
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing get with preset
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing get ID
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing get ID
+[main] INFO tech.greenfield.vertx.irked.TestImplicitRequestContext - Testing get extended ID
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - done generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - deploying verticle
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting websocket
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting web handler manual upgrade true
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - setting up ws handler
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Socket open, sending request
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Accepted socket
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Waiting for reply
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a binary message
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a reply
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Shutting down
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - done generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - deploying verticle
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting websocket
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting web handler manual upgrade true
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - setting up ws handler
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Accepted socket
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Socket open, sending request
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Waiting for reply
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a binary message
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a reply
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Shutting down
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - done generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - deploying verticle
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting websocket
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Socket open, sending request
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Waiting for reply
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started handling payload request of 4000 bytes
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Completed log checksum
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - sent reply of 4000 bytes
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a reply
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Shutting down
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - done generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - deploying verticle
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting websocket
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Socket open, sending request
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Waiting for reply
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started handling payload request of 8000 bytes
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Completed log checksum
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - sent reply of 8000 bytes
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a reply
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Shutting down
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - done generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - deploying verticle
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting websocket
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting web handler manual upgrade true
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - setting up ws handler
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Accepted socket
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Socket open, sending request
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Waiting for reply
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a binary message
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a reply
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Shutting down
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - done generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - deploying verticle
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting websocket
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Socket open, sending request
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Waiting for reply
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started handling payload request of 1000 bytes
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Completed log checksum
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - sent reply of 1000 bytes
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a reply
+[vert.x-eventloop-thread-1] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Shutting down
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Started generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - done generating payloads
+[main] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Starting websocket
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Socket open, sending request
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Waiting for reply
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a binary message
+[vert.x-eventloop-thread-0] INFO tech.greenfield.vertx.irked.TestWebSocketPayloads - Got a reply
+Generated HTTP status codes classes
+An error occurred while running the script: TypeError: Cannot read properties of undefined (reading 'map')
+    at SonatypeRepositoryGetDependencyNewerVersions.execute (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/services/impl/sonatype/sonatype-repository-get-depedendency-newer-versions.ts:40:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at <anonymous> (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:164:22)
+    at async Promise.all (index 0)
+    at getDependenciesNewerVersions (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:161:92)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:60:37)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5)
