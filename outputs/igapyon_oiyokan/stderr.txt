@@ -1,0 +1,1167 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:11-jdk-jammy
+#2 DONE 1.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:11-jdk-jammy@sha256:e76884f585036b97226325114719591f0d564ab4702548b746d90a206d8b491f
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:54022d807edf4119a2e33505eac4750b1feb7de5b4040b63464c30c6e7ab13bc done
+#7 naming to docker.io/library/java-setup-11 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+Jun 18, 2025 12:55:05 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+INFO: [IY7173] INFO: start to load oiyokan settings
+Jun 18, 2025 12:55:05 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+INFO: [IY7174] INFO: load oiyokan settings: /oiyokan/oiyokanKan-settings.json
+Jun 18, 2025 12:55:05 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+INFO: [IY6101] INFO: settings: load namespace: Oiyokan
+Jun 18, 2025 12:55:05 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+INFO: [IY6102] INFO: settings: load containerName: Container
+Jun 18, 2025 12:55:05 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+INFO: [IY6103] INFO: settings: load database: oiyokanKan
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+INFO: [IY6104] INFO: settings: load entitySet: Oiyokan
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+INFO: [IY7174] INFO: load oiyokan settings: /oiyokan/oiyokan-settings.json
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoInfoUtil loadOiyokanSettings
+WARNING: [IY7112] WARN: Fail to load Oiyokan settings: java.io.IOException: Resource not found: /oiyokan/oiyokan-settings.json
+Jun 18, 2025 12:55:06 AM jp.oiyokan.data.OiyokanResourceSqlUtil loadOiyokanResourceSql
+INFO: /oiyokan/sql/oiyokan-unittest-db-h2.sql
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEdmProvider getEntityContainer
+INFO: [IY1001] Start Oiyokan (Oiyokan: 1.20.20210620a)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEdmProvider getEntityContainer
+INFO: [IY1051] Check JDBC Driver: org.h2.Driver
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEdmProvider getEntityContainer
+INFO: [IY1051] Check JDBC Driver: org.h2.Driver
+Jun 18, 2025 12:55:06 AM jp.oiyokan.data.OiyokanKanDatabase setupKanDatabase
+INFO: [IY7172] INFO: setup oiyokanKan database (Oiyokan: 1.20.20210620a)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1076] INFO: ENTITY: PATCH: UPSERT: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255 FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest2(Decimal1=543.21,StringChar8='ZZYYXX12',StringVar255='Val20000'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Date1) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE (Date1 = ?) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (?,?,?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest2(Decimal1=1404%2CStringChar8=%27%20%203456%27%2CStringVar255=%27ABCXYZ%27),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (TimeOfDay1) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.db.testdb.entity.UnitTestTypeTimeOfDay01Test test03
+INFO: {"@odata.context":"$metadata#ODataTest1","ID":206,"Name":"Types UnitTest","Description":null,"Sbyte1":127,"Int16a":32767,"Int32a":2147483647,"Int64a":2147483647,"Decimal1":1234.56,"StringChar8":"CHAR_VAL","StringVar255":"VARCHAR255","StringLongVar1":"LONGVARCHAR","Clob1":"CLOB","Boolean1":false,"Single1":123.45,"Double1":123.4567890123,"Date1":"2025-06-18","DateTimeOffset1":"2025-06-18T00:55:06.740142Z","TimeOfDay1":"21:53:00","Binary1":"SGVsbG8gd29ybGQh","VarBinary1":"SGVsbG8gd29ybGQh","LongVarBinary1":"SGVsbG8gd29ybGQh","Blob1":"SGVsbG8gd29ybGQh"}
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE (TimeOfDay1 = ?) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest5
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest5 (Name) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Iden1,Name,Value1 FROM ODataTest5 WHERE Iden1=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Iden1,Name,Value1 FROM ODataTest5 WHERE (Iden1 = 1) ORDER BY Iden1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest5
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Iden1,Name,Value1 FROM ODataTest5 WHERE Iden1=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest5
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest5 WHERE Iden1=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest5
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Iden1,Name,Value1 FROM ODataTest5 WHERE Iden1=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Iden1,Name,Value1 FROM ODataTest5 WHERE Iden1=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest5(1),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT Iden1,Name,Value1 FROM ODataTest5 WHERE Iden1=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest3 (Name,Description,StringChar8) VALUES (?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT StringChar8,ID FROM ODataTest3 WHERE (ID = 1) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest3(1),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (?,?,?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest2(Decimal1=1404%2CStringChar8=%27%20%203456%20%20%27%2CStringVar255=%27ABCXYZ%27),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1404 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest3 (Name,Description) VALUES (?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest3(2),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest3 (Name,Description,StringVar255,Clob1) VALUES (?,?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Name,Description,StringVar255,Clob1,ID FROM ODataTest3 WHERE (ID = 3) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1074] INFO: ENTITY: PATCH: UPDATE (If-Match): ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE ODataTest3 SET Name=?,Description=?,StringVar255=?,Clob1=? WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Name,Description,StringVar255,Clob1,ID FROM ODataTest3 WHERE (ID = 3) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest3(3),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1074] INFO: ENTITY: PATCH: UPDATE (If-Match): ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE ODataTest2 SET Name=?,Description=? WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+WARNING: [IY3101] NO record processed. No Entity effects.: UPDATE ODataTest2 SET Name=?,Description=? WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateInternal
+SEVERE: [IY3108] Fail to update entity.: org.apache.olingo.server.api.ODataApplicationException: [IY3101] NO record processed. No Entity effects.: UPDATE ODataTest2 SET Name=?,Description=? WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+SEVERE: [IY3108] Fail to update entity.: org.apache.olingo.server.api.ODataApplicationException: [IY3101] NO record processed. No Entity effects.: UPDATE ODataTest2 SET Name=?,Description=? WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor updateEntity
+WARNING: [IY9535] WARN: EntityProcessor.updateEntity: exception caught: /ODataTest2(Decimal1=543.21,StringChar8='ZZYYXX12',StringVar255='Val20001'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3101] NO record processed. No Entity effects.: UPDATE ODataTest2 SET Name=?,Description=? WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1076] INFO: ENTITY: PATCH: UPSERT: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1074] INFO: ENTITY: PATCH: UPDATE (If-Match): ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE ODataTest2 SET Name=?,Description=? WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255 FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+WARNING: [IY3101] NO record processed. No Entity effects.: DELETE FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor deleteEntity
+WARNING: [IY9537] WARN: EntityProcessor.deleteEntity: exception caught: /ODataTest2(Decimal1=543.21,StringChar8='ZZYYXX12',StringVar255='Val20001'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3101] NO record processed. No Entity effects.: DELETE FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest2(Decimal1=543.21,StringChar8='ZZYYXX12',StringVar255='Val20001'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255) VALUES (?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=8765.43 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=8765.43 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=8765.43 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Sbyte1) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Sbyte1 FROM ODataTest1 WHERE ((ID = 207) AND (Sbyte1 = 1)) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest8
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest8 (MainKey) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT MainKey,Description FROM ODataTest8 WHERE MainKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest8
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT MainKey,Description FROM ODataTest8 WHERE MainKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT MainKey,Description FROM ODataTest8 WHERE (MainKey = ?) ORDER BY MainKey
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest8Sub
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest8Sub (MainKey,SubKey) VALUES (?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT MainKey,SubKey,Description FROM ODataTest8Sub WHERE MainKey=? AND SubKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest8SubSub
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest8SubSub (MainKey,SubKey,SubSubKey) VALUES (?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT MainKey,SubKey,SubSubKey,Description FROM ODataTest8SubSub WHERE MainKey=? AND SubKey=? AND SubSubKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest8SubSub
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest8SubSub WHERE MainKey=? AND SubKey=? AND SubSubKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest8Sub
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest8Sub WHERE MainKey=? AND SubKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest8
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest8 WHERE MainKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest8
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT MainKey,Description FROM ODataTest8 WHERE MainKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT MainKey,Description FROM ODataTest8 WHERE MainKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest8('KEY001'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT MainKey,Description FROM ODataTest8 WHERE MainKey=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Blob1) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Blob1 FROM ODataTest1 WHERE (ID = 208) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Boolean1) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Boolean1 FROM ODataTest1 WHERE ((ID = 209) AND (Boolean1 = ?)) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1074] INFO: ENTITY: PATCH: UPDATE (If-Match): ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE ODataTest1 SET Boolean1=? WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Boolean1 FROM ODataTest1 WHERE ((ID = 209) AND (Boolean1 = ?)) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.sql.OiyoSqlInsertOneBuilder buildInsertIntoDml
+WARNING: [IY3121] WARN: Ignore given value during INSERT because property that was set as autoGenKey.: name:ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Name,Description,Sbyte1,Int16a,Decimal1,Single1,Double1) VALUES (?,?,?,?,?,?,?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,ID FROM ODataTest1 WHERE (ID = 210) ORDER BY ID
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest1(210),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (DateTimeOffset1) VALUES (?)
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:06 AM jp.oiyokan.db.testdb.entity.UnitTestTypeDateTimeOffset02Test test03
+INFO: {"@odata.context":"$metadata#ODataTest1","ID":211,"Name":"Types UnitTest","Description":null,"Sbyte1":127,"Int16a":32767,"Int32a":2147483647,"Int64a":2147483647,"Decimal1":1234.56,"StringChar8":"CHAR_VAL","StringVar255":"VARCHAR255","StringLongVar1":"LONGVARCHAR","Clob1":"CLOB","Boolean1":false,"Single1":123.45,"Double1":123.4567890123,"Date1":"2025-06-18","DateTimeOffset1":"2020-12-31T12:53:00Z","TimeOfDay1":"00:55:07","Binary1":"SGVsbG8gd29ybGQh","VarBinary1":"SGVsbG8gd29ybGQh","LongVarBinary1":"SGVsbG8gd29ybGQh","Blob1":"SGVsbG8gd29ybGQh"}
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:06 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE (DateTimeOffset1 = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest1(211),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1075] INFO: ENTITY: PATCH: INSERT (If-None-Match): ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255 FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+{"@odata.context":"$metadata#ODataTest2","Decimal1":543.21,"StringChar8":"ZZYYXX12","StringVar255":"Val20002","Name":"Name2","Description":"Description2"}
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1075] INFO: ENTITY: PATCH: INSERT (If-None-Match): ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+SEVERE: [IY3401] Integrity constraint violation occured (DML). 制約違反.: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?), org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.PRIMARY_KEY_C3 ON PUBLIC.ODataTest2(Decimal1, StringChar8, StringVar255) VALUES 7"; SQL statement:
+INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?) [23505-200]
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+SEVERE: [IY3108] Fail to update entity.: org.apache.olingo.server.api.ODataApplicationException: [IY3401] Integrity constraint violation occured (DML). 制約違反.: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?): Unique index or primary key violation: "PUBLIC.PRIMARY_KEY_C3 ON PUBLIC.ODataTest2(Decimal1, StringChar8, StringVar255) VALUES 7"; SQL statement:
+INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?) [23505-200]
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor updateEntity
+WARNING: [IY9535] WARN: EntityProcessor.updateEntity: exception caught: /ODataTest2(Decimal1=543.21,StringChar8='ZZYYXX12',StringVar255='Val20002'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3401] Integrity constraint violation occured (DML). 制約違反.: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?): Unique index or primary key violation: "PUBLIC.PRIMARY_KEY_C3 ON PUBLIC.ODataTest2(Decimal1, StringChar8, StringVar255) VALUES 7"; SQL statement:
+INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?) [23505-200]
+{"error":{"code":null,"message":"[IY3401] Integrity constraint violation occured (DML). 制約違反.: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?): Unique index or primary key violation: \"PUBLIC.PRIMARY_KEY_C3 ON PUBLIC.ODataTest2(Decimal1, StringChar8, StringVar255) VALUES 7\"; SQL statement:\nINSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (543.21,?,?,?,?) [23505-200]"}}
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest2(Decimal1=543.21,StringChar8='ZZYYXX12',StringVar255='Val20002'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=543.21 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest3 (Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest3(4),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO [OData Test4] ([I D],[Na me]) VALUES (?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1076] INFO: ENTITY: PATCH: UPSERT: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE [OData Test4] SET [Va lue1]=? WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE ([I D] = ?) ORDER BY [I D],[Na me]
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest4(I_D=70103,Na_me='Name'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+WARNING: [IY3122] ERROR: If-None-Match NOT allowed because there is property that was set as autoGenKey.
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor updateEntity
+WARNING: [IY9535] WARN: EntityProcessor.updateEntity: exception caught: /ODataTest3(21003),null: org.apache.olingo.server.api.ODataApplicationException: [IY3122] ERROR: If-None-Match NOT allowed because there is property that was set as autoGenKey.
+{"error":{"code":null,"message":"[IY3122] ERROR: If-None-Match NOT allowed because there is property that was set as autoGenKey."}}
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (StringLongVar1) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,StringLongVar1 FROM ODataTest1 WHERE ((ID = 212) AND (StringLongVar1 = ?)) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (DateTimeOffset1) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE (DateTimeOffset1 = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest1(213),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Decimal1) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Decimal1 FROM ODataTest1 WHERE ((ID = 214) AND (Decimal1 = 8765.43)) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Clob1) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Clob1 FROM ODataTest1 WHERE ((ID = 215) AND (Clob1 = ?)) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest2 (Decimal1,StringChar8,StringVar255,Name,Description) VALUES (?,?,?,?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1304 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1304 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest2 WHERE Decimal1=1304 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1304 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1304 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest2(Decimal1=1304%2CStringChar8=%2712345678%27%2CStringVar255=%27ABCXYZ%27),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 WHERE Decimal1=1304 AND StringChar8=? AND StringVar255=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest6
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest6 (Binary1,VarBinary1,LongVarBinary1,Blob1) VALUES (?,?,?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest6
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1074] INFO: ENTITY: PATCH: UPDATE (If-Match): ODataTest6
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE ODataTest6 SET VarBinary1=? WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest6
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE (ID = 1) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest6
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest6
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest6(1),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO [OData Test4] ([I D],[Na me]) VALUES (?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor updateEntity
+WARNING: [IY3103] WARN: Duplicate name given as Entity Property.: Na_me
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1076] INFO: ENTITY: PATCH: UPSERT: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE [OData Test4] SET [Va lue1]=? WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest4
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest4(I_D=70205,Na_me='Name'),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] WHERE [I D]=? AND [Na me]=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest3 (Name,Description) VALUES (?,?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder updateEntityDataPatch
+INFO: [IY1074] INFO: ENTITY: PATCH: UPDATE (If-Match): ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: UPDATE ODataTest3 SET Name=?,Description=? WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest3(5),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (VarBinary1) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,VarBinary1 FROM ODataTest1 WHERE (ID = 216) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Single1) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Single1 FROM ODataTest1 WHERE ((ID = 217) AND (Single1 = 543.21)) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (StringChar8) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,StringChar8 FROM ODataTest1 WHERE ((ID = 218) AND (StringChar8 IS NULL)) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest1 (Double1) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Double1 FROM ODataTest1 WHERE ((ID = 219) AND (Double1 = 543.21)) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest1 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder createEntityData
+INFO: [IY1072] INFO: ENTITY: CREATE: ODataTest7
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: INSERT INTO ODataTest7 (ID) VALUES (?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Uuid1 FROM ODataTest7 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest7
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Uuid1 FROM ODataTest7 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Uuid1 FROM ODataTest7 WHERE (ID = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder deleteEntityData
+INFO: [IY1073] INFO: ENTITY: DELETE: ODataTest7
+Jun 18, 2025 12:55:07 AM jp.oiyokan.common.OiyoCommonJdbcUtil executeDml
+INFO: [IY1066] INFO: SQL exec: DELETE FROM ODataTest7 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: ODataTest7
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT ID,Name,Description,Uuid1 FROM ODataTest7 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+WARNING: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Uuid1 FROM ODataTest7 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.OiyokanEntityProcessor readEntity
+WARNING: [IY9531] WARN: EntityProcessor.readEntity: exception caught: /ODataTest7(20006),null: org.apache.olingo.server.api.ODataApplicationException: [IY3105] WARN: No such Entity data: SELECT ID,Name,Description,Uuid1 FROM ODataTest7 WHERE ID=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Int16a FROM ODataTest1 WHERE (Int16a = ?) ORDER BY ID LIMIT 3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Int16a FROM ODataTest1 WHERE (Int16a = ?) ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (Int16a <> ?) ORDER BY ID LIMIT 3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (NOT ((INSTR(StringVar255,?) > 0)))
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (NOT ((INSTR(StringVar255,?) > 0))) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Int32a FROM ODataTest1 WHERE (Int32a = ?) ORDER BY ID LIMIT 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description FROM ODataTest1 ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (CONCAT(?,StringVar255) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (CONCAT(?,StringVar255) = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (StringVar255 = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,StringVar255 FROM ODataTest1 WHERE (StringVar255 = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 ORDER BY ID LIMIT 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE ((LENGTH(StringVar255)) = 26)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE ((LENGTH(StringVar255)) = 26) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (Clob1 = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1 (elapsed: 26)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Clob1 FROM ODataTest1 WHERE (Clob1 = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityTypeBuilder getEntityType
+WARNING: [IY7130] WARN: No key provided EntitySet. Specify key no EntitySet.: ODataTest9
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityTypeBuilder getEntityType
+WARNING: [IY7130] WARN: No key provided EntitySet. Specify key no EntitySet.: ODataTest9
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.sql.OiyoSqlQueryListBuilder expandOrderByWithPrimary
+WARNING: [IY2107] WARN: EntitySet should have Primary Key. First property was used for orderby.: ODataTest9: Name
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Name,Description FROM ODataTest9 ORDER BY Name
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE ((INSTR(StringVar255,?) = 1) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE ((INSTR(StringVar255,?) = 1) = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Int64a FROM ODataTest1 WHERE (Int64a = ?) ORDER BY ID LIMIT 2 OFFSET 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE ((Date1 < ?) AND (Date1 > ?)) ORDER BY ID LIMIT 51
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (Double1 < 123.456789)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (Double1 < 123.456789) ORDER BY ID LIMIT 51
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (RIGHT(StringVar255,LENGTH(?)) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (RIGHT(StringVar255,LENGTH(?)) = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (LOWER(StringVar255) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (LOWER(StringVar255) = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Sbyte1 FROM ODataTest1 WHERE (Sbyte1 = 127) ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (Int16a > 30) ORDER BY ID LIMIT 5 OFFSET 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (DateTimeOffset1 < ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (DateTimeOffset1 < ?) ORDER BY ID LIMIT 51
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (StringLongVar1 = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,StringLongVar1 FROM ODataTest1 WHERE (StringLongVar1 = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (Int16a >= 30) ORDER BY ID LIMIT 5 OFFSET 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (INSTR(StringVar255,?) > 0)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (INSTR(StringVar255,?) > 0) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Int32a,Int64a FROM ODataTest1 WHERE (Int32a = Int64a) ORDER BY ID LIMIT 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (StringVar255 IS NOT NULL) ORDER BY ID LIMIT 3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (ID = 5.0)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name FROM ODataTest1 WHERE (ID = 5.0) ORDER BY ID LIMIT 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (INSTR(StringVar255,?) > 0)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (INSTR(StringVar255,?) > 0) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (Double1 < ?) ORDER BY ID LIMIT 5 OFFSET 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (StringVar255 IS NULL)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,StringVar255 FROM ODataTest1 WHERE (StringVar255 IS NULL) ORDER BY ID LIMIT 3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Single1 FROM ODataTest1 WHERE (Single1 = 123.45) ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Boolean1 FROM ODataTest1 WHERE (Boolean1 = ?) ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE ((SUBSTRING(StringVar255,3,2)) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE ((SUBSTRING(StringVar255,3,2)) = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE ((Int32a <> Int64a) OR (Int16a <> Int32a)) ORDER BY ID LIMIT 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Decimal1 FROM ODataTest1 WHERE (Decimal1 = 1234.56) ORDER BY ID LIMIT 2 OFFSET 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE ((INSTR(StringVar255,?) = 1) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 203
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE ((INSTR(StringVar255,?) = 1) = ?) ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (UPPER(LOWER(StringVar255)) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (UPPER(LOWER(StringVar255)) = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (((StringVar255 = ?) OR ((StringVar255 = ?) AND (StringLongVar1 = ?))) OR (Clob1 = ?))
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,StringVar255,StringLongVar1,Clob1 FROM ODataTest1 WHERE (((StringVar255 = ?) OR ((StringVar255 = ?) AND (StringLongVar1 = ?))) OR (Clob1 = ?)) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (INSTR(StringVar255,?) = 1)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (INSTR(StringVar255,?) = 1) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (Double1 <= ?) ORDER BY ID LIMIT 5 OFFSET 2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE ((INSTR(StringVar255,?) - 1) = 7)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE ((INSTR(StringVar255,?) - 1) = 7) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 204
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest1 ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 204
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255 LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest3
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Sbyte1,Int16a,Int32a,Int64a,Decimal1,StringChar8,StringVar255,StringLongVar1,Clob1,Boolean1,Single1,Double1,Date1,DateTimeOffset1,TimeOfDay1,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest3 ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM [OData Test4]
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT [I D],[Na me],[Va lue1] FROM [OData Test4] ORDER BY [I D],[Na me] LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest5
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Iden1,Name,Value1 FROM ODataTest5 ORDER BY Iden1 LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest6
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Binary1,VarBinary1,LongVarBinary1,Blob1 FROM ODataTest6 ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest7
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID,Name,Description,Uuid1 FROM ODataTest7 ORDER BY ID LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest8
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT MainKey,Description FROM ODataTest8 ORDER BY MainKey LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest8Sub
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT MainKey,SubKey,Description FROM ODataTest8Sub ORDER BY MainKey,SubKey LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest8SubSub
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT MainKey,SubKey,SubSubKey,Description FROM ODataTest8SubSub ORDER BY MainKey,SubKey,SubSubKey LIMIT 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: 0
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest2
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT Decimal1,StringChar8,StringVar255,Name,Description FROM ODataTest2 ORDER BY Decimal1,StringChar8,StringVar255
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestCount01Test test
+INFO: {"@odata.context":"$metadata#ODataTest2","@odata.count":1,"value":[{"Decimal1":1234.56,"StringChar8":"CHAR_VAL","StringVar255":"ABCDEFGHIJKLMNOPQRSTUVWXYZ","Name":"StringTests","Description":"文字列検索確認"}]}
+Jun 18, 2025 12:55:07 AM jp.oiyokan.db.testdb.query.UnitTestQueryOrderby04Test testSimpleSearch
+INFO: [INFO] $search はサポート外: テストスキップします.
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1062] INFO: COUNT: SELECT COUNT(*) FROM ODataTest1 WHERE (TRIM(CONCAT(?,StringVar255)) = ?)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCountQuery
+INFO: [IY1063] INFO: COUNT = 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT ID FROM ODataTest1 WHERE (TRIM(CONCAT(?,StringVar255)) = ?) ORDER BY ID
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT KeyName,KeyValue FROM Oiyokan ORDER BY KeyName LIMIT 1 OFFSET 1
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readEntityData
+INFO: [IY1071] INFO: ENTITY: READ: Oiyokan
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityOneBuilder readInternal
+INFO: [IY1081] INFO: SQL single: SELECT KeyName,KeyValue FROM Oiyokan WHERE KeyName=?
+Jun 18, 2025 12:55:07 AM jp.oiyokan.basic.OiyoBasicJdbcEntityCollectionBuilder processCollectionQuery
+INFO: [IY1064] INFO: SQL collect: SELECT KeyName,KeyValue FROM Oiyokan WHERE (KeyName = ?) ORDER BY KeyName
+Jun 18, 2025 12:55:07 AM jp.oiyokan.data.OiyokanKanDatabase setupKanDatabase
+INFO: [IY7172] INFO: setup oiyokanKan database (Oiyokan: 1.20.20210620a)
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanKanSettingsJsonTest test01
+INFO: oiyokan kanri setting file auto-generated: /app/target/generated-oiyokan/auto-generated-oiyokanKan-settings.json
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+INFO: Target database: oiyoUnitTestDb
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+WARNING: Fail to read table: IGNORELIST
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+WARNING: Fail to read table: INDEXES
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+WARNING: Fail to read table: MAP
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+WARNING: Fail to read table: ROWS
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+WARNING: Fail to read table: SETTINGS
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+WARNING: Fail to read table: WORDS
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen01OiyokanUnittestSettingsJsonTest test01
+INFO: oiyokan unittest setting file auto-generated: /app/target/generated-oiyokan/auto-generated-oiyokan-unittest-settings.json
+Jun 18, 2025 12:55:07 AM jp.oiyokan.oiyogen.Gen02OiyokanUnittestDdlFromJsonTest test01
+INFO: sample oiyokan create ddl file generated: /app/target/generated-oiyokan/auto-generated-oiyokan-unittest-ddl.sql
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/igapyon_oiyokan false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 342126,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/igapyon_oiyokan false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:42:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 343002,
+  stdout: null,
+  stderr: null
+}
+Error during Maven build.

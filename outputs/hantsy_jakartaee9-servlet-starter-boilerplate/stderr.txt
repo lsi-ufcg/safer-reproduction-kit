@@ -1,0 +1,322 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:6801c663ee4b0db7e74573402ac8ef55bc10e4933db39a3b94019cabad25e6a9
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:c4237301b9f9af352dcc47ba9f05a6209c141bd842b51292741ae223c1c84feb done
+#7 naming to docker.io/library/java-setup-17 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Jun 17, 2025 8:40:32 PM com.example.GreetingService buildGreetingMessage
+INFO: build message: GreetingMessage{message='Say Hello to JakartaEE at 2025-06-17T20:40:32.140820356'}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 17, 2025 8:40:38 PM com.example.it.GreetingResourceTest createDeployment
+INFO: war deployment: d83e5cfd-6f89-4603-9e4e-2d547602eee2.war:
+/WEB-INF/
+/WEB-INF/classes/
+/WEB-INF/classes/com/
+/WEB-INF/classes/com/example/
+/WEB-INF/classes/com/example/GreetingMessage.class
+/WEB-INF/classes/com/example/GreetingService.class
+/WEB-INF/classes/com/example/GreetingResource.class
+/WEB-INF/classes/com/example/RestActivator.class
+/WEB-INF/beans.xml
+/WEB-INF/web.xml
+/WEB-INF/jetty-env.xml
+/WEB-INF/lib/
+/WEB-INF/lib/jakarta.faces-3.0.2.jar
+/WEB-INF/lib/jakarta.annotation-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar
+/WEB-INF/lib/jakarta.xml.bind-api-3.0.1.jar
+/WEB-INF/lib/jakarta.activation-2.0.1.jar
+/WEB-INF/lib/jakarta.el-4.0.2.jar
+/WEB-INF/lib/jakarta.el-api-4.0.0.jar
+/WEB-INF/lib/hibernate-validator-8.0.1.Final.jar
+/WEB-INF/lib/jakarta.validation-api-3.0.0.jar
+/WEB-INF/lib/jboss-logging-3.4.3.Final.jar
+/WEB-INF/lib/classmate-1.5.1.jar
+/WEB-INF/lib/weld-servlet-core-4.0.3.Final.jar
+/WEB-INF/lib/weld-environment-common-4.0.3.Final.jar
+/WEB-INF/lib/weld-core-impl-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.interceptor-api-2.0.0.jar
+/WEB-INF/lib/weld-spi-4.0.SP1.jar
+/WEB-INF/lib/weld-api-4.0.SP1.jar
+/WEB-INF/lib/weld-probe-core-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.enterprise.cdi-api-3.0.0.jar
+/WEB-INF/lib/weld-jsf-4.0.3.Final.jar
+/WEB-INF/lib/weld-web-4.0.3.Final.jar
+/WEB-INF/lib/jboss-classfilewriter-1.2.5.Final.jar
+/WEB-INF/lib/jersey-container-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-container-servlet-core-3.0.14.jar
+/WEB-INF/lib/jakarta.inject-api-2.0.0.jar
+/WEB-INF/lib/jersey-common-3.0.14.jar
+/WEB-INF/lib/osgi-resource-locator-1.0.3.jar
+/WEB-INF/lib/jersey-server-3.0.14.jar
+/WEB-INF/lib/jersey-client-3.0.14.jar
+/WEB-INF/lib/jakarta.ws.rs-api-3.0.0.jar
+/WEB-INF/lib/jersey-hk2-3.0.14.jar
+/WEB-INF/lib/hk2-locator-3.0.6.jar
+/WEB-INF/lib/aopalliance-repackaged-3.0.6.jar
+/WEB-INF/lib/hk2-api-3.0.6.jar
+/WEB-INF/lib/hk2-utils-3.0.6.jar
+/WEB-INF/lib/javassist-3.30.2-GA.jar
+/WEB-INF/lib/jersey-cdi1x-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-ban-custom-hk2-binding-3.0.14.jar
+/WEB-INF/lib/jersey-media-json-binding-3.0.14.jar
+/WEB-INF/lib/jakarta.json-api-2.0.1.jar
+/WEB-INF/lib/jakarta.json.bind-api-2.0.0.jar
+/WEB-INF/lib/parsson-1.0.5.jar
+/WEB-INF/lib/yasson-2.0.4.jar
+/WEB-INF/lib/assertj-core-3.26.0.jar
+/WEB-INF/lib/byte-buddy-1.14.16.jar
+/WEB-INF/lib/hamcrest-core-2.2.jar
+/WEB-INF/lib/hamcrest-2.2.jar
+/WEB-INF/lib/mockito-core-5.12.0.jar
+/WEB-INF/lib/byte-buddy-agent-1.14.15.jar
+/WEB-INF/lib/objenesis-3.3.jar
+Jun 17, 2025 8:40:38 PM com.example.it.GreetingServiceTest createDeployment
+INFO: war deployment: bb3e4b3b-441e-4210-91fb-999cee376ad2.war:
+/WEB-INF/
+/WEB-INF/classes/
+/WEB-INF/classes/com/
+/WEB-INF/classes/com/example/
+/WEB-INF/classes/com/example/GreetingMessage.class
+/WEB-INF/classes/com/example/GreetingService.class
+/WEB-INF/beans.xml
+/WEB-INF/web.xml
+/WEB-INF/jetty-env.xml
+/WEB-INF/lib/
+/WEB-INF/lib/jakarta.faces-3.0.2.jar
+/WEB-INF/lib/jakarta.annotation-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar
+/WEB-INF/lib/jakarta.xml.bind-api-3.0.1.jar
+/WEB-INF/lib/jakarta.activation-2.0.1.jar
+/WEB-INF/lib/jakarta.el-4.0.2.jar
+/WEB-INF/lib/jakarta.el-api-4.0.0.jar
+/WEB-INF/lib/hibernate-validator-8.0.1.Final.jar
+/WEB-INF/lib/jakarta.validation-api-3.0.0.jar
+/WEB-INF/lib/jboss-logging-3.4.3.Final.jar
+/WEB-INF/lib/classmate-1.5.1.jar
+/WEB-INF/lib/weld-servlet-core-4.0.3.Final.jar
+/WEB-INF/lib/weld-environment-common-4.0.3.Final.jar
+/WEB-INF/lib/weld-core-impl-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.interceptor-api-2.0.0.jar
+/WEB-INF/lib/weld-spi-4.0.SP1.jar
+/WEB-INF/lib/weld-api-4.0.SP1.jar
+/WEB-INF/lib/weld-probe-core-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.enterprise.cdi-api-3.0.0.jar
+/WEB-INF/lib/weld-jsf-4.0.3.Final.jar
+/WEB-INF/lib/weld-web-4.0.3.Final.jar
+/WEB-INF/lib/jboss-classfilewriter-1.2.5.Final.jar
+/WEB-INF/lib/jersey-container-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-container-servlet-core-3.0.14.jar
+/WEB-INF/lib/jakarta.inject-api-2.0.0.jar
+/WEB-INF/lib/jersey-common-3.0.14.jar
+/WEB-INF/lib/osgi-resource-locator-1.0.3.jar
+/WEB-INF/lib/jersey-server-3.0.14.jar
+/WEB-INF/lib/jersey-client-3.0.14.jar
+/WEB-INF/lib/jakarta.ws.rs-api-3.0.0.jar
+/WEB-INF/lib/jersey-hk2-3.0.14.jar
+/WEB-INF/lib/hk2-locator-3.0.6.jar
+/WEB-INF/lib/aopalliance-repackaged-3.0.6.jar
+/WEB-INF/lib/hk2-api-3.0.6.jar
+/WEB-INF/lib/hk2-utils-3.0.6.jar
+/WEB-INF/lib/javassist-3.30.2-GA.jar
+/WEB-INF/lib/jersey-cdi1x-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-ban-custom-hk2-binding-3.0.14.jar
+/WEB-INF/lib/jersey-media-json-binding-3.0.14.jar
+/WEB-INF/lib/jakarta.json-api-2.0.1.jar
+/WEB-INF/lib/jakarta.json.bind-api-2.0.0.jar
+/WEB-INF/lib/parsson-1.0.5.jar
+/WEB-INF/lib/yasson-2.0.4.jar
+/WEB-INF/lib/assertj-core-3.26.0.jar
+/WEB-INF/lib/byte-buddy-1.14.16.jar
+/WEB-INF/lib/hamcrest-core-2.2.jar
+/WEB-INF/lib/hamcrest-2.2.jar
+/WEB-INF/lib/mockito-core-5.12.0.jar
+/WEB-INF/lib/byte-buddy-agent-1.14.15.jar
+/WEB-INF/lib/objenesis-3.3.jar
+Jun 17, 2025 8:40:39 PM com.example.it.GreetingPagesServletTest createDeployment
+INFO: war deployment: e21ba71f-70ae-4f5c-aaa5-202b9f56ac04.war:
+/WEB-INF/
+/WEB-INF/classes/
+/WEB-INF/classes/com/
+/WEB-INF/classes/com/example/
+/WEB-INF/classes/com/example/GreetingMessage.class
+/WEB-INF/classes/com/example/GreetingService.class
+/WEB-INF/classes/com/example/GreetingPagesServlet.class
+/WEB-INF/beans.xml
+/WEB-INF/web.xml
+/WEB-INF/jetty-env.xml
+/WEB-INF/lib/
+/WEB-INF/lib/jakarta.faces-3.0.2.jar
+/WEB-INF/lib/jakarta.annotation-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar
+/WEB-INF/lib/jakarta.xml.bind-api-3.0.1.jar
+/WEB-INF/lib/jakarta.activation-2.0.1.jar
+/WEB-INF/lib/jakarta.el-4.0.2.jar
+/WEB-INF/lib/jakarta.el-api-4.0.0.jar
+/WEB-INF/lib/hibernate-validator-8.0.1.Final.jar
+/WEB-INF/lib/jakarta.validation-api-3.0.0.jar
+/WEB-INF/lib/jboss-logging-3.4.3.Final.jar
+/WEB-INF/lib/classmate-1.5.1.jar
+/WEB-INF/lib/weld-servlet-core-4.0.3.Final.jar
+/WEB-INF/lib/weld-environment-common-4.0.3.Final.jar
+/WEB-INF/lib/weld-core-impl-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.interceptor-api-2.0.0.jar
+/WEB-INF/lib/weld-spi-4.0.SP1.jar
+/WEB-INF/lib/weld-api-4.0.SP1.jar
+/WEB-INF/lib/weld-probe-core-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.enterprise.cdi-api-3.0.0.jar
+/WEB-INF/lib/weld-jsf-4.0.3.Final.jar
+/WEB-INF/lib/weld-web-4.0.3.Final.jar
+/WEB-INF/lib/jboss-classfilewriter-1.2.5.Final.jar
+/WEB-INF/lib/jersey-container-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-container-servlet-core-3.0.14.jar
+/WEB-INF/lib/jakarta.inject-api-2.0.0.jar
+/WEB-INF/lib/jersey-common-3.0.14.jar
+/WEB-INF/lib/osgi-resource-locator-1.0.3.jar
+/WEB-INF/lib/jersey-server-3.0.14.jar
+/WEB-INF/lib/jersey-client-3.0.14.jar
+/WEB-INF/lib/jakarta.ws.rs-api-3.0.0.jar
+/WEB-INF/lib/jersey-hk2-3.0.14.jar
+/WEB-INF/lib/hk2-locator-3.0.6.jar
+/WEB-INF/lib/aopalliance-repackaged-3.0.6.jar
+/WEB-INF/lib/hk2-api-3.0.6.jar
+/WEB-INF/lib/hk2-utils-3.0.6.jar
+/WEB-INF/lib/javassist-3.30.2-GA.jar
+/WEB-INF/lib/jersey-cdi1x-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-ban-custom-hk2-binding-3.0.14.jar
+/WEB-INF/lib/jersey-media-json-binding-3.0.14.jar
+/WEB-INF/lib/jakarta.json-api-2.0.1.jar
+/WEB-INF/lib/jakarta.json.bind-api-2.0.0.jar
+/WEB-INF/lib/parsson-1.0.5.jar
+/WEB-INF/lib/yasson-2.0.4.jar
+/WEB-INF/lib/assertj-core-3.26.0.jar
+/WEB-INF/lib/byte-buddy-1.14.16.jar
+/WEB-INF/lib/hamcrest-core-2.2.jar
+/WEB-INF/lib/hamcrest-2.2.jar
+/WEB-INF/lib/mockito-core-5.12.0.jar
+/WEB-INF/lib/byte-buddy-agent-1.14.15.jar
+/WEB-INF/lib/objenesis-3.3.jar
+/hello-pages.jspx
+Jun 17, 2025 8:40:39 PM com.example.it.GreetingServletTest createDeployment
+INFO: war deployment: 6d6fcbc2-42bb-48ae-a042-bb12dbe47b6d.war:
+/WEB-INF/
+/WEB-INF/classes/
+/WEB-INF/classes/com/
+/WEB-INF/classes/com/example/
+/WEB-INF/classes/com/example/GreetingMessage.class
+/WEB-INF/classes/com/example/GreetingService.class
+/WEB-INF/classes/com/example/GreetingServlet.class
+/WEB-INF/beans.xml
+/WEB-INF/web.xml
+/WEB-INF/jetty-env.xml
+/WEB-INF/lib/
+/WEB-INF/lib/jakarta.faces-3.0.2.jar
+/WEB-INF/lib/jakarta.annotation-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar
+/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar
+/WEB-INF/lib/jakarta.xml.bind-api-3.0.1.jar
+/WEB-INF/lib/jakarta.activation-2.0.1.jar
+/WEB-INF/lib/jakarta.el-4.0.2.jar
+/WEB-INF/lib/jakarta.el-api-4.0.0.jar
+/WEB-INF/lib/hibernate-validator-8.0.1.Final.jar
+/WEB-INF/lib/jakarta.validation-api-3.0.0.jar
+/WEB-INF/lib/jboss-logging-3.4.3.Final.jar
+/WEB-INF/lib/classmate-1.5.1.jar
+/WEB-INF/lib/weld-servlet-core-4.0.3.Final.jar
+/WEB-INF/lib/weld-environment-common-4.0.3.Final.jar
+/WEB-INF/lib/weld-core-impl-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.interceptor-api-2.0.0.jar
+/WEB-INF/lib/weld-spi-4.0.SP1.jar
+/WEB-INF/lib/weld-api-4.0.SP1.jar
+/WEB-INF/lib/weld-probe-core-4.0.3.Final.jar
+/WEB-INF/lib/jakarta.enterprise.cdi-api-3.0.0.jar
+/WEB-INF/lib/weld-jsf-4.0.3.Final.jar
+/WEB-INF/lib/weld-web-4.0.3.Final.jar
+/WEB-INF/lib/jboss-classfilewriter-1.2.5.Final.jar
+/WEB-INF/lib/jersey-container-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-container-servlet-core-3.0.14.jar
+/WEB-INF/lib/jakarta.inject-api-2.0.0.jar
+/WEB-INF/lib/jersey-common-3.0.14.jar
+/WEB-INF/lib/osgi-resource-locator-1.0.3.jar
+/WEB-INF/lib/jersey-server-3.0.14.jar
+/WEB-INF/lib/jersey-client-3.0.14.jar
+/WEB-INF/lib/jakarta.ws.rs-api-3.0.0.jar
+/WEB-INF/lib/jersey-hk2-3.0.14.jar
+/WEB-INF/lib/hk2-locator-3.0.6.jar
+/WEB-INF/lib/aopalliance-repackaged-3.0.6.jar
+/WEB-INF/lib/hk2-api-3.0.6.jar
+/WEB-INF/lib/hk2-utils-3.0.6.jar
+/WEB-INF/lib/javassist-3.30.2-GA.jar
+/WEB-INF/lib/jersey-cdi1x-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-servlet-3.0.14.jar
+/WEB-INF/lib/jersey-cdi1x-ban-custom-hk2-binding-3.0.14.jar
+/WEB-INF/lib/jersey-media-json-binding-3.0.14.jar
+/WEB-INF/lib/jakarta.json-api-2.0.1.jar
+/WEB-INF/lib/jakarta.json.bind-api-2.0.0.jar
+/WEB-INF/lib/parsson-1.0.5.jar
+/WEB-INF/lib/yasson-2.0.4.jar
+/WEB-INF/lib/assertj-core-3.26.0.jar
+/WEB-INF/lib/byte-buddy-1.14.16.jar
+/WEB-INF/lib/hamcrest-core-2.2.jar
+/WEB-INF/lib/hamcrest-2.2.jar
+/WEB-INF/lib/mockito-core-5.12.0.jar
+/WEB-INF/lib/byte-buddy-agent-1.14.15.jar
+/WEB-INF/lib/objenesis-3.3.jar
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/hantsy_jakartaee9-servlet-starter-boilerplate false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3640280,
+  stdout: null,
+  stderr: null
+}
+Dependency org.glassfish.jersey.ext.cdi:jersey-cdi1x not found in POM.
+Dependency org.glassfish.jersey.ext.cdi:jersey-cdi1x-servlet not found in POM.
