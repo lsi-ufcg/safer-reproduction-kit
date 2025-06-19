@@ -1,0 +1,445 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:6801c663ee4b0db7e74573402ac8ef55bc10e4933db39a3b94019cabad25e6a9
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:b843511158dd8df9396e372cecafda684c43442b4e287b9056e2317edde506b3 done
+#7 naming to docker.io/library/java-setup-17 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+3420 [main] WARN UploadId - Unable to URL encode upload ID value
+org.apache.commons.codec.DecoderException: Invalid URL encoding: not a valid digit (radix 16): 32
+	at org.apache.commons.codec.net.Utils.digit16(Utils.java:48)
+	at org.apache.commons.codec.net.URLCodec.decodeUrl(URLCodec.java:113)
+	at org.apache.commons.codec.net.URLCodec.decode(URLCodec.java:201)
+	at org.apache.commons.codec.net.URLCodec.decode(URLCodec.java:271)
+	at me.desair.tus.server.upload.UploadId.<init>(UploadId.java:34)
+	at me.desair.tus.server.upload.UploadIdTest.toStringWithInternalDecoderException(UploadIdTest.java:58)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+3452 [main] ERROR UploadInputStreamEnumeration - Error while retrieving input stream for upload with ID b9d87c81-8dfc-4867-8787-dd731ce4a33f
+java.io.IOException: Test
+	at me.desair.tus.server.upload.concatenation.UploadInputStreamEnumeration.getNextInputStream(UploadInputStreamEnumeration.java:62)
+	at me.desair.tus.server.upload.concatenation.UploadInputStreamEnumeration.hasMoreElements(UploadInputStreamEnumeration.java:37)
+	at me.desair.tus.server.upload.concatenation.UploadInputStreamEnumerationTest.hasMoreElementsException(UploadInputStreamEnumerationTest.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+3526 [main] ERROR CreationPatchRequestHandler - The patch request handler could not find the upload for URL . This means something is really wrong the request validators!
+me.desair.tus.server.exception.UploadNotFoundException: test
+	at me.desair.tus.server.creation.CreationPatchRequestHandler.process(CreationPatchRequestHandler.java:47)
+	at me.desair.tus.server.creation.CreationPatchRequestHandlerTest.processAppendNotFound(CreationPatchRequestHandlerTest.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+3534 [main] INFO CreationPostRequestHandler - Created upload with ID 67d24a2c-c251-451d-a257-4828b828bed8 at 1750327316682 for ip address 127.0.0.1 with location /test/upload/67d24a2c-c251-451d-a257-4828b828bed8
+3538 [main] INFO CreationPostRequestHandler - Created upload with ID 56641557-9df4-49e7-8bad-7f1cb6ef559d at 1750327316688 for ip address 127.0.0.1 with location /test/upload/56641557-9df4-49e7-8bad-7f1cb6ef559d
+3540 [main] INFO CreationPostRequestHandler - Created upload with ID 8b330ef8-4f6a-4a5b-b4fd-cf6e7c9035cf at 1750327316690 for ip address 127.0.0.1 with location /test/upload/8b330ef8-4f6a-4a5b-b4fd-cf6e7c9035cf
+3542 [main] INFO CreationPostRequestHandler - Created upload with ID e6d84443-b468-4be5-a4b9-a1a4401a41be at 1750327316692 for ip address 127.0.0.1 with location /test/upload/e6d84443-b468-4be5-a4b9-a1a4401a41be
+3660 [main] ERROR CorePatchRequestHandler - The patch request handler could not find the upload for URL {0}. This means something is really wrong the request validators!
+3662 [main] INFO CorePatchRequestHandler - Upload with ID 4ca5be17-5af0-4ab2-9192-8b7684c2b8dc at location  finished successfully
+3664 [main] ERROR CorePatchRequestHandler - The patch request handler could not find the upload for URL {0}. This means something is really wrong the request validators!
+1529 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327320372 at 1750327320372 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327320372
+1634 [main] INFO CorePatchRequestHandler - Upload with ID 1750327320372 at location /test/upload/1750327320372 finished successfully
+1646 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/1750327320372. Sent response status 404 with message "The upload for path /test/upload/1750327320372 and owner ALTER-EGO was not found."
+1653 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327320511 at 1750327320511 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327320511
+1711 [main] INFO CorePatchRequestHandler - Upload with ID 1750327320511 at location /test/upload/1750327320511 finished successfully
+1716 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327320574 at 1750327320574 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327320574
+1778 [main] INFO CorePatchRequestHandler - Upload with ID 1750327320574 at location /test/upload/1750327320574 finished successfully
+1783 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327320641 at 1750327320641 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327320641
+1808 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327320666 at 1750327320666 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327320666
+1947 [main] INFO CorePatchRequestHandler - Upload with ID 1750327320666 at location /test/upload/1750327320666 finished successfully
+1948 [main] WARN TusFileUploadService - Unable to process request PATCH http://localhost/test/upload/1750327320666. Sent response status 460 with message "Expected checksum invalid but was oNge323kGFKICxp+Me5xJgPvGEM= with algorithm sha1"
+2029 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327320666. Sent response status 404 with message "The upload for path /test/upload/1750327320666 and owner null was not found."
+2031 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327320890 at 1750327320890 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327320890
+2207 [main] INFO CorePatchRequestHandler - Upload with ID 1750327320890 at location /test/upload/1750327320890 finished successfully
+2238 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 413 with message "Upload requests can have a maximum size of 10"
+2243 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321102 at 1750327321102 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321102
+2306 [main] INFO CorePatchRequestHandler - Upload with ID 1750327321102 at location /test/upload/1750327321102 finished successfully
+2309 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321168 at 1750327321168 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321168
+2362 [main] INFO CorePatchRequestHandler - Upload with ID 1750327321168 at location /test/upload/1750327321168 finished successfully
+2364 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321223 at 1750327321223 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321223
+2375 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/94f11629-c793-4216-86a6-a3484cd484b8. Sent response status 405 with message "The HTTP method GET is not supported"
+2376 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/d8c6384e-ae14-40fe-be5a-467acca535f7. Sent response status 405 with message "The HTTP method DELETE is not supported"
+2377 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/98ee3055-6a01-4fde-bf14-efeaf156d75c. Sent response status 405 with message "The HTTP method PUT is not supported"
+2377 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/22fa992c-18e8-4910-b65f-e845f98bacd2. Sent response status 405 with message "The HTTP method CONNECT is not supported"
+2378 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/ae066fed-7f7a-464d-9b02-887d00766a51. Sent response status 405 with message "The HTTP method TRACE is not supported"
+2380 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321238 at 1750327321238 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321238
+2381 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321240 at 1750327321240 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321240
+2382 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321241 at 1750327321241 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321241
+2445 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321304 at 1750327321304 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321304
+2455 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/1750327321304. Sent response status 422 with message "Upload /test/upload/1750327321304 is still in progress and cannot be downloaded yet"
+2594 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/2815962e-5df5-4ca7-a824-cbb3e418e696. Sent response status 404 with message "The upload for path /test/upload/2815962e-5df5-4ca7-a824-cbb3e418e696 and owner JOHN_DOE was not found."
+2595 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 412 with message "This server does not support tus protocol version 2.0.0"
+2598 [main] INFO CreationPostRequestHandler - Created upload with ID 8da8fba1-b738-45ad-9a7c-40d422db5d5a at 1750327321456 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /users/98765/files/upload/8da8fba1-b738-45ad-9a7c-40d422db5d5a
+2642 [main] INFO CorePatchRequestHandler - Upload with ID 8da8fba1-b738-45ad-9a7c-40d422db5d5a at location /users/98765/files/upload/8da8fba1-b738-45ad-9a7c-40d422db5d5a finished successfully
+2648 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327321506 at 1750327321506 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327321506
+3718 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327321506. Sent response status 404 with message "The upload for path /test/upload/1750327321506 and owner JOHN_DOE was not found."
+3720 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327322579 at 1750327322579 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327322579
+3766 [main] INFO CorePatchRequestHandler - Upload with ID 1750327322579 at location /test/upload/1750327322579 finished successfully
+3773 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327322579. Sent response status 404 with message "The upload for path /test/upload/1750327322579 and owner JOHN_DOE was not found."
+3774 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327322633 at 1750327322633 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327322633
+3833 [main] INFO CorePatchRequestHandler - Upload with ID 1750327322633 at location /test/upload/1750327322633 finished successfully
+3850 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327322633. Sent response status 404 with message "The upload for path /test/upload/1750327322633 and owner JOHN_DOE was not found."
+3852 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327322710 at 1750327322710 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327322710
+3918 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/1750327322710. Sent response status 422 with message "Upload /test/upload/1750327322710 is still in progress and cannot be downloaded yet"
+3990 [main] INFO CorePatchRequestHandler - Upload with ID 1750327322710 at location /test/upload/1750327322710 finished successfully
+4010 [main] INFO CreationPostRequestHandler - Created upload with ID fe72354b-a31c-4ad1-a130-264a749cd97d at 1750327322869 for ip address 127.0.0.1 with location /submission/0ae5f8vv4s8c/files/upload/fe72354b-a31c-4ad1-a130-264a749cd97d
+4013 [main] INFO CreationPostRequestHandler - Created upload with ID ba3df6e9-6a73-496c-99bd-0607f95b59b8 at 1750327322872 for ip address 127.0.0.1 with location /test/upload/ba3df6e9-6a73-496c-99bd-0607f95b59b8
+4015 [main] INFO CreationPostRequestHandler - Created upload with ID c1449645-73a2-460a-9752-2151eb65a305 at 1750327322874 for ip address 127.0.0.1 with location /test/upload/c1449645-73a2-460a-9752-2151eb65a305
+4017 [main] INFO CreationPostRequestHandler - Created upload with ID 8264afe9-c58b-4561-b2d5-ec6c04e84382 at 1750327322876 for ip address 127.0.0.1 with location /test/upload/8264afe9-c58b-4561-b2d5-ec6c04e84382
+4024 [main] INFO CreationPostRequestHandler - Created upload with ID fc089a79-4f91-4004-8ed3-e6228461dd67 at 1750327322883 for ip address 127.0.0.1 with location /test/upload/fc089a79-4f91-4004-8ed3-e6228461dd67
+4028 [main] INFO CreationPostRequestHandler - Created upload with ID 099e0d27-c5d5-46e5-8f6d-16064574adab at 1750327322887 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/099e0d27-c5d5-46e5-8f6d-16064574adab
+4426 [main] INFO CorePatchRequestHandler - Upload with ID 099e0d27-c5d5-46e5-8f6d-16064574adab at location /test/upload/099e0d27-c5d5-46e5-8f6d-16064574adab finished successfully
+4427 [main] WARN TusFileUploadService - Unable to process request PATCH http://localhost/test/upload/099e0d27-c5d5-46e5-8f6d-16064574adab. Sent response status 460 with message "Expected checksum invalid but was oNge323kGFKICxp+Me5xJgPvGEM= with algorithm sha1"
+4485 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/099e0d27-c5d5-46e5-8f6d-16064574adab. Sent response status 404 with message "The upload for path /test/upload/099e0d27-c5d5-46e5-8f6d-16064574adab and owner null was not found."
+4486 [main] INFO CreationPostRequestHandler - Created upload with ID ec1c8ada-ce69-4e03-aea8-847b39177c67 at 1750327323344 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/ec1c8ada-ce69-4e03-aea8-847b39177c67
+4672 [main] INFO CorePatchRequestHandler - Upload with ID ec1c8ada-ce69-4e03-aea8-847b39177c67 at location /test/upload/ec1c8ada-ce69-4e03-aea8-847b39177c67 finished successfully
+4675 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 413 with message "Upload requests can have a maximum size of 10"
+4676 [main] INFO CreationPostRequestHandler - Created upload with ID 90b3721f-d94a-418e-a8fb-3d090b4b97d8 at 1750327323535 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/90b3721f-d94a-418e-a8fb-3d090b4b97d8
+4729 [main] INFO CorePatchRequestHandler - Upload with ID 90b3721f-d94a-418e-a8fb-3d090b4b97d8 at location /test/upload/90b3721f-d94a-418e-a8fb-3d090b4b97d8 finished successfully
+4731 [main] INFO CreationPostRequestHandler - Created upload with ID c881ff70-c140-4526-af84-5846ffdffb6e at 1750327323589 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/c881ff70-c140-4526-af84-5846ffdffb6e
+4796 [main] INFO CorePatchRequestHandler - Upload with ID c881ff70-c140-4526-af84-5846ffdffb6e at location /test/upload/c881ff70-c140-4526-af84-5846ffdffb6e finished successfully
+4798 [main] INFO CreationPostRequestHandler - Created upload with ID ca93ce2b-626b-43b0-9e9d-dada554c9ff4 at 1750327323656 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/ca93ce2b-626b-43b0-9e9d-dada554c9ff4
+4804 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/849eff02-a4d2-4bc2-9eda-8f85e5725985. Sent response status 405 with message "The HTTP method GET is not supported"
+4805 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/d6e0f6a9-951f-4d73-9a46-58a69156ce77. Sent response status 405 with message "The HTTP method DELETE is not supported"
+4805 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/c70bf1c7-6675-4431-9001-a814a6f61dd2. Sent response status 405 with message "The HTTP method PUT is not supported"
+4806 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/83cd191f-5266-4ec1-88e5-1719689e2e5b. Sent response status 405 with message "The HTTP method CONNECT is not supported"
+4806 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/3f868843-d9b6-4539-b7db-deea1de53017. Sent response status 405 with message "The HTTP method TRACE is not supported"
+4807 [main] INFO CreationPostRequestHandler - Created upload with ID 37044926-5400-413b-ac4f-1b9972a45229 at 1750327323666 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/37044926-5400-413b-ac4f-1b9972a45229
+4808 [main] INFO CreationPostRequestHandler - Created upload with ID 2cac1a4d-6802-4c90-b1f7-f63c72e4f21d at 1750327323667 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/2cac1a4d-6802-4c90-b1f7-f63c72e4f21d
+4809 [main] INFO CreationPostRequestHandler - Created upload with ID 2d774701-141a-49cf-8f91-e2aee2780f0e at 1750327323668 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/2d774701-141a-49cf-8f91-e2aee2780f0e
+4866 [main] INFO CreationPostRequestHandler - Created upload with ID febc43bc-8466-45da-8cc1-a168dcfb09c8 at 1750327323725 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/febc43bc-8466-45da-8cc1-a168dcfb09c8
+4871 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/febc43bc-8466-45da-8cc1-a168dcfb09c8. Sent response status 422 with message "Upload /test/upload/febc43bc-8466-45da-8cc1-a168dcfb09c8 is still in progress and cannot be downloaded yet"
+5006 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/9bc0b9d7-1ab7-4ce7-91bd-a29816025fb3. Sent response status 404 with message "The upload for path /test/upload/9bc0b9d7-1ab7-4ce7-91bd-a29816025fb3 and owner JOHN_DOE was not found."
+5007 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 412 with message "This server does not support tus protocol version 2.0.0"
+5008 [main] INFO CreationPostRequestHandler - Created upload with ID ad7a4352-1851-4cce-8f99-ad33cd8e653f at 1750327323867 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /users/98765/files/upload/ad7a4352-1851-4cce-8f99-ad33cd8e653f
+5065 [main] INFO CorePatchRequestHandler - Upload with ID ad7a4352-1851-4cce-8f99-ad33cd8e653f at location /users/98765/files/upload/ad7a4352-1851-4cce-8f99-ad33cd8e653f finished successfully
+5068 [main] INFO CreationPostRequestHandler - Created upload with ID 4b58f718-e902-4ecf-b803-366d79a271c7 at 1750327323927 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/4b58f718-e902-4ecf-b803-366d79a271c7
+6127 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/4b58f718-e902-4ecf-b803-366d79a271c7. Sent response status 404 with message "The upload for path /test/upload/4b58f718-e902-4ecf-b803-366d79a271c7 and owner JOHN_DOE was not found."
+6129 [main] INFO CreationPostRequestHandler - Created upload with ID b37ed6aa-147a-49db-a074-e8c73155998a at 1750327324987 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/b37ed6aa-147a-49db-a074-e8c73155998a
+6188 [main] INFO CorePatchRequestHandler - Upload with ID b37ed6aa-147a-49db-a074-e8c73155998a at location /test/upload/b37ed6aa-147a-49db-a074-e8c73155998a finished successfully
+6192 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/b37ed6aa-147a-49db-a074-e8c73155998a. Sent response status 404 with message "The upload for path /test/upload/b37ed6aa-147a-49db-a074-e8c73155998a and owner JOHN_DOE was not found."
+6193 [main] INFO CreationPostRequestHandler - Created upload with ID 66d21218-bcc0-4610-a2f3-678eab3944b6 at 1750327325052 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/66d21218-bcc0-4610-a2f3-678eab3944b6
+6244 [main] INFO CorePatchRequestHandler - Upload with ID 66d21218-bcc0-4610-a2f3-678eab3944b6 at location /test/upload/66d21218-bcc0-4610-a2f3-678eab3944b6 finished successfully
+6255 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/66d21218-bcc0-4610-a2f3-678eab3944b6. Sent response status 404 with message "The upload for path /test/upload/66d21218-bcc0-4610-a2f3-678eab3944b6 and owner JOHN_DOE was not found."
+6256 [main] INFO CreationPostRequestHandler - Created upload with ID 2c8853c1-4680-4b24-aded-3e50e7bce612 at 1750327325115 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/2c8853c1-4680-4b24-aded-3e50e7bce612
+6327 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/2c8853c1-4680-4b24-aded-3e50e7bce612. Sent response status 422 with message "Upload /test/upload/2c8853c1-4680-4b24-aded-3e50e7bce612 is still in progress and cannot be downloaded yet"
+6389 [main] INFO CorePatchRequestHandler - Upload with ID 2c8853c1-4680-4b24-aded-3e50e7bce612 at location /test/upload/2c8853c1-4680-4b24-aded-3e50e7bce612 finished successfully
+Dependency org.mockito:mockito-core not found in POM.
+3334 [main] WARN UploadId - Unable to URL encode upload ID value
+org.apache.commons.codec.DecoderException: Invalid URL encoding: not a valid digit (radix 16): 32
+	at org.apache.commons.codec.net.Utils.digit16(Utils.java:48)
+	at org.apache.commons.codec.net.URLCodec.decodeUrl(URLCodec.java:113)
+	at org.apache.commons.codec.net.URLCodec.decode(URLCodec.java:201)
+	at org.apache.commons.codec.net.URLCodec.decode(URLCodec.java:271)
+	at me.desair.tus.server.upload.UploadId.<init>(UploadId.java:34)
+	at me.desair.tus.server.upload.UploadIdTest.toStringWithInternalDecoderException(UploadIdTest.java:58)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+3376 [main] ERROR UploadInputStreamEnumeration - Error while retrieving input stream for upload with ID 20c15e71-f867-404d-adc6-114e33c9878f
+java.io.IOException: Test
+	at me.desair.tus.server.upload.concatenation.UploadInputStreamEnumeration.getNextInputStream(UploadInputStreamEnumeration.java:62)
+	at me.desair.tus.server.upload.concatenation.UploadInputStreamEnumeration.hasMoreElements(UploadInputStreamEnumeration.java:37)
+	at me.desair.tus.server.upload.concatenation.UploadInputStreamEnumerationTest.hasMoreElementsException(UploadInputStreamEnumerationTest.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+3519 [main] ERROR CreationPatchRequestHandler - The patch request handler could not find the upload for URL . This means something is really wrong the request validators!
+me.desair.tus.server.exception.UploadNotFoundException: test
+	at me.desair.tus.server.creation.CreationPatchRequestHandler.process(CreationPatchRequestHandler.java:47)
+	at me.desair.tus.server.creation.CreationPatchRequestHandlerTest.processAppendNotFound(CreationPatchRequestHandlerTest.java:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+3533 [main] INFO CreationPostRequestHandler - Created upload with ID 3413b495-b424-4fa8-a060-d34bb420e261 at 1750327350318 for ip address 127.0.0.1 with location /test/upload/3413b495-b424-4fa8-a060-d34bb420e261
+3538 [main] INFO CreationPostRequestHandler - Created upload with ID 3ca1db4f-2b98-438a-bc74-37e1004787a0 at 1750327350328 for ip address 127.0.0.1 with location /test/upload/3ca1db4f-2b98-438a-bc74-37e1004787a0
+3541 [main] INFO CreationPostRequestHandler - Created upload with ID 9a344869-e08a-4809-b029-d1c40dc89dc7 at 1750327350331 for ip address 127.0.0.1 with location /test/upload/9a344869-e08a-4809-b029-d1c40dc89dc7
+3544 [main] INFO CreationPostRequestHandler - Created upload with ID 932e5caf-39b4-46e7-9d76-f5a6c2f4d64d at 1750327350334 for ip address 127.0.0.1 with location /test/upload/932e5caf-39b4-46e7-9d76-f5a6c2f4d64d
+3647 [main] ERROR CorePatchRequestHandler - The patch request handler could not find the upload for URL {0}. This means something is really wrong the request validators!
+3649 [main] INFO CorePatchRequestHandler - Upload with ID 2d9877cd-073b-436b-a136-8e50cbbc877e at location  finished successfully
+3650 [main] ERROR CorePatchRequestHandler - The patch request handler could not find the upload for URL {0}. This means something is really wrong the request validators!
+1899 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354015 at 1750327354015 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354015
+2005 [main] INFO CorePatchRequestHandler - Upload with ID 1750327354015 at location /test/upload/1750327354015 finished successfully
+2020 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/1750327354015. Sent response status 404 with message "The upload for path /test/upload/1750327354015 and owner ALTER-EGO was not found."
+2025 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354153 at 1750327354153 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354153
+2105 [main] INFO CorePatchRequestHandler - Upload with ID 1750327354153 at location /test/upload/1750327354153 finished successfully
+2109 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354237 at 1750327354237 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354237
+2163 [main] INFO CorePatchRequestHandler - Upload with ID 1750327354237 at location /test/upload/1750327354237 finished successfully
+2167 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354296 at 1750327354295 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354296
+2197 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354326 at 1750327354326 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354326
+2319 [main] INFO CorePatchRequestHandler - Upload with ID 1750327354326 at location /test/upload/1750327354326 finished successfully
+2320 [main] WARN TusFileUploadService - Unable to process request PATCH http://localhost/test/upload/1750327354326. Sent response status 460 with message "Expected checksum invalid but was oNge323kGFKICxp+Me5xJgPvGEM= with algorithm sha1"
+2407 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327354326. Sent response status 404 with message "The upload for path /test/upload/1750327354326 and owner null was not found."
+2411 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354539 at 1750327354539 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354539
+2621 [main] INFO CorePatchRequestHandler - Upload with ID 1750327354539 at location /test/upload/1750327354539 finished successfully
+2631 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 413 with message "Upload requests can have a maximum size of 10"
+2634 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354762 at 1750327354762 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354762
+2699 [main] INFO CorePatchRequestHandler - Upload with ID 1750327354762 at location /test/upload/1750327354762 finished successfully
+2702 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354831 at 1750327354831 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354831
+2756 [main] INFO CorePatchRequestHandler - Upload with ID 1750327354831 at location /test/upload/1750327354831 finished successfully
+2758 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354887 at 1750327354886 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354887
+2767 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/71b5780a-ceb9-44a8-bb9e-190d1511e913. Sent response status 405 with message "The HTTP method GET is not supported"
+2768 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/5b7a8d76-cf8a-4cbe-bb65-b1455dea686d. Sent response status 405 with message "The HTTP method DELETE is not supported"
+2768 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/6b64704f-fb91-4e32-b5cd-c734d3c997d1. Sent response status 405 with message "The HTTP method PUT is not supported"
+2769 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/53882163-09b2-4549-b1dd-1da4f0e4fc4a. Sent response status 405 with message "The HTTP method CONNECT is not supported"
+2769 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/42c3ac85-a6ee-4f3d-b559-2d681f55bb59. Sent response status 405 with message "The HTTP method TRACE is not supported"
+2770 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354899 at 1750327354899 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354899
+2771 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354900 at 1750327354900 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354900
+2772 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354901 at 1750327354901 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354901
+2836 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327354965 at 1750327354965 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327354965
+2841 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/1750327354965. Sent response status 422 with message "Upload /test/upload/1750327354965 is still in progress and cannot be downloaded yet"
+2981 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/8fc4d38d-348b-4950-9db6-5545fbcd515d. Sent response status 404 with message "The upload for path /test/upload/8fc4d38d-348b-4950-9db6-5545fbcd515d and owner JOHN_DOE was not found."
+2982 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 412 with message "This server does not support tus protocol version 2.0.0"
+2985 [main] INFO CreationPostRequestHandler - Created upload with ID 76f8288b-1669-47d2-8538-652cf06d4c19 at 1750327355113 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /users/98765/files/upload/76f8288b-1669-47d2-8538-652cf06d4c19
+3036 [main] INFO CorePatchRequestHandler - Upload with ID 76f8288b-1669-47d2-8538-652cf06d4c19 at location /users/98765/files/upload/76f8288b-1669-47d2-8538-652cf06d4c19 finished successfully
+3040 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327355169 at 1750327355169 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327355169
+4099 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327355169. Sent response status 404 with message "The upload for path /test/upload/1750327355169 and owner JOHN_DOE was not found."
+4100 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327356229 at 1750327356229 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327356229
+4149 [main] INFO CorePatchRequestHandler - Upload with ID 1750327356229 at location /test/upload/1750327356229 finished successfully
+4156 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327356229. Sent response status 404 with message "The upload for path /test/upload/1750327356229 and owner JOHN_DOE was not found."
+4157 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327356285 at 1750327356285 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327356285
+4206 [main] INFO CorePatchRequestHandler - Upload with ID 1750327356285 at location /test/upload/1750327356285 finished successfully
+4220 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/1750327356285. Sent response status 404 with message "The upload for path /test/upload/1750327356285 and owner JOHN_DOE was not found."
+4222 [main] INFO CreationPostRequestHandler - Created upload with ID 1750327356350 at 1750327356350 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1750327356350
+4293 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/1750327356350. Sent response status 422 with message "Upload /test/upload/1750327356350 is still in progress and cannot be downloaded yet"
+4364 [main] INFO CorePatchRequestHandler - Upload with ID 1750327356350 at location /test/upload/1750327356350 finished successfully
+4397 [main] INFO CreationPostRequestHandler - Created upload with ID a597b952-7628-446b-9dd2-f826483ec34e at 1750327356526 for ip address 127.0.0.1 with location /submission/0ae5f8vv4s8c/files/upload/a597b952-7628-446b-9dd2-f826483ec34e
+4401 [main] INFO CreationPostRequestHandler - Created upload with ID 29ccfc8e-a445-4628-85ac-f07d5eee26b4 at 1750327356530 for ip address 127.0.0.1 with location /test/upload/29ccfc8e-a445-4628-85ac-f07d5eee26b4
+4404 [main] INFO CreationPostRequestHandler - Created upload with ID 1b4b27ed-f25a-4733-b7df-8fc720b3df0b at 1750327356533 for ip address 127.0.0.1 with location /test/upload/1b4b27ed-f25a-4733-b7df-8fc720b3df0b
+4408 [main] INFO CreationPostRequestHandler - Created upload with ID d561610c-fa5b-4605-92cc-0d1aaa291ca6 at 1750327356536 for ip address 127.0.0.1 with location /test/upload/d561610c-fa5b-4605-92cc-0d1aaa291ca6
+4422 [main] INFO CreationPostRequestHandler - Created upload with ID 79446ed8-a299-4b72-b8bf-52e626a6f28a at 1750327356550 for ip address 127.0.0.1 with location /test/upload/79446ed8-a299-4b72-b8bf-52e626a6f28a
+4428 [main] INFO CreationPostRequestHandler - Created upload with ID b802f642-cb7f-4446-9f69-cf6393ff5672 at 1750327356556 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/b802f642-cb7f-4446-9f69-cf6393ff5672
+4543 [main] INFO CorePatchRequestHandler - Upload with ID b802f642-cb7f-4446-9f69-cf6393ff5672 at location /test/upload/b802f642-cb7f-4446-9f69-cf6393ff5672 finished successfully
+4544 [main] WARN TusFileUploadService - Unable to process request PATCH http://localhost/test/upload/b802f642-cb7f-4446-9f69-cf6393ff5672. Sent response status 460 with message "Expected checksum invalid but was oNge323kGFKICxp+Me5xJgPvGEM= with algorithm sha1"
+4625 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/b802f642-cb7f-4446-9f69-cf6393ff5672. Sent response status 404 with message "The upload for path /test/upload/b802f642-cb7f-4446-9f69-cf6393ff5672 and owner null was not found."
+4626 [main] INFO CreationPostRequestHandler - Created upload with ID dc662569-9f87-45db-b558-fa9510f241bc at 1750327356754 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/dc662569-9f87-45db-b558-fa9510f241bc
+4811 [main] INFO CorePatchRequestHandler - Upload with ID dc662569-9f87-45db-b558-fa9510f241bc at location /test/upload/dc662569-9f87-45db-b558-fa9510f241bc finished successfully
+4816 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 413 with message "Upload requests can have a maximum size of 10"
+4818 [main] INFO CreationPostRequestHandler - Created upload with ID f2f036e7-1aed-47ba-92df-02f49c05e05d at 1750327356946 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/f2f036e7-1aed-47ba-92df-02f49c05e05d
+4879 [main] INFO CorePatchRequestHandler - Upload with ID f2f036e7-1aed-47ba-92df-02f49c05e05d at location /test/upload/f2f036e7-1aed-47ba-92df-02f49c05e05d finished successfully
+4881 [main] INFO CreationPostRequestHandler - Created upload with ID 4f8204a9-c41f-4157-bc98-a2365c4eb55d at 1750327357009 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/4f8204a9-c41f-4157-bc98-a2365c4eb55d
+4946 [main] INFO CorePatchRequestHandler - Upload with ID 4f8204a9-c41f-4157-bc98-a2365c4eb55d at location /test/upload/4f8204a9-c41f-4157-bc98-a2365c4eb55d finished successfully
+4950 [main] INFO CreationPostRequestHandler - Created upload with ID 2c7679af-72f0-4566-bb9c-f33e4373ff57 at 1750327357078 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/2c7679af-72f0-4566-bb9c-f33e4373ff57
+4961 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/a3fc0fcf-9e8a-4d7a-87fd-6e8ba086edd0. Sent response status 405 with message "The HTTP method GET is not supported"
+4962 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/0ca8fd8f-6d68-4967-a4ba-90bf5a0099ff. Sent response status 405 with message "The HTTP method DELETE is not supported"
+4963 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/85ef06fb-973e-47a8-919d-b84254cd83da. Sent response status 405 with message "The HTTP method PUT is not supported"
+4964 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/9474c2f4-05cb-4942-b2b9-067a6ce16c7e. Sent response status 405 with message "The HTTP method CONNECT is not supported"
+4964 [main] WARN TusFileUploadService - Unable to process request null http://localhost/test/upload/25db2a4d-3dc9-4dde-9441-f3f089dca50c. Sent response status 405 with message "The HTTP method TRACE is not supported"
+4965 [main] INFO CreationPostRequestHandler - Created upload with ID 58cbcffd-1f6a-45fa-b91b-69338d745508 at 1750327357094 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/58cbcffd-1f6a-45fa-b91b-69338d745508
+4967 [main] INFO CreationPostRequestHandler - Created upload with ID 42bb8cc8-6e36-46c1-a1c2-74c0be4cbadb at 1750327357096 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/42bb8cc8-6e36-46c1-a1c2-74c0be4cbadb
+4969 [main] INFO CreationPostRequestHandler - Created upload with ID 1a511fe4-17a5-4ab5-9df7-ac0423ac52f0 at 1750327357097 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/1a511fe4-17a5-4ab5-9df7-ac0423ac52f0
+5027 [main] INFO CreationPostRequestHandler - Created upload with ID d201d8c3-dc94-4cfa-aca6-2036e6d48a7d at 1750327357156 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/d201d8c3-dc94-4cfa-aca6-2036e6d48a7d
+5032 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/d201d8c3-dc94-4cfa-aca6-2036e6d48a7d. Sent response status 422 with message "Upload /test/upload/d201d8c3-dc94-4cfa-aca6-2036e6d48a7d is still in progress and cannot be downloaded yet"
+5166 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/615298b6-e2a0-4c55-8f96-c3874fad2bc4. Sent response status 404 with message "The upload for path /test/upload/615298b6-e2a0-4c55-8f96-c3874fad2bc4 and owner JOHN_DOE was not found."
+5167 [main] WARN TusFileUploadService - Unable to process request POST http://localhost/test/upload. Sent response status 412 with message "This server does not support tus protocol version 2.0.0"
+5168 [main] INFO CreationPostRequestHandler - Created upload with ID c73b3e93-2360-4777-8774-c6f4a25347ff at 1750327357296 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /users/98765/files/upload/c73b3e93-2360-4777-8774-c6f4a25347ff
+5215 [main] INFO CorePatchRequestHandler - Upload with ID c73b3e93-2360-4777-8774-c6f4a25347ff at location /users/98765/files/upload/c73b3e93-2360-4777-8774-c6f4a25347ff finished successfully
+5219 [main] INFO CreationPostRequestHandler - Created upload with ID bd777ba3-08f8-48a0-a1b7-2ad3f852e344 at 1750327357347 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/bd777ba3-08f8-48a0-a1b7-2ad3f852e344
+6265 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/bd777ba3-08f8-48a0-a1b7-2ad3f852e344. Sent response status 404 with message "The upload for path /test/upload/bd777ba3-08f8-48a0-a1b7-2ad3f852e344 and owner JOHN_DOE was not found."
+6266 [main] INFO CreationPostRequestHandler - Created upload with ID c8d04cf8-37d3-495f-b199-47354f627d83 at 1750327358395 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/c8d04cf8-37d3-495f-b199-47354f627d83
+6317 [main] INFO CorePatchRequestHandler - Upload with ID c8d04cf8-37d3-495f-b199-47354f627d83 at location /test/upload/c8d04cf8-37d3-495f-b199-47354f627d83 finished successfully
+6321 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/c8d04cf8-37d3-495f-b199-47354f627d83. Sent response status 404 with message "The upload for path /test/upload/c8d04cf8-37d3-495f-b199-47354f627d83 and owner JOHN_DOE was not found."
+6322 [main] INFO CreationPostRequestHandler - Created upload with ID c3f89386-50fa-48f9-a27c-f19e2384f9bf at 1750327358451 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/c3f89386-50fa-48f9-a27c-f19e2384f9bf
+6362 [main] INFO CorePatchRequestHandler - Upload with ID c3f89386-50fa-48f9-a27c-f19e2384f9bf at location /test/upload/c3f89386-50fa-48f9-a27c-f19e2384f9bf finished successfully
+6371 [main] WARN TusFileUploadService - Unable to process request HEAD http://localhost/test/upload/c3f89386-50fa-48f9-a27c-f19e2384f9bf. Sent response status 404 with message "The upload for path /test/upload/c3f89386-50fa-48f9-a27c-f19e2384f9bf and owner JOHN_DOE was not found."
+6371 [main] INFO CreationPostRequestHandler - Created upload with ID 02352d5b-b555-4088-99ff-2de676918cd7 at 1750327358500 for ip address 10.0.2.1, 123.231.12.4, 192.168.1.1 with location /test/upload/02352d5b-b555-4088-99ff-2de676918cd7
+6422 [main] WARN TusFileUploadService - Unable to process request GET http://localhost/test/upload/02352d5b-b555-4088-99ff-2de676918cd7. Sent response status 422 with message "Upload /test/upload/02352d5b-b555-4088-99ff-2de676918cd7 is still in progress and cannot be downloaded yet"
+6463 [main] INFO CorePatchRequestHandler - Upload with ID 02352d5b-b555-4088-99ff-2de676918cd7 at location /test/upload/02352d5b-b555-4088-99ff-2de676918cd7 finished successfully
+Dependency org.hamcrest:hamcrest-all not found in POM.
+Dependency junit:junit not found in POM.
+Dependency org.springframework:spring-test not found in POM.
+Dependency org.slf4j:slf4j-simple not found in POM.

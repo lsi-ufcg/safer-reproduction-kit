@@ -1,0 +1,1035 @@
+Required Java version: 11
+Building Docker Image for project commoncrawl_cc-index-table with Java version 11...
+Image built successfully. Running container...
+
+
+
+========= DEPENDENCIES NEWER VERSIONS ==========
+
+[
+  {
+    dependency: { group: 'com.google.code.gson', name: 'gson', version: '2.13.1' },
+    newerVersions: [ '2.13.1' ]
+  },
+  {
+    dependency: {
+      group: 'com.github.crawler-commons',
+      name: 'crawler-commons',
+      version: '1.4'
+    },
+    newerVersions: [ '1.4' ]
+  },
+  {
+    dependency: { group: 'org.slf4j', name: 'slf4j-api', version: '2.0.17' },
+    newerVersions: [ '2.1.0-alpha1', '2.1.0-alpha0', '2.0.17' ]
+  },
+  {
+    dependency: {
+      group: 'org.apache.spark',
+      name: 'spark-core_2.12',
+      version: '3.5.5'
+    },
+    newerVersions: [ '3.5.6', '3.5.5' ]
+  },
+  {
+    dependency: {
+      group: 'org.apache.spark',
+      name: 'spark-sql_2.12',
+      version: '3.5.5'
+    },
+    newerVersions: [ '3.5.6', '3.5.5' ]
+  },
+  {
+    dependency: {
+      group: 'org.junit.jupiter',
+      name: 'junit-jupiter-engine',
+      version: '5.12.2'
+    },
+    newerVersions: [
+      '5.13.1',
+      '5.13.0',
+      '5.13.0-RC1',
+      '5.13.0-M3',
+      '5.13.0-M2',
+      '5.13.0-M1',
+      '5.12.2'
+    ]
+  },
+  {
+    dependency: { group: 'commons-cli', name: 'commons-cli', version: '1.5.0' },
+    newerVersions: [ '20040117.000000', '1.9.0', '1.8.0', '1.7.0', '1.6.0', '1.5.0' ]
+  },
+  {
+    dependency: { group: 'software.amazon.awssdk', name: 's3', version: '2.31.43' },
+    newerVersions: [
+      '2.31.66', '2.31.65', '2.31.64',
+      '2.31.63', '2.31.62', '2.31.61',
+      '2.31.60', '2.31.59', '2.31.58',
+      '2.31.57', '2.31.56', '2.31.55',
+      '2.31.54', '2.31.53', '2.31.52',
+      '2.31.51', '2.31.50', '2.31.49',
+      '2.31.48', '2.31.47', '2.31.46',
+      '2.31.45', '2.31.44', '2.31.43'
+    ]
+  },
+  {
+    dependency: { group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.17' },
+    newerVersions: [ '2.1.0-alpha1', '2.1.0-alpha0', '2.0.17' ]
+  },
+  {
+    dependency: { group: 'com.google.guava', name: 'guava', version: '33.4.8-jre' },
+    newerVersions: [ '33.4.8-jre' ]
+  }
+]
+
+
+
+========= DEPENDENCIES VERSIONS RANK ==========
+
+[
+  {
+    dependency: { group: 'com.google.code.gson', name: 'gson', version: '2.13.1' },
+    rank: [
+      {
+        version: '2.13.1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: {
+      group: 'com.github.crawler-commons',
+      name: 'crawler-commons',
+      version: '1.4'
+    },
+    rank: [
+      {
+        version: '1.4',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-78wr-2p64-hpwj',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'commons-io',
+                name: 'commons-io',
+                version: '2.13.0'
+              }
+            }
+          ],
+          rate: 22.5
+        }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'org.slf4j', name: 'slf4j-api', version: '2.0.17' },
+    rank: [
+      {
+        version: '2.0.17',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.1.0-alpha1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.1.0-alpha0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: {
+      group: 'org.apache.spark',
+      name: 'spark-core_2.12',
+      version: '3.5.5'
+    },
+    rank: [
+      {
+        version: '3.5.6',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '3.5.5',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-5mg8-w23w-74h3',
+              severity: 'low',
+              severityScore: 3.3,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.guava',
+                name: 'guava',
+                version: '14.0.1'
+              }
+            },
+            {
+              id: 'GHSA-7g45-4rm6-3mm3',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.guava',
+                name: 'guava',
+                version: '14.0.1'
+              }
+            },
+            {
+              id: 'GHSA-mvr2-9pj6-7w5j',
+              severity: 'medium',
+              severityScore: 5.9,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.guava',
+                name: 'guava',
+                version: '14.0.1'
+              }
+            },
+            {
+              id: 'GHSA-4265-ccf5-phj5',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.commons',
+                name: 'commons-compress',
+                version: '1.23.0'
+              }
+            },
+            {
+              id: 'GHSA-4g9r-vxhx-9pgx',
+              severity: 'medium',
+              severityScore: 5.9,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.commons',
+                name: 'commons-compress',
+                version: '1.23.0'
+              }
+            },
+            {
+              id: 'GHSA-cgwf-w82q-5jrr',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.commons',
+                name: 'commons-compress',
+                version: '1.23.0'
+              }
+            },
+            {
+              id: 'GHSA-2jc4-r94c-rp7h',
+              severity: 'high',
+              severityScore: 8.2,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.ivy',
+                name: 'ivy',
+                version: '2.5.1'
+              }
+            },
+            {
+              id: 'GHSA-7286-pgfv-vxvh',
+              severity: 'critical',
+              severityScore: 9.1,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.zookeeper',
+                name: 'zookeeper',
+                version: '3.6.3'
+              }
+            },
+            {
+              id: 'GHSA-r978-9m6m-6gm6',
+              severity: 'medium',
+              severityScore: 5.3,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.zookeeper',
+                name: 'zookeeper',
+                version: '3.6.3'
+              }
+            },
+            {
+              id: 'GHSA-5jpm-x58v-624v',
+              severity: 'medium',
+              severityScore: 5.3,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-codec-http',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-xpw8-rcwv-8f8p',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-codec-http2',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-389x-839f-4rhx',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-common',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-xq3w-v528-46rv',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-common',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-4g8c-wm8x-jfhw',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-handler',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-735f-pc8j-v9w8',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.protobuf',
+                name: 'protobuf-java',
+                version: '3.23.4'
+              }
+            }
+          ],
+          rate: 240.7
+        }
+      }
+    ]
+  },
+  {
+    dependency: {
+      group: 'org.apache.spark',
+      name: 'spark-sql_2.12',
+      version: '3.5.5'
+    },
+    rank: [
+      {
+        version: '3.5.6',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-735f-pc8j-v9w8',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.protobuf',
+                name: 'protobuf-java',
+                version: '3.23.4'
+              }
+            },
+            {
+              id: 'GHSA-q4rv-gq96-w7c5',
+              severity: 'high',
+              severityScore: 7.2,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.eclipse.jetty',
+                name: 'jetty-server',
+                version: '9.4.56.v20240826'
+              }
+            },
+            {
+              id: 'GHSA-qh8g-58pp-2wxh',
+              severity: 'medium',
+              severityScore: 3.7,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.eclipse.jetty',
+                name: 'jetty-http',
+                version: '9.4.56.v20240826'
+              }
+            }
+          ],
+          rate: 51.5
+        }
+      },
+      {
+        version: '3.5.5',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-735f-pc8j-v9w8',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.protobuf',
+                name: 'protobuf-java',
+                version: '3.23.4'
+              }
+            },
+            {
+              id: 'GHSA-4265-ccf5-phj5',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.commons',
+                name: 'commons-compress',
+                version: '1.23.0'
+              }
+            },
+            {
+              id: 'GHSA-4g9r-vxhx-9pgx',
+              severity: 'medium',
+              severityScore: 5.9,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.commons',
+                name: 'commons-compress',
+                version: '1.23.0'
+              }
+            },
+            {
+              id: 'GHSA-cgwf-w82q-5jrr',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.commons',
+                name: 'commons-compress',
+                version: '1.23.0'
+              }
+            },
+            {
+              id: 'GHSA-2jc4-r94c-rp7h',
+              severity: 'high',
+              severityScore: 8.2,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.ivy',
+                name: 'ivy',
+                version: '2.5.1'
+              }
+            },
+            {
+              id: 'GHSA-7286-pgfv-vxvh',
+              severity: 'critical',
+              severityScore: 9.1,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.zookeeper',
+                name: 'zookeeper',
+                version: '3.6.3'
+              }
+            },
+            {
+              id: 'GHSA-r978-9m6m-6gm6',
+              severity: 'medium',
+              severityScore: 5.3,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.zookeeper',
+                name: 'zookeeper',
+                version: '3.6.3'
+              }
+            },
+            {
+              id: 'GHSA-5jpm-x58v-624v',
+              severity: 'medium',
+              severityScore: 5.3,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-codec-http',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-xpw8-rcwv-8f8p',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-codec-http2',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-389x-839f-4rhx',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-common',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-xq3w-v528-46rv',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-common',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-4g8c-wm8x-jfhw',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'io.netty',
+                name: 'netty-handler',
+                version: '4.1.96.Final'
+              }
+            },
+            {
+              id: 'GHSA-q4rv-gq96-w7c5',
+              severity: 'high',
+              severityScore: 7.2,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.eclipse.jetty',
+                name: 'jetty-server',
+                version: '9.4.56.v20240826'
+              }
+            },
+            {
+              id: 'GHSA-qh8g-58pp-2wxh',
+              severity: 'medium',
+              severityScore: 3.7,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.eclipse.jetty',
+                name: 'jetty-http',
+                version: '9.4.56.v20240826'
+              }
+            },
+            {
+              id: 'GHSA-5mg8-w23w-74h3',
+              severity: 'low',
+              severityScore: 3.3,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.guava',
+                name: 'guava',
+                version: '14.0.1'
+              }
+            },
+            {
+              id: 'GHSA-7g45-4rm6-3mm3',
+              severity: 'medium',
+              severityScore: 5.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.guava',
+                name: 'guava',
+                version: '14.0.1'
+              }
+            },
+            {
+              id: 'GHSA-mvr2-9pj6-7w5j',
+              severity: 'medium',
+              severityScore: 5.9,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'com.google.guava',
+                name: 'guava',
+                version: '14.0.1'
+              }
+            }
+          ],
+          rate: 269.7
+        }
+      }
+    ]
+  },
+  {
+    dependency: {
+      group: 'org.junit.jupiter',
+      name: 'junit-jupiter-engine',
+      version: '5.12.2'
+    },
+    rank: [
+      {
+        version: '5.12.2',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '5.13.0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '5.13.1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '5.13.0-RC1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '5.13.0-M3',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '5.13.0-M2',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '5.13.0-M1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'commons-cli', name: 'commons-cli', version: '1.5.0' },
+    rank: [
+      {
+        version: '1.5.0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '1.6.0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '1.7.0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '1.8.0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '1.9.0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '20040117.000000',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'software.amazon.awssdk', name: 's3', version: '2.31.43' },
+    rank: [
+      {
+        version: '2.31.43',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.44',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.45',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.46',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.47',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.48',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.49',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.50',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.51',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.52',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.53',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.54',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.55',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.56',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.57',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.58',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.59',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.60',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.61',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.62',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.63',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.64',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.65',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.31.66',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.17' },
+    rank: [
+      {
+        version: '2.0.17',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.1.0-alpha1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '2.1.0-alpha0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'com.google.guava', name: 'guava', version: '33.4.8-jre' },
+    rank: [
+      {
+        version: '33.4.8-jre',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  }
+]
+Applying version 2.13.1 with vulnerability rate 0 of gson dependency in pom.xml
+Keeping the current version 2.13.1 of gson
+
+
+Applying version 1.4 with vulnerability rate 22.5 of crawler-commons dependency in pom.xml
+Keeping the current version 1.4 of crawler-commons
+
+
+Applying version 2.0.17 with vulnerability rate 0 of slf4j-api dependency in pom.xml
+Keeping the current version 2.0.17 of slf4j-api
+
+
+Applying version 3.5.6 with vulnerability rate 0 of spark-core_2.12 dependency in pom.xml
+Running maven build for version 3.5.6 of spark-core_2.12 dependency
+Maven build executed successfully
+
+
+Applying version 3.5.6 with vulnerability rate 51.5 of spark-sql_2.12 dependency in pom.xml
+Running maven build for version 3.5.6 of spark-sql_2.12 dependency
+Maven build executed successfully
+
+
+Applying version 5.12.2 with vulnerability rate 0 of junit-jupiter-engine dependency in pom.xml
+Keeping the current version 5.12.2 of junit-jupiter-engine
+
+
+Applying version 1.5.0 with vulnerability rate 0 of commons-cli dependency in pom.xml
+Keeping the current version 1.5.0 of commons-cli
+
+
+Applying version 2.31.43 with vulnerability rate 0 of s3 dependency in pom.xml
+Keeping the current version 2.31.43 of s3
+
+
+Applying version 2.0.17 with vulnerability rate 0 of slf4j-simple dependency in pom.xml
+Keeping the current version 2.0.17 of slf4j-simple
+
+
+Applying version 33.4.8-jre with vulnerability rate 0 of guava dependency in pom.xml
+Keeping the current version 33.4.8-jre of guava
+
+
+Dependency and Security Report
+
+The information was obtained from Open Source Insights, which gathers security advisories information from OSV.
+
+Analyzed Dependencies:
+
+- com.google.code.gson:gson: 2.13.1 [NEW] [OLD]
+  Version: 2.13.1 [NEW] [OLD], Vulnerabilities: 0
+
+- com.github.crawler-commons:crawler-commons: 1.4 [NEW] [OLD]
+  Version: 1.4 [NEW] [OLD], Vulnerabilities: 22.5
+    ID: GHSA-78wr-2p64-hpwj, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: commons-io:commons-io:2.13.0
+
+- org.slf4j:slf4j-api: 2.0.17 [NEW] [OLD]
+  Version: 2.0.17 [NEW] [OLD], Vulnerabilities: 0
+  Version: 2.1.0-alpha1 , Vulnerabilities: 0
+  Version: 2.1.0-alpha0 , Vulnerabilities: 0
+
+- org.apache.spark:spark-core_2.12: 3.5.5 [OLD]
+  Version: 3.5.6 [NEW], Vulnerabilities: 0
+  Version: 3.5.5 [OLD], Vulnerabilities: 240.7
+    ID: GHSA-5mg8-w23w-74h3, Severity: low, Score: 3.3, Transitive: Yes
+    Source Dependency: com.google.guava:guava:14.0.1
+    ID: GHSA-7g45-4rm6-3mm3, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: com.google.guava:guava:14.0.1
+    ID: GHSA-mvr2-9pj6-7w5j, Severity: medium, Score: 5.9, Transitive: Yes
+    Source Dependency: com.google.guava:guava:14.0.1
+    ID: GHSA-4265-ccf5-phj5, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: org.apache.commons:commons-compress:1.23.0
+    ID: GHSA-4g9r-vxhx-9pgx, Severity: medium, Score: 5.9, Transitive: Yes
+    Source Dependency: org.apache.commons:commons-compress:1.23.0
+    ID: GHSA-cgwf-w82q-5jrr, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: org.apache.commons:commons-compress:1.23.0
+    ID: GHSA-2jc4-r94c-rp7h, Severity: high, Score: 8.2, Transitive: Yes
+    Source Dependency: org.apache.ivy:ivy:2.5.1
+    ID: GHSA-7286-pgfv-vxvh, Severity: critical, Score: 9.1, Transitive: Yes
+    Source Dependency: org.apache.zookeeper:zookeeper:3.6.3
+    ID: GHSA-r978-9m6m-6gm6, Severity: medium, Score: 5.3, Transitive: Yes
+    Source Dependency: org.apache.zookeeper:zookeeper:3.6.3
+    ID: GHSA-5jpm-x58v-624v, Severity: medium, Score: 5.3, Transitive: Yes
+    Source Dependency: io.netty:netty-codec-http:4.1.96.Final
+    ID: GHSA-xpw8-rcwv-8f8p, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: io.netty:netty-codec-http2:4.1.96.Final
+    ID: GHSA-389x-839f-4rhx, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: io.netty:netty-common:4.1.96.Final
+    ID: GHSA-xq3w-v528-46rv, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: io.netty:netty-common:4.1.96.Final
+    ID: GHSA-4g8c-wm8x-jfhw, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: io.netty:netty-handler:4.1.96.Final
+    ID: GHSA-735f-pc8j-v9w8, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: com.google.protobuf:protobuf-java:3.23.4
+
+- org.apache.spark:spark-sql_2.12: 3.5.5 [OLD]
+  Version: 3.5.6 [NEW], Vulnerabilities: 51.5
+    ID: GHSA-735f-pc8j-v9w8, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: com.google.protobuf:protobuf-java:3.23.4
+    ID: GHSA-q4rv-gq96-w7c5, Severity: high, Score: 7.2, Transitive: Yes
+    Source Dependency: org.eclipse.jetty:jetty-server:9.4.56.v20240826
+    ID: GHSA-qh8g-58pp-2wxh, Severity: medium, Score: 3.7, Transitive: Yes
+    Source Dependency: org.eclipse.jetty:jetty-http:9.4.56.v20240826
+  Version: 3.5.5 [OLD], Vulnerabilities: 269.7
+    ID: GHSA-735f-pc8j-v9w8, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: com.google.protobuf:protobuf-java:3.23.4
+    ID: GHSA-4265-ccf5-phj5, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: org.apache.commons:commons-compress:1.23.0
+    ID: GHSA-4g9r-vxhx-9pgx, Severity: medium, Score: 5.9, Transitive: Yes
+    Source Dependency: org.apache.commons:commons-compress:1.23.0
+    ID: GHSA-cgwf-w82q-5jrr, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: org.apache.commons:commons-compress:1.23.0
+    ID: GHSA-2jc4-r94c-rp7h, Severity: high, Score: 8.2, Transitive: Yes
+    Source Dependency: org.apache.ivy:ivy:2.5.1
+    ID: GHSA-7286-pgfv-vxvh, Severity: critical, Score: 9.1, Transitive: Yes
+    Source Dependency: org.apache.zookeeper:zookeeper:3.6.3
+    ID: GHSA-r978-9m6m-6gm6, Severity: medium, Score: 5.3, Transitive: Yes
+    Source Dependency: org.apache.zookeeper:zookeeper:3.6.3
+    ID: GHSA-5jpm-x58v-624v, Severity: medium, Score: 5.3, Transitive: Yes
+    Source Dependency: io.netty:netty-codec-http:4.1.96.Final
+    ID: GHSA-xpw8-rcwv-8f8p, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: io.netty:netty-codec-http2:4.1.96.Final
+    ID: GHSA-389x-839f-4rhx, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: io.netty:netty-common:4.1.96.Final
+    ID: GHSA-xq3w-v528-46rv, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: io.netty:netty-common:4.1.96.Final
+    ID: GHSA-4g8c-wm8x-jfhw, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: io.netty:netty-handler:4.1.96.Final
+    ID: GHSA-q4rv-gq96-w7c5, Severity: high, Score: 7.2, Transitive: Yes
+    Source Dependency: org.eclipse.jetty:jetty-server:9.4.56.v20240826
+    ID: GHSA-qh8g-58pp-2wxh, Severity: medium, Score: 3.7, Transitive: Yes
+    Source Dependency: org.eclipse.jetty:jetty-http:9.4.56.v20240826
+    ID: GHSA-5mg8-w23w-74h3, Severity: low, Score: 3.3, Transitive: Yes
+    Source Dependency: com.google.guava:guava:14.0.1
+    ID: GHSA-7g45-4rm6-3mm3, Severity: medium, Score: 5.5, Transitive: Yes
+    Source Dependency: com.google.guava:guava:14.0.1
+    ID: GHSA-mvr2-9pj6-7w5j, Severity: medium, Score: 5.9, Transitive: Yes
+    Source Dependency: com.google.guava:guava:14.0.1
+
+- org.junit.jupiter:junit-jupiter-engine: 5.12.2 [NEW] [OLD]
+  Version: 5.12.2 [NEW] [OLD], Vulnerabilities: 0
+  Version: 5.13.0 , Vulnerabilities: 0
+  Version: 5.13.1 , Vulnerabilities: 0
+  Version: 5.13.0-RC1 , Vulnerabilities: 0
+  Version: 5.13.0-M3 , Vulnerabilities: 0
+  Version: 5.13.0-M2 , Vulnerabilities: 0
+  Version: 5.13.0-M1 , Vulnerabilities: 0
+
+- commons-cli:commons-cli: 1.5.0 [NEW] [OLD]
+  Version: 1.5.0 [NEW] [OLD], Vulnerabilities: 0
+  Version: 1.6.0 , Vulnerabilities: 0
+  Version: 1.7.0 , Vulnerabilities: 0
+  Version: 1.8.0 , Vulnerabilities: 0
+  Version: 1.9.0 , Vulnerabilities: 0
+  Version: 20040117.000000 , Vulnerabilities: 0
+
+- software.amazon.awssdk:s3: 2.31.43 [NEW] [OLD]
+  Version: 2.31.43 [NEW] [OLD], Vulnerabilities: 0
+  Version: 2.31.44 , Vulnerabilities: 0
+  Version: 2.31.45 , Vulnerabilities: 0
+  Version: 2.31.46 , Vulnerabilities: 0
+  Version: 2.31.47 , Vulnerabilities: 0
+  Version: 2.31.48 , Vulnerabilities: 0
+  Version: 2.31.49 , Vulnerabilities: 0
+  Version: 2.31.50 , Vulnerabilities: 0
+  Version: 2.31.51 , Vulnerabilities: 0
+  Version: 2.31.52 , Vulnerabilities: 0
+  Version: 2.31.53 , Vulnerabilities: 0
+  Version: 2.31.54 , Vulnerabilities: 0
+  Version: 2.31.55 , Vulnerabilities: 0
+  Version: 2.31.56 , Vulnerabilities: 0
+  Version: 2.31.57 , Vulnerabilities: 0
+  Version: 2.31.58 , Vulnerabilities: 0
+  Version: 2.31.59 , Vulnerabilities: 0
+  Version: 2.31.60 , Vulnerabilities: 0
+  Version: 2.31.61 , Vulnerabilities: 0
+  Version: 2.31.62 , Vulnerabilities: 0
+  Version: 2.31.63 , Vulnerabilities: 0
+  Version: 2.31.64 , Vulnerabilities: 0
+  Version: 2.31.65 , Vulnerabilities: 0
+  Version: 2.31.66 , Vulnerabilities: 0
+
+- org.slf4j:slf4j-simple: 2.0.17 [NEW] [OLD]
+  Version: 2.0.17 [NEW] [OLD], Vulnerabilities: 0
+  Version: 2.1.0-alpha1 , Vulnerabilities: 0
+  Version: 2.1.0-alpha0 , Vulnerabilities: 0
+
+- com.google.guava:guava: 33.4.8-jre [NEW] [OLD]
+  Version: 33.4.8-jre [NEW] [OLD], Vulnerabilities: 0
+
+It was executed:
+- Project Build: Yes
+- Project Tests: No
+- Exploratory Testing: No
+
+Vulnerabilities Summary:
+The information was obtained from Open Source Insights, which gathers security advisories information from OSV.
+
+Number of dependencies with vulnerabilities:
+ Before: 3 After: 2
+Number of vulnerabilities:
+ Before: 33 After: 4
+Before execution, total vulnerabilities were:
+ Low: 2, Medium: 19, High: 10, Critical: 2
+After execution, total vulnerabilities are:
+ Low: 0, Medium: 1, High: 3, Critical: 0
+Details of vulnerabilities before execution:
+Dependency com.github.crawler-commons:crawler-commons: 1.4:
+- ID: GHSA-78wr-2p64-hpwj, Severity: high, Score: 7.5, Transitive: Yes
+Dependency org.apache.spark:spark-core_2.12: 3.5.5:
+- ID: GHSA-5mg8-w23w-74h3, Severity: low, Score: 3.3, Transitive: Yes
+- ID: GHSA-7g45-4rm6-3mm3, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-mvr2-9pj6-7w5j, Severity: medium, Score: 5.9, Transitive: Yes
+- ID: GHSA-4265-ccf5-phj5, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-4g9r-vxhx-9pgx, Severity: medium, Score: 5.9, Transitive: Yes
+- ID: GHSA-cgwf-w82q-5jrr, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-r978-9m6m-6gm6, Severity: medium, Score: 5.3, Transitive: Yes
+- ID: GHSA-5jpm-x58v-624v, Severity: medium, Score: 5.3, Transitive: Yes
+- ID: GHSA-389x-839f-4rhx, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-xq3w-v528-46rv, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-2jc4-r94c-rp7h, Severity: high, Score: 8.2, Transitive: Yes
+- ID: GHSA-xpw8-rcwv-8f8p, Severity: high, Score: 7.5, Transitive: Yes
+- ID: GHSA-4g8c-wm8x-jfhw, Severity: high, Score: 7.5, Transitive: Yes
+- ID: GHSA-735f-pc8j-v9w8, Severity: high, Score: 7.5, Transitive: Yes
+- ID: GHSA-7286-pgfv-vxvh, Severity: critical, Score: 9.1, Transitive: Yes
+Dependency org.apache.spark:spark-sql_2.12: 3.5.5:
+- ID: GHSA-735f-pc8j-v9w8, Severity: high, Score: 7.5, Transitive: Yes
+- ID: GHSA-2jc4-r94c-rp7h, Severity: high, Score: 8.2, Transitive: Yes
+- ID: GHSA-xpw8-rcwv-8f8p, Severity: high, Score: 7.5, Transitive: Yes
+- ID: GHSA-4g8c-wm8x-jfhw, Severity: high, Score: 7.5, Transitive: Yes
+- ID: GHSA-q4rv-gq96-w7c5, Severity: high, Score: 7.2, Transitive: Yes
+- ID: GHSA-4265-ccf5-phj5, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-4g9r-vxhx-9pgx, Severity: medium, Score: 5.9, Transitive: Yes
+- ID: GHSA-cgwf-w82q-5jrr, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-r978-9m6m-6gm6, Severity: medium, Score: 5.3, Transitive: Yes
+- ID: GHSA-5jpm-x58v-624v, Severity: medium, Score: 5.3, Transitive: Yes
+- ID: GHSA-389x-839f-4rhx, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-xq3w-v528-46rv, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-qh8g-58pp-2wxh, Severity: medium, Score: 3.7, Transitive: Yes
+- ID: GHSA-7g45-4rm6-3mm3, Severity: medium, Score: 5.5, Transitive: Yes
+- ID: GHSA-mvr2-9pj6-7w5j, Severity: medium, Score: 5.9, Transitive: Yes
+- ID: GHSA-7286-pgfv-vxvh, Severity: critical, Score: 9.1, Transitive: Yes
+- ID: GHSA-5mg8-w23w-74h3, Severity: low, Score: 3.3, Transitive: Yes
+Details of vulnerabilities after execution:
+Dependency com.github.crawler-commons:crawler-commons: 1.4:
+- ID: GHSA-78wr-2p64-hpwj, Severity: high, Score: 7.5, Transitive: Yes
+Dependency org.apache.spark:spark-sql_2.12: 3.5.5:
+- ID: GHSA-735f-pc8j-v9w8, Severity: high, Score: 7.5, Transitive: Yes
+- ID: GHSA-q4rv-gq96-w7c5, Severity: high, Score: 7.2, Transitive: Yes
+- ID: GHSA-qh8g-58pp-2wxh, Severity: medium, Score: 3.7, Transitive: Yes
+
+CSV:
+Number of dependencies with vulnerabilities (Before),Number of dependencies with vulnerabilities (After),Number of vulnerabilities (Before),Number of vulnerabilities (After),Low vulnerabilities (Before),Low vulnerabilities (After),Medium vulnerabilities (Before),Medium vulnerabilities (After),High vulnerabilities (Before),High vulnerabilities (After),Critical vulnerabilities (Before),Critical vulnerabilities (After),Project Type,Tests
+3,2,33,4,2,0,19,1,10,3,2,0,maven,false
+Recommendations:
+- Prioritize updating dependencies to their latest, compatible versions that pass all builds and tests, while also manually reviewing and applying updates to the most secure versions available, even if this requires additional compatibility adjustments.
+- Regularly conduct comprehensive security audits to promptly identify and address vulnerabilities within dependencies, incorporating both automated tools and expert reviews to ensure thorough coverage.
+- Adopt secure coding practices throughout the development lifecycle to prevent the introduction of vulnerabilities, emphasizing code reviews, secure coding standards, and developer training on security best practices.
+- Leverage automated testing, continuous integration, and continuous deployment (CI/CD) pipelines to maintain high standards of code quality and security, ensuring that any changes, including dependency updates, undergo rigorous testing before deployment.
+
+Please consider the above recommendations to improve the security and stability of your project.
+
+
+Stopping java container...
+java-container-safer-commoncrawl_cc-index-table
+Deleting Java container...
+java-container-safer-commoncrawl_cc-index-table

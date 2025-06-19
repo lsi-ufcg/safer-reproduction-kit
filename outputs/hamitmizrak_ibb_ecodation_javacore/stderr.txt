@@ -1,0 +1,37 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:23-jdk-jammy
+#2 ERROR: docker.io/library/eclipse-temurin:23-jdk-jammy: not found
+------
+ > [internal] load metadata for docker.io/library/eclipse-temurin:23-jdk-jammy:
+------
+Dockerfile:3
+--------------------
+   1 |     ARG JAVA_VERSION=17
+   2 |     
+   3 | >>> FROM eclipse-temurin:${JAVA_VERSION}-jdk-jammy
+   4 |     #MAVEN start
+   5 |     ENV MAVEN_HOME /usr/share/maven
+--------------------
+ERROR: failed to solve: eclipse-temurin:23-jdk-jammy: failed to resolve source metadata for docker.io/library/eclipse-temurin:23-jdk-jammy: docker.io/library/eclipse-temurin:23-jdk-jammy: not found
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/java/init-java-container.sh 23 /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hamitmizrak_ibb_ecodation_javacore /media/lsi/HDD/safer/safer-reproduction-kit/safer
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.initJavaContainer (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/java/java-runner.ts:13:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:50:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1039582,
+  stdout: null,
+  stderr: null
+}
+Error during Maven build.

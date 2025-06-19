@@ -1,0 +1,503 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.melloware</groupId>
+	<artifactId>jintellitype</artifactId>
+	<version>1.5.7-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>JIntellitype</name>
+	<description>JIntellitype - JNI Java bridge to Microsoft Intellitype commands.</description>
+	<url>https://www.melloware.com</url>
+	<inceptionYear>1999</inceptionYear>
+	<organization>
+		<name>Melloware Inc</name>
+		<url>https://www.melloware.com</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>mellowaredev@gmail.com</id>
+			<name>Melloware</name>
+			<email>mellowaredev@gmail.com</email>
+			<url>https://www.melloware.com</url>
+			<organization>Melloware Inc</organization>
+			<organizationUrl>https://www.melloware.com</organizationUrl>
+			<roles>
+				<role>Architect</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Bertrand Florat</name>
+			<email>bflorat@users.sourceforge.net</email>
+			<url>https://jajuk.info</url>
+			<organization>Jajuk Team</organization>
+			<organizationUrl>http://jajuk.info</organizationUrl>
+			<roles>
+				<role>Code Contributor</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Peter Fichtner</name>
+			<email>fichtner@c2tn.de</email>
+			<url>https://www.c2tn.de</url>
+			<organization>C2TN Team</organization>
+			<organizationUrl>https://www.c2tn.de</organizationUrl>
+			<roles>
+				<role>Code Contributor</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Thomas Beckers</name>
+			<email />
+			<url>https://www.atunes.org/</url>
+			<organization>aTunes Team</organization>
+			<organizationUrl>https://www.atunes.org/</organizationUrl>
+			<roles>
+				<role>Code Contributor</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Karl von Randow</name>
+			<email />
+			<url>https://xk72.com/</url>
+			<organization>XK72</organization>
+			<organizationUrl>https://xk72.com/</organizationUrl>
+			<roles>
+				<role>Code Contributor</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Johannes Frank</name>
+			<email />
+			<url>http://radis.sf.net/</url>
+			<organization>RadiS</organization>
+			<organizationUrl>http://radis.sf.net/</organizationUrl>
+			<roles>
+				<role>Code Contributor</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Wordoholic</name>
+			<email />
+			<url>https://wordoholic.com/</url>
+			<organization>Wordoholic</organization>
+			<organizationUrl>https://wordoholic.com/</organizationUrl>
+			<roles>
+				<role>Code Contributor</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Zeroflag</name>
+			<email />
+			<url />
+			<organization>ZeroFlag</organization>
+			<organizationUrl />
+			<roles>
+				<role>x64 DLL Contributor</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Lars</name>
+			<email />
+			<url />
+			<organization>Hamburg</organization>
+			<organizationUrl />
+			<roles>
+				<role>Strings for Register Hotkeys</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Rocket</name>
+			<email>ma2014119@outlook.com</email>
+			<url>https://github.com/RocketMaDev</url>
+			<organization />
+			<organizationUrl />
+			<roles>
+				<role>Make it usable above JDK 9</role>
+			</roles>
+		</contributor>
+	</contributors>
+	<scm>
+		<connection>scm:git:https://github.com/melloware/jintellitype.git</connection>
+		<developerConnection>scm:git:https://github.com/melloware/jintellitype.git</developerConnection>
+		<url>https://github.com/melloware/jintellitype</url>
+	</scm>
+	<properties>
+		<organization.logo>https://melloware.com/images/header.jpg</organization.logo>
+		<default.encoding>UTF-8</default.encoding>
+		<project.build.sourceEncoding>${default.encoding}</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${default.encoding}</project.reporting.outputEncoding>
+		<maven.compiler.plugin.encoding>${default.encoding}</maven.compiler.plugin.encoding>
+		<maven.compiler.release>8</maven.compiler.release>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>3.1.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.14.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>3.11.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.3.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.7.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.melloware.jintellitype.Main</mainClass>
+						</manifest>
+					</archive>
+					<descriptors>
+						<descriptor>src/assembly/descriptor.xml</descriptor>
+					</descriptors>
+					<outputDirectory>target/assembly</outputDirectory>
+					<workDirectory>target/assembly/work</workDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<!-- this is used for inheritance merges -->
+						<phase>package</phase>
+						<!-- append to the packaging phase. -->
+						<goals>
+							<goal>single</goal>
+							<!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.11.2</version>
+				<configuration>
+					<source>${maven.compiler.release}</source>
+					<detectJavaApiLink>false</detectJavaApiLink>
+					<quiet>true</quiet>
+					<doclint>none</doclint>
+					<failOnError>false</failOnError>
+					<failOnWarnings>false</failOnWarnings>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<propertiesEncoding>${project.build.sourceEncoding}</propertiesEncoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.4.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.melloware.jintellitype.Main</mainClass>
+						</manifest>
+						<manifestEntries>
+							<URL>${project.url}</URL>
+							<Extension-Name>${project.artifactId}</Extension-Name>
+							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
+							<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
+							<Implementation-Title>${project.description}</Implementation-Title>
+							<Implementation-Version>${project.version}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<addGroupIdToProjectName>true</addGroupIdToProjectName>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<version>3.5.3</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>3.5.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- avoid loading the dll into the main maven process: -->
+					<forkCount>1</forkCount>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changes-plugin</artifactId>
+				<version>2.12.1</version>
+				<executions>
+					<execution>
+						<id>validate-changes</id>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>changes-validate</goal>
+						</goals>
+						<configuration>
+							<failOnError>true</failOnError>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jreleaser</groupId>
+				<artifactId>jreleaser-maven-plugin</artifactId>
+				<version>1.18.0</version>
+				<configuration>
+					<jreleaser>
+						<release>
+							<github>
+								<tagName>{{projectVersion}}</tagName>
+								<releaseName>{{projectVersion}}</releaseName>
+								<overwrite>true</overwrite>
+								<changelog>
+									<formatted>ALWAYS</formatted>
+									<format>- {{commitShortHash}} {{commitTitle}}</format>
+									<preset>conventional-commits</preset>
+									<categories>
+										<category>
+											<title>Breaking Changes 💥</title>
+											<labels>
+												<label>breaking-change</label>
+											</labels>
+										</category>
+										<category>
+											<title>Security 🔒</title>
+											<labels>
+												<label>:lock: security</label>
+											</labels>
+										</category>
+										<category>
+											<title>Performance⚡</title>
+											<labels>
+												<label>:zap: performance</label>
+											</labels>
+										</category>
+										<category>
+											<title>New Features &amp; Enhancements 🎉</title>
+											<labels>
+												<label>new feature</label>
+												<label>enhancement</label>
+											</labels>
+										</category>
+										<category>
+											<title>Accessibility ♿</title>
+											<labels>
+												<label>accessibility</label>
+											</labels>
+										</category>
+										<category>
+											<title>Defects 🐞</title>
+											<labels>
+												<label>:lady_beetle: defect</label>
+											</labels>
+										</category>
+										<category>
+											<title>Dependencies 👒</title>
+											<labels>
+												<label>dependencies</label>
+											</labels>
+										</category>
+									</categories>
+									<contributors>
+										<format>- {{contributorName}}</format>
+									</contributors>
+									<hide>
+										<categories>merge</categories>
+										<contributors>GitHub,dependabot</contributors>
+									</hide>
+								</changelog>
+							</github>
+						</release>
+						<signing>
+							<active>ALWAYS</active>
+							<armored>true</armored>
+						</signing>
+						<deploy>
+							<maven>
+								<mavenCentral>
+									<sonatype>
+										<active>ALWAYS</active>
+										<url>https://central.sonatype.com/api/v1/publisher</url>
+										<stagingRepositories>target/staging-deploy</stagingRepositories>
+									</sonatype>
+								</mavenCentral>
+							</maven>
+						</deploy>
+					</jreleaser>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.0.0</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>summary</report>
+							<report>dependencies</report>
+							<report>dependency-convergence</report>
+							<report>project-team</report>
+							<report>license</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>3.6.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.11.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<show>private</show>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.26.0</version>
+				<configuration>
+					<rulesets>
+						<ruleset>/rulesets/basic.xml</ruleset>
+						<ruleset>/rulesets/imports.xml</ruleset>
+						<ruleset>/rulesets/unusedcode.xml</ruleset>
+						<ruleset>/rulesets/finalizers.xml</ruleset>
+						<ruleset>/rulesets/logging-jakarta-commons.xml</ruleset>
+						<ruleset>/rulesets/logging-java.xml</ruleset>
+						<ruleset>/rulesets/migrating_to_15.xml</ruleset>
+						<ruleset>/rulesets/design.xml</ruleset>
+						<ruleset>/rulesets/strings.xml</ruleset>
+					</rulesets>
+					<minimumTokens>150</minimumTokens>
+					<targetJdk>${maven.compiler.release}</targetJdk>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changes-plugin</artifactId>
+				<version>2.12.1</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>changes-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+	<profiles>
+		<profile>
+			<id>release</id>
+			<properties>
+				<altDeploymentRepository>local::file:./target/staging-deploy</altDeploymentRepository>
+			</properties>
+			<build>
+				<defaultGoal>deploy jreleaser:full-release</defaultGoal>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<attach>true</attach>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<attach>true</attach>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

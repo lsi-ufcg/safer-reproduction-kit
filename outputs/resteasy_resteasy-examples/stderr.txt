@@ -1,0 +1,300 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:11-jdk-jammy
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:11-jdk-jammy@sha256:e76884f585036b97226325114719591f0d564ab4702548b746d90a206d8b491f
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:9a223c677387980f1ca87a98a4e509620f8c97742f8b8a62936bef90a0504a19 done
+#7 naming to docker.io/library/java-setup-11 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 12:58:48 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 12:58:48 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 12:58:49 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 12:58:49 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 998ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 12:58:50 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 12:58:52 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 33ms
+Dependency jakarta.enterprise.concurrent:jakarta.enterprise.concurrent-api not found in POM.
+Dependency org.jboss.arquillian.junit5:arquillian-junit5-container not found in POM.
+Dependency org.eclipse.parsson:parsson not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency jakarta.json:jakarta.json-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency jakarta.annotation:jakarta.annotation-api not found in POM.
+Dependency org.jboss.arquillian.protocol:arquillian-protocol-servlet-jakarta not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-p-provider not found in POM.
+Dependency jakarta.inject:jakarta.inject-api not found in POM.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 1:01:41 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 1:01:41 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 1:01:41 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 1:01:41 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 806ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 1:01:42 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 1:01:43 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 38ms
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency org.wildfly.arquillian:wildfly-arquillian-container-managed not found in POM.
+Dependency jakarta.enterprise:jakarta.enterprise.cdi-api not found in POM.
+Dependency org.jboss.arquillian.protocol:arquillian-protocol-servlet-jakarta not found in POM.
+Dependency org.jboss.arquillian.junit5:arquillian-junit5-container not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency org.wildfly.arquillian:wildfly-arquillian-container-bootable not found in POM.
+Dependency org.jboss.logmanager:jboss-logmanager not found in POM.
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-undertow-cdi not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency jakarta.enterprise.concurrent:jakarta.enterprise.concurrent-api not found in POM.
+Dependency org.jboss.arquillian.junit5:arquillian-junit5-container not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.jboss.arquillian.protocol:arquillian-protocol-rest-jakarta not found in POM.
+Dependency jakarta.json:jakarta.json-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency jakarta.persistence:jakarta.persistence-api not found in POM.
+Dependency jakarta.annotation:jakarta.annotation-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency jakarta.inject:jakarta.inject-api not found in POM.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 1:03:51 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 1:03:52 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 1:03:52 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 1:03:52 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 817ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 1:03:53 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 1:03:54 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 25ms
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency org.jboss.logging:jboss-logging not found in POM.
+Dependency jakarta.transaction:jakarta.transaction-api not found in POM.
+Dependency org.wildfly.arquillian:wildfly-arquillian-container-managed not found in POM.
+Dependency jakarta.enterprise:jakarta.enterprise.cdi-api not found in POM.
+Dependency jakarta.validation:jakarta.validation-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency jakarta.inject:jakarta.inject-api not found in POM.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 1:06:02 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 1:06:02 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 1:06:02 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 1:06:03 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 948ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 1:06:03 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 1:06:05 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 9ms
+Dependency dev.resteasy.junit.extension:resteasy-junit-extension not found in POM.
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency org.jboss.resteasy:resteasy-undertow-cdi not found in POM.
+Dependency org.jboss.resteasy:resteasy-jsapi not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency jakarta.enterprise.concurrent:jakarta.enterprise.concurrent-api not found in POM.
+Dependency org.jboss.arquillian.junit5:arquillian-junit5-container not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.jboss.arquillian.protocol:arquillian-protocol-rest-jakarta not found in POM.
+Dependency jakarta.json:jakarta.json-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-multipart-provider not found in POM.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 1:08:12 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 1:08:12 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 1:08:13 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 1:08:13 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 807ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 1:08:13 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 1:08:15 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 35ms
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency jakarta.persistence:jakarta.persistence-api not found in POM.
+Dependency jakarta.annotation:jakarta.annotation-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency jakarta.inject:jakarta.inject-api not found in POM.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 1:10:26 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 1:10:26 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 1:10:27 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 1:10:27 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 792ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 1:10:27 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 1:10:29 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 29ms
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency org.jboss.logging:jboss-logging not found in POM.
+Dependency jakarta.transaction:jakarta.transaction-api not found in POM.
+Dependency org.wildfly.arquillian:wildfly-arquillian-container-managed not found in POM.
+Dependency jakarta.enterprise:jakarta.enterprise.cdi-api not found in POM.
+Dependency jakarta.validation:jakarta.validation-api not found in POM.
+Dependency org.jboss.arquillian.protocol:arquillian-protocol-servlet-jakarta not found in POM.
+Dependency jakarta.json.bind:jakarta.json.bind-api not found in POM.
+Dependency org.jboss.arquillian.junit5:arquillian-junit5-container not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency jakarta.json:jakarta.json-api not found in POM.
+Dependency org.wildfly.arquillian:wildfly-arquillian-container-managed not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency org.eclipse.microprofile.openapi:microprofile-openapi-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency org.jboss.resteasy:resteasy-servlet-initializer not found in POM.
+Dependency org.jboss.arquillian.protocol:arquillian-protocol-servlet-jakarta not found in POM.
+Dependency org.jboss.resteasy:resteasy-crypto not found in POM.
+Dependency org.jboss.arquillian.junit5:arquillian-junit5-container not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.wildfly.arquillian:wildfly-arquillian-container-managed not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency org.jboss.resteasy:resteasy-jaxb-provider not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-p-provider not found in POM.
+Dependency org.jboss.logmanager:jboss-logmanager not found in POM.
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-undertow-cdi not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.
+Dependency org.jboss.resteasy:resteasy-multipart-provider not found in POM.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 1:12:39 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 1:12:39 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 1:12:40 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 1:12:40 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 932ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 1:12:41 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 1:12:42 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 27ms
+Dependency org.jboss.arquillian.protocol:arquillian-protocol-servlet-jakarta not found in POM.
+Dependency org.jboss.arquillian.junit5:arquillian-junit5-container not found in POM.
+Dependency org.jboss.resteasy:resteasy-json-binding-provider not found in POM.
+Dependency jakarta.inject:jakarta.inject-api not found in POM.
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 19, 2025 1:14:45 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.5.5.Final
+Jun 19, 2025 1:14:45 PM org.jboss.as.server.ApplicationServerService start
+INFO: WFLYSRV0049: WildFly Core 26.0.1.Final starting
+Jun 19, 2025 1:14:46 PM org.jboss.as.server.ServerService finishBoot
+INFO: WFLYSRV0212: Resuming server
+Jun 19, 2025 1:14:46 PM org.jboss.as.server.BootstrapListener printBootStatisticsMessage
+INFO: WFLYSRV0025: WildFly Core 26.0.1.Final started in 1081ms - Started 27 of 30 services (3 services are lazy, passive or on-demand) - Server configuration file in use: standalone.xml - Minimum feature stability level: community
+Jun 19, 2025 1:14:46 PM org.wildfly.security.Version <clinit>
+INFO: ELY00001: WildFly Elytron version 2.6.0.Final
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.wildfly.extension.elytron.SSLDefinitions (jar:file:/app/bootable-jar/target/wildfly-bootable/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-26.0.1.Final.jar!/) to method com.sun.net.ssl.internal.ssl.Provider.isFIPS()
+WARNING: Please consider reporting this to the maintainers of org.wildfly.extension.elytron.SSLDefinitions
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Jun 19, 2025 1:14:47 PM org.jboss.as.server.ApplicationServerService stop
+INFO: WFLYSRV0050: WildFly Core 26.0.1.Final stopped in 9ms
+Dependency org.junit.jupiter:junit-jupiter not found in POM.
+Dependency jakarta.ws.rs:jakarta.ws.rs-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-core not found in POM.
+Dependency org.jboss.resteasy:resteasy-tracing-api not found in POM.
+Dependency jakarta.servlet:jakarta.servlet-api not found in POM.
+Dependency org.wildfly.arquillian:wildfly-arquillian-container-managed not found in POM.
+Dependency jakarta.enterprise:jakarta.enterprise.cdi-api not found in POM.
+Dependency org.jboss.resteasy:resteasy-client not found in POM.

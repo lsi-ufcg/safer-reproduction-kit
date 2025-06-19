@@ -1,0 +1,794 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:33:30 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:33:32 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:33:34 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:33:35 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:33:37 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:33:39 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:33:39 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:33:39 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:33:39 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:33:39 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:33:39 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:33:39 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:33:40 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Target version not found in available versions.  com.hazelcast:hazelcast:tests
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3914518,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3918192,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3919656,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3921984,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3923471,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3925334,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3926885,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3928532,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3930329,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3931645,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3933159,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3934810,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:38:59 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:01 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:39:03 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:05 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:06 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:08 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:39:08 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:39:08 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:39:08 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:39:08 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:39:08 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:39:09 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:39:09 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3936813,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:39:36 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:37 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:39:39 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:41 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:42 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:39:44 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:39:44 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:39:44 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:39:44 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:39:44 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:39:45 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:39:45 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:39:45 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3940478,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:40:12 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:14 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:40:16 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:18 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:19 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:40:21 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3944186,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:40:48 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:49 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:40:52 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:53 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:55 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:40:57 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3947424,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3949819,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3950386,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3950734,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:50:49 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:50:51 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:50:53 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:50:55 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:50:56 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:50:58 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:50:58 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:50:58 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:50:58 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:50:58 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:50:58 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:50:59 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:50:59 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:51:34 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:51:35 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:51:37 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:51:39 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:51:40 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:51:42 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:51:42 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:51:42 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:51:42 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:51:43 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:51:43 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:51:43 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:51:43 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3979652,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:52:17 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:52:19 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:52:21 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:52:23 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:52:24 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:52:26 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:52:26 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:52:26 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:52:26 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:52:26 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:52:27 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:52:27 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:52:27 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3981770,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:52:56 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:52:57 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:53:00 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:53:01 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:53:03 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:53:05 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:53:05 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:53:05 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:53:06 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:53:06 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:53:06 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:53:06 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:53:07 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3984018,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:53:39 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:53:40 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:53:43 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:53:44 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:53:46 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:53:48 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:53:48 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:53:48 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:53:48 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:53:48 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:53:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:53:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:53:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3986287,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3988644,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3989045,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/hazelcast_hazelcast-kubernetes false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3989342,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 19, 2025 5:54:39 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:54:41 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [2] retrying in 2 seconds...
+Jun 19, 2025 5:54:43 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:54:45 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:54:46 AM com.hazelcast.kubernetes.RetryUtils
+WARNING: Couldn't discover Hazelcast members using Kubernetes API, [1] retrying in 1 seconds...
+Jun 19, 2025 5:54:48 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-1
+Jun 19, 2025 5:54:48 AM com.hazelcast.kubernetes.KubernetesClient
+INFO: Using node name instead of public IP for node, must be available from client: node-name-2
+Jun 19, 2025 5:54:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:54:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API authorization failure! To use Hazelcast Kubernetes discovery, please check your 'api-token' property. Starting standalone.
+Jun 19, 2025 5:54:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:54:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network
+Jun 19, 2025 5:54:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Kubernetes API access is forbidden! Starting standalone. To use Hazelcast Kubernetes discovery, configure the required RBAC. For 'default' service account in 'default' namespace execute: `kubectl apply -f https://raw.githubusercontent.com/hazelcast/hazelcast-kubernetes/master/rbac.yaml`
+Jun 19, 2025 5:54:49 AM com.hazelcast.kubernetes.KubernetesClient
+WARNING: Cannot fetch public IPs of Hazelcast Member PODs, you won't be able to use Hazelcast Smart Client from outside of the Kubernetes network

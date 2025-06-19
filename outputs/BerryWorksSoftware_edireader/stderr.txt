@@ -1,0 +1,374 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 850 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.plugin.PluginControllerFactory lookForSpecificPlugin
+INFO: Plugin found for document type 850_X_003999: Purchase Order (for test purposes only)
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.plugin.PluginControllerFactory lookForSpecificPlugin
+INFO: Plugin found for document type 824: Application Advice
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextSegment
+WARNING: Too many fields for d segment (Segment terminator problem?) at segment 2, field 32
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextSimpleValue
+WARNING: Mandatory element missing in SEG segment at segment 1, field 3
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextSimpleValue
+WARNING: Mandatory element missing in SEG segment at segment 1, field 7
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextSimpleValue
+WARNING: Expected a simple token at segment 1, field 8
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextSimpleValue
+WARNING: Mandatory element missing in SEG segment at segment 1, field 10
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextSimpleValue
+WARNING: Mandatory element missing in SEG segment at segment 1, field 10
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer scanData
+WARNING: Too many characters in an element (delimiter problem?) at segment 1, field 1
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer getChars
+WARNING: Encountered end of data unexpectedly after reading 0 characters of an expected 1 character sequence
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextIntValue
+WARNING: Element must contain only digits at segment 3, field 3
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.plugin.PluginControllerFactory lookForSpecificPlugin
+INFO: Plugin found for document type 870: Order Status Report
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader parseStringFromNextElement
+WARNING: Mandatory element missing at segment 5, field 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseBINSequence
+WARNING: BIN segment missing mandatory length field at segment 5, field 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA07 has incorrect length. Expected 2 instead of 1 at segment 1, field 8
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseFunctionalGroup
+WARNING: Invalid beginning of segment at segment 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA04 has incorrect length. Expected 10 instead of 11 at segment 1, field 5
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA01 has incorrect length. Expected 2 instead of 4 at segment 1, field 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA15 has incorrect length. Expected 1 instead of 0 at segment 1, field 16
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA12 has incorrect length. Expected 5 instead of 8 at segment 1, field 13
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Control number error in GE segment. Expected 1210001 instead of 9210001 at segment 7, field 3
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseFunctionalGroup
+WARNING: Unexpected segment type in this context. Expected GE or ST instead of xGE at segment 7, field 1
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Control number error in IEA segment. Expected 000000121 instead of 000000921 at segment 8, field 3
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA08 has incorrect length. Expected 15 instead of 0 at segment 1, field 9
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA05 has incorrect length. Expected 2 instead of 3 at segment 1, field 6
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA02 has incorrect length. Expected 10 instead of 9 at segment 1, field 3
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Transaction count error in GE segment. Expected 1 instead of 44 at segment 7, field 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA13 has incorrect length. Expected 9 instead of 3 at segment 1, field 14
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.tokenizer.AbstractTokenizer nextSimpleValue
+WARNING: Mandatory element missing in GS segment at segment 2, field 6
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Mandatory element missing. Expected at least one non-space character instead of (empty) at segment 2, field 6
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseFunctionalGroup
+WARNING: Mandatory element missing. Expected at least one non-space character instead of (empty) at segment 2, field 6
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA11 has incorrect length. Expected 1 instead of 2 at segment 1, field 12
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA10 has incorrect length. Expected 4 instead of 3 at segment 1, field 11
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA09 has incorrect length. Expected 6 instead of 8 at segment 1, field 10
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA06 has incorrect length. Expected 15 instead of 6 at segment 1, field 7
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+WARNING: Transaction must be terminated with an SE segment at segment 7, field 1
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader preview
+WARNING: Invalid ISA16 sub-element delimiter
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Invalid ISA16 sub-element delimiter
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader preview
+WARNING: Invalid segment terminator
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader preview
+WARNING: Invalid ISA16 sub-element delimiter
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Invalid ISA16 sub-element delimiter
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Segment count error in SE segment. Expected 4 instead of 44 at segment 6, field 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader preview
+WARNING: Invalid ISA16 sub-element delimiter
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Invalid ISA16 sub-element delimiter
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseBINSequence
+WARNING: BIN object length must be numeric instead of xx at segment 5, field 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA03 has incorrect length. Expected 2 instead of 3 at segment 1, field 4
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Functional group count error in IEA segment. Expected 1 instead of 44 at segment 8, field 2
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseInterchange
+WARNING: Invalid beginning of segment at segment 1
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA14 has incorrect length. Expected 1 instead of 3 at segment 1, field 15
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.plugin.PluginControllerFactory lookForSpecificPlugin
+INFO: Plugin found for document type 870: Order Status Report
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: Control number error in SE segment. Expected 0000001 instead of 1111111 at segment 6, field 3
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 870 transaction
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.StandardReader recover
+WARNING: ISA fixed-length field ISA11 has incorrect length. Expected 1 instead of 2 at segment 1, field 12
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader preview
+WARNING: Invalid ISA16 sub-element delimiter
+Jun 19, 2025 4:32:20 PM com.berryworks.edireader.AnsiReader preview
+WARNING: Invalid segment terminator
+Jun 19, 2025 4:32:21 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:22 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:22 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:22 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:22 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:22 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:22 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:23 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:23 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:24 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:24 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:25 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:26 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:26 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:26 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:26 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:26 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+ERROR:  ''
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing ORDRSP message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.StandardReader recover
+WARNING: Control number error in UNE segment. Expected 16 instead of 99 at segment 6, field 3
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.StandardReader recover
+WARNING: Control number error in UNZ segment. Expected 841F60UNZ instead of not841F60UNZ at segment 10, field 3
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing ORDRSP message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.StandardReader recover
+WARNING: Message count error in UNE segment. Expected 1 instead of 111 at segment 6, field 2
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.StandardReader recover
+WARNING: Segment count error in UNT segment. Expected 8 instead of 88 at segment 9, field 2
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.StandardReader recover
+WARNING: Functional group count error in UNZ segment. Expected 1 instead of 11 at segment 10, field 2
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing DCQCKI message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.StandardReader recover
+WARNING: Control number error in UNT segment. Expected 1 instead of 11 at segment 9, field 3
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 824 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 204 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 204 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 204 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 204 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.AnsiReader
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.AnsiReader parseDocument
+INFO: Parsing 204 transaction
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.EdifactReaderWithCONTRL
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing INVOIC message
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EDIReader parse
+INFO: Created an EDIReader of type com.berryworks.edireader.EdifactReaderWithCONTRL
+Jun 19, 2025 4:32:27 PM com.berryworks.edireader.EdifactReader parseDocument
+INFO: Parsing INVOIC message
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/BerryWorksSoftware_edireader false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2562291,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/BerryWorksSoftware_edireader false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:42:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2566971,
+  stdout: null,
+  stderr: null
+}
+Error during Maven build.
