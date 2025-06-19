@@ -1,0 +1,157 @@
+Required Java version: 8
+Building Docker Image for project nivance_DPModel with Java version 8...
+Image built successfully. Running container...
+Maven build completed successfully.
+
+
+
+========= DEPENDENCIES NEWER VERSIONS ==========
+
+[
+  {
+    dependency: { group: 'javax.servlet', name: 'servlet-api', version: '2.5' },
+    newerVersions: [ '3.0-alpha-1', '2.5' ]
+  },
+  {
+    dependency: { group: 'dom4j', name: 'dom4j', version: '1.6.1' },
+    newerVersions: [ '1.6.1' ]
+  },
+  {
+    dependency: { group: 'junit', name: 'junit', version: '4.13.1' },
+    newerVersions: [ '4.13.2', '4.13.1' ]
+  }
+]
+
+
+
+========= DEPENDENCIES VERSIONS RANK ==========
+
+[
+  {
+    dependency: { group: 'javax.servlet', name: 'servlet-api', version: '2.5' },
+    rank: [
+      {
+        version: '2.5',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '3.0-alpha-1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'dom4j', name: 'dom4j', version: '1.6.1' },
+    rank: [
+      {
+        version: '1.6.1',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-6pcc-3rfx-4gpm',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: false,
+              sourceDependency: { group: 'dom4j', name: 'dom4j', version: '1.6.1' }
+            },
+            {
+              id: 'GHSA-hwj3-m3p6-hj38',
+              severity: 'critical',
+              severityScore: 9.8,
+              isTransitive: false,
+              sourceDependency: { group: 'dom4j', name: 'dom4j', version: '1.6.1' }
+            }
+          ],
+          rate: 71.5
+        }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'junit', name: 'junit', version: '4.13.1' },
+    rank: [
+      {
+        version: '4.13.1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '4.13.2',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  }
+]
+Applying version 2.5 with vulnerability rate 0 of servlet-api dependency in pom.xml
+Keeping the current version 2.5 of servlet-api
+
+
+Applying version 1.6.1 with vulnerability rate 71.5 of dom4j dependency in pom.xml
+Keeping the current version 1.6.1 of dom4j
+
+
+Applying version 4.13.1 with vulnerability rate 0 of junit dependency in pom.xml
+Keeping the current version 4.13.1 of junit
+
+
+Dependency and Security Report
+
+The information was obtained from Open Source Insights, which gathers security advisories information from OSV.
+
+Analyzed Dependencies:
+
+- javax.servlet:servlet-api: 2.5 [NEW] [OLD]
+  Version: 2.5 [NEW] [OLD], Vulnerabilities: 0
+  Version: 3.0-alpha-1 , Vulnerabilities: 0
+
+- dom4j:dom4j: 1.6.1 [NEW] [OLD]
+  Version: 1.6.1 [NEW] [OLD], Vulnerabilities: 71.5
+    ID: GHSA-6pcc-3rfx-4gpm, Severity: high, Score: 7.5, Transitive: No
+    Source Dependency: dom4j:dom4j:1.6.1
+    ID: GHSA-hwj3-m3p6-hj38, Severity: critical, Score: 9.8, Transitive: No
+    Source Dependency: dom4j:dom4j:1.6.1
+
+- junit:junit: 4.13.1 [NEW] [OLD]
+  Version: 4.13.1 [NEW] [OLD], Vulnerabilities: 0
+  Version: 4.13.2 , Vulnerabilities: 0
+
+It was executed:
+- Project Build: Yes
+- Project Tests: No
+- Exploratory Testing: No
+
+Vulnerabilities Summary:
+The information was obtained from Open Source Insights, which gathers security advisories information from OSV.
+
+Number of dependencies with vulnerabilities:
+ Before: 1 After: 1
+Number of vulnerabilities:
+ Before: 2 After: 2
+Before execution, total vulnerabilities were:
+ Low: 0, Medium: 0, High: 1, Critical: 1
+After execution, total vulnerabilities are:
+ Low: 0, Medium: 0, High: 1, Critical: 1
+Details of vulnerabilities before execution:
+Dependency dom4j:dom4j: 1.6.1:
+- ID: GHSA-6pcc-3rfx-4gpm, Severity: high, Score: 7.5, Transitive: No
+- ID: GHSA-hwj3-m3p6-hj38, Severity: critical, Score: 9.8, Transitive: No
+Details of vulnerabilities after execution:
+Dependency dom4j:dom4j: 1.6.1:
+- ID: GHSA-6pcc-3rfx-4gpm, Severity: high, Score: 7.5, Transitive: No
+- ID: GHSA-hwj3-m3p6-hj38, Severity: critical, Score: 9.8, Transitive: No
+
+CSV:
+Number of dependencies with vulnerabilities (Before),Number of dependencies with vulnerabilities (After),Number of vulnerabilities (Before),Number of vulnerabilities (After),Low vulnerabilities (Before),Low vulnerabilities (After),Medium vulnerabilities (Before),Medium vulnerabilities (After),High vulnerabilities (Before),High vulnerabilities (After),Critical vulnerabilities (Before),Critical vulnerabilities (After),Project Type,Tests
+1,1,2,2,0,0,0,0,1,1,1,1,maven,false
+Recommendations:
+- Prioritize updating dependencies to their latest, compatible versions that pass all builds and tests, while also manually reviewing and applying updates to the most secure versions available, even if this requires additional compatibility adjustments.
+- Regularly conduct comprehensive security audits to promptly identify and address vulnerabilities within dependencies, incorporating both automated tools and expert reviews to ensure thorough coverage.
+- Adopt secure coding practices throughout the development lifecycle to prevent the introduction of vulnerabilities, emphasizing code reviews, secure coding standards, and developer training on security best practices.
+- Leverage automated testing, continuous integration, and continuous deployment (CI/CD) pipelines to maintain high standards of code quality and security, ensuring that any changes, including dependency updates, undergo rigorous testing before deployment.
+
+Please consider the above recommendations to improve the security and stability of your project.
+
+
+Stopping java container...
+java-container-safer-nivance_DPModel
+Deleting Java container...
+java-container-safer-nivance_DPModel

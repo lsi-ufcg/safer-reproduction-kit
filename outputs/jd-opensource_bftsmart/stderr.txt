@@ -1,0 +1,547 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+2025-06-18 10:59:22.301 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 351 scheduleReceiving - Error occurred while connecting to remote! --[Me=1][Remote=0] Connection reset utils.io.RuntimeIOException: Connection reset
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.MacAuthenticator.receiveDHKey(MacAuthenticator.java:115) ~[classes/:?]
+	at bftsmart.communication.impl.socket.MacAuthenticator.authenticate(MacAuthenticator.java:82) ~[classes/:?]
+	at bftsmart.communication.impl.socket.MacAuthenticator.authenticate(MacAuthenticator.java:62) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.getAuthenticatedChannel(AbstractStreamConnection.java:452) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.getInputStream(AbstractStreamConnection.java:510) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:347) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 9 more
+
+2025-06-18 10:59:38.704 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 10:59:38.704 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=1] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 10:59:42.705 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 10:59:42.705 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=2] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 10:59:46.706 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 10:59:46.706 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 10:59:50.710 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=1] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 10:59:50.710 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=2] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 10:59:54.711 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=1] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 10:59:54.711 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 10:59:58.714 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=2] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 10:59:58.714 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+Dependency commons-codec:commons-codec not found in POM.
+Dependency commons-io:commons-io not found in POM.
+2025-06-18 11:01:15.427 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 351 scheduleReceiving - Error occurred while connecting to remote! --[Me=1][Remote=0] Connection reset utils.io.RuntimeIOException: Connection reset
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.MacAuthenticator.receiveDHKey(MacAuthenticator.java:115) ~[classes/:?]
+	at bftsmart.communication.impl.socket.MacAuthenticator.authenticate(MacAuthenticator.java:82) ~[classes/:?]
+	at bftsmart.communication.impl.socket.MacAuthenticator.authenticate(MacAuthenticator.java:62) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.getAuthenticatedChannel(AbstractStreamConnection.java:452) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.getInputStream(AbstractStreamConnection.java:510) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:347) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 9 more
+
+2025-06-18 11:01:31.750 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:01:31.750 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=1] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:01:35.750 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:01:35.750 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=2] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:01:39.751 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:01:39.751 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:01:43.753 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=1] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:01:43.753 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=2] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:01:47.754 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:01:47.754 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=1] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:01:51.758 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=2] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:01:51.758 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+Dependency org.apache.commons:commons-collections4 not found in POM.
+Dependency io.netty:netty-all not found in POM.
+Dependency org.bouncycastle:bcprov-jdk15on not found in POM.
+Dependency org.springframework.boot:spring-boot-starter-log4j2 not found in POM.
+Dependency junit:junit not found in POM.
+2025-06-18 11:02:45.501 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 351 scheduleReceiving - Error occurred while connecting to remote! --[Me=1][Remote=0] Connection reset utils.io.RuntimeIOException: Connection reset
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.MacAuthenticator.receiveDHKey(MacAuthenticator.java:115) ~[classes/:?]
+	at bftsmart.communication.impl.socket.MacAuthenticator.authenticate(MacAuthenticator.java:82) ~[classes/:?]
+	at bftsmart.communication.impl.socket.MacAuthenticator.authenticate(MacAuthenticator.java:62) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.getAuthenticatedChannel(AbstractStreamConnection.java:452) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.getInputStream(AbstractStreamConnection.java:510) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:347) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 9 more
+
+2025-06-18 11:03:01.820 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=1] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:03:01.820 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:03:05.821 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:03:05.821 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=2] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:03:09.824 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=0][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:03:09.825 [Receiver-Thread-From-Remote[0]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=0] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:03:13.842 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=1] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:03:13.842 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=2] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:03:17.843 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=1][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+2025-06-18 11:03:17.843 [Receiver-Thread-From-Remote[1]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=1] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:03:21.850 [Receiver-Thread-From-Remote[2]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=3][Remote=2] No enough data to read as integer from the specified input stream! utils.IllegalDataException: No enough data to read as integer from the specified input stream!
+	at utils.io.BytesUtils.readInt(BytesUtils.java:649) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+
+2025-06-18 11:03:21.850 [Receiver-Thread-From-Remote[3]] ERROR bftsmart.communication.impl.socket.AbstractStreamConnection 367 scheduleReceiving - Error occurred while reading the input message! --[Me=2][Remote=3] Socket closed utils.io.RuntimeIOException: Socket closed
+	at utils.io.BytesUtils.readInt(BytesUtils.java:654) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.readMessage(AbstractStreamConnection.java:411) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.scheduleReceiving(AbstractStreamConnection.java:364) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection.access$100(AbstractStreamConnection.java:34) ~[classes/:?]
+	at bftsmart.communication.impl.socket.AbstractStreamConnection$2.run(AbstractStreamConnection.java:121) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_452]
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_452]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_452]
+	at java.io.FilterInputStream.read(FilterInputStream.java:83) ~[?:1.8.0_452]
+	at utils.io.BytesUtils.readInt(BytesUtils.java:644) ~[utils-common-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	... 5 more
+
+Dependency org.mockito:mockito-core not found in POM.

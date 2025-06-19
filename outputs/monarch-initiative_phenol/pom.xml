@@ -1,0 +1,393 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <groupId>org.monarchinitiative.phenol</groupId>
+  <artifactId>phenol</artifactId>
+  <packaging>pom</packaging>
+  <version>2.1.2</version>
+
+  <name>Phenol</name>
+
+  <description>Phenotype Ontology Library</description>
+  <url>https://github.com/monarch-initiative/phenol</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>11</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+
+    <obographs.version>0.3.1</obographs.version>
+    <jackson.version>2.14.3</jackson.version>
+    <guava.version>[32.0.1-jre,)</guava.version>
+    <snakeyaml.version>[2.0,3.0)</snakeyaml.version>
+    <jgrapht.version>1.5.2</jgrapht.version>
+    <slf4j.version>[2.0,3.0)</slf4j.version>
+    <commons-codec.version>1.15</commons-codec.version>
+    <commons-csv.version>1.10.0</commons-csv.version>
+    <h2.version>[2.2.220,3.0)</h2.version>
+    <picocli.version>4.6.3</picocli.version>
+
+    <hamcrest.version>2.2</hamcrest.version>
+    <junit.jupiter.version>5.9.3</junit.jupiter.version>
+    <mockito.version>5.3.1</mockito.version>
+    <jmh.version>1.37</jmh.version>
+  </properties>
+
+  <modules>
+    <module>phenol-core</module>
+    <module>phenol-io</module>
+    <module>phenol-annotations</module>
+    <module>phenol-analysis</module>
+    <module>phenol-cli</module>
+  </modules>
+
+  <!-- Inherit artifact from SonaType OSS pom.xml Following this article:
+    http://java.dzone.com/articles/deploy-maven-central -->
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>9</version>
+  </parent>
+
+  <!-- License Information for Maven Central -->
+  <licenses>
+    <license>
+      <name>BSD 3-clause Clear License</name>
+      <url>https://spdx.org/licenses/BSD-3-Clause-Clear.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!-- Developers Information for Maven Central -->
+  <developers>
+    <developer>
+      <name>Sebastian Bauer</name>
+      <email>mail@sebastianbauer.info</email>
+    </developer>
+    <developer>
+      <name>Peter Robinson</name>
+      <email>peter.robinson@jax.org</email>
+      <organization>The Jackson Laboratory</organization>
+      <organizationUrl>https://www.jax.org</organizationUrl>
+    </developer>
+    <developer>
+      <name>Manuel Holtgrewe</name>
+      <email>Manuel.Holtgrewe@bihealth.de</email>
+      <organization>Berlin Institute of Health</organization>
+      <organizationUrl>https://www.bihealth.de</organizationUrl>
+    </developer>
+    <developer>
+      <name>Sebastian Koehler</name>
+      <email>sebastian.koehler@charite.de</email>
+      <organization>Charite University Medicine Berlin</organization>
+      <organizationUrl>https://www.charite.de</organizationUrl>
+    </developer>
+    <developer>
+      <name>HyeongSik Kim</name>
+      <email>HyeongSikKim@lbl.gov</email>
+      <organization>Lawrence Berkeley National Laboratory</organization>
+      <organizationUrl>https://www.lbl.gov</organizationUrl>
+    </developer>
+    <developer>
+      <name>Daniel Danis</name>
+      <email>daniel.danis@jax.org</email>
+      <organization>The Jackson Laboratory</organization>
+      <organizationUrl>https://www.jax.org</organizationUrl>
+    </developer>
+    <developer>
+      <name>Jules Jacobsen</name>
+      <url>https://github.com/julesjacobsen</url>
+    </developer>
+  </developers>
+
+  <!-- SCM Information for Maven Central -->
+  <scm>
+    <connection>scm:git:git@github.com:monarch-initiative/phenol.git</connection>
+    <developerConnection>scm:git:git@github.com:monarch-initiative/phenol.git</developerConnection>
+    <url>scm:git:git@github.com:monarch-initiative/phenol.git</url>
+    <tag>v${project.version}</tag>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>2.1.0-alpha1</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jgrapht</groupId>
+        <artifactId>jgrapht-core</artifactId>
+        <version>1.5.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.geneontology.obographs</groupId>
+        <artifactId>obographs-core</artifactId>
+        <version>0.3.1</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.15</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>2.14.3</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.14.3</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-yaml</artifactId>
+        <version>2.15.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>2.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-csv</artifactId>
+        <version>1.10.0</version>
+      </dependency>
+      <dependency>
+        <groupId>info.picocli</groupId>
+        <artifactId>picocli</artifactId>
+        <version>4.6.3</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.5.13</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>2.1.0-alpha1</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>2.3.232</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.9.3</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>5.3.1</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest</artifactId>
+        <version>2.2</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.openjdk.jmh</groupId>
+        <artifactId>jmh-core</artifactId>
+        <version>1.37</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.openjdk.jmh</groupId>
+        <artifactId>jmh-generator-annprocess</artifactId>
+        <version>1.37</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+    </dependency>
+
+    <!-- Mockito mocking -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <showWarnings>true</showWarnings>
+            <showDeprecation>true</showDeprecation>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>2.7</version>
+          <configuration>
+            <generateBackupPoms>false</generateBackupPoms>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <!-- This profile should be activated only during local install or deploying a release. -->
+      <!-- The GPG plugin is used to sign the artifacts. Note that you need to set up your GPG key first. -->
+      <!-- Activate the profile by running e.g. `./mvnw -Prelease clean deploy` -->
+      <id>release</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-source-plugin</artifactId>
+              <version>2.2.1</version>
+              <executions>
+                <execution>
+                  <id>attach-sources</id>
+                  <goals>
+                    <goal>jar-no-fork</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <version>3.3.1</version>
+              <configuration>
+                <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+                <doclint>none</doclint>
+                <quiet>true</quiet>
+              </configuration>
+              <executions>
+                <execution>
+                  <id>attach-javadocs</id>
+                  <goals>
+                    <goal>jar</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-release-plugin</artifactId>
+              <version>3.0.0-M5</version>
+            </plugin>
+            <plugin>
+              <!-- override version of GPG plugin to use new GPG signing features -->
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-gpg-plugin</artifactId>
+              <version>1.6</version>
+              <executions>
+                <execution>
+                  <id>sign-artifacts</id>
+                  <phase>verify</phase>
+                  <goals>
+                    <goal>sign</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-deploy-plugin</artifactId>
+              <version>3.0.0-M2</version>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

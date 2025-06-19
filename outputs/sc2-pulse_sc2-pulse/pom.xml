@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (C) 2020-2025 Oleksandr Masniuk -->
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.9</version>
+    </parent>
+  <groupId>com.nephest.battlenet.sc2</groupId>
+  <artifactId>sc2-webapp</artifactId>
+  <version>1.62.0</version>
+  <packaging>${packaging.type}</packaging>
+
+  <name>SC2 Pulse</name>
+  <url>https://www.nephest.com/sc2/</url>
+
+    <organization>
+        <name>Oleksandr Masniuk</name>
+        <url>https://nephest.com</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GNU Affero General Public License, Version 3.0</name>
+            <url>https://www.gnu.org/licenses/agpl-3.0.en.html</url>
+            <comments>
+                The GNU Affero General Public License is a free,
+                copyleft license for software and other kinds of works.
+            </comments>
+        </license>
+    </licenses>
+    <inceptionYear>2020</inceptionYear>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <okhttp.version>4.12.0</okhttp.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+        <groupId>jakarta.platform</groupId>
+        <artifactId>jakarta.jakartaee-api</artifactId>
+        <version>10.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.11.4</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>5.16.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>5.16.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>mockwebserver</artifactId>
+        <version>4.12.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>io.projectreactor</groupId>
+        <artifactId>reactor-test</artifactId>
+        <version>3.5.19</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.20.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>6.1.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.17.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-batch</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-aop</artifactId>
+      </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-cache</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-oauth2-client</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+
+    <dependency>
+          <groupId>org.thymeleaf.extras</groupId>
+          <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+          <version>3.1.3.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>io.reactivex</groupId>
+        <artifactId>rxjava-reactive-streams</artifactId>
+        <version>1.2.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>de.codecentric</groupId>
+        <artifactId>spring-boot-admin-starter-server</artifactId>
+        <version>3.4.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.discord4j</groupId>
+        <artifactId>discord4j-core</artifactId>
+        <version>3.3.0-RC2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.github.twitch4j</groupId>
+        <artifactId>twitch4j</artifactId>
+        <version>1.24.0</version>
+    </dependency>
+
+      <dependency>
+          <groupId>org.springdoc</groupId>
+          <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+          <version>2.7.0-RC1</version>
+      </dependency>
+
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.7.7</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>webjars-locator</artifactId>
+        <version>0.52</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>jquery</artifactId>
+        <version>3.7.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>5.0.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>popper.js</artifactId>
+        <version>1.16.1-lts</version>
+    </dependency>
+
+    <dependency>
+    <groupId>org.webjars.npm</groupId>
+        <artifactId>hammerjs</artifactId>
+        <version>2.0.8</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>chart.js</artifactId>
+        <version>4.4.9</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>chartjs-plugin-zoom</artifactId>
+        <version>2.2.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>chartjs-plugin-annotation</artifactId>
+        <version>3.1.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>chartjs-scale-timestack</artifactId>
+        <version>1.0.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars.npm</groupId>
+        <artifactId>chartjs-adapter-luxon</artifactId>
+        <version>1.3.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>luxon</artifactId>
+      <version>3.6.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>select2</artifactId>
+        <version>4.0.13</version>
+    </dependency>
+
+  </dependencies>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-devtools</artifactId>
+                    <optional>true</optional>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <profiles>
+                                <profile>default</profile>
+                                <profile>dev</profile>
+                            </profiles>
+                            <arguments>
+                                <argument>--logging.level.com.nephest=DEBUG</argument>
+                                <argument>--spring.thymeleaf.cache=false</argument>
+                                <argument>--spring.thymeleaf.prefix=file:src/main/resources/templates/</argument>
+                            </arguments>
+                            <jvmArguments>-Dsun.net.client.defaultConnectTimeout=30000 -Dsun.net.client.defaultReadTimeout=30000</jvmArguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <packaging.type>war</packaging.type>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <scope>provided</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-actuator</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>de.codecentric</groupId>
+                    <artifactId>spring-boot-admin-starter-client</artifactId>
+                    <version>3.3.12</version>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>3.4.0</version>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <phase>prepare-package</phase>
+                                <goals><goal>run</goal></goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <target>
+                                <java classname="com.google.javascript.jscomp.CommandLineRunner" failonerror="true" fork="true">
+                                    <classpath>
+                                        <path refid="maven.plugin.classpath"/>
+                                    </classpath>
+                                    <!-- JS files have no dependency info. Including them in the same order as in base.html-->
+                                    <arg line="--compilation_level SIMPLE_OPTIMIZATIONS
+                                        --language_in ECMASCRIPT_2020
+                                        --language_out ECMASCRIPT_2015
+                                        --js ${basedir}/src/main/webapp/static/script/LuxonConfig.js
+                                        --js ${basedir}/src/main/webapp/static/script/IntervalExecutor.js
+                                        --js ${basedir}/src/main/webapp/static/script/Util.js
+                                        --js ${basedir}/src/main/webapp/static/script/BootstrapUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/ElementUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/enum.js
+                                        --js ${basedir}/src/main/webapp/static/script/EnumUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/CharacterUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/FollowUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/HistoryUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/LadderUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/Model.js
+                                        --js ${basedir}/src/main/webapp/static/script/Pagination.js
+                                        --js ${basedir}/src/main/webapp/static/script/PaginationUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/SeasonUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/MetaUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/Session.js
+                                        --js ${basedir}/src/main/webapp/static/script/SC2Restful.js
+                                        --js ${basedir}/src/main/webapp/static/script/ChartUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/StatsUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/TableUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/TeamUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/ViewUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/FormUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/ClanUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/Buffer.js
+                                        --js ${basedir}/src/main/webapp/static/script/BufferUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/MatchUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/VersusUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/VODUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/RevealUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/GroupUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/CommunityUtil.js
+                                        --js ${basedir}/src/main/webapp/static/script/MatrixUI.js
+                                        --js ${basedir}/src/main/webapp/static/script/EnhancementUtil.js
+                                        --js_output_file ${basedir}/target/sc2-webapp/static/script/sc2-restful.min.js"/>
+                                </java>
+                            </target>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.google.javascript</groupId>
+                                <artifactId>closure-compiler</artifactId>
+                                <version>v20240317</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+  <build>
+    <finalName>sc2-webapp</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.3.2</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.2.5</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.13.0</version>
+            <configuration>
+                <release>17</release>
+                <parameters>true</parameters>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <trimStackTrace>false</trimStackTrace>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>3.2.5</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>integration-test</goal>
+                        <goal>verify</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+  </build>
+</project>

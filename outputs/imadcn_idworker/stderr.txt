@@ -1,0 +1,1874 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+java.lang.NullPointerException
+	at org.apache.zookeeper.server.persistence.FileTxnSnapLog.fastForwardFromEdits(FileTxnSnapLog.java:269)
+	at org.apache.zookeeper.server.ZKDatabase.fastForwardDataBase(ZKDatabase.java:251)
+	at org.apache.zookeeper.server.ZooKeeperServer.shutdown(ZooKeeperServer.java:583)
+	at org.apache.zookeeper.server.ZooKeeperServer.shutdown(ZooKeeperServer.java:546)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.shutdown(NIOServerCnxnFactory.java:929)
+	at org.apache.curator.test.TestingZooKeeperMain.close(TestingZooKeeperMain.java:178)
+	at org.apache.curator.test.TestingZooKeeperServer.stop(TestingZooKeeperServer.java:118)
+	at org.apache.curator.test.TestingZooKeeperServer.close(TestingZooKeeperServer.java:130)
+	at org.apache.curator.test.TestingServer.close(TestingServer.java:178)
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1192386,
+  stdout: null,
+  stderr: null
+}
+java.lang.NullPointerException
+	at org.apache.zookeeper.server.persistence.FileTxnSnapLog.fastForwardFromEdits(FileTxnSnapLog.java:269)
+	at org.apache.zookeeper.server.ZKDatabase.fastForwardDataBase(ZKDatabase.java:251)
+	at org.apache.zookeeper.server.ZooKeeperServer.shutdown(ZooKeeperServer.java:583)
+	at org.apache.zookeeper.server.ZooKeeperServer.shutdown(ZooKeeperServer.java:546)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.shutdown(NIOServerCnxnFactory.java:929)
+	at org.apache.curator.test.TestingZooKeeperMain.close(TestingZooKeeperMain.java:178)
+	at org.apache.curator.test.TestingZooKeeperServer.stop(TestingZooKeeperServer.java:118)
+	at org.apache.curator.test.TestingZooKeeperServer.close(TestingZooKeeperServer.java:130)
+	at org.apache.curator.test.TestingServer.close(TestingServer.java:178)
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1193187,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1194072,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1194788,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1195697,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1196497,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1199214,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1200214,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1201188,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1202143,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1202745,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1203262,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1203977,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1204782,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1205317,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1205716,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1206131,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1206767,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1208058,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1208593,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1208963,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1209511,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1209867,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1210259,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1210543,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1211189,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1211759,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1212163,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1212492,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1212925,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1213192,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1213534,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1214142,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1214492,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1214813,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1215287,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1215647,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1216094,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1216402,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1216918,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1217221,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-10" Exception in thread "Thread-18" Exception in thread "Thread-16" Exception in thread "Thread-20" Exception in thread "Thread-2" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-28" Exception in thread "Thread-4" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-12" Exception in thread "Thread-22" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-14" Exception in thread "Thread-6" Exception in thread "Thread-8" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-24" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-26" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1218332,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-12" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-28" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-14" Exception in thread "Thread-10" Exception in thread "Thread-6" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-20" Exception in thread "Thread-8" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-22" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-26" Exception in thread "Thread-24" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-18" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-4" Exception in thread "Thread-16" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-2" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1265041,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-28" Exception in thread "Thread-10" Exception in thread "Thread-12" Exception in thread "Thread-14" Exception in thread "Thread-22" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-20" Exception in thread "Thread-8" Exception in thread "Thread-6" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-4" Exception in thread "Thread-16" Exception in thread "Thread-2" Exception in thread "Thread-18" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-26" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-24" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1303262,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-16" Exception in thread "Thread-10" Exception in thread "Thread-4" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-26" Exception in thread "Thread-18" Exception in thread "Thread-8" Exception in thread "Thread-14" Exception in thread "Thread-12" Exception in thread "Thread-22" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-24" Exception in thread "Thread-20" Exception in thread "Thread-2" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-28" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-6" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1352678,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-4" Exception in thread "Thread-28" Exception in thread "Thread-22" Exception in thread "Thread-24" Exception in thread "Thread-14" Exception in thread "Thread-8" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-26" Exception in thread "Thread-12" Exception in thread "Thread-6" Exception in thread "Thread-20" Exception in thread "Thread-2" Exception in thread "Thread-18" Exception in thread "Thread-10" Exception in thread "Thread-16" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1392324,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-14" Exception in thread "Thread-12" Exception in thread "Thread-28" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-2" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-8" Exception in thread "Thread-6" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-10" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-4" Exception in thread "Thread-16" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-18" Exception in thread "Thread-26" Exception in thread "Thread-24" Exception in thread "Thread-22" Exception in thread "Thread-20" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1413992,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-10" Exception in thread "Thread-16" Exception in thread "Thread-26" Exception in thread "Thread-8" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-14" Exception in thread "Thread-2" Exception in thread "Thread-4" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-28" Exception in thread "Thread-22" Exception in thread "Thread-6" Exception in thread "Thread-24" Exception in thread "Thread-12" Exception in thread "Thread-20" Exception in thread "Thread-18" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1442894,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-4" Exception in thread "Thread-10" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-16" Exception in thread "Thread-22" Exception in thread "Thread-24" Exception in thread "Thread-28" Exception in thread "Thread-18" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-20" Exception in thread "Thread-8" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-26" Exception in thread "Thread-12" Exception in thread "Thread-14" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-2" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-6" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1474117,
+  stdout: null,
+  stderr: null
+}
+Exception in thread "Thread-0" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-5" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-7" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-9" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-11" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-13" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-15" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-17" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-19" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-21" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-23" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-25" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-27" java.lang.NoSuchMethodError: org.apache.zookeeper.server.ZooKeeperServer.<init>(Lorg/apache/zookeeper/server/persistence/FileTxnSnapLog;IIILorg/apache/zookeeper/server/ZKDatabase;)V
+	at org.apache.curator.test.TestingZooKeeperMain$TestZooKeeperServer.<init>(TestingZooKeeperMain.java:267)
+	at org.apache.curator.test.TestingZooKeeperMain.internalRunFromConfig(TestingZooKeeperMain.java:228)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:132)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:158)
+	at java.lang.Thread.run(Thread.java:750)
+Exception in thread "Thread-16" Exception in thread "Thread-2" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-4" Exception in thread "Thread-20" Exception in thread "Thread-18" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-14" Exception in thread "Thread-10" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-28" Exception in thread "Thread-6" Exception in thread "Thread-24" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-22" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Exception in thread "Thread-8" Exception in thread "Thread-12" Exception in thread "Thread-26" java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+java.lang.NullPointerException
+	at com.imadcn.system.test.spring.EmbedZookeeperTestExecutionListener$1.run(EmbedZookeeperTestExecutionListener.java:50)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/imadcn_idworker false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1508492,
+  stdout: null,
+  stderr: null
+}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+SLF4J: Failed to load class "org.slf4j.impl.StaticMDCBinder".
+SLF4J: Defaulting to no-operation MDCAdapter implementation.
+SLF4J: See http://www.slf4j.org/codes.html#no_static_mdc_binder for further details.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+SLF4J: Failed to load class "org.slf4j.impl.StaticMDCBinder".
+SLF4J: Defaulting to no-operation MDCAdapter implementation.
+SLF4J: See http://www.slf4j.org/codes.html#no_static_mdc_binder for further details.

@@ -1,0 +1,122 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+Ran testParseSPENGOToken(jcifs.tests.PACTest)
+Ran testNFold(jcifs.tests.PACTest)
+Ran testRC4Checksum1(jcifs.tests.PACTest)
+Ran testRC4Checksum2(jcifs.tests.PACTest)
+Ran testRC4Checksum3(jcifs.tests.PACTest)
+Ran testRC4Checksum4(jcifs.tests.PACTest)
+Ran testRC4Checksum5(jcifs.tests.PACTest)
+Ran testJavaHMAC(jcifs.tests.PACTest)
+Ran testAES128Checksum(jcifs.tests.PACTest)
+Ran testPACAESChecksum(jcifs.tests.PACTest)
+Ran testAES256Checksum(jcifs.tests.PACTest)
+Ran testParsingType2TargetInformation(jcifs.tests.NtlmTest)
+Ran testParsingType2NoTarget(jcifs.tests.NtlmTest)
+Ran testParsingType2Target(jcifs.tests.NtlmTest)
+Ran testParsingType1(jcifs.tests.NtlmTest)
+Ran testParsingType3(jcifs.tests.NtlmTest)
+Ran testGetNameShare(jcifs.tests.FileLocationTest)
+Ran testChildMultiPath(jcifs.tests.FileLocationTest)
+Ran testDfsReferralServer(jcifs.tests.FileLocationTest)
+Ran testDfsReferralChildResource(jcifs.tests.FileLocationTest)
+Skipped testRelativeWhitespaceStart(jcifs.tests.FileLocationTest)
+Ran testEmpty(jcifs.tests.FileLocationTest)
+Ran testV6DCE(jcifs.tests.FileLocationTest)
+Ran testRoot(jcifs.tests.FileLocationTest)
+Ran testDfsReferralShareNested(jcifs.tests.FileLocationTest)
+Ran testParentRoot(jcifs.tests.FileLocationTest)
+Ran testIPCHidden(jcifs.tests.FileLocationTest)
+Skipped testRelativeWhitespaceEnd(jcifs.tests.FileLocationTest)
+Skipped testURLCharacter(jcifs.tests.FileLocationTest)
+Ran testGetName(jcifs.tests.FileLocationTest)
+Ran testChildShareCombined(jcifs.tests.FileLocationTest)
+Ran testParentPath1(jcifs.tests.FileLocationTest)
+Ran testParentPath2(jcifs.tests.FileLocationTest)
+Ran testParentShare(jcifs.tests.FileLocationTest)
+Ran testChildHost(jcifs.tests.FileLocationTest)
+Ran testChildPath(jcifs.tests.FileLocationTest)
+Ran testChildShare(jcifs.tests.FileLocationTest)
+Ran testGetNameServer(jcifs.tests.FileLocationTest)
+Ran testChildPathCombined(jcifs.tests.FileLocationTest)
+Ran testSetAddress(jcifs.tests.FileLocationTest)
+Ran testBindingAddress(jcifs.tests.FileLocationTest)
+Ran testDfsReferralShare(jcifs.tests.FileLocationTest)
+Ran testInvalid(jcifs.tests.FileLocationTest)
+Ran testDfsReferralMultiLink(jcifs.tests.FileLocationTest)
+Ran testDfsReferralAfterUncPath(jcifs.tests.FileLocationTest)
+Ran testParentServer(jcifs.tests.FileLocationTest)
+Ran testLegacyURLConstructor(jcifs.tests.ContextConfigTest)
+Ran testCredentials(jcifs.tests.ContextConfigTest)
+Ran testFixedCredentials(jcifs.tests.ContextConfigTest)
+Ran testDefaultCredentials(jcifs.tests.ContextConfigTest)
+Ran testPasswordAt(jcifs.tests.ContextConfigTest)
+Ran testLegacyStringConstructor(jcifs.tests.ContextConfigTest)
+Ran testSingletonInit(jcifs.tests.ContextConfigTest)
+Ran testURLHandlerRegistration(jcifs.tests.ContextConfigTest)
+Ran testLegacyConfig(jcifs.tests.ContextConfigTest)
+Ran testMinMaxVersions(jcifs.tests.ContextConfigTest)
+Ran testSecretMask(jcifs.tests.ContextConfigTest)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/codelibs_jcifs false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1675494,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/codelibs_jcifs false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:42:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1678717,
+  stdout: null,
+  stderr: null
+}
+Error during Maven build.
