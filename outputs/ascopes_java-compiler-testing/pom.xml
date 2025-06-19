@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2022 - 2025, the original author or authors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.ascopes.jct</groupId>
+  <artifactId>java-compiler-testing-parent</artifactId>
+  <version>5.0.5-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Java Compiler Testing parent project</name>
+
+  <description>
+    Parent POM for the java-compiler-testing project. You probably want to be using that instead
+    of including this POM into your projects directly.
+  </description>
+
+  <modules>
+    <module>java-compiler-testing</module>
+  </modules>
+
+  <inceptionYear>2022</inceptionYear>
+  <url>https://github.com/ascopes/java-compiler-testing</url>
+
+  <developers>
+    <developer>
+      <id>ascopes</id>
+      <name>Ashley Scopes</name>
+      <email>73482956+ascopes@users.noreply.github.com</email>
+      <url>https://github.com/ascopes</url>
+      <organization>Ashley Scopes</organization>
+      <organizationUrl>https://github.com/ascopes</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>Europe/London</timezone>
+    </developer>
+  </developers>
+
+  <contributors />
+
+  <distributionManagement>
+    <repository>
+      <id>central</id>
+      <name>Maven Central</name>
+      <url>https://central.sonatype.com</url>
+    </repository>
+  </distributionManagement>
+
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/ascopes/java-compiler-testing/issues</url>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>https://github.com/ascopes/java-compiler-testing/blob/main/LICENSE.txt</url>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Ashley Scopes (GitHub)</name>
+    <url>https://github.com/ascopes</url>
+  </organization>
+
+  <scm>
+    <url>https://github.com/ascopes/java-compiler-testing</url>
+    <connection>scm:git:https://github.com/ascopes/java-compiler-testing</connection>
+    <developerConnection>scm:git:https://github.com/ascopes/java-compiler-testing</developerConnection>
+    <tag>vHEAD</tag>
+  </scm>
+
+  <properties>
+    <!-- Dependencies -->
+    <assertj.version>4.0.0-M1</assertj.version>
+    <awaitility.version>4.3.0</awaitility.version>
+    <fuzzywuzzy.version>1.4.0</fuzzywuzzy.version>
+    <jspecify.version>1.0.0</jspecify.version>
+    <junit.version>5.13.1</junit.version>
+    <memoryfilesystem.version>2.8.1</memoryfilesystem.version>
+    <mockito.version>5.18.0</mockito.version>
+    <slf4j.version>2.0.17</slf4j.version>
+
+    <!-- Plugins -->
+    <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+    <license-maven-plugin.version>5.0.0</license-maven-plugin.version>
+    <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
+    <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+    <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+    <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
+    <maven-gpg-plugin.version>3.2.1</maven-gpg-plugin.version>
+    <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
+    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+    <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
+    <maven-invoker-plugin.version>3.9.0</maven-invoker-plugin.version>
+    <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
+    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+    <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+
+    <!-- Plugin dependencies -->
+    <checkstyle.version>10.25.0</checkstyle.version>
+    <maven-surefire-junit5-tree-reporter.version>1.4.0</maven-surefire-junit5-tree-reporter.version>
+
+    <!-- Log verbosity -->
+    <hide-test-logs-in-console>true</hide-test-logs-in-console>
+
+    <!--
+      This argument is pulled in by Surefire and Failsafe, and JaCoCo will amend it to 
+      ensure the coverage agent is installed into the forked JVM running the tests. See
+      https://www.eclemma.org/jacoco/trunk/doc/prepare-agent-mojo.html for info.
+
+      We also disable code sharing to prevent some other warnings during test runs, and
+      force the SLF4J simple logger defaults to use in tests here.
+
+      URL support for the memory filesystem requires enablement by system property.
+
+      Tired compilation is modified to reduce the amount of time the JVM wastes JITing
+      code during tests.
+
+      Byte Buddy experimental support enables running ByteBuddy (used by Mockito) in JDK
+      experimental builds.
+
+      We force enable dynamic agent loading to remove warnings in Java 22 and onwards about
+      ByteBuddy injecting itself as an agent, as this will eventually be deprecated
+      behaviour.
+    -->
+    <argLine>
+      -DmvnArgLinePropagated=true
+      -Dnet.bytebuddy.experimental=true
+      -Dorg.slf4j.simpleLogger.log=WARN
+      -Dorg.slf4j.simpleLogger.log.io.github.ascopes.jct=INFO
+      -Xshare:off
+      -XX:+TieredCompilation
+      -XX:TieredStopAtLevel=1
+      -XX:+EnableDynamicAgentLoading
+    </argLine>
+
+    <!-- Project flags -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java-release>17</java-release>
+
+    <!-- JavaDocs -->
+    <current-year>2025</current-year>
+    <newest-java-version>23</newest-java-version>
+    <highlight-js.version>11.9.0</highlight-js.version>
+
+    <!-- Other configuration -->
+    <mvnArgLinePropagated>true</mvnArgLinePropagated>
+    <project-slug>ascopes/java-compiler-testing</project-slug>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <!-- In-memory file system -->
+        <groupId>com.github.marschall</groupId>
+        <artifactId>memoryfilesystem</artifactId>
+        <version>2.8.1</version>
+      </dependency>
+
+      <dependency>
+        <!-- Fuzzy string matching -->
+        <groupId>me.xdrop</groupId>
+        <artifactId>fuzzywuzzy</artifactId>
+        <version>1.4.0</version>
+      </dependency>
+
+      <dependency>
+        <!-- Fluent assertions -->
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>4.0.0-M1</version>
+      </dependency>
+
+      <dependency>
+        <!-- Awaitable assertions -->
+        <groupId>org.awaitility</groupId>
+        <artifactId>awaitility</artifactId>
+        <version>4.3.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jspecify</groupId>
+        <artifactId>jspecify</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+
+      <dependency>
+        <!-- Unit testing -->
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${junit.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+
+      <dependency>
+        <!-- Mocking -->
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-bom</artifactId>
+        <version>${mockito.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+
+      <dependency>
+        <!-- Logging interface -->
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>2.0.17</version>
+      </dependency>
+
+      <dependency>
+        <!-- Logging implementation for tests -->
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>2.0.17</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <!-- Java compiler config -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+
+          <configuration>
+            <failOnWarning>true</failOnWarning>
+            <parameters>true</parameters>
+            <release>${java-release}</release>
+            <showDeprecation>true</showDeprecation>
+            <showWarnings>true</showWarnings>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${maven-deploy-plugin.version}</version>
+
+          <configuration>
+            <deployAtEnd>true</deployAtEnd>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <!-- Integration testing config -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${maven-failsafe-plugin.version}</version>
+
+          <configuration>
+            <includes>
+              <include>*IntegrationTest</include>
+            </includes>
+
+            <runOrder>random</runOrder>
+            <useModulePath>false</useModulePath>
+
+            <!--
+              This block is needed to show @DisplayName and @ParameterizedTest
+              in reports with the provided names.
+            -->
+            <statelessTestsetReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+              <disable>false</disable>
+              <version>3.0</version>
+              <usePhrasedFileName>false</usePhrasedFileName>
+              <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
+              <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
+              <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
+            </statelessTestsetReporter>
+            <consoleOutputReporter>
+              <disable>${hide-test-logs-in-console}</disable>
+            </consoleOutputReporter>
+            <statelessTestsetInfoReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoTreeReporter">
+              <disable>false</disable>
+              <printStacktraceOnError>true</printStacktraceOnError>
+              <printStacktraceOnFailure>true</printStacktraceOnFailure>
+              <usePhrasedFileName>false</usePhrasedFileName>
+              <usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
+              <usePhrasedClassNameInTestCaseSummary>true</usePhrasedClassNameInTestCaseSummary>
+            </statelessTestsetInfoReporter>
+          </configuration>
+
+          <dependencies>
+            <dependency>
+              <groupId>me.fabriciorby</groupId>
+              <artifactId>maven-surefire-junit5-tree-reporter</artifactId>
+              <version>${maven-surefire-junit5-tree-reporter.version}</version>
+            </dependency>
+          </dependencies>
+
+          <executions>
+            <execution>
+              <!-- Enable failsafe to run -->
+              <id>integration-test</id>
+              <!-- This must not run during the test phase - JaCoCo messes up the reporting! -->
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${maven-gpg-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${maven-install-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-invoker-plugin</artifactId>
+          <version>${maven-invoker-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven-jar-plugin.version}</version>
+
+          <configuration>
+            <archive>
+              <manifest>
+                <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              </manifest>
+              <manifestEntries>
+                <Sealed>true</Sealed>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${maven-javadoc-plugin.version}</version>
+
+          <configuration>
+            <additionalOptions>
+              <option>--allow-script-in-comments</option>
+              <option>--override-methods=detail</option>
+              <option>--show-packages=exported</option>
+              <option>-use</option>
+              <option>-Xdoclint:all</option>
+            </additionalOptions>
+            <bottom>© ${project.inceptionYear} - ${current-year}, Ashley Scopes --
+              Apache License V2
+            </bottom>
+            <defaultSince>0.0.1</defaultSince>
+            <detectLinks>false</detectLinks>
+            <header>
+              <![CDATA[
+              <!-- Highlight.js -->
+              <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/${highlight-js.version}/styles/stackoverflow-light.min.css">
+              <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/${highlight-js.version}/highlight.min.js"></script>
+              <script>
+                "use strict";
+
+                function initSyntaxHighlighting() {
+                  hljs.configure({languages: ["java"]});
+                  hljs.highlightAll();
+                }
+
+                if (document.readyState === "complete" || document.readyState === "interactive") {
+                  setTimeout(initSyntaxHighlighting, 1);
+                } else {
+                  document.addEventListener("DOMContentLoaded", initSyntaxHighlighting);
+                }
+              </script>
+              ]]>
+            </header>
+            <linksource>true</linksource>
+            <links>
+              <link>https://docs.oracle.com/en/java/javase/${newest-java-version}/docs/api</link>
+              <link>https://javadoc.io/doc/org.assertj/assertj-core/${assertj.version}</link>
+              <link>https://javadoc.io/doc/org.jspecify/jspecify/${jspecify.version}</link>
+              <link>https://javadoc.io/doc/org.slf4j/slf4j-api/${slf4j.version}</link>
+              <link>https://junit.org/junit5/docs/${junit.version}/api</link>
+            </links>
+            <quiet>true</quiet>
+            <release>${java-release}</release>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <!-- Release management -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <!-- Don't bother testing, we do that prior to calling this in CI. -->
+            <arguments>-Dmaven.test.skip -Dinvoker.skip -Preleases</arguments>
+            <goals>deploy</goals>
+            <preparationGoals>clean verify</preparationGoals>
+            <releaseProfiles>releases</releaseProfiles>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <!-- Resource file handling -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven-resources-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <!-- Bundles source code into a JAR -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${maven-source-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <!-- Unit testing config -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+
+          <configuration>
+            <excludes>
+              <exclude>*IntegrationTest</exclude>
+            </excludes>
+
+            <runOrder>random</runOrder>
+
+            <!--
+              If you reach here wondering why IntelliJ cannot find certain JUnit classes on the
+              classpath, make sure you set the IntelliJ test runner to "not use module-path". Seems
+              to be a bug in the IDE where this detail gets missed.
+            -->
+            <useModulePath>false</useModulePath>
+
+            <!--
+              This block is needed to show @DisplayName and @ParameterizedTest
+              in reports with the provided names.
+            -->
+            <statelessTestsetReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+              <disable>false</disable>
+              <version>3.0</version>
+              <usePhrasedFileName>false</usePhrasedFileName>
+              <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
+              <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
+              <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
+            </statelessTestsetReporter>
+            <consoleOutputReporter>
+              <disable>${hide-test-logs-in-console}</disable>
+            </consoleOutputReporter>
+            <statelessTestsetInfoReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoTreeReporter">
+              <disable>false</disable>
+              <printStacktraceOnError>true</printStacktraceOnError>
+              <printStacktraceOnFailure>true</printStacktraceOnFailure>
+              <usePhrasedFileName>false</usePhrasedFileName>
+              <usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
+              <usePhrasedClassNameInTestCaseSummary>true</usePhrasedClassNameInTestCaseSummary>
+            </statelessTestsetInfoReporter>
+          </configuration>
+
+          <dependencies>
+            <dependency>
+              <groupId>me.fabriciorby</groupId>
+              <artifactId>maven-surefire-junit5-tree-reporter</artifactId>
+              <version>${maven-surefire-junit5-tree-reporter.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <plugin>
+          <!-- Coverage tracing -->
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco-maven-plugin.version}</version>
+
+          <executions>
+            <execution>
+              <id>add-coverage-agent-to-surefire-args</id>
+              <phase>initialize</phase>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+
+              <configuration>
+                <destFile>${project.build.directory}/jacoco-surefire.bin</destFile>
+              </configuration>
+            </execution>
+
+            <execution>
+              <id>report-unit-test-coverage</id>
+              <phase>test</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+              <configuration>
+                <dataFile>${project.build.directory}/jacoco-surefire.bin</dataFile>
+                <outputDirectory>${project.build.directory}/site/jacoco/surefire</outputDirectory>
+              </configuration>
+            </execution>
+
+            <execution>
+              <id>add-coverage-agent-to-failsafe-args</id>
+              <phase>pre-integration-test</phase>
+              <goals>
+                <goal>prepare-agent-integration</goal>
+              </goals>
+              <configuration>
+                <destFile>${project.build.directory}/jacoco-failsafe.bin</destFile>
+              </configuration>
+            </execution>
+
+            <execution>
+              <id>report-failsafe-test-coverage</id>
+              <phase>post-integration-test</phase>
+              <goals>
+                <goal>report-integration</goal>
+              </goals>
+              <configuration>
+                <dataFile>${project.build.directory}/jacoco-failsafe.bin</dataFile>
+                <outputDirectory>${project.build.directory}/site/jacoco/failsafe</outputDirectory>
+              </configuration>
+            </execution>
+
+            <execution>
+              <id>add-coverage-agent-to-invoker-args</id>
+              <phase>pre-integration-test</phase>
+              <goals>
+                <goal>prepare-agent-integration</goal>
+              </goals>
+              <configuration>
+                <!-- Append to ensure multiple invoker test calls are included -->
+                <append>true</append>
+                <destFile>${project.build.directory}/jacoco-invoker.bin</destFile>
+                <excludes>io.github.ascopes.jct.acceptance.*</excludes>
+                <includes>io.github.ascopes.jct.*</includes>
+                <!-- Ensure `${invoker.mavenOpts}` is set in the invoker.properties as well
+                    if maven.argLine is overridden. -->
+                <propertyName>invoker.mavenOpts</propertyName>
+              </configuration>
+            </execution>
+
+            <execution>
+              <id>report-invoker-test-coverage</id>
+              <phase>post-integration-test</phase>
+              <goals>
+                <goal>report-integration</goal>
+              </goals>
+              <configuration>
+                <dataFile>${project.build.directory}/jacoco-invoker.bin</dataFile>
+                <outputDirectory>${project.build.directory}/site/jacoco/invoker</outputDirectory>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <!-- Enforces our license header and allows adding it automatically to code. -->
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>${license-maven-plugin.version}</version>
+        <inherited>false</inherited>
+
+        <configuration>
+          <aggregate>true</aggregate>
+          <licenseSets>
+            <licenseSet>
+              <header>file:.mvn/license/license-header.txt</header>
+              <!-- Useful flags: https://mycila.carbou.me/license-maven-plugin/ -->
+              <includes>
+                <include>**.toml</include>
+                <include>**.yml</include>
+                <include>**.yaml</include>
+                <include>**/pom.xml</include>
+                <include>**/security-suppressions.xml</include>
+                <include>**/src/**/*.bsh</include>
+                <include>**/src/**/*.groovy</include>
+                <include>**/src/**/*.java</include>
+                <include>**/src/it/settings.xml</include>
+              </includes>
+            </licenseSet>
+          </licenseSets>
+          <mapping>
+            <bsh>SLASHSTAR_STYLE</bsh>
+            <groovy>SLASHSTAR_STYLE</groovy>
+            <java>SLASHSTAR_STYLE</java>
+            <toml>SCRIPT_STYLE</toml>
+          </mapping>
+          <properties>
+            <currentYear>${current-year}</currentYear>
+            <inceptionYear>${project.inceptionYear}</inceptionYear>
+          </properties>
+          <strictCheck>true</strictCheck>
+        </configuration>
+
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <!-- Checking style of code matches the Google code style -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${maven-checkstyle-plugin.version}</version>
+
+        <configuration>
+          <configLocation>.mvn/checkstyle/checkstyle.xml</configLocation>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <includeResources>true</includeResources>
+          <sourceDirectories>${project.basedir}/src</sourceDirectories>
+          <suppressionsLocation>.mvn/checkstyle/suppressions.xml</suppressionsLocation>
+          <violationSeverity>info</violationSeverity>
+        </configuration>
+        
+        <!-- This is inherited to recurse, but each project must set 
+             the <relativePath/> attribute correctly. -->
+
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <dependencies>
+          <dependency>
+            <!-- Force the usage of checkstyle v10 rather than v8.28 -->
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>${checkstyle.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+      <plugin>
+        <!--
+            Intercepts the default deploy phase and replaces it with goals that
+            handle pushing to Sonatype Nexus (Maven Central's registry backend)
+            and then triggering a "closure" operation that will promote it to
+            the public Maven repository.
+        -->
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>${central-publishing-maven-plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <autoPublish>true</autoPublish>
+          <publishingServerId>central</publishingServerId>
+          <!--
+               The central publishing plugin has an eventual consistency bug
+               here where the API may give a 404 for a short time before reporting
+               the publication as in progress. This crashes the plugin and erroneously
+               forces a revert to occur when it is not needed. For now, just hope
+               that the publication succeeds at some point instead of waiting for it.
+          -->
+          <!-- <waitUntil>published</waitUntil> -->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>releases</id>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- Enable GPG-signing the release -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+                <configuration>
+                  <gpgArguments>
+                    <arg>--pinentry-mode</arg>
+                    <arg>loopback</arg>
+                  </gpgArguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

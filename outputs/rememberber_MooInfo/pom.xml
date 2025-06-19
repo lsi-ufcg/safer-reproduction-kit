@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.luoboduner.moo.info</groupId>
+    <artifactId>MooInfo</artifactId>
+    <version>1.1.4</version>
+    <packaging>jar</packaging>
+
+    <name>MooInfo</name>
+    <url>http://www.luoboduner.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <logback.version>1.4.7</logback.version>
+        <forms_rt.version>7.0.3</forms_rt.version>
+        <lombok.version>1.18.30</lombok.version>
+        <junit-jupiter-api.version>5.9.2</junit-jupiter-api.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <guava.version>31.1-jre</guava.version>
+        <okhttp.version>5.0.0-alpha.11</okhttp.version>
+        <flatlaf.version>3.5.2</flatlaf.version>
+        <flatlaf-extras.version>3.5.2</flatlaf-extras.version>
+        <flatlaf-intellij-themes.version>3.5.2</flatlaf-intellij-themes.version>
+        <hutool-all.version>5.8.18</hutool-all.version>
+        <fastjson.version>2.0.32</fastjson.version>
+        <oshi-core.version>6.6.5</oshi-core.version>
+        <jfreechart.version>1.5.4</jfreechart.version>
+		<imaging.version>1.0-alpha3</imaging.version>
+		<xmlwise.version>1.2.11</xmlwise.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.13</version>
+        </dependency>
+
+        <!--GUI Designer -> binary class files-->
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>forms_rt</artifactId>
+            <version>7.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>32.0.1-jre</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>5.0.0-alpha.12</version>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>kotlin-stdlib</artifactId>-->
+<!--                    <groupId>org.jetbrains.kotlin</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+        </dependency>
+
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf-extras</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf-intellij-themes</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.42</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <version>6.6.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-imaging</artifactId>
+			<version>1.0.0-alpha6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xmlwise</groupId>
+			<artifactId>xmlwise</artifactId>
+			<version>1.2.11</version>
+		</dependency>
+	</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.fvarrui</groupId>
+                <artifactId>javapackager</artifactId>
+                <version>1.7.5</version>
+                <configuration>
+                    <bundleJre>true</bundleJre>
+                    <mainClass>com.luoboduner.moo.info.App</mainClass>
+                    <generateInstaller>true</generateInstaller>
+                </configuration>
+                <executions>
+                    <!--<execution>-->
+                    <!--    <id>bundling-for-windows</id>-->
+                    <!--    <phase>package</phase>-->
+                    <!--    <goals>-->
+                    <!--        <goal>package</goal>-->
+                    <!--    </goals>-->
+                    <!--    <configuration>-->
+                    <!--        <platform>windows</platform>-->
+                    <!--        <createZipball>true</createZipball>-->
+                    <!--        <additionalModules>jdk.crypto.ec</additionalModules>-->
+                    <!--        &lt;!&ndash;                            <administratorRequired>true</administratorRequired>&ndash;&gt;-->
+                    <!--        <winConfig>-->
+
+                    <!--            &lt;!&ndash; general properties &ndash;&gt;-->
+                    <!--            <generateSetup>true</generateSetup>-->
+                    <!--            <generateMsi>true</generateMsi>-->
+                    <!--            <generateMsm>true</generateMsm>-->
+
+                    <!--            &lt;!&ndash; setup generation properties &ndash;&gt;-->
+                    <!--            <setupMode>installForAllUsers</setupMode>-->
+                    <!--            <createDesktopIconTask>true</createDesktopIconTask>-->
+                    <!--            <disableDirPage>false</disableDirPage>-->
+                    <!--            <disableFinishedPage>false</disableFinishedPage>-->
+                    <!--            <removeOldLibs>true</removeOldLibs>-->
+                    <!--            <setupLanguages>-->
+                    <!--                <english>compiler:Default.isl</english>-->
+                    <!--                &lt;!&ndash;                                    <spanish>compiler:Languages\Chinese.isl</spanish>&ndash;&gt;-->
+                    <!--            </setupLanguages>-->
+                    <!--        </winConfig>-->
+                    <!--    </configuration>-->
+                    <!--</execution>-->
+<!--                                                            <execution>-->
+<!--                                                                <id>bundling-for-linux</id>-->
+<!--                                                                <phase>package</phase>-->
+<!--                                                                <goals>-->
+<!--                                                                    <goal>package</goal>-->
+<!--                                                                </goals>-->
+<!--                                                                <configuration>-->
+<!--                                                                    <platform>linux</platform>-->
+<!--                                                                    <createTarball>true</createTarball>-->
+<!--                    <additionalModules>jdk.crypto.ec</additionalModules>-->
+<!--                    &lt;!&ndash;                                                <jdkPath>X:\\path\to\linux\jdk</jdkPath>&ndash;&gt;-->
+<!--                                                                </configuration>-->
+<!--                                                            </execution>-->
+                <execution>
+                    <id>bundling-for-mac</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>package</goal>
+                    </goals>
+                    <configuration>
+                        <platform>mac</platform>
+                        <createTarball>true</createTarball>
+                      <macConfig>
+                        <macStartup>UNIVERSAL</macStartup>
+                        <developerId>rememberber@163.com</developerId>
+                      </macConfig>
+                    <additionalModules>jdk.crypto.ec</additionalModules>
+                <!-- <jdkPath>X:\\path\to\mac\jdk</jdkPath>-->
+                    </configuration>
+                </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
