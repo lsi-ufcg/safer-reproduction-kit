@@ -1,0 +1,237 @@
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.mvohm.quadruple</groupId>
+  <artifactId>Quadruple</artifactId>
+  <version>1.1.3</version>
+  <name>Quadruple, 128-bit floating-point arithmetics</name>
+  <url>https://github.com/m-vokhm/Quadruple</url>
+  <description>128-bit floating-point arithmetics</description>
+  
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <junit.jupiter.minorVersion>2.0</junit.jupiter.minorVersion>
+    
+    <!-- For benchmarking, added 21.06.06 -->
+    <jmh.version>1.29</jmh.version>
+    <!-- <uberjar.name>benchmarks</uberjar.name - left aside till the next approach -->
+    
+  </properties>
+  
+  <dependencies>
+    <!-- For benchmarking, added 21.06.06 --> 
+    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-core</artifactId>
+      <version>1.29</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-generator-annprocess</artifactId>
+      <version>1.29</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-console-standalone</artifactId>
+      <version>1.10.2</version>
+      <scope>runtime</scope>
+    </dependency>  </dependencies>
+  
+  <build>
+  
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/test/java</testSourceDirectory>    
+    
+    <resources>
+      <resource>
+        <directory>src/main</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+          <exclude>**/javadoc/</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    
+    <testResources>
+      <testResource>
+        <directory>src/test</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+          <exclude>**/javadoc/</exclude>
+        </excludes>
+      </testResource>
+    </testResources>
+    
+    <plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        
+        <dependencies>
+          <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-surefire-provider</artifactId>
+            <version>1.0.0</version>
+          </dependency>
+          <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.${junit.jupiter.minorVersion}</version>
+          </dependency>
+        </dependencies>  
+                    
+        <configuration>
+        
+           <!-- <skipTests>true</skipTests>  TODO to speed up build process, for testing it  -->
+          
+          <includes>
+            <include>**/QuadJUnitTest.java</include>
+          </includes>
+          
+          <excludes>
+            <exclude>%regex[Test.+]</exclude>
+            <exclude>**/QuadTest.java</exclude>
+          </excludes>          
+           
+        </configuration>
+      </plugin>
+      
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>17</source>
+          <target>17</target>
+        </configuration>
+      </plugin>
+      
+      <!-- ++ 21.06.21 16:44:21 To add source -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>      
+      
+      <!-- ++ 21.06.21 16:44:21 To add JavaDoc -->
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>copy-javadoc-css</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/apidocs</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/javadoc</directory>
+                  <includes>
+                    <include>customtable.css</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <!-- compatible with old javadoc syntax: v2.9.1 --> 
+        <version>3.3.0</version> 
+        <configuration>
+          <addStylesheets>
+            <addStylesheet>customtable.css</addStylesheet>
+          </addStylesheets>
+          <additionalOptions>
+            <additionalOption>-public</additionalOption>
+          </additionalOptions>          
+        </configuration>        
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+              
+      <plugin>  
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>test-jar</id>
+            <phase>package</phase>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+            
+            <configuration>
+              <archive>
+                <manifest>
+                  <addClasspath>true</addClasspath>
+                  <mainClass>
+                    com.mvohm.quadruple.test.QuadTest
+                  </mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>      
+      
+    </plugins>
+    
+    <pluginManagement>
+      <plugins>
+      
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>2.8</version>
+        </plugin>
+        
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.7.0</version>
+        </plugin>
+      
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19</version>
+        </plugin>
+        
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.3.2</version>
+        </plugin>
+        
+      </plugins>
+    </pluginManagement>
+    
+  </build>
+</project>

@@ -1,0 +1,56 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:16-jdk-jammy
+#2 ERROR: docker.io/library/eclipse-temurin:16-jdk-jammy: not found
+------
+ > [internal] load metadata for docker.io/library/eclipse-temurin:16-jdk-jammy:
+------
+Dockerfile:3
+--------------------
+   1 |     ARG JAVA_VERSION=17
+   2 |     
+   3 | >>> FROM eclipse-temurin:${JAVA_VERSION}-jdk-jammy
+   4 |     #MAVEN start
+   5 |     ENV MAVEN_HOME /usr/share/maven
+--------------------
+ERROR: failed to solve: eclipse-temurin:16-jdk-jammy: failed to resolve source metadata for docker.io/library/eclipse-temurin:16-jdk-jammy: docker.io/library/eclipse-temurin:16-jdk-jammy: not found
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/java/init-java-container.sh 16 /mnt/hdd/safer-reproduction-kit/workstation/maven/veryfi_veryfi-java /mnt/hdd/safer-reproduction-kit/safer
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.initJavaContainer (/mnt/hdd/safer-reproduction-kit/safer/src/runners/java/java-runner.ts:13:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:36:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 20650,
+  stdout: null,
+  stderr: null
+}
+Error response from daemon: No such container: java-container-safer-veryfi_veryfi-java
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/veryfi_veryfi-java false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:42:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 20742,
+  stdout: null,
+  stderr: null
+}
+Error during Maven build.

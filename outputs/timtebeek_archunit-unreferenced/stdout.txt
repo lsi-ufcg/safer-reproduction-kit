@@ -1,0 +1,337 @@
+Required Java version: 17
+Building Docker Image for project timtebeek_archunit-unreferenced with Java version 17...
+Image built successfully. Running container...
+Maven build completed successfully.
+
+
+
+========= DEPENDENCIES NEWER VERSIONS ==========
+
+[
+  {
+    dependency: {
+      group: 'org.springframework.boot',
+      name: 'spring-boot-starter-web',
+      version: '3.5.0'
+    },
+    newerVersions: [ '3.5.0' ]
+  },
+  {
+    dependency: {
+      group: 'org.springframework.kafka',
+      name: 'spring-kafka',
+      version: '3.3.6'
+    },
+    newerVersions: [ '4.0.0-M2', '4.0.0-M1', '3.3.7', '3.3.6' ]
+  },
+  {
+    dependency: { group: 'org.projectlombok', name: 'lombok', version: '1.18.38' },
+    newerVersions: [ '1.18.38' ]
+  },
+  {
+    dependency: {
+      group: 'org.springframework.boot',
+      name: 'spring-boot-starter-test',
+      version: '3.5.0'
+    },
+    newerVersions: [ '3.5.0' ]
+  },
+  {
+    dependency: {
+      group: 'com.tngtech.archunit',
+      name: 'archunit-junit5',
+      version: '1.4.1'
+    },
+    newerVersions: [ '1.4.1' ]
+  }
+]
+
+
+
+========= DEPENDENCIES VERSIONS RANK ==========
+
+[
+  {
+    dependency: {
+      group: 'org.springframework.boot',
+      name: 'spring-boot-starter-web',
+      version: '3.5.0'
+    },
+    rank: [
+      {
+        version: '3.5.0',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-6r3c-xf4w-jxjm',
+              severity: 'medium',
+              severityScore: 6.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.springframework',
+                name: 'spring-web',
+                version: '6.2.7'
+              }
+            },
+            {
+              id: 'GHSA-h3gc-qfqq-6h8f',
+              severity: 'high',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.tomcat.embed',
+                name: 'tomcat-embed-core',
+                version: '10.1.41'
+              }
+            },
+            {
+              id: 'GHSA-wc4r-xq3c-5cf3',
+              severity: 'medium',
+              severityScore: 4,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.tomcat.embed',
+                name: 'tomcat-embed-core',
+                version: '10.1.41'
+              }
+            }
+          ],
+          rate: 43.5
+        }
+      }
+    ]
+  },
+  {
+    dependency: {
+      group: 'org.springframework.kafka',
+      name: 'spring-kafka',
+      version: '3.3.6'
+    },
+    rank: [
+      {
+        version: '3.3.7',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '4.0.0-M2',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      },
+      {
+        version: '3.3.6',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-vgq5-3255-v292',
+              severity: 'medium',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.kafka',
+                name: 'kafka-clients',
+                version: '3.8.1'
+              }
+            }
+          ],
+          rate: 15
+        }
+      },
+      {
+        version: '4.0.0-M1',
+        detailsDependencyVulnerability: {
+          details: [
+            {
+              id: 'GHSA-vgq5-3255-v292',
+              severity: 'medium',
+              severityScore: 7.5,
+              isTransitive: true,
+              sourceDependency: {
+                group: 'org.apache.kafka',
+                name: 'kafka-clients',
+                version: '3.8.1'
+              }
+            }
+          ],
+          rate: 15
+        }
+      }
+    ]
+  },
+  {
+    dependency: { group: 'org.projectlombok', name: 'lombok', version: '1.18.38' },
+    rank: [
+      {
+        version: '1.18.38',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: {
+      group: 'org.springframework.boot',
+      name: 'spring-boot-starter-test',
+      version: '3.5.0'
+    },
+    rank: [
+      {
+        version: '3.5.0',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  },
+  {
+    dependency: {
+      group: 'com.tngtech.archunit',
+      name: 'archunit-junit5',
+      version: '1.4.1'
+    },
+    rank: [
+      {
+        version: '1.4.1',
+        detailsDependencyVulnerability: { details: [], rate: 0 }
+      }
+    ]
+  }
+]
+Applying version 3.5.0 with vulnerability rate 43.5 of spring-boot-starter-web dependency in pom.xml
+Keeping the current version 3.5.0 of spring-boot-starter-web
+
+
+Applying version 3.3.7 with vulnerability rate 0 of spring-kafka dependency in pom.xml
+Running maven build for version 3.3.7 of spring-kafka dependency
+Error on maven build. Let's try a new version.
+ Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/timtebeek_archunit-unreferenced false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 637334,
+  stdout: null,
+  stderr: null
+}
+Applying version 4.0.0-M2 with vulnerability rate 0 of spring-kafka dependency in pom.xml
+Running maven build for version 4.0.0-M2 of spring-kafka dependency
+Error on maven build. Let's try a new version.
+ Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/timtebeek_archunit-unreferenced false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 637427,
+  stdout: null,
+  stderr: null
+}
+Applying version 3.3.6 with vulnerability rate 15 of spring-kafka dependency in pom.xml
+Keeping the current version 3.3.6 of spring-kafka
+
+
+Applying version 1.18.38 with vulnerability rate 0 of lombok dependency in pom.xml
+Keeping the current version 1.18.38 of lombok
+
+
+Applying version 3.5.0 with vulnerability rate 0 of spring-boot-starter-test dependency in pom.xml
+Keeping the current version 3.5.0 of spring-boot-starter-test
+
+
+Applying version 1.4.1 with vulnerability rate 0 of archunit-junit5 dependency in pom.xml
+Keeping the current version 1.4.1 of archunit-junit5
+
+
+Dependency and Security Report
+
+The information was obtained from Open Source Insights, which gathers security advisories information from OSV.
+
+Analyzed Dependencies:
+
+- org.springframework.boot:spring-boot-starter-web: 3.5.0 [NEW] [OLD]
+  Version: 3.5.0 [NEW] [OLD], Vulnerabilities: 43.5
+    ID: GHSA-6r3c-xf4w-jxjm, Severity: medium, Score: 6.5, Transitive: Yes
+    Source Dependency: org.springframework:spring-web:6.2.7
+    ID: GHSA-h3gc-qfqq-6h8f, Severity: high, Score: 7.5, Transitive: Yes
+    Source Dependency: org.apache.tomcat.embed:tomcat-embed-core:10.1.41
+    ID: GHSA-wc4r-xq3c-5cf3, Severity: medium, Score: 4, Transitive: Yes
+    Source Dependency: org.apache.tomcat.embed:tomcat-embed-core:10.1.41
+
+- org.springframework.kafka:spring-kafka: 3.3.6 [NEW] [OLD]
+  Version: 3.3.7 , Vulnerabilities: 0
+  Version: 4.0.0-M2 , Vulnerabilities: 0
+  Version: 3.3.6 [NEW] [OLD], Vulnerabilities: 15
+    ID: GHSA-vgq5-3255-v292, Severity: medium, Score: 7.5, Transitive: Yes
+    Source Dependency: org.apache.kafka:kafka-clients:3.8.1
+  Version: 4.0.0-M1 , Vulnerabilities: 15
+    ID: GHSA-vgq5-3255-v292, Severity: medium, Score: 7.5, Transitive: Yes
+    Source Dependency: org.apache.kafka:kafka-clients:3.8.1
+
+- org.projectlombok:lombok: 1.18.38 [NEW] [OLD]
+  Version: 1.18.38 [NEW] [OLD], Vulnerabilities: 0
+
+- org.springframework.boot:spring-boot-starter-test: 3.5.0 [NEW] [OLD]
+  Version: 3.5.0 [NEW] [OLD], Vulnerabilities: 0
+
+- com.tngtech.archunit:archunit-junit5: 1.4.1 [NEW] [OLD]
+  Version: 1.4.1 [NEW] [OLD], Vulnerabilities: 0
+
+It was executed:
+- Project Build: Yes
+- Project Tests: Yes
+- Exploratory Testing: No
+
+Vulnerabilities Summary:
+The information was obtained from Open Source Insights, which gathers security advisories information from OSV.
+
+Number of dependencies with vulnerabilities:
+ Before: 2 After: 2
+Number of vulnerabilities:
+ Before: 4 After: 4
+Before execution, total vulnerabilities were:
+ Low: 0, Medium: 3, High: 1, Critical: 0
+After execution, total vulnerabilities are:
+ Low: 0, Medium: 3, High: 1, Critical: 0
+Details of vulnerabilities before execution:
+Dependency org.springframework.boot:spring-boot-starter-web: 3.5.0:
+- ID: GHSA-6r3c-xf4w-jxjm, Severity: medium, Score: 6.5, Transitive: Yes
+- ID: GHSA-wc4r-xq3c-5cf3, Severity: medium, Score: 4, Transitive: Yes
+- ID: GHSA-h3gc-qfqq-6h8f, Severity: high, Score: 7.5, Transitive: Yes
+Dependency org.springframework.kafka:spring-kafka: 3.3.6:
+- ID: GHSA-vgq5-3255-v292, Severity: medium, Score: 7.5, Transitive: Yes
+Details of vulnerabilities after execution:
+Dependency org.springframework.boot:spring-boot-starter-web: 3.5.0:
+- ID: GHSA-6r3c-xf4w-jxjm, Severity: medium, Score: 6.5, Transitive: Yes
+- ID: GHSA-wc4r-xq3c-5cf3, Severity: medium, Score: 4, Transitive: Yes
+- ID: GHSA-h3gc-qfqq-6h8f, Severity: high, Score: 7.5, Transitive: Yes
+Dependency org.springframework.kafka:spring-kafka: 3.3.6:
+- ID: GHSA-vgq5-3255-v292, Severity: medium, Score: 7.5, Transitive: Yes
+
+CSV:
+Number of dependencies with vulnerabilities (Before),Number of dependencies with vulnerabilities (After),Number of vulnerabilities (Before),Number of vulnerabilities (After),Low vulnerabilities (Before),Low vulnerabilities (After),Medium vulnerabilities (Before),Medium vulnerabilities (After),High vulnerabilities (Before),High vulnerabilities (After),Critical vulnerabilities (Before),Critical vulnerabilities (After),Project Type,Tests
+2,2,4,4,0,0,3,3,1,1,0,0,maven,true
+Recommendations:
+- Prioritize updating dependencies to their latest, compatible versions that pass all builds and tests, while also manually reviewing and applying updates to the most secure versions available, even if this requires additional compatibility adjustments.
+- Regularly conduct comprehensive security audits to promptly identify and address vulnerabilities within dependencies, incorporating both automated tools and expert reviews to ensure thorough coverage.
+- Adopt secure coding practices throughout the development lifecycle to prevent the introduction of vulnerabilities, emphasizing code reviews, secure coding standards, and developer training on security best practices.
+- Leverage automated testing, continuous integration, and continuous deployment (CI/CD) pipelines to maintain high standards of code quality and security, ensuring that any changes, including dependency updates, undergo rigorous testing before deployment.
+
+Please consider the above recommendations to improve the security and stability of your project.
+
+
+Stopping java container...
+java-container-safer-timtebeek_archunit-unreferenced
+Deleting Java container...
+java-container-safer-timtebeek_archunit-unreferenced

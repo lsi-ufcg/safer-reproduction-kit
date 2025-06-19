@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sothatsit</groupId>
+    <artifactId>RoyalUrAnalysis</artifactId>
+    <version>2.1.1</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- Used for interaction with the browser for WASM target. -->
+        <dependency>
+            <groupId>de.mirkosertic.bytecoder</groupId>
+            <artifactId>bytecoder.api</artifactId>
+            <version>2024-05-10</version>
+        </dependency>
+        <dependency>
+            <groupId>de.mirkosertic.bytecoder</groupId>
+            <artifactId>bytecoder.web</artifactId>
+            <version>2024-05-10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>3.13.7</version>
+            <classifier>standalone</classifier>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>RoyalUrAnalysis</finalName>
+
+        <plugins>
+            <!-- Compilation target to compile to a jar file. -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.sothatsit.royalur.analysis.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Copies the built jar-with-dependencies to CLI.jar. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+
+                                <copy file="${project.build.directory}/RoyalUrAnalysis-jar-with-dependencies.jar"
+                                      tofile="${project.build.directory}/CLI.jar" />
+
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Compilation target to compile to WASM. -->
+    <profiles>
+        <profile>
+            <id>wasm</id>
+            <build>
+                <plugins>
+                    <!-- Generate the WASM code. -->
+                    <plugin>
+                        <groupId>de.mirkosertic.bytecoder</groupId>
+                        <artifactId>bytecoder-mavenplugin</artifactId>
+                        <version>2021-11-02</version>
+                        <configuration>
+                            <mainClass>com.sothatsit.royalur.browser.WasmMain</mainClass>
+                            <backend>wasm_llvm</backend>
+                            <enableExceptionHandling>true</enableExceptionHandling>
+                            <optimizationLevel>ALL</optimizationLevel>
+                            <llvmOptimizationLevel>O3</llvmOptimizationLevel>
+                            <filenamePrefix>royal_ur_analysis</filenamePrefix>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Generates the JavaScript API code to run and hook into RoyalUrAnalysis. -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <configuration>
+                                    <target>
+
+                                        <concat destfile="${project.build.directory}/bytecoder/api.js">
+                                            <fileset file="${project.build.directory}/bytecoder/royal_ur_analysis.js" />
+                                            <fileset file="${project.basedir}/src/main/java/com/sothatsit/royalur/browser/api.js" />
+                                        </concat>
+                                        <delete file="${project.build.directory}/bytecoder/royal_ur_analysis.js" />
+                                        <echo message="Generated ${project.build.directory}/bytecoder/api.js" level="info" />
+
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
