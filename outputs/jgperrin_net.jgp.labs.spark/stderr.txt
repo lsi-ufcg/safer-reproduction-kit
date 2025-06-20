@@ -1,0 +1,920 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 368210,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 368571,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 370729,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 371294,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 371941,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 372755,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 373043,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 373517,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 373946,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 374358,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 374729,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 375201,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 375947,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 376695,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 377448,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 377913,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 378384,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 378843,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 379596,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 380087,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 380635,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 381250,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 382003,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 382555,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 383225,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 383846,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 384726,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 385434,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 385891,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 386521,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 387081,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 387622,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 388181,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 388961,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 389592,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 390136,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 390619,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 391615,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 392150,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 392690,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 393060,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 393511,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 393903,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 394366,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 394819,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 395279,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 395855,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 396332,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 397144,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 397553,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 398054,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 398564,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 399152,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 399746,
+  stdout: null,
+  stderr: null
+}
+Dependency ml.dmlc:xgboost4j-spark_2.12 not found in POM.
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/jgperrin_net.jgp.labs.spark false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 415342,
+  stdout: null,
+  stderr: null
+}
+Dependency com.databricks:spark-xml_2.12 not found in POM.
+Dependency org.apache.spark:spark-sql_2.12 not found in POM.
+Dependency org.slf4j:slf4j-api not found in POM.
+Dependency org.apache.spark:spark-core_2.12 not found in POM.
+Dependency ml.dmlc:xgboost4j_2.12 not found in POM.
+Dependency org.apache.spark:spark-mllib_2.12 not found in POM.
+Dependency com.github.fommil.netlib:all not found in POM.

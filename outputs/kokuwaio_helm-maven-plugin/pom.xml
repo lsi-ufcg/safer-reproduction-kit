@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>io.kokuwa.maven</groupId>
+		<artifactId>maven-parent</artifactId>
+		<version>0.6.17</version>
+		<relativePath />
+	</parent>
+
+	<artifactId>helm-maven-plugin</artifactId>
+	<version>6.17.1-SNAPSHOT</version>
+	<packaging>maven-plugin</packaging>
+
+	<name>Helm Maven Plugin</name>
+	<description>A plugin for executing HELM (https://docs.helm.sh).</description>
+	<url>https://github.com/kokuwaio/helm-maven-plugin</url>
+	<inceptionYear>2017</inceptionYear>
+	<organization>
+		<name>Kokuwa.io</name>
+		<url>http://kokuwa.io</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>MIT</name>
+			<url>https://opensource.org/license/MIT</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>sschnabe</id>
+			<name>Stephan Schnabel</name>
+			<url>https://github.com/sschnabe</url>
+			<email>stephan@grayc.de</email>
+			<organization>GrayC GmbH</organization>
+			<organizationUrl>https://grayc.de</organizationUrl>
+			<timezone>Europe/Berlin</timezone>
+			<roles>
+				<role>Lead Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>fabian-schlegel</id>
+			<name>Fabian Schlegel</name>
+			<url>https://github.com/fabian-schlegel</url>
+			<email>fabian.schlegel@grayc.de</email>
+			<organization>GrayC GmbH</organization>
+			<organizationUrl>https://grayc.de</organizationUrl>
+			<timezone>Europe/Berlin</timezone>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<prerequisites>
+		<maven>${version.org.apache.maven.plugin}</maven>
+	</prerequisites>
+
+	<scm>
+		<url>https://github.com/kokuwaio/helm-maven-plugin</url>
+		<connection>scm:git:https://github.com/kokuwaio/helm-maven-plugin.git</connection>
+		<developerConnection>scm:git:https://github.com/kokuwaio/helm-maven-plugin.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/kokuwaio/helm-maven-plugin/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>github</system>
+		<url>https://github.com/kokuwaio/helm-maven-plugin/actions</url>
+	</ciManagement>
+
+	<properties>
+
+		<!-- ===================================================================== -->
+		<!-- ============================== Build ================================ -->
+		<!-- ===================================================================== -->
+
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.showDeprecation>false</maven.compiler.showDeprecation>
+		<maven.compiler.compilerArgument>-Xlint:all,-processing,-deprecation</maven.compiler.compilerArgument>
+
+		<!-- we have flaky tests with caching of Authenticator.setDefault() -->
+		<surefire.rerunFailingTestsCount>3</surefire.rerunFailingTestsCount>
+
+		<invoker.debug>false</invoker.debug>
+		<invoker.parallelThreads>0.5C</invoker.parallelThreads>
+		<invoker.settingsFile>${project.basedir}/src/it/settings.xml</invoker.settingsFile>
+
+		<!-- ===================================================================== -->
+		<!-- ============================= Versions ============================== -->
+		<!-- ===================================================================== -->
+
+		<version.org.apache.commons.compress>1.27.1</version.org.apache.commons.compress>
+		<version.org.junit.jupiter>5.12.2</version.org.junit.jupiter>
+		<version.org.mockito>4.11.0</version.org.mockito>
+		<version.org.projectlombok>1.18.38</version.org.projectlombok>
+		<version.com.fasterxml.jackson>2.19.0</version.com.fasterxml.jackson>
+		<version.com.github.tomakehurst.wiremock>2.35.2</version.com.github.tomakehurst.wiremock>
+		<version.com.puppycrawl.tools.checkstyle>9.3</version.com.puppycrawl.tools.checkstyle>
+
+	</properties>
+
+	<dependencies>
+
+		<!-- maven -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-settings</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>3.9.4</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.sonatype.plexus</groupId>
+					<artifactId>plexus-sec-dispatcher</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.codehaus.plexus</groupId>
+					<artifactId>plexus-utils</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugin-tools</groupId>
+			<artifactId>maven-plugin-annotations</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-sec-dispatcher</artifactId>
+		</dependency>
+
+		<!-- libraries -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>1.27.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.38</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.19.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>2.19.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.19.0</version>
+		</dependency>
+
+		<!-- test -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.12.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.sisu</groupId>
+			<artifactId>org.eclipse.sisu.plexus</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<version>4.11.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock-jre8</artifactId>
+			<version>2.35.2</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-annotations</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-databind</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- generate help -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>helpmojo</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- run invoker tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-invoker-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>install</goal>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<localRepositoryPath>${project.build.directory}/it-repo</localRepositoryPath>
+					<addTestClassPath>true</addTestClassPath>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

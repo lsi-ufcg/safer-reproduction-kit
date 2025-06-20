@@ -1,0 +1,474 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+[main] INFO org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+[main] INFO org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+[main] INFO com.ibm.eventstreams.connect.mqsource.builders.JsonRecordBuilder - Building records using com.ibm.eventstreams.connect.mqsource.builders.JsonRecordBuilder
+[main] INFO org.apache.kafka.connect.json.JsonConverterConfig - JsonConverterConfig values: 
+	converter.type = value
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+[main] INFO com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder - Building records using com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+[main] ERROR com.ibm.eventstreams.connect.mqsource.builders.RecordBuilderFactory - Could not instantiate message builder casjsajhasdhusdo;iasd
+[main] ERROR com.ibm.eventstreams.connect.mqsource.builders.RecordBuilderFactory - Could not instantiate message builder casjsajhasdhusdo;iasd
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 1 
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor -  All MQ connections will be closed.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 1 
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2016 MQRC_GET_INHIBITED
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - A queue has the GET operation intentionally inhibited, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2003 MQRC_BACKED_OUT
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2537 MQRC_CHANNEL_NOT_AVAILABLE
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2009 MQRC_CONNECTION_BROKEN
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2538 MQRC_HOST_NOT_AVAILABLE
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2035 MQRC_NOT_AUTHORIZED
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2059 MQRC_Q_MGR_NOT_AVAILABLE
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2161 MQRC_Q_MGR_QUIESCING
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2162 MQRC_Q_MGR_STOPPING
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2195 MQRC_UNEXPECTED_ERROR
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 2016 MQRC_GET_INHIBITED
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is retriable, wait for next poll.
+[main] ERROR com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - MQ error: CompCode 1, Reason 1 
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor - JMS exception is not retriable, the connector is in a failed state.
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = DEV.QUEUE.2
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = DEV.QUEUE.2
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = DEV.QUEUE.2
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = DEV.QUEUE.2
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = null
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] ERROR com.ibm.eventstreams.connect.mqsource.MQSourceTask - Unexpected connect exception: 
+org.apache.kafka.connect.errors.ConnectException: Missing commits for message batch
+	at com.ibm.eventstreams.connect.mqsource.MQSourceTask.internalPoll(MQSourceTask.java:294)
+	at com.ibm.eventstreams.connect.mqsource.MQSourceTask.poll(MQSourceTask.java:256)
+	at com.ibm.eventstreams.connect.mqsource.MQSourceTaskTest.lambda$testRepeatedPollsFailWhileMessagesInFlight$0(MQSourceTaskTest.java:273)
+	at org.junit.Assert.assertThrows(Assert.java:1001)
+	at org.junit.Assert.assertThrows(Assert.java:981)
+	at com.ibm.eventstreams.connect.mqsource.MQSourceTaskTest.testRepeatedPollsFailWhileMessagesInFlight(MQSourceTaskTest.java:273)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:41)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[main] INFO com.ibm.eventstreams.connect.mqsource.util.ExceptionProcessor -  All MQ connections will be closed.
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = DEV.QUEUE.2
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = null
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = DEV.QUEUE.2
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = DEV.QUEUE.2
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.apache.kafka.common.config.AbstractConfig - AbstractConfig values: 
+	mq.batch.size = 8
+	mq.ccdt.url = null
+	mq.channel.name = DEV.APP.SVRCONN
+	mq.client.reconnect.options = ASDEF
+	mq.connection.mode = client
+	mq.connection.name.list = localhost(9090)
+	mq.exactly.once.state.queue = null
+	mq.jms.properties.copy.to.kafka.headers = false
+	mq.max.poll.blocked.time.ms = 100
+	mq.message.body.jms = false
+	mq.message.mqmd.read = false
+	mq.message.receive.timeout = 2000
+	mq.password = null
+	mq.queue = DEV.QUEUE.1
+	mq.queue.manager = MYQMGR
+	mq.receive.subsequent.timeout.ms = 0
+	mq.reconnect.delay.max.ms = 8192
+	mq.reconnect.delay.min.ms = 64
+	mq.record.builder = com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
+	mq.record.builder.key.header = null
+	mq.ssl.cipher.suite = null
+	mq.ssl.keystore.location = null
+	mq.ssl.keystore.password = null
+	mq.ssl.peer.name = null
+	mq.ssl.truststore.location = null
+	mq.ssl.truststore.password = null
+	mq.ssl.use.ibm.cipher.mappings = true
+	mq.user.authentication.mqcsp = false
+	mq.user.name = null
+	topic = mytopic
+
+[main] INFO org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+[main] INFO org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.dockerclient.DockerMachineClientProviderStrategy - docker-machine executable was not found on PATH ([/usr/share/maven/bin, /opt/java/openjdk/bin, /usr/local/sbin, /usr/local/bin, /usr/sbin, /usr/bin, /sbin, /bin])
+[main] ERROR org.testcontainers.dockerclient.DockerClientProviderStrategy - Could not find a valid Docker environment. Please check configuration. Attempted configurations were:
+	UnixSocketClientProviderStrategy: failed with exception InvalidConfigurationException (Could not find unix domain socket). Root cause NoSuchFileException (/var/run/docker.sock)
+	DockerDesktopClientProviderStrategy: failed with exception NullPointerException (null). Root cause NullPointerException (null)As no valid configuration was found, execution cannot continue.
+See https://java.testcontainers.org/on_failure.html for more details.
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+[main] INFO org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.1
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/ibm-messaging_kafka-connect-mq-source false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 446024,
+  stdout: null,
+  stderr: null
+}
+Dependency org.mockito:mockito-core not found in POM.
+Dependency com.ibm.mq:com.ibm.mq.allclient not found in POM.
+Dependency org.testcontainers:testcontainers not found in POM.
+Dependency junit:junit not found in POM.
+Dependency org.assertj:assertj-core not found in POM.
+Dependency javax.jms:javax.jms-api not found in POM.
+Dependency org.slf4j:slf4j-api not found in POM.
+Dependency org.slf4j:slf4j-simple not found in POM.

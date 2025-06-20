@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <description>Backend project of asoulcnki.asia</description>
+    <groupId>asia.asoucnki</groupId>
+    <artifactId>api</artifactId>
+    <version>latest</version>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <relativePath/>
+        <version>2.3.4.RELEASE</version> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <druid-version>1.1.5</druid-version>
+        <guava.version>19.0</guava.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <mysql-connector-java.version>8.0.21</mysql-connector-java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+	<springfox-swagger2.version>3.0.0</springfox-swagger2.version>
+	<docker.registry>registry.cn-hangzhou.aliyuncs.com</docker.registry>
+        <docker.image.prefix>asoulcnki</docker.image.prefix>
+        <dockerfile-maven-plugin.version>1.4.7</dockerfile-maven-plugin.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <artifactId>spring-boot-starter</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo-shaded</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>lombok</artifactId>
+            <groupId>org.projectlombok</groupId>
+	    <version>2.3.4.RELEASE</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <groupId>com.baomidou</groupId>
+            <version>3.4.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>druid</artifactId>
+            <groupId>com.alibaba</groupId>
+            <version>${druid-version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>mysql-connector-java</artifactId>
+            <groupId>mysql</groupId>
+            <scope>runtime</scope>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>commons-lang3</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>springfox-boot-starter</artifactId>
+            <groupId>io.springfox</groupId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>guava</artifactId>
+            <groupId>com.google.guava</groupId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>slf4j-api</artifactId>
+            <groupId>org.slf4j</groupId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <groupId>com.baomidou</groupId>
+            <version>3.4.0</version>
+        </dependency>
+        <dependency>
+            <artifactId>velocity-engine-core</artifactId>
+            <groupId>org.apache.velocity</groupId>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>fastjson</artifactId>
+            <groupId>com.alibaba</groupId>
+            <version>1.2.76</version>
+        </dependency>
+
+        <!-- 处理配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 数据校验依赖 -->
+        <dependency>
+            <artifactId>hibernate-validator</artifactId>
+            <groupId>org.hibernate.validator</groupId>
+            <version>2.3.4.RELEASE</version>
+        </dependency>
+
+        <!-- Redis 缓存依赖 -->
+        <dependency>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <!-- caffeine 缓存依赖 -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
+        <!-- es 搜索 -->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>7.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>7.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>7.14.0</version>
+        </dependency>
+
+        <!--单测框架-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+
+	<!--阿里巴巴规约插件-->
+	<dependency>
+		<groupId>com.alibaba.p3c</groupId>
+		<artifactId>p3c-pmd</artifactId>
+		<version>1.3.6</version>
+	</dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+			<imageName>${docker.registry}/${docker.image.prefix}/${project.name}:${project.version}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
