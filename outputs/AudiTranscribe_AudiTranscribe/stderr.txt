@@ -153,3 +153,39 @@ java.lang.UnsatisfiedLinkError: /app/?/.openjfx/cache/20.0.1+2/amd64/libglass.so
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/AudiTranscribe_AudiTranscribe false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 137,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1030312,
+  stdout: null,
+  stderr: null
+}
+Error response from daemon: container 7f417caf7f3d1206919cda4139b43d20fabd22567f90a10db4a1d5eb9e1d8489 is not running
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/AudiTranscribe_AudiTranscribe false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:42:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1284302,
+  stdout: null,
+  stderr: null
+}
+Error during Maven build.

@@ -1,0 +1,684 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:b38b536d0115a01a6a9cde0dda7014664231cf40e6b1060fb082854c9a4117d0 done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775134,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775214,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775305,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775458,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775551,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775633,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775720,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775812,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775890,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1775974,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776053,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776209,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776295,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776372,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776463,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776542,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776633,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776792,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776872,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1776965,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777049,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777127,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777285,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777377,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777453,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777546,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777633,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777722,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777864,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1777951,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778037,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778123,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778268,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778356,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778453,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778541,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778687,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/huanfenz_StudentManager false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1778769,
+  stdout: null,
+  stderr: null
+}
+Dependency taglibs:standard not found in POM.
+Dependency javax.servlet:javax.servlet-api not found in POM.
+Dependency org.springframework:spring-aspects not found in POM.
+Dependency javax.servlet.jsp:jsp-api not found in POM.
+Dependency jstl:jstl not found in POM.
+Dependency com.github.penggle:kaptcha not found in POM.

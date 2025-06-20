@@ -1,0 +1,76 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:11-jdk-jammy
+#2 DONE 1.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.1s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:11-jdk-jammy@sha256:e76884f585036b97226325114719591f0d564ab4702548b746d90a206d8b491f
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:54022d807edf4119a2e33505eac4750b1feb7de5b4040b63464c30c6e7ab13bc 0.0s done
+#7 naming to docker.io/library/java-setup-11 0.1s done
+#7 DONE 0.2s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/app/%3F/.m2/repository/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/app/%3F/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.17.1/log4j-slf4j-impl-2.17.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/app/%3F/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Reload4jLoggerFactory]
+log4j:WARN No appenders could be found for logger (org.apache.kafka.common.config.AbstractConfig).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/getindata_kafka-connect-iceberg-sink false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1299324,
+  stdout: null,
+  stderr: null
+}
+Dependency org.apache.parquet:parquet-hadoop-bundle not found in POM.
+Dependency org.apache.commons:commons-lang3 not found in POM.
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/getindata_kafka-connect-iceberg-sink false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1352050,
+  stdout: null,
+  stderr: null
+}

@@ -1,0 +1,2192 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:6801c663ee4b0db7e74573402ac8ef55bc10e4933db39a3b94019cabad25e6a9
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:c4237301b9f9af352dcc47ba9f05a6209c141bd842b51292741ae223c1c84feb done
+#7 naming to docker.io/library/java-setup-17 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2240578,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2241389,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2241473,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2241572,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2241661,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2241738,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2241830,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242071,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242150,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242222,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242303,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242386,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242468,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242553,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242637,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242716,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242798,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242872,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2242997,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243147,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243233,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243309,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243388,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243596,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243693,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243775,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243853,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2243943,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244090,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244176,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244263,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244344,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244426,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244657,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244736,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244815,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244894,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2244984,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245127,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245205,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245285,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245372,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245453,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245596,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245680,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245820,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245901,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2245992,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246071,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246209,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246287,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246437,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246514,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246599,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246678,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246816,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246896,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2246979,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247119,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247200,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247279,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247417,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247499,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247639,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247728,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247825,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2247980,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2248121,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2248239,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2248383,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2248478,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2248565,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2248676,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2248885,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249004,
+  stdout: null,
+  stderr: null
+}
+Dependency org.apache.commons:commons-lang3 not found in POM.
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249215,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249357,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249466,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249542,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249639,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249861,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2249980,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250060,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250152,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250235,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250361,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250441,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250522,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250649,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250758,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2250908,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2251186,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2251444,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2251656,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2251961,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252138,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252294,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252449,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252528,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252640,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252773,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252896,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2252981,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253142,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253254,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253352,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253462,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253553,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253674,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253773,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2253888,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254062,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254177,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254299,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254370,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254462,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254585,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254684,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254794,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2254909,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2255017,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2255155,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2255335,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2255442,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2255549,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2255692,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/graphaware_neo4j-config-cli false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2255792,
+  stdout: null,
+  stderr: null
+}

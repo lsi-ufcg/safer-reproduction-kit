@@ -1,0 +1,82 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:18-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:18-jdk-jammy@sha256:ff53f70a043f358b6880f3a94aff4b151b2447a4acf20b2a0e940229d0585248
+#4 CACHED
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 1.080 curl: (22) The requested URL returned error: 404
+#5 1.084 
+#5 1.084 gzip: stdin: unexpected end of file
+#5 1.085 tar: Child returned status 1
+#5 1.085 tar: Error is not recoverable: exiting now
+#5 ERROR: process "/bin/sh -c mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn" did not complete successfully: exit code: 2
+------
+ > [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn:
+1.080 curl: (22) The requested URL returned error: 404
+1.084 
+1.084 gzip: stdin: unexpected end of file
+1.085 tar: Child returned status 1
+1.085 tar: Error is not recoverable: exiting now
+------
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+Dockerfile:14
+--------------------
+  13 |     
+  14 | >>> RUN mkdir -p /usr/share/maven \
+  15 | >>>    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz \
+  16 | >>>    | tar -xzC /usr/share/maven --strip-components=1 \
+  17 | >>>    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn 
+  18 |     #MAVEN end
+--------------------
+ERROR: failed to solve: process "/bin/sh -c mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn" did not complete successfully: exit code: 2
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/java/init-java-container.sh 18 /mnt/hdd/safer-reproduction-kit/workstation/maven/SEM24_Ecommerce-Website-Spring-Boot /mnt/hdd/safer-reproduction-kit/safer
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.initJavaContainer (/mnt/hdd/safer-reproduction-kit/safer/src/runners/java/java-runner.ts:13:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:36:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1425192,
+  stdout: null,
+  stderr: null
+}
+Error response from daemon: No such container: java-container-safer-SEM24_Ecommerce-Website-Spring-Boot
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/SEM24_Ecommerce-Website-Spring-Boot false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:42:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1425436,
+  stdout: null,
+  stderr: null
+}
+Error during Maven build.
