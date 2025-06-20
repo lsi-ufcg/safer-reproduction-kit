@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--<groupId>cz.cvut.fel.ida</groupId>-->
+    <groupId>io.github.gustiks</groupId>
+    <artifactId>NeuraLogic</artifactId>
+    <version>0.3.0</version>
+    <packaging>pom</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>A Java library for Deep Relational Learning (with differentiable logic programming).</description>
+    <url>https://github.com/gustiks/neuralogic</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>gustiks</id>
+            <name>Gustav Sir</name>
+            <email>souregus@gmail.com</email>
+            <organization>Czech Technical University</organization>
+            <organizationUrl>https://gustiks.github.io</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:gustiks/neuralogic.git</connection>
+        <developerConnection>scm:git:ssh://github.com:gustiks/neuralogic.git</developerConnection>
+        <url>https://github.com/gustiks/neuralogic/tree/master</url>
+    </scm>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+
+        <!--<repository>-->
+        <!--<id>github</id>-->
+        <!--<name>gustiks</name>-->
+        <!--<url>https://maven.pkg.github.com/gustiks/neuralogic/</url>-->
+        <!--</repository>-->
+    </distributionManagement>
+
+
+    <modules>
+        <module>Resources</module>
+        <module>Algebra</module>
+        <module>Settings</module>
+        <module>CLI</module>
+        <module>Drawing</module>
+        <module>Learning</module>
+        <module>Logging</module>
+        <module>Logic</module>
+        <module>Logical</module>
+        <module>Neural</module>
+        <module>Neuralization</module>
+        <module>Parsing</module>
+        <module>Pipelines</module>
+        <module>Utilities</module>
+        <module>Workflow</module>
+    </modules>
+
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <!--<appendAssemblyId>false</appendAssemblyId>-->
+                    <archive>
+                        <manifest>
+                            <mainClass>cz.cvut.fel.ida.neuralogic.cli.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>make-jar-with-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <argLine>-Xmx8g</argLine>
+                    <skip>false</skip>
+                    <groups>Fast, Medium, PreciseBenchmark</groups>
+                    <!--<excludedGroups>Interactive, Slow, AdHoc, SlowBenchmark</excludedGroups>-->
+                    <includes>
+                        <include>*.java</include>
+                    </includes>
+                    <excludes>
+                        <!--exclude the JMH autogenerated test classes causing problems-->
+                        <exclude>**.generated.**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>ci-cd</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <doclint>none</doclint>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <!--<configuration>-->
+                                <!--&lt;!&ndash; Prevent gpg from using pinentry programs. Fixes: gpg: signing-->
+                                <!--failed: Inappropriate ioctl for device &ndash;&gt;-->
+                                <!--&lt;!&ndash;<gpgArguments>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<arg>pinentry-mode</arg>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<arg>loopback</arg>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</gpgArguments>&ndash;&gt;-->
+                                <!--</configuration>-->
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!--<plugin>-->
+                        <!--<groupId>org.codehaus.mojo</groupId>-->
+                        <!--<artifactId>exec-maven-plugin</artifactId>-->
+                        <!--<version>1.6.0</version>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<id>run-benchmarks</id>-->
+                                <!--<phase>integration-test</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>exec</goal>-->
+                                <!--</goals>-->
+                                <!--<configuration>-->
+                                    <!--<classpathScope>test</classpathScope>-->
+                                    <!--<executable>java</executable>-->
+                                    <!--<arguments>-->
+                                        <!--<argument>-classpath</argument>-->
+                                        <!--<classpath/>-->
+                                        <!--<argument>org.openjdk.jmh.Main</argument>-->
+                                        <!--<argument>.*</argument>-->
+                                    <!--</arguments>-->
+                                <!--</configuration>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                    <!--</plugin>-->
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

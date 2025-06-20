@@ -1,0 +1,2561 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3454142,
+  stdout: null,
+  stderr: null
+}
+Dependency ch.qos.logback:logback-classic not found in POM.
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3476245,
+  stdout: null,
+  stderr: null
+}
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency junit:junit not found in POM.
+Dependency ch.qos.logback:logback-classic not found in POM.
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3491344,
+  stdout: null,
+  stderr: null
+}
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency junit:junit not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency junit:junit not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3498884,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3502578,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3503415,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3505435,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3507198,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3509589,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3511729,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3514797,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3518305,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3521073,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3523617,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3525187,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3530219,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3534598,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3536764,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3541662,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3545957,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3550439,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3556553,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3559355,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3562214,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3563334,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3566059,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3569372,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3573260,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3577127,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3581139,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3584886,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3588814,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3592837,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3597595,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3601710,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3605637,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3609093,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3611160,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3613285,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3615746,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3617596,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3620521,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3622803,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3624450,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3626485,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3629288,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3630373,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3631548,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3632797,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3633772,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3635062,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3637160,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3639804,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3642512,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3643770,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3644973,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3646649,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3648095,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3649748,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3651370,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3652854,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3654499,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3656105,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3658683,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3660838,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3662282,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3663174,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3664179,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3666784,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3667678,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3668779,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3669645,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3670687,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3671551,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3672555,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3673406,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3674305,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3675312,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3676155,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3677198,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3678066,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3679094,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3679943,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3680825,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3681844,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3682732,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3683767,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3684676,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3685535,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3686612,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3687460,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3688477,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3689322,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3690368,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3691240,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3692092,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3693119,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3693968,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3694984,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3695870,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3696895,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3697751,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3698601,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3699604,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3700455,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3701500,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3702355,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3703248,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3704294,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3705133,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3706205,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3707055,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3708107,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3708944,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3709787,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3710817,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3711691,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3712693,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3713503,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3714349,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3715385,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3716471,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3717451,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3718292,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3719351,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3720193,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3721050,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3722127,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3722979,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3724017,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3724902,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3725956,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3726815,
+  stdout: null,
+  stderr: null
+}
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency org.apache.commons:commons-configuration2 not found in POM.
+Dependency org.powermock:powermock-module-junit4 not found in POM.
+Dependency commons-beanutils:commons-beanutils not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core-bson not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency org.powermock:powermock-api-mockito2 not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency junit:junit not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/huaweicloud_huaweicloud-sdk-java-v3 false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3730897,
+  stdout: null,
+  stderr: null
+}
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency junit:junit not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core-xml not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency ch.qos.logback:logback-classic not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency junit:junit not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dataartsstudio not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cce not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-sfsturbo not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-bms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-koomessage not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-meeting not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cloudtable not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-vpn not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ivs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-er not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-apig not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codeartspipeline not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-sdrs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-swr not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-mapds not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-idme not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-roma not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-functiongraph not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-osm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codeartsinspector not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dws not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-eip not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codeartsgovernance not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ugo not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-koomap not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ec not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-secmaster not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-iotanalytics not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-imagesearch not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-iam not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cbh not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-lts not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-bss not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cloudrtc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-eihealth not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dris not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dis not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-iotedge not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-eps not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ims not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ocr not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-lakeformation not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codeartscheck not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ddm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cgs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-identitycenterstore not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-drs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-sa not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cph not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-waf not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dbss not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dataartsinsight not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-classroom not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-evs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cse not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cpts not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dli not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-vpcep not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-bcs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-as not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-hss not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dcs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codehub not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-identitycenterportalapi not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core-xml not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-rgc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-asm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-servicestage not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-tms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-mas not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-oroas not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-smn not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-obs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-config not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dds not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dsc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-res not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-kvs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-coc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-projectman not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-gaussdbforopengauss not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-sis not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-iotda not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-moderation not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-hilens not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-smsapi not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-mpc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-frs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cfw not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-vpc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-aom not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ief not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dataartsfabric not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-identitycenterscim not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dss not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-kps not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-optverse not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-das not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-msgsms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-rocketmq not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-eg not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cts not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-identitycenteroidc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-bssintl not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-devstar not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-pangulargemodels not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-voicecall not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-rms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cbr not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ecs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cdn not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-expert not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-aad not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-image not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-mssi not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-gaussdbfornosql not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codeartsdeploy not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-metastudio not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-aos not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-orgid not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-mastudio not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-edgesec not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ces not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-deh not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cloudide not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-vcm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-geip not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dgc not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-rds not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-iamaccessanalyzer not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cdm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-gsl not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cae not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-kms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-csms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-organizations not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-antiddos not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-gaussdb not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-tics not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cbs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dataartsfabricep not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cloudpond not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codecraft not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-live not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-vas not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-css not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-workspace not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-rabbitmq not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ga not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-oms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-koophone not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-kafka not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ram not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-sts not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-idmeclassicapi not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-mrs not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-vod not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-scm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ges not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dwr not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-nlp not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-sms not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-elb not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codeartsbuild not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-workspaceapp not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-ccm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dns not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-nat not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-iec not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-campusgo not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-cloudtest not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-iotdm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-codeartsartifact not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-identitycenter not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-dlf not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-vias not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-apm not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-smnglobal not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-core-bson not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-oa not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-eds not found in POM.
+Dependency com.huaweicloud.sdk:huaweicloud-sdk-all not found in POM.

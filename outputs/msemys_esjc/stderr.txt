@@ -1,0 +1,159 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Exception in thread "pool-1-thread-1" java.util.concurrent.CompletionException: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at java.util.concurrent.CompletableFuture.reportJoin(CompletableFuture.java:375)
+	at java.util.concurrent.CompletableFuture.join(CompletableFuture.java:1947)
+	at com.github.msemys.esjc.ITTransaction.lambda$commitsWhenWritingWithExpectedVersionAnyEvenWhileSomeoneIsWritingInParallel$0(ITTransaction.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at com.github.msemys.esjc.operation.manager.OperationManager.cleanUp(OperationManager.java:46)
+	at com.github.msemys.esjc.EventStoreTcp.disconnect(EventStoreTcp.java:627)
+	at com.github.msemys.esjc.EventStoreTcp.handle(EventStoreTcp.java:892)
+	at com.github.msemys.esjc.EventStoreTcp.timerTick(EventStoreTcp.java:708)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:159)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+Exception in thread "pool-1-thread-2" java.util.concurrent.CompletionException: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.biRelay(CompletableFuture.java:1298)
+	at java.util.concurrent.CompletableFuture$BiRelay.tryFire(CompletableFuture.java:1284)
+	at java.util.concurrent.CompletableFuture$CoCompletion.tryFire(CompletableFuture.java:1034)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at com.github.msemys.esjc.operation.AbstractOperation.fail(AbstractOperation.java:179)
+	at com.github.msemys.esjc.operation.manager.OperationManager.lambda$cleanUp$0(OperationManager.java:47)
+	at com.github.msemys.esjc.util.Iterables.consume(Iterables.java:22)
+	at com.github.msemys.esjc.operation.manager.OperationManager.cleanUp(OperationManager.java:50)
+	at com.github.msemys.esjc.EventStoreTcp.disconnect(EventStoreTcp.java:627)
+	at com.github.msemys.esjc.EventStoreTcp.handle(EventStoreTcp.java:892)
+	at com.github.msemys.esjc.EventStoreTcp.timerTick(EventStoreTcp.java:708)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:159)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at com.github.msemys.esjc.operation.manager.OperationManager.cleanUp(OperationManager.java:46)
+	... 13 more
+Exception in thread "pool-2-thread-1" java.util.concurrent.CompletionException: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at java.util.concurrent.CompletableFuture.reportJoin(CompletableFuture.java:375)
+	at java.util.concurrent.CompletableFuture.join(CompletableFuture.java:1947)
+	at com.github.msemys.esjc.ITTransaction.lambda$commitsWhenWritingWithExpectedVersionAnyEvenWhileSomeoneIsWritingInParallel$0(ITTransaction.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at com.github.msemys.esjc.operation.manager.OperationManager.cleanUp(OperationManager.java:46)
+	at com.github.msemys.esjc.EventStoreTcp.disconnect(EventStoreTcp.java:627)
+	at com.github.msemys.esjc.EventStoreTcp.handle(EventStoreTcp.java:892)
+	at com.github.msemys.esjc.EventStoreTcp.timerTick(EventStoreTcp.java:708)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:159)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+Exception in thread "pool-2-thread-2" java.util.concurrent.CompletionException: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.biRelay(CompletableFuture.java:1298)
+	at java.util.concurrent.CompletableFuture$BiRelay.tryFire(CompletableFuture.java:1284)
+	at java.util.concurrent.CompletableFuture$CoCompletion.tryFire(CompletableFuture.java:1034)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at com.github.msemys.esjc.operation.AbstractOperation.fail(AbstractOperation.java:179)
+	at com.github.msemys.esjc.operation.manager.OperationManager.lambda$cleanUp$0(OperationManager.java:47)
+	at com.github.msemys.esjc.util.Iterables.consume(Iterables.java:22)
+	at com.github.msemys.esjc.operation.manager.OperationManager.cleanUp(OperationManager.java:50)
+	at com.github.msemys.esjc.EventStoreTcp.disconnect(EventStoreTcp.java:627)
+	at com.github.msemys.esjc.EventStoreTcp.handle(EventStoreTcp.java:892)
+	at com.github.msemys.esjc.EventStoreTcp.timerTick(EventStoreTcp.java:708)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:159)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: com.github.msemys.esjc.ConnectionClosedException: Connection was closed.
+	at com.github.msemys.esjc.operation.manager.OperationManager.cleanUp(OperationManager.java:46)
+	... 13 more
+Jun 20, 2025 12:04:43 AM io.netty.channel.nio.NioEventLoop unexpectedSelectorWakeup
+WARNING: Selector.select() returned prematurely 512 times in a row; rebuilding Selector io.netty.channel.nio.SelectedSelectionKeySetSelector@32dbfcad.
+Jun 20, 2025 12:04:43 AM io.netty.channel.nio.NioEventLoop rebuildSelector0
+INFO: Migrated 0 channel(s) to the new Selector.
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/msemys_esjc false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3877143,
+  stdout: null,
+  stderr: null
+}
+Dependency junit:junit not found in POM.

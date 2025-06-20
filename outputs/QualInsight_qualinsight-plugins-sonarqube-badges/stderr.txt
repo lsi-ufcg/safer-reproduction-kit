@@ -1,0 +1,1360 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:6801c663ee4b0db7e74573402ac8ef55bc10e4933db39a3b94019cabad25e6a9
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:b843511158dd8df9396e372cecafda684c43442b4e287b9056e2317edde506b3 done
+#7 naming to docker.io/library/java-setup-17 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3820332,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3820515,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3820664,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3820817,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3820963,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3821109,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3821256,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3821399,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3821532,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3821689,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3821822,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3821951,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3822120,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3822261,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3822402,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3822536,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3822676,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3822813,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3823203,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3823417,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3823573,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3823842,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3824167,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3824403,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3824710,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3824949,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3825187,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3825517,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3825756,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3826070,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3826352,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3826616,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3826950,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3827196,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3827511,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3827749,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3828067,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3828306,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3828615,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3828854,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3829167,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3829403,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3829725,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3829966,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3830278,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3830529,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3831001,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3831245,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3831492,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3831730,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3831968,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3832132,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3832369,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3832601,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3832841,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3832986,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3833229,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3833469,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3833707,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3833946,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3834114,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3834348,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3834580,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3834822,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3835057,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3835218,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3835534,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3835848,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3836071,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3836380,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3836621,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3836913,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3837152,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3837627,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3837950,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3838187,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3838507,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3838745,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3839057,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3839381,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3839616,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3839807,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/QualInsight_qualinsight-plugins-sonarqube-badges false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3839959,
+  stdout: null,
+  stderr: null
+}
