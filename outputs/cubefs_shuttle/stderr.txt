@@ -1,0 +1,1637 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:b38b536d0115a01a6a9cde0dda7014664231cf40e6b1060fb082854c9a4117d0 done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+log4j:WARN No appenders could be found for logger (com.oppo.shuttle.rss.storage.fs.local.LocalFileSystem).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+25/06/20 14:01:29 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/06/20 14:01:30 INFO ZooKeeperServerMain: Starting server
+25/06/20 14:01:30 INFO ZooKeeperServer: tickTime set to 3000
+25/06/20 14:01:30 INFO ZooKeeperServer: minSessionTimeout set to -1
+25/06/20 14:01:30 INFO ZooKeeperServer: maxSessionTimeout set to -1
+25/06/20 14:01:30 INFO ServerCnxnFactory: Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+25/06/20 14:01:30 INFO NIOServerCnxnFactory: binding to port 0.0.0.0/0.0.0.0:2181
+25/06/20 14:01:30 ERROR TestingZooKeeperServer: From testing server (random state: false) for instance: InstanceSpec{dataDirectory=/tmp/1750428090135-0, port=2181, electionPort=40865, quorumPort=43553, deleteDataDirectoryOnClose=true, serverId=4, tickTime=-1, maxClientCnxns=-1} org.apache.curator.test.InstanceSpec@885
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:461)
+	at sun.nio.ch.Net.bind(Net.java:453)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:222)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:85)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:78)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:90)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:120)
+	at org.apache.curator.test.TestingZooKeeperMain.runFromConfig(TestingZooKeeperMain.java:73)
+	at org.apache.curator.test.TestingZooKeeperServer$1.run(TestingZooKeeperServer.java:148)
+	at java.lang.Thread.run(Thread.java:750)
+25/06/20 14:01:32 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleDistributeTest.testDistributeServerAlgorithm(Ors2ShuffleDistributeTest.scala:47)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+25/06/20 14:01:32 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:32 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleClusterTest.testMaster(Ors2ShuffleClusterTest.scala:60)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+25/06/20 14:01:32 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:32 INFO ShuffleWorkerStatusManager: 150.165.75.98_19190 unregister from master
+25/06/20 14:01:32 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b163b3d0002
+25/06/20 14:01:32 INFO ZooKeeper: Session: 0x1000b163b3d0002 closed
+25/06/20 14:01:32 INFO ClientCnxn: EventThread shut down for session: 0x1000b163b3d0002
+25/06/20 14:01:32 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:35550 which had sessionid 0x1000b163b3d0002
+25/06/20 14:01:32 INFO ShuffleServer: Channels closed
+25/06/20 14:01:34 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:01:36 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:01:37 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:01:39 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:01:39 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19190
+25/06/20 14:01:39 INFO ShuffleWorkerStatusManager: 150.165.75.98_19192 unregister from master
+25/06/20 14:01:39 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b163b3d0003
+25/06/20 14:01:39 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:35556 which had sessionid 0x1000b163b3d0003
+25/06/20 14:01:39 INFO ZooKeeper: Session: 0x1000b163b3d0003 closed
+25/06/20 14:01:39 INFO ClientCnxn: EventThread shut down for session: 0x1000b163b3d0003
+25/06/20 14:01:39 INFO ShuffleServer: Channels closed
+25/06/20 14:01:41 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:01:43 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:01:44 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:01:46 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:01:46 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19192
+25/06/20 14:01:46 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b163b3d0004
+25/06/20 14:01:46 INFO ShuffleWorkerStatusManager: 150.165.75.98_19194 unregister from master
+25/06/20 14:01:46 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:35570 which had sessionid 0x1000b163b3d0004
+25/06/20 14:01:46 INFO ClientCnxn: EventThread shut down for session: 0x1000b163b3d0004
+25/06/20 14:01:46 INFO ZooKeeper: Session: 0x1000b163b3d0004 closed
+25/06/20 14:01:46 INFO ShuffleServer: Channels closed
+25/06/20 14:01:48 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:01:50 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:01:51 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:01:53 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:01:53 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19194
+25/06/20 14:01:53 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b163b3d0001
+25/06/20 14:01:53 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:46356 which had sessionid 0x1000b163b3d0001
+25/06/20 14:01:53 INFO ClientCnxn: EventThread shut down for session: 0x1000b163b3d0001
+25/06/20 14:01:53 INFO ZooKeeper: Session: 0x1000b163b3d0001 closed
+25/06/20 14:01:53 INFO ShuffleServer: Channels closed
+25/06/20 14:01:55 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleMasterGroup.
+25/06/20 14:01:55 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleMasterHttpGroup.
+25/06/20 14:01:55 INFO ShuffleMaster: ShuffleMaster shutdown finished: 150.165.75.98:19189
+25/06/20 14:01:55 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:46364 which had sessionid 0x1000b163b3d0005
+25/06/20 14:01:55 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:35544 which had sessionid 0x1000b163b3d0000
+25/06/20 14:01:55 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:35584 which had sessionid 0x1000b163b3d0006
+25/06/20 14:01:55 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b163b3d0005, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:01:55 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b163b3d0000, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:01:55 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b163b3d0006, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:01:55 INFO NIOServerCnxnFactory: NIOServerCnxn factory exited run method
+25/06/20 14:01:55 INFO ZooKeeperServer: shutting down
+25/06/20 14:01:55 INFO SessionTrackerImpl: Shutting down
+25/06/20 14:01:55 INFO PrepRequestProcessor: Shutting down
+25/06/20 14:01:55 INFO SyncRequestProcessor: Shutting down
+25/06/20 14:01:55 INFO SyncRequestProcessor: SyncRequestProcessor exited!
+25/06/20 14:01:55 INFO PrepRequestProcessor: PrepRequestProcessor exited loop!
+25/06/20 14:01:55 INFO FinalRequestProcessor: shutdown of request processor complete
+25/06/20 14:01:55 INFO ConnectionStateManager: State change: SUSPENDED
+25/06/20 14:01:55 INFO ConnectionStateManager: State change: SUSPENDED
+25/06/20 14:01:55 INFO ZooKeeper: Session: 0x1000b163b3d0000 closed
+25/06/20 14:01:55 INFO ClientCnxn: EventThread shut down for session: 0x1000b163b3d0000
+25/06/20 14:01:55 INFO ZooKeeperServerMain: Starting server
+25/06/20 14:01:55 INFO ZooKeeperServer: tickTime set to 3000
+25/06/20 14:01:55 INFO ZooKeeperServer: minSessionTimeout set to -1
+25/06/20 14:01:55 INFO ZooKeeperServer: maxSessionTimeout set to -1
+25/06/20 14:01:55 INFO ServerCnxnFactory: Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+25/06/20 14:01:55 INFO NIOServerCnxnFactory: binding to port 0.0.0.0/0.0.0.0:2181
+25/06/20 14:01:56 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:01:56 INFO ZooKeeper: Initiating client connection, connectString=127.0.0.1 sessionTimeout=60000 watcher=org.apache.curator.ConnectionState@5a4e993d
+25/06/20 14:01:56 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:56 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:59594
+25/06/20 14:01:56 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:01:56 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:59594
+25/06/20 14:01:56 INFO FileTxnLog: Creating new log file: log.1
+25/06/20 14:01:56 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:01:56 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@7369aeec
+25/06/20 14:01:56 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:01:56 INFO ShuffleMaster: Starting shuffle master : 150.165.75.98:19189
+25/06/20 14:01:56 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:56 INFO ShuffleWorkerStatusManager: start ShuffleWorkerStatusManager, workerCheckInterval: 15000 mills, appFileRetentionMillis: 28800000 mills
+25/06/20 14:01:56 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:45902
+25/06/20 14:01:56 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:01:56 INFO ZooKeeperServer: Established session 0x1000b16e1ef0000 with negotiated timeout 60000 for client /127.0.0.1:59594
+25/06/20 14:01:56 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b16e1ef0000, negotiated timeout = 60000
+25/06/20 14:01:56 INFO ShuffleWorkerStatusManager: start ShuffleWorkerStatusManager, workerCheckInterval: 15000 mills, appFileRetentionMillis: 28800000 mills
+25/06/20 14:01:56 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:45902
+25/06/20 14:01:56 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:01:56 INFO ZooKeeperServer: Established session 0x1000b16e1ef0001 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:45902
+25/06/20 14:01:56 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b16e1ef0001, negotiated timeout = 30000
+25/06/20 14:01:56 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:01:57 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:57 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:01:57 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:45914
+25/06/20 14:01:57 INFO ZooKeeperServer: Client attempting to renew session 0x1000b163b3d0006 at /0:0:0:0:0:0:0:1:45914
+25/06/20 14:01:57 INFO ZooKeeperServer: Invalid session 0x1000b163b3d0006 for client /0:0:0:0:0:0:0:1:45914, probably expired
+25/06/20 14:01:57 WARN ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b163b3d0006 has expired
+25/06/20 14:01:57 INFO ConnectionStateManager: State change: LOST
+25/06/20 14:01:57 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:45914 which had sessionid 0x1000b163b3d0006
+25/06/20 14:01:57 WARN ConnectionState: Session expired event received
+25/06/20 14:01:57 INFO ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b163b3d0006 has expired, closing socket connection
+25/06/20 14:01:57 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@c3976d4
+25/06/20 14:01:57 INFO ClientCnxn: EventThread shut down for session: 0x1000b163b3d0006
+25/06/20 14:01:57 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:57 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:01:57 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:45930
+25/06/20 14:01:57 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:45930
+25/06/20 14:01:57 INFO ZooKeeperServer: Established session 0x1000b16e1ef0002 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:45930
+25/06/20 14:01:57 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b16e1ef0002, negotiated timeout = 30000
+25/06/20 14:01:57 INFO ConnectionStateManager: State change: RECONNECTED
+25/06/20 14:01:57 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:57 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:45944
+25/06/20 14:01:57 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:01:57 INFO ZooKeeperServer: Client attempting to renew session 0x1000b163b3d0005 at /0:0:0:0:0:0:0:1:45944
+25/06/20 14:01:57 INFO ZooKeeperServer: Invalid session 0x1000b163b3d0005 for client /0:0:0:0:0:0:0:1:45944, probably expired
+25/06/20 14:01:57 WARN ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b163b3d0005 has expired
+25/06/20 14:01:57 INFO ConnectionStateManager: State change: LOST
+25/06/20 14:01:57 WARN ConnectionState: Session expired event received
+25/06/20 14:01:57 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:45944 which had sessionid 0x1000b163b3d0005
+25/06/20 14:01:57 INFO ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b163b3d0005 has expired, closing socket connection
+25/06/20 14:01:57 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@7af5cf2a
+25/06/20 14:01:57 INFO ClientCnxn: EventThread shut down for session: 0x1000b163b3d0005
+25/06/20 14:01:57 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:57 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:01:57 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:45960
+25/06/20 14:01:57 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:45960
+25/06/20 14:01:57 INFO ZooKeeperServer: Established session 0x1000b16e1ef0003 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:45960
+25/06/20 14:01:57 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b16e1ef0003, negotiated timeout = 30000
+25/06/20 14:01:57 INFO ConnectionStateManager: State change: RECONNECTED
+25/06/20 14:01:57 INFO SessionTrackerImpl: SessionTrackerImpl exited loop!
+25/06/20 14:01:57 ERROR ZkShuffleServiceManager: Error get children for path /shuffle_rss_path/shuffle_storage_type.
+25/06/20 14:01:57 INFO ShuffleMasterClusterManager: Current dag cluster map is {}
+25/06/20 14:01:57 INFO ShuffleMaster: Registering shuffle master, data center: default_dc, cluster: default_cluster, server id: 150.165.75.98:19189, 
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/default_master/shuffle_master/shuffle_master_watch
+25/06/20 14:01:57 INFO PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x1000b16e1ef0001 type:create cxid:0x6 zxid:0x5 txntype:-1 reqpath:n/a Error Path:/shuffle_rss_path/default_master/shuffle_master Error:KeeperErrorCode = NoNode for /shuffle_rss_path/default_master/shuffle_master
+25/06/20 14:01:57 ERROR ZkShuffleServiceManager: Error get children for path /shuffle_rss_path/shuffle_storage_type.
+25/06/20 14:01:57 INFO ShuffleMasterClusterManager: Current dag cluster map is {}
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/default_master/shuffle_master/shuffle_master_watch
+25/06/20 14:01:57 INFO ShuffleMaster: Create master watch path succeed : /shuffle_rss_path/default_master/shuffle_master/shuffle_master_watch
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19189
+25/06/20 14:01:57 INFO ShuffleMaster: Init master aggregate channel finished, port: 150.165.75.98:19189.
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x1000b16e1ef0001 type:create cxid:0x11 zxid:0xa txntype:-1 reqpath:n/a Error Path:/shuffle_rss_path/default_master/shuffle_master/shuffle_master_ha Error:KeeperErrorCode = NoNode for /shuffle_rss_path/default_master/shuffle_master/shuffle_master_ha
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19188
+25/06/20 14:01:57 INFO ShuffleMaster: Init master http channel finished, port: 150.165.75.98:19188.
+25/06/20 14:01:57 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:01:57 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@7198937f
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:01:57 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:57 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:01:57 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:01:57 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:01:57 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:59596
+25/06/20 14:01:57 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:59596
+25/06/20 14:01:57 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:01:57 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 388030208
+25/06/20 14:01:57 INFO ZooKeeperServer: Established session 0x1000b16e1ef0004 with negotiated timeout 30000 for client /127.0.0.1:59596
+25/06/20 14:01:57 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b16e1ef0004, negotiated timeout = 30000
+25/06/20 14:01:57 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:01:57 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:01:57 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: default_dc, cluster: default_cluster, workerId: 150.165.75.98_19190, rootDir: target/rss-data
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19191
+25/06/20 14:01:57 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19191
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO ShuffleMaster: Current host is leader
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19190
+25/06/20 14:01:57 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19190
+25/06/20 14:01:57 INFO ShuffleWorker: Registering shuffle server, data center: default_dc, cluster: default_cluster, server id: 150.165.75.98_19190, host and port: 150.165.75.98:19190:19191
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/default_dc/default_cluster/shuffle_worker/150.165.75.98%3A19190%3A19191
+25/06/20 14:01:57 INFO PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x1000b16e1ef0004 type:create cxid:0x2 zxid:0xf txntype:-1 reqpath:n/a Error Path:/shuffle_rss_path/default_dc/default_cluster/shuffle_worker Error:KeeperErrorCode = NoNode for /shuffle_rss_path/default_dc/default_cluster/shuffle_worker
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/default_dc/default_cluster/shuffle_worker/150.165.75.98%3A19190%3A19191
+25/06/20 14:01:57 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:01:57 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428117843.dat 
+25/06/20 14:01:57 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:01:57 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@51348a1b
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:01:57 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:57 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:01:57 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:01:57 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:01:57 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:59610
+25/06/20 14:01:57 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:59610
+25/06/20 14:01:57 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:01:57 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 377829568
+25/06/20 14:01:57 INFO ZooKeeperServer: Established session 0x1000b16e1ef0005 with negotiated timeout 30000 for client /127.0.0.1:59610
+25/06/20 14:01:57 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b16e1ef0005, negotiated timeout = 30000
+25/06/20 14:01:57 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:01:57 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:01:57 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: default_dc, cluster: default_cluster, workerId: 150.165.75.98_19192, rootDir: target/rss-data
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19193
+25/06/20 14:01:57 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19193
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19192
+25/06/20 14:01:57 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19192
+25/06/20 14:01:57 INFO ShuffleWorker: Registering shuffle server, data center: default_dc, cluster: default_cluster, server id: 150.165.75.98_19192, host and port: 150.165.75.98:19192:19193
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/default_dc/default_cluster/shuffle_worker/150.165.75.98%3A19192%3A19193
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/default_dc/default_cluster/shuffle_worker/150.165.75.98%3A19192%3A19193
+25/06/20 14:01:57 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:01:57 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428117855.dat 
+25/06/20 14:01:57 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:01:57 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@6e1a3fe8
+25/06/20 14:01:57 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:01:57 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:01:57 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:01:57 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:01:57 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:45976
+25/06/20 14:01:57 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:45976
+25/06/20 14:01:57 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:01:57 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 372962608
+25/06/20 14:01:57 INFO ZooKeeperServer: Established session 0x1000b16e1ef0006 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:45976
+25/06/20 14:01:57 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b16e1ef0006, negotiated timeout = 30000
+25/06/20 14:01:57 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:01:57 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:01:57 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: default_dc, cluster: default_cluster, workerId: 150.165.75.98_19194, rootDir: target/rss-data
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19195
+25/06/20 14:01:57 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19195
+25/06/20 14:01:57 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:01:57 INFO ShuffleServer: Bound bootstrap specified port: 19194
+25/06/20 14:01:57 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19194
+25/06/20 14:01:57 INFO ShuffleWorker: Registering shuffle server, data center: default_dc, cluster: default_cluster, server id: 150.165.75.98_19194, host and port: 150.165.75.98:19194:19195
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/default_dc/default_cluster/shuffle_worker/150.165.75.98%3A19194%3A19195
+25/06/20 14:01:57 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/default_dc/default_cluster/shuffle_worker/150.165.75.98%3A19194%3A19195
+25/06/20 14:01:57 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:01:57 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428117870.dat 
+25/06/20 14:01:57 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleClusterTest.testZk(Ors2ShuffleClusterTest.scala:77)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+25/06/20 14:01:57 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:57 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.runWithConf(Ors2ShuffleManagerTest.scala:72)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.bypass(Ors2ShuffleManagerTest.scala:91)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+25/06/20 14:01:57 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:57 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:117)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.rddCacheDisk(Ors2ShuffleManagerTest.scala:143)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+25/06/20 14:01:57 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:57 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:117)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.rddCacheMemory(Ors2ShuffleManagerTest.scala:130)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+25/06/20 14:01:57 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:57 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.runWithConf(Ors2ShuffleManagerTest.scala:72)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.retry(Ors2ShuffleManagerTest.scala:124)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+25/06/20 14:01:57 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:57 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.runWithConf(Ors2ShuffleManagerTest.scala:72)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.skipFlowControl(Ors2ShuffleManagerTest.scala:170)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+25/06/20 14:01:57 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:57 WARN SparkContext: Another SparkContext is being constructed (or threw an exception in its constructor). This may indicate an error, since only one SparkContext should be running in this JVM (see SPARK-2243). The other SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:939)
+org.apache.spark.shuffle.Ors2ShuffleTestEnv.createSession(Ors2ShuffleTestEnv.scala:125)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.runWithConf(Ors2ShuffleManagerTest.scala:72)
+org.apache.spark.shuffle.Ors2ShuffleManagerTest.sort(Ors2ShuffleManagerTest.scala:111)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+org.testng.TestRunner.privateRun(TestRunner.java:648)
+org.testng.TestRunner.run(TestRunner.java:505)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+org.testng.SuiteRunner.run(SuiteRunner.java:364)
+25/06/20 14:01:57 INFO SparkContext: Running Spark version 3.1.2
+25/06/20 14:01:57 INFO ShuffleWorkerStatusManager: 150.165.75.98_19190 unregister from master
+25/06/20 14:01:57 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b16e1ef0004
+25/06/20 14:01:57 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:59596 which had sessionid 0x1000b16e1ef0004
+25/06/20 14:01:57 INFO ClientCnxn: EventThread shut down for session: 0x1000b16e1ef0004
+25/06/20 14:01:57 INFO ZooKeeper: Session: 0x1000b16e1ef0004 closed
+25/06/20 14:01:57 INFO ShuffleServer: Channels closed
+25/06/20 14:01:59 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:01:59 INFO ShuffleServer: Channels closed
+25/06/20 14:01:59 INFO ShuffleWorkerStatusManager: 150.165.75.98_19190 unregister from master
+25/06/20 14:02:01 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:01 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:03 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:03 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:04 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:07 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:07 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:07 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19190
+25/06/20 14:02:07 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19190
+25/06/20 14:02:07 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: default_dc, cluster: default_cluster, workerId: 150.165.75.98_19190, rootDir: target/rss-data
+25/06/20 14:02:07 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:07 INFO ShuffleWorkerStatusManager: 150.165.75.98_19192 unregister from master
+25/06/20 14:02:07 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b16e1ef0005
+25/06/20 14:02:07 INFO ZooKeeper: Session: 0x1000b16e1ef0005 closed
+25/06/20 14:02:07 INFO ClientCnxn: EventThread shut down for session: 0x1000b16e1ef0005
+25/06/20 14:02:07 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:59610 which had sessionid 0x1000b16e1ef0005
+25/06/20 14:02:07 INFO ShuffleServer: Channels closed
+25/06/20 14:02:07 WARN AbstractChannel: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x3875a63c]
+java.util.concurrent.RejectedExecutionException: event executor terminated
+	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:926)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:353)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:346)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:828)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:818)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register(AbstractChannel.java:471)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:87)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:81)
+	at io.netty.channel.MultithreadEventLoopGroup.register(MultithreadEventLoopGroup.java:86)
+	at io.netty.bootstrap.AbstractBootstrap.initAndRegister(AbstractBootstrap.java:323)
+	at io.netty.bootstrap.AbstractBootstrap.doBind(AbstractBootstrap.java:272)
+	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:268)
+	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:246)
+	at com.oppo.shuttle.rss.server.ShuffleServer.bindPort(ShuffleServer.java:86)
+	at com.oppo.shuttle.rss.server.worker.ShuffleWorker.initChannel(ShuffleWorker.java:196)
+	at com.oppo.shuttle.rss.server.worker.ShuffleWorker.run(ShuffleWorker.java:225)
+	at org.apache.spark.shuffle.Ors2ShuffleTestEnv.restartFirstServer(Ors2ShuffleTestEnv.scala:88)
+	at org.apache.spark.shuffle.Ors2ShuffleManagerTest$$anon$1.run(Ors2ShuffleManagerTest.scala:120)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+	at io.netty.channel.DefaultEventLoop.run(DefaultEventLoop.java:54)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+25/06/20 14:02:09 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:11 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:12 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:14 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:14 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19192
+25/06/20 14:02:14 INFO ShuffleWorkerStatusManager: 150.165.75.98_19194 unregister from master
+25/06/20 14:02:14 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b16e1ef0006
+25/06/20 14:02:14 INFO ZooKeeper: Session: 0x1000b16e1ef0006 closed
+25/06/20 14:02:14 INFO ClientCnxn: EventThread shut down for session: 0x1000b16e1ef0006
+25/06/20 14:02:14 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:45976 which had sessionid 0x1000b16e1ef0006
+25/06/20 14:02:14 INFO ShuffleServer: Channels closed
+25/06/20 14:02:16 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:18 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:19 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:21 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:21 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19194
+25/06/20 14:02:21 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b16e1ef0001
+25/06/20 14:02:21 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:45902 which had sessionid 0x1000b16e1ef0001
+25/06/20 14:02:21 INFO ClientCnxn: EventThread shut down for session: 0x1000b16e1ef0001
+25/06/20 14:02:21 INFO ZooKeeper: Session: 0x1000b16e1ef0001 closed
+25/06/20 14:02:21 INFO ShuffleServer: Channels closed
+25/06/20 14:02:23 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleMasterGroup.
+25/06/20 14:02:23 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleMasterHttpGroup.
+25/06/20 14:02:23 INFO ShuffleMaster: ShuffleMaster shutdown finished: 150.165.75.98:19189
+25/06/20 14:02:23 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:45930 which had sessionid 0x1000b16e1ef0002
+25/06/20 14:02:23 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b16e1ef0002, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:02:23 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:59594 which had sessionid 0x1000b16e1ef0000
+25/06/20 14:02:23 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b16e1ef0000, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:02:23 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:45960 which had sessionid 0x1000b16e1ef0003
+25/06/20 14:02:23 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b16e1ef0003, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:02:23 INFO NIOServerCnxnFactory: NIOServerCnxn factory exited run method
+25/06/20 14:02:23 INFO ZooKeeperServer: shutting down
+25/06/20 14:02:23 INFO SessionTrackerImpl: Shutting down
+25/06/20 14:02:23 INFO PrepRequestProcessor: Shutting down
+25/06/20 14:02:23 INFO SyncRequestProcessor: Shutting down
+25/06/20 14:02:23 INFO PrepRequestProcessor: PrepRequestProcessor exited loop!
+25/06/20 14:02:23 INFO SyncRequestProcessor: SyncRequestProcessor exited!
+25/06/20 14:02:23 INFO FinalRequestProcessor: shutdown of request processor complete
+25/06/20 14:02:23 INFO ConnectionStateManager: State change: SUSPENDED
+25/06/20 14:02:23 INFO ZooKeeper: Session: 0x1000b16e1ef0000 closed
+25/06/20 14:02:23 INFO ClientCnxn: EventThread shut down for session: 0x1000b16e1ef0000
+25/06/20 14:02:23 INFO ConnectionStateManager: State change: SUSPENDED
+25/06/20 14:02:23 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 10, queueSize 50
+25/06/20 14:02:24 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:24 INFO SessionTrackerImpl: SessionTrackerImpl exited loop!
+25/06/20 14:02:24 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 10, queueSize 50
+25/06/20 14:02:24 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:24 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:02:25 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:25 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:02:25 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:26 INFO BlackListRefresher: Refresh 0 workers to black list from config
+25/06/20 14:02:26 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:26 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:02:27 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:27 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:02:28 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:28 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:02:28 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:28 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:02:29 INFO BlackListRefresher: Refresh 0 workers to black list from config
+25/06/20 14:02:29 INFO ZooKeeperServerMain: Starting server
+25/06/20 14:02:29 INFO ZooKeeperServer: tickTime set to 3000
+25/06/20 14:02:29 INFO ZooKeeperServer: minSessionTimeout set to -1
+25/06/20 14:02:29 INFO ZooKeeperServer: maxSessionTimeout set to -1
+25/06/20 14:02:29 INFO ServerCnxnFactory: Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+25/06/20 14:02:29 INFO NIOServerCnxnFactory: binding to port 0.0.0.0/0.0.0.0:2181
+25/06/20 14:02:29 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:29 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:02:29 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:53932
+25/06/20 14:02:29 INFO ZooKeeperServer: Refusing session request for client /0:0:0:0:0:0:0:1:53932 as it has seen zxid 0x4 our last zxid is 0x0 client must try another server
+25/06/20 14:02:29 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:53932 (no session established for client)
+25/06/20 14:02:29 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b16e1ef0003, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@579612f8
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ShuffleMaster: Starting shuffle master : 150.165.75.98:19189
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO ShuffleWorkerStatusManager: start ShuffleWorkerStatusManager, workerCheckInterval: 15000 mills, appFileRetentionMillis: 28800000 mills
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52314
+25/06/20 14:02:30 INFO ShuffleWorkerStatusManager: start ShuffleWorkerStatusManager, workerCheckInterval: 15000 mills, appFileRetentionMillis: 28800000 mills
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52314
+25/06/20 14:02:30 INFO FileTxnLog: Creating new log file: log.1
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0000 with negotiated timeout 30000 for client /127.0.0.1:52314
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0000, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 ERROR ZkShuffleServiceManager: Error get children for path /shuffle_rss_path/shuffle_storage_type.
+25/06/20 14:02:30 INFO ShuffleMasterClusterManager: Current dag cluster map is {}
+25/06/20 14:02:30 INFO ShuffleMaster: Registering shuffle master, data center: default_dc, cluster: default_cluster, server id: 150.165.75.98:19189, 
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/default_master/shuffle_master/shuffle_master_watch
+25/06/20 14:02:30 INFO PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x1000b1763cf0000 type:create cxid:0x7 zxid:0x2 txntype:-1 reqpath:n/a Error Path:/shuffle_rss_path/default_master/shuffle_master Error:KeeperErrorCode = NoNode for /shuffle_rss_path/default_master/shuffle_master
+25/06/20 14:02:30 ERROR ZkShuffleServiceManager: Error get children for path /shuffle_rss_path/shuffle_storage_type.
+25/06/20 14:02:30 INFO ShuffleMasterClusterManager: Current dag cluster map is {}
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/default_master/shuffle_master/shuffle_master_watch
+25/06/20 14:02:30 INFO ShuffleMaster: Create master watch path succeed : /shuffle_rss_path/default_master/shuffle_master/shuffle_master_watch
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19189
+25/06/20 14:02:30 INFO ShuffleMaster: Init master aggregate channel finished, port: 150.165.75.98:19189.
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x1000b1763cf0000 type:create cxid:0x11 zxid:0x7 txntype:-1 reqpath:n/a Error Path:/shuffle_rss_path/default_master/shuffle_master/shuffle_master_ha Error:KeeperErrorCode = NoNode for /shuffle_rss_path/default_master/shuffle_master/shuffle_master_ha
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19188
+25/06/20 14:02:30 INFO ShuffleMaster: Init master http channel finished, port: 150.165.75.98:19188.
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@357afae1
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ShuffleMaster: Current host is leader
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52328
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52328
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 315907736
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0001 with negotiated timeout 30000 for client /127.0.0.1:52328
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0001, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19190, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19191
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19191
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19190
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19190
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19190, host and port: 150.165.75.98:19190:19191
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19190%3A19191
+25/06/20 14:02:30 INFO PrepRequestProcessor: Got user-level KeeperException when processing sessionid:0x1000b1763cf0001 type:create cxid:0x2 zxid:0xc txntype:-1 reqpath:n/a Error Path:/shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker Error:KeeperErrorCode = NoNode for /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19190%3A19191
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150079.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@30393db8
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52344
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52344
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 305641680
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0002 with negotiated timeout 30000 for client /127.0.0.1:52344
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0002, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19192, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19193
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19193
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19192
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19192
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19192, host and port: 150.165.75.98:19192:19193
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19192%3A19193
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19192%3A19193
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150092.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@1e992336
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52346
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52346
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 301030872
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0003 with negotiated timeout 30000 for client /127.0.0.1:52346
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0003, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19194, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19195
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19195
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19194
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19194
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19194, host and port: 150.165.75.98:19194:19195
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19194%3A19195
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19194%3A19195
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150104.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@1627e0c1
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52348
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52348
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 290252320
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0004 with negotiated timeout 30000 for client /127.0.0.1:52348
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0004, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19196, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19197
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19197
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19196
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19196
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19196, host and port: 150.165.75.98:19196:19197
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19196%3A19197
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19196%3A19197
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150117.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@5a00dab7
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52354
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52354
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 280051744
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0005 with negotiated timeout 30000 for client /127.0.0.1:52354
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0005, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19198, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19199
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19199
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19198
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19198
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19198, host and port: 150.165.75.98:19198:19199
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19198%3A19199
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19198%3A19199
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150130.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@3f3fdc07
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:53936
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:53936
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 275697088
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0006 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:53936
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b1763cf0006, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19200, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19201
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19201
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19200
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19200
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19200, host and port: 150.165.75.98:19200:19201
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19200%3A19201
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19200%3A19201
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150142.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@549e0088
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52356
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52356
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 265752736
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0007 with negotiated timeout 30000 for client /127.0.0.1:52356
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0007, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19202, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19203
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19203
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19202
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19202
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19202, host and port: 150.165.75.98:19202:19203
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19202%3A19203
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19202%3A19203
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150161.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@37389825
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52358
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52358
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 261398080
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0008 with negotiated timeout 30000 for client /127.0.0.1:52358
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0008, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19204, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19205
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19205
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19204
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19204
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19204, host and port: 150.165.75.98:19204:19205
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19204%3A19205
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19204%3A19205
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150173.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@6a15d338
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52368
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /127.0.0.1:52368
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 625475584, freeMemory: 251449616
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf0009 with negotiated timeout 30000 for client /127.0.0.1:52368
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1000b1763cf0009, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19206, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19207
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19207
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19206
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19206
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19206, host and port: 150.165.75.98:19206:19207
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19206%3A19207
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19206%3A19207
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150185.dat 
+25/06/20 14:02:30 INFO CuratorFrameworkImpl: Starting
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@48c87759
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Init ZkShuffleWorkerManager: ZkServerConnString:localhost:2181, connTimeoutMs:30000, maxRetryTimes:5, zkCuratorBaseSleepMs:1000, zkCuratorMaxSleepMs:10000
+25/06/20 14:02:30 INFO ShuffleDataExecutor: Started with storageDir=target/rss-data, storage=ShuffleFileStorage{}, appObjRetentionMillis=21600000, dumperThreads=8, dumperQueueSize=50
+25/06/20 14:02:30 INFO Ors2WorkerPartitionExecutor: Ors2WorkerPartitionExecutor create success, threadNum: 8, queueSize 50
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:53946
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:53946
+25/06/20 14:02:30 INFO BuildConnectionExecutor: Start BuildConnectionExecutor
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf000a with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:53946
+25/06/20 14:02:30 INFO CommonUtils: Jvm totalMemory: 830472192, freeMemory: 744871392
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b1763cf000a, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: CONNECTED
+25/06/20 14:02:30 INFO FlowController: InitFreeConnections size: 5100
+25/06/20 14:02:30 INFO ShuffleWorker: Starting ShuffleWorker process, dataCenter: SSD_HDFS, cluster: cluster1, workerId: 150.165.75.98_19208, rootDir: target/rss-data
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19209
+25/06/20 14:02:30 INFO ShuffleWorker: Init buildConnectionChannel ip: 150.165.75.98 port:19209
+25/06/20 14:02:30 INFO ShuffleServer: UseEpoll false 
+25/06/20 14:02:30 INFO ShuffleServer: Bound bootstrap specified port: 19208
+25/06/20 14:02:30 INFO ShuffleWorker: Init shuffleDataChannel ip: 150.165.75.98 port:19208
+25/06/20 14:02:30 INFO ShuffleWorker: Registering shuffle server, data center: SSD_HDFS, cluster: cluster1, server id: 150.165.75.98_19208, host and port: 150.165.75.98:19208:19209
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Trying to create zk node: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19208%3A19209
+25/06/20 14:02:30 INFO ZkShuffleServiceManager: Zk node path created: /shuffle_rss_path/SSD_HDFS/cluster1/shuffle_worker/150.165.75.98%3A19208%3A19209
+25/06/20 14:02:30 INFO ShuffleWorker: Send heartbeat to master
+25/06/20 14:02:30 INFO SelfCheckUtils: Worker storage check success, write file: target/rss-data/local_self_check_150.165.75.98_1750428150210.dat 
+25/06/20 14:02:30 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0001
+25/06/20 14:02:30 INFO ShuffleWorkerStatusManager: 150.165.75.98_19190 unregister from master
+25/06/20 14:02:30 INFO ZooKeeper: Session: 0x1000b1763cf0001 closed
+25/06/20 14:02:30 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52328 which had sessionid 0x1000b1763cf0001
+25/06/20 14:02:30 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0001
+25/06/20 14:02:30 INFO ShuffleServer: Channels closed
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:53962
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to renew session 0x1000b16e1ef0002 at /0:0:0:0:0:0:0:1:53962
+25/06/20 14:02:30 INFO ZooKeeperServer: Invalid session 0x1000b16e1ef0002 for client /0:0:0:0:0:0:0:1:53962, probably expired
+25/06/20 14:02:30 WARN ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b16e1ef0002 has expired
+25/06/20 14:02:30 INFO ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b16e1ef0002 has expired, closing socket connection
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: LOST
+25/06/20 14:02:30 WARN ConnectionState: Session expired event received
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@c3976d4
+25/06/20 14:02:30 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:53962 which had sessionid 0x1000b16e1ef0002
+25/06/20 14:02:30 INFO ClientCnxn: EventThread shut down for session: 0x1000b16e1ef0002
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:53978
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:53978
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf000b with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:53978
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b1763cf000b, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: RECONNECTED
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /127.0.0.1:52382
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/127.0.0.1:2181, initiating session
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to renew session 0x1000b16e1ef0003 at /127.0.0.1:52382
+25/06/20 14:02:30 INFO ZooKeeperServer: Invalid session 0x1000b16e1ef0003 for client /127.0.0.1:52382, probably expired
+25/06/20 14:02:30 WARN ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b16e1ef0003 has expired
+25/06/20 14:02:30 INFO ClientCnxn: Unable to reconnect to ZooKeeper service, session 0x1000b16e1ef0003 has expired, closing socket connection
+25/06/20 14:02:30 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52382 which had sessionid 0x1000b16e1ef0003
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: LOST
+25/06/20 14:02:30 WARN ConnectionState: Session expired event received
+25/06/20 14:02:30 INFO ZooKeeper: Initiating client connection, connectString=localhost:2181 sessionTimeout=30000 watcher=org.apache.curator.ConnectionState@7af5cf2a
+25/06/20 14:02:30 INFO ClientCnxn: EventThread shut down for session: 0x1000b16e1ef0003
+25/06/20 14:02:30 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:02:30 INFO ClientCnxn: Socket connection established to localhost/0:0:0:0:0:0:0:1:2181, initiating session
+25/06/20 14:02:30 INFO NIOServerCnxnFactory: Accepted socket connection from /0:0:0:0:0:0:0:1:53984
+25/06/20 14:02:30 INFO ZooKeeperServer: Client attempting to establish new session at /0:0:0:0:0:0:0:1:53984
+25/06/20 14:02:30 INFO ZooKeeperServer: Established session 0x1000b1763cf000c with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:53984
+25/06/20 14:02:30 INFO ClientCnxn: Session establishment complete on server localhost/0:0:0:0:0:0:0:1:2181, sessionid = 0x1000b1763cf000c, negotiated timeout = 30000
+25/06/20 14:02:30 INFO ConnectionStateManager: State change: RECONNECTED
+25/06/20 14:02:32 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:34 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:35 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:37 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:37 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19190
+25/06/20 14:02:37 INFO ShuffleWorkerStatusManager: 150.165.75.98_19192 unregister from master
+25/06/20 14:02:37 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0002
+25/06/20 14:02:37 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52344 which had sessionid 0x1000b1763cf0002
+25/06/20 14:02:37 INFO ZooKeeper: Session: 0x1000b1763cf0002 closed
+25/06/20 14:02:37 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0002
+25/06/20 14:02:37 INFO ShuffleServer: Channels closed
+25/06/20 14:02:39 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:41 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:42 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:44 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:44 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19192
+25/06/20 14:02:44 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0003
+25/06/20 14:02:44 INFO ShuffleWorkerStatusManager: 150.165.75.98_19194 unregister from master
+25/06/20 14:02:44 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52346 which had sessionid 0x1000b1763cf0003
+25/06/20 14:02:44 INFO ZooKeeper: Session: 0x1000b1763cf0003 closed
+25/06/20 14:02:44 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0003
+25/06/20 14:02:44 INFO ShuffleServer: Channels closed
+25/06/20 14:02:46 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:48 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:49 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:51 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:51 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19194
+25/06/20 14:02:51 INFO ShuffleWorkerStatusManager: 150.165.75.98_19196 unregister from master
+25/06/20 14:02:51 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0004
+25/06/20 14:02:51 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52348 which had sessionid 0x1000b1763cf0004
+25/06/20 14:02:51 INFO ZooKeeper: Session: 0x1000b1763cf0004 closed
+25/06/20 14:02:51 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0004
+25/06/20 14:02:51 INFO ShuffleServer: Channels closed
+25/06/20 14:02:53 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:02:55 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:02:56 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:02:59 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:02:59 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19196
+25/06/20 14:02:59 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0005
+25/06/20 14:02:59 INFO ShuffleWorkerStatusManager: 150.165.75.98_19198 unregister from master
+25/06/20 14:02:59 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52354 which had sessionid 0x1000b1763cf0005
+25/06/20 14:02:59 INFO ZooKeeper: Session: 0x1000b1763cf0005 closed
+25/06/20 14:02:59 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0005
+25/06/20 14:02:59 INFO ShuffleServer: Channels closed
+25/06/20 14:03:01 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:03:03 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:03:04 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:03:06 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:03:06 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19198
+25/06/20 14:03:06 INFO ShuffleWorkerStatusManager: 150.165.75.98_19200 unregister from master
+25/06/20 14:03:06 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0006
+25/06/20 14:03:06 INFO ZooKeeper: Session: 0x1000b1763cf0006 closed
+25/06/20 14:03:06 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:53936 which had sessionid 0x1000b1763cf0006
+25/06/20 14:03:06 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0006
+25/06/20 14:03:06 INFO ShuffleServer: Channels closed
+25/06/20 14:03:08 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:03:10 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:03:11 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:03:13 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:03:13 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19200
+25/06/20 14:03:13 INFO ShuffleWorkerStatusManager: 150.165.75.98_19202 unregister from master
+25/06/20 14:03:13 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0007
+25/06/20 14:03:13 INFO ZooKeeper: Session: 0x1000b1763cf0007 closed
+25/06/20 14:03:13 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52356 which had sessionid 0x1000b1763cf0007
+25/06/20 14:03:13 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0007
+25/06/20 14:03:13 INFO ShuffleServer: Channels closed
+25/06/20 14:03:15 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:03:17 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:03:18 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:03:20 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:03:20 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19202
+25/06/20 14:03:20 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0008
+25/06/20 14:03:20 INFO ShuffleWorkerStatusManager: 150.165.75.98_19204 unregister from master
+25/06/20 14:03:20 INFO ZooKeeper: Session: 0x1000b1763cf0008 closed
+25/06/20 14:03:20 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0008
+25/06/20 14:03:20 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52358 which had sessionid 0x1000b1763cf0008
+25/06/20 14:03:20 INFO ShuffleServer: Channels closed
+25/06/20 14:03:22 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:03:24 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:03:25 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:03:27 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:03:27 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19204
+25/06/20 14:03:27 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0009
+25/06/20 14:03:27 INFO ShuffleWorkerStatusManager: 150.165.75.98_19206 unregister from master
+25/06/20 14:03:27 INFO ZooKeeper: Session: 0x1000b1763cf0009 closed
+25/06/20 14:03:28 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0009
+25/06/20 14:03:28 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52368 which had sessionid 0x1000b1763cf0009
+25/06/20 14:03:28 INFO ShuffleServer: Channels closed
+25/06/20 14:03:30 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:03:32 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:03:33 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:03:35 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:03:35 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19206
+25/06/20 14:03:35 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf000a
+25/06/20 14:03:35 INFO ShuffleWorkerStatusManager: 150.165.75.98_19208 unregister from master
+25/06/20 14:03:35 INFO ZooKeeper: Session: 0x1000b1763cf000a closed
+25/06/20 14:03:35 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:53946 which had sessionid 0x1000b1763cf000a
+25/06/20 14:03:35 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf000a
+25/06/20 14:03:35 INFO ShuffleServer: Channels closed
+25/06/20 14:03:37 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerParentGroup.
+25/06/20 14:03:39 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleWorkerChildGroup.
+25/06/20 14:03:40 INFO Ors2WorkerPartitionExecutor: Wait for the task execution in the queue to complete
+25/06/20 14:03:42 WARN ZkShuffleServiceManager: ZK curator is null, return
+25/06/20 14:03:42 INFO ShuffleWorker: ShuffleWorker shutdown finished: 150.165.75.98_19208
+25/06/20 14:03:42 INFO PrepRequestProcessor: Processed session termination for sessionid: 0x1000b1763cf0000
+25/06/20 14:03:42 INFO ZooKeeper: Session: 0x1000b1763cf0000 closed
+25/06/20 14:03:42 INFO ClientCnxn: EventThread shut down for session: 0x1000b1763cf0000
+25/06/20 14:03:42 INFO NIOServerCnxn: Closed socket connection for client /127.0.0.1:52314 which had sessionid 0x1000b1763cf0000
+25/06/20 14:03:42 INFO ShuffleServer: Channels closed
+25/06/20 14:03:44 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleMasterGroup.
+25/06/20 14:03:44 INFO ShuffleServer: Event loop group shutdown gracefully finished: ShuffleMasterHttpGroup.
+25/06/20 14:03:44 INFO ShuffleMaster: ShuffleMaster shutdown finished: 150.165.75.98:19189
+25/06/20 14:03:44 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:53984 which had sessionid 0x1000b1763cf000c
+25/06/20 14:03:44 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b1763cf000c, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:03:44 INFO NIOServerCnxn: Closed socket connection for client /0:0:0:0:0:0:0:1:53978 which had sessionid 0x1000b1763cf000b
+25/06/20 14:03:44 INFO ClientCnxn: Unable to read additional data from server sessionid 0x1000b1763cf000b, likely server has closed socket, closing socket connection and attempting reconnect
+25/06/20 14:03:44 INFO NIOServerCnxnFactory: NIOServerCnxn factory exited run method
+25/06/20 14:03:44 INFO ZooKeeperServer: shutting down
+25/06/20 14:03:44 INFO SessionTrackerImpl: Shutting down
+25/06/20 14:03:44 INFO PrepRequestProcessor: Shutting down
+25/06/20 14:03:44 INFO SyncRequestProcessor: Shutting down
+25/06/20 14:03:44 INFO PrepRequestProcessor: PrepRequestProcessor exited loop!
+25/06/20 14:03:44 INFO SyncRequestProcessor: SyncRequestProcessor exited!
+25/06/20 14:03:44 INFO FinalRequestProcessor: shutdown of request processor complete
+25/06/20 14:03:44 INFO ApplicationRequestController: Current resource holders are: []
+25/06/20 14:03:44 INFO ApplicationRequestController: Current resource holders are: [application_164359_275]
+25/06/20 14:03:44 INFO ConnectionStateManager: State change: SUSPENDED
+25/06/20 14:03:44 INFO ConnectionStateManager: State change: SUSPENDED
+25/06/20 14:03:45 INFO SessionTrackerImpl: SessionTrackerImpl exited loop!
+25/06/20 14:03:45 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:45 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:46 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:46 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:03:47 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:47 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:47 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:47 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:48 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:48 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:49 INFO ApplicationRequestController: Current resource holders are: []
+25/06/20 14:03:49 INFO ApplicationRequestController: Current resource holders are: []
+25/06/20 14:03:49 INFO ApplicationRequestController: Current resource holders are: [application_16359_275]
+25/06/20 14:03:49 INFO ApplicationRequestController: Current resource holders are: [application_16359_276, application_16359_275]
+25/06/20 14:03:49 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:49 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:50 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:50 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:03:51 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:51 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:51 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:51 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:53 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:53 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:03:53 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:53 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:03:54 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:54 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:55 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:55 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:03:56 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:56 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:56 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:56 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:58 INFO ClientCnxn: Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:58 INFO ClientCnxn: Socket error occurred: localhost/0:0:0:0:0:0:0:1:2181: Connection refused
+25/06/20 14:03:58 INFO ClientCnxn: Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+25/06/20 14:03:58 INFO ClientCnxn: Socket error occurred: localhost/127.0.0.1:2181: Connection refused
+25/06/20 14:03:59 INFO ApplicationRequestController: application_16359_277 request can't get resource in 10 seconds, return fail.
+25/06/20 14:03:59 INFO ApplicationRequestController: Current resource holders are: []
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2341664,
+  stdout: null,
+  stderr: null
+}
+Dependency org.scalatest:scalatest_2.12 not found in POM.
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2347494,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2348235,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2348663,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2349005,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2349331,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2349623,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2349929,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2350259,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2350523,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2350759,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2351022,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2351245,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2351506,
+  stdout: null,
+  stderr: null
+}
+Dependency org.apache.spark:spark-sql_2.12 not found in POM.
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2352653,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2352888,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2353138,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2353332,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2353545,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2353836,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2354065,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2354257,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2354481,
+  stdout: null,
+  stderr: null
+}
+Dependency com.carrotsearch:hppc not found in POM.
+Dependency com.fasterxml.jackson.module:jackson-module-scala_2.12 not found in POM.
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2356841,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2357137,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2357476,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2357775,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2358164,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2358451,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /mnt/hdd/safer-reproduction-kit/workstation/maven/cubefs_shuttle false
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/mnt/hdd/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at updateDependenciesInPom (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:119:21)
+    at runForMaven (/mnt/hdd/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at async main (/mnt/hdd/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 2358740,
+  stdout: null,
+  stderr: null
+}
+Dependency org.apache.spark:spark-core_2.12 not found in POM.
