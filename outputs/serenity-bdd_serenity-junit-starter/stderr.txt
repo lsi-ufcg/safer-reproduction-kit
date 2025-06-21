@@ -1,0 +1,213 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#2 DONE 0.8s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:6801c663ee4b0db7e74573402ac8ef55bc10e4933db39a3b94019cabad25e6a9
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:b843511158dd8df9396e372cecafda684c43442b4e287b9056e2317edde506b3 done
+#7 naming to docker.io/library/java-setup-17 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+Jun 20, 2025 9:38:28 PM org.junit.platform.launcher.core.CompositeTestExecutionListener lambda$notifyEach$21
+WARNING: TestExecutionListener [net.serenitybdd.junit5.SerenityTestExecutionListener] threw exception for method: executionFinished(TestIdentifier [uniqueId = [engine:junit-jupiter]/[class:starter.acceptancetests.WhenAddingNumbers], parentId = [engine:junit-jupiter], displayName = 'WhenAddingNumbers', legacyReportingName = 'starter.acceptancetests.WhenAddingNumbers', source = ClassSource [className = 'starter.acceptancetests.WhenAddingNumbers', filePosition = null], tags = [], type = CONTAINER], TestExecutionResult [status = SUCCESSFUL, throwable = null])
+java.lang.NoClassDefFoundError: Could not initialize class net.thucydides.model.adapters.TestFramework
+	at net.thucydides.model.requirements.SerenityTestCaseFinder.isSerenityTestCase(SerenityTestCaseFinder.java:11)
+	at net.thucydides.core.annotations.TestCaseAnnotations.isASerenityTestCase(TestCaseAnnotations.java:135)
+	at net.thucydides.core.junit.SerenityJUnitTestCase.isAWebTest(SerenityJUnitTestCase.java:18)
+	at net.thucydides.core.steps.BaseStepListener.currentTestIsABrowserTest(BaseStepListener.java:715)
+	at net.thucydides.core.steps.BaseStepListener.testSuiteFinished(BaseStepListener.java:492)
+	at net.thucydides.core.steps.StepEventBus.testSuiteFinished(StepEventBus.java:855)
+	at net.serenitybdd.junit5.SerenityTestExecutionListener.executionFinished(SerenityTestExecutionListener.java:295)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.lambda$executionFinished$10(CompositeTestExecutionListener.java:74)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.lambda$notifyEach$21(CompositeTestExecutionListener.java:110)
+	at org.junit.platform.commons.util.CollectionUtils.forEachInReverseOrder(CollectionUtils.java:243)
+	at org.junit.platform.launcher.core.IterationOrder$2.forEach(IterationOrder.java:30)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.notifyEach(CompositeTestExecutionListener.java:108)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.executionFinished(CompositeTestExecutionListener.java:73)
+	at org.junit.platform.launcher.core.ExecutionListenerAdapter.executionFinished(ExecutionListenerAdapter.java:57)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.lambda$executionFinished$6(CompositeEngineExecutionListener.java:60)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.lambda$notifyEach$13(CompositeEngineExecutionListener.java:82)
+	at org.junit.platform.commons.util.CollectionUtils.forEachInReverseOrder(CollectionUtils.java:243)
+	at org.junit.platform.launcher.core.IterationOrder$2.forEach(IterationOrder.java:30)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.notifyEach(CompositeEngineExecutionListener.java:80)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.executionFinished(CompositeEngineExecutionListener.java:59)
+	at org.junit.platform.launcher.core.DelegatingEngineExecutionListener.executionFinished(DelegatingEngineExecutionListener.java:47)
+	at org.junit.platform.launcher.core.StackTracePruningEngineExecutionListener.executionFinished(StackTracePruningEngineExecutionListener.java:46)
+	at org.junit.platform.launcher.core.DelegatingEngineExecutionListener.executionFinished(DelegatingEngineExecutionListener.java:47)
+	at org.junit.platform.launcher.core.OutcomeDelayingEngineExecutionListener.executionFinished(OutcomeDelayingEngineExecutionListener.java:63)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.reportCompletion(NodeTestTask.java:200)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:105)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.execSync(ForkJoinPoolHierarchicalTestExecutorService.java:247)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.executeSync(ForkJoinPoolHierarchicalTestExecutorService.java:194)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:166)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: No Test Strategy Adapter found: To run JUnit tests in Serenity make sure that either the Serenity JUnit 4 (serenity-junit) or JUnit 5 (serenity-junit5) dependency is available. [in thread "ForkJoinPool-1-worker-1"]
+	at net.thucydides.model.adapters.TestFramework.<clinit>(TestFramework.java:34)
+	at net.serenitybdd.annotations.TestAnnotations.isIgnored(TestAnnotations.java:49)
+	at net.thucydides.core.steps.StepInterceptor.isIgnored(StepInterceptor.java:466)
+	at net.thucydides.core.steps.StepInterceptor.shouldSkip(StepInterceptor.java:390)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:214)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at starter.acceptancetests.MathWizSteps$ByteBuddy$pc1sQeFB.startsWith(Unknown Source)
+	at starter.acceptancetests.WhenAddingNumbers.addingSums(WhenAddingNumbers.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:775)
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:479)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:161)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:152)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:91)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:112)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:94)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:87)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:216)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:212)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.execSync(ForkJoinPoolHierarchicalTestExecutorService.java:247)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:159)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	... 18 more
+
+Jun 20, 2025 9:38:28 PM org.junit.platform.launcher.core.CompositeTestExecutionListener lambda$notifyEach$21
+WARNING: TestExecutionListener [net.serenitybdd.junit5.SerenityTestExecutionListener] threw exception for method: executionFinished(TestIdentifier [uniqueId = [engine:junit-jupiter]/[class:starter.acceptancetests.WhenSearchingForTerms], parentId = [engine:junit-jupiter], displayName = 'WhenSearchingForTerms', legacyReportingName = 'starter.acceptancetests.WhenSearchingForTerms', source = ClassSource [className = 'starter.acceptancetests.WhenSearchingForTerms', filePosition = null], tags = [], type = CONTAINER], TestExecutionResult [status = SUCCESSFUL, throwable = null])
+java.lang.NoClassDefFoundError: Could not initialize class net.thucydides.model.adapters.TestFramework
+	at net.thucydides.model.requirements.SerenityTestCaseFinder.isSerenityTestCase(SerenityTestCaseFinder.java:11)
+	at net.thucydides.core.annotations.TestCaseAnnotations.isASerenityTestCase(TestCaseAnnotations.java:135)
+	at net.thucydides.core.junit.SerenityJUnitTestCase.isAWebTest(SerenityJUnitTestCase.java:18)
+	at net.thucydides.core.steps.BaseStepListener.currentTestIsABrowserTest(BaseStepListener.java:715)
+	at net.thucydides.core.steps.BaseStepListener.testSuiteFinished(BaseStepListener.java:492)
+	at net.thucydides.core.steps.StepEventBus.testSuiteFinished(StepEventBus.java:855)
+	at net.serenitybdd.junit5.SerenityTestExecutionListener.executionFinished(SerenityTestExecutionListener.java:295)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.lambda$executionFinished$10(CompositeTestExecutionListener.java:74)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.lambda$notifyEach$21(CompositeTestExecutionListener.java:110)
+	at org.junit.platform.commons.util.CollectionUtils.forEachInReverseOrder(CollectionUtils.java:243)
+	at org.junit.platform.launcher.core.IterationOrder$2.forEach(IterationOrder.java:30)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.notifyEach(CompositeTestExecutionListener.java:108)
+	at org.junit.platform.launcher.core.CompositeTestExecutionListener.executionFinished(CompositeTestExecutionListener.java:73)
+	at org.junit.platform.launcher.core.ExecutionListenerAdapter.executionFinished(ExecutionListenerAdapter.java:57)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.lambda$executionFinished$6(CompositeEngineExecutionListener.java:60)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.lambda$notifyEach$13(CompositeEngineExecutionListener.java:82)
+	at org.junit.platform.commons.util.CollectionUtils.forEachInReverseOrder(CollectionUtils.java:243)
+	at org.junit.platform.launcher.core.IterationOrder$2.forEach(IterationOrder.java:30)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.notifyEach(CompositeEngineExecutionListener.java:80)
+	at org.junit.platform.launcher.core.CompositeEngineExecutionListener.executionFinished(CompositeEngineExecutionListener.java:59)
+	at org.junit.platform.launcher.core.DelegatingEngineExecutionListener.executionFinished(DelegatingEngineExecutionListener.java:47)
+	at org.junit.platform.launcher.core.StackTracePruningEngineExecutionListener.executionFinished(StackTracePruningEngineExecutionListener.java:46)
+	at org.junit.platform.launcher.core.DelegatingEngineExecutionListener.executionFinished(DelegatingEngineExecutionListener.java:47)
+	at org.junit.platform.launcher.core.OutcomeDelayingEngineExecutionListener.executionFinished(OutcomeDelayingEngineExecutionListener.java:63)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.reportCompletion(NodeTestTask.java:200)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:105)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.execSync(ForkJoinPoolHierarchicalTestExecutorService.java:247)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.executeSync(ForkJoinPoolHierarchicalTestExecutorService.java:194)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:166)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.IllegalStateException: No Test Strategy Adapter found: To run JUnit tests in Serenity make sure that either the Serenity JUnit 4 (serenity-junit) or JUnit 5 (serenity-junit5) dependency is available. [in thread "ForkJoinPool-1-worker-1"]
+	at net.thucydides.model.adapters.TestFramework.<clinit>(TestFramework.java:34)
+	at net.serenitybdd.annotations.TestAnnotations.isIgnored(TestAnnotations.java:49)
+	at net.thucydides.core.steps.StepInterceptor.isIgnored(StepInterceptor.java:466)
+	at net.thucydides.core.steps.StepInterceptor.shouldSkip(StepInterceptor.java:390)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:214)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at starter.acceptancetests.MathWizSteps$ByteBuddy$pc1sQeFB.startsWith(Unknown Source)
+	at starter.acceptancetests.WhenAddingNumbers.addingSums(WhenAddingNumbers.java:19)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	... 5 more
+
+Error executing command: Error: Command failed: /media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /media/lsi/HDD/safer/safer-reproduction-kit/workstation/maven/serenity-bdd_serenity-junit-starter false
+    at __node_internal_genericNodeError (node:internal/errors:865:15)
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at execCommand (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:14:5)
+    at runForMaven (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/runners/maven/script.ts:37:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at main (/media/lsi/HDD/safer/safer-reproduction-kit/safer/src/script.ts:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 127962,
+  stdout: null,
+  stderr: null
+}
+Dependency org.assertj:assertj-core not found in POM.

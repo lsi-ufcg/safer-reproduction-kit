@@ -1,0 +1,804 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+File: /app/src/main/java/com/codepine/api/testrail/TestRail.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ListToCsvSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CaseModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CsvToListDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UnixTimestampModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PlanModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/IntToBooleanDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ResultModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/QueryParameterString.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/StringToMapDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/FieldModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PageDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UrlConnectionFactory.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/BooleanToIntSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/Request.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Case.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Run.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Plan.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Status.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/User.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Priority.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Links.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Test.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Section.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Result.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseType.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Milestone.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Suite.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Page.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Project.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Configuration.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/ResultField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Field.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailConfig.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailException.java [delomboked]
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:487: warning: Generating equals/hashCode implementation but without a call to superclass, even though this class does not extend java.lang.Object. If this is intentional, add '@EqualsAndHashCode(callSuper=false)' to your type.
+    @Data
+    ^
+/app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Plan;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Result;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.ResultField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java:44: error: cannot find symbol
+    private BooleanToIntSerializer booleanToIntSerializer;
+            ^
+  symbol:   class BooleanToIntSerializer
+  location: class BooleanToIntSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java:50: error: cannot find symbol
+    private CsvToListDeserializer csvToListDeserializer;
+            ^
+  symbol:   class CsvToListDeserializer
+  location: class CsvToListDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java:47: error: cannot find symbol
+    private ListToCsvSerializer listToCsvSerializer;
+            ^
+  symbol:   class ListToCsvSerializer
+  location: class ListToCsvSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java:46: error: cannot find symbol
+    private IntToBooleanDeserializer intToBooleanDeserializer;
+            ^
+  symbol:   class IntToBooleanDeserializer
+  location: class IntToBooleanDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java:50: error: cannot find symbol
+    private StringToMapDeserializer stringToMapDeserializer;
+            ^
+  symbol:   class StringToMapDeserializer
+  location: class StringToMapDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:27: error: cannot find symbol
+import com.codepine.api.testrail.internal.ListToCsvSerializer;
+                                         ^
+  symbol:   class ListToCsvSerializer
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:28: error: cannot find symbol
+import com.codepine.api.testrail.internal.UrlConnectionFactory;
+                                         ^
+  symbol:   class UrlConnectionFactory
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Page;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:72: error: cannot find symbol
+    private static final TestRailConfig config = TestRail.builder(TEST_END_POINT, "testUser", "testPassword").build().getConfig();
+                         ^
+  symbol:   class TestRailConfig
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:84: error: cannot find symbol
+    private UrlConnectionFactory mockUrlConnectionFactory;
+            ^
+  symbol:   class UrlConnectionFactory
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:312: error: cannot find symbol
+    @RequiredArgsConstructor
+    ^
+  symbol:   class UrlConnectionFactory
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:365: error: cannot find symbol
+        public static class Get extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:375: error: cannot find symbol
+        public static class List extends Request<java.util.List<Model>> {
+                                         ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:395: error: cannot find symbol
+        public static class ListPaginated extends Request<java.util.List<Model>> {
+                                                  ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                              ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                                                     ^
+  symbol:   class Case
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:434: error: cannot find symbol
+        public static class ListWithAltName extends Request<java.util.List<ModelWithAltName>> {
+                                                    ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:449: error: cannot find symbol
+        public static class Add extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:464: error: cannot find symbol
+        public static class Update extends Request<Model> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:479: error: cannot find symbol
+        public static class Delete extends Request<Void> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:384: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class List
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:404: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListPaginated
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:424: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListCases
+File: /app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/UnixTimestampModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/RequestTest.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRail.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ListToCsvSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CaseModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CsvToListDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UnixTimestampModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PlanModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/IntToBooleanDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ResultModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/QueryParameterString.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/StringToMapDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/FieldModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PageDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UrlConnectionFactory.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/BooleanToIntSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/Request.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Case.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Run.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Plan.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Status.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/User.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Priority.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Links.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Test.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Section.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Result.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseType.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Milestone.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Suite.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Page.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Project.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Configuration.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/ResultField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Field.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailConfig.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailException.java [delomboked]
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:487: warning: Generating equals/hashCode implementation but without a call to superclass, even though this class does not extend java.lang.Object. If this is intentional, add '@EqualsAndHashCode(callSuper=false)' to your type.
+    @Data
+    ^
+/app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Plan;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Result;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.ResultField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java:44: error: cannot find symbol
+    private BooleanToIntSerializer booleanToIntSerializer;
+            ^
+  symbol:   class BooleanToIntSerializer
+  location: class BooleanToIntSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java:50: error: cannot find symbol
+    private CsvToListDeserializer csvToListDeserializer;
+            ^
+  symbol:   class CsvToListDeserializer
+  location: class CsvToListDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java:47: error: cannot find symbol
+    private ListToCsvSerializer listToCsvSerializer;
+            ^
+  symbol:   class ListToCsvSerializer
+  location: class ListToCsvSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java:46: error: cannot find symbol
+    private IntToBooleanDeserializer intToBooleanDeserializer;
+            ^
+  symbol:   class IntToBooleanDeserializer
+  location: class IntToBooleanDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java:50: error: cannot find symbol
+    private StringToMapDeserializer stringToMapDeserializer;
+            ^
+  symbol:   class StringToMapDeserializer
+  location: class StringToMapDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:27: error: cannot find symbol
+import com.codepine.api.testrail.internal.ListToCsvSerializer;
+                                         ^
+  symbol:   class ListToCsvSerializer
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:28: error: cannot find symbol
+import com.codepine.api.testrail.internal.UrlConnectionFactory;
+                                         ^
+  symbol:   class UrlConnectionFactory
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Page;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:72: error: cannot find symbol
+    private static final TestRailConfig config = TestRail.builder(TEST_END_POINT, "testUser", "testPassword").build().getConfig();
+                         ^
+  symbol:   class TestRailConfig
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:84: error: cannot find symbol
+    private UrlConnectionFactory mockUrlConnectionFactory;
+            ^
+  symbol:   class UrlConnectionFactory
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:312: error: cannot find symbol
+    @RequiredArgsConstructor
+    ^
+  symbol:   class UrlConnectionFactory
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:365: error: cannot find symbol
+        public static class Get extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:375: error: cannot find symbol
+        public static class List extends Request<java.util.List<Model>> {
+                                         ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:395: error: cannot find symbol
+        public static class ListPaginated extends Request<java.util.List<Model>> {
+                                                  ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                              ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                                                     ^
+  symbol:   class Case
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:434: error: cannot find symbol
+        public static class ListWithAltName extends Request<java.util.List<ModelWithAltName>> {
+                                                    ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:449: error: cannot find symbol
+        public static class Add extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:464: error: cannot find symbol
+        public static class Update extends Request<Model> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:479: error: cannot find symbol
+        public static class Delete extends Request<Void> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:384: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class List
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:404: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListPaginated
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:424: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListCases
+File: /app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/UnixTimestampModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/RequestTest.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRail.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ListToCsvSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CaseModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CsvToListDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UnixTimestampModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PlanModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/IntToBooleanDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ResultModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/QueryParameterString.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/StringToMapDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/FieldModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PageDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UrlConnectionFactory.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/BooleanToIntSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/Request.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Case.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Run.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Plan.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Status.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/User.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Priority.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Links.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Test.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Section.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Result.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseType.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Milestone.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Suite.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Page.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Project.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Configuration.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/ResultField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Field.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailConfig.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailException.java [delomboked]
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:487: warning: Generating equals/hashCode implementation but without a call to superclass, even though this class does not extend java.lang.Object. If this is intentional, add '@EqualsAndHashCode(callSuper=false)' to your type.
+    @Data
+    ^
+/app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Plan;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Result;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.ResultField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java:44: error: cannot find symbol
+    private BooleanToIntSerializer booleanToIntSerializer;
+            ^
+  symbol:   class BooleanToIntSerializer
+  location: class BooleanToIntSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java:50: error: cannot find symbol
+    private CsvToListDeserializer csvToListDeserializer;
+            ^
+  symbol:   class CsvToListDeserializer
+  location: class CsvToListDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java:47: error: cannot find symbol
+    private ListToCsvSerializer listToCsvSerializer;
+            ^
+  symbol:   class ListToCsvSerializer
+  location: class ListToCsvSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java:46: error: cannot find symbol
+    private IntToBooleanDeserializer intToBooleanDeserializer;
+            ^
+  symbol:   class IntToBooleanDeserializer
+  location: class IntToBooleanDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java:50: error: cannot find symbol
+    private StringToMapDeserializer stringToMapDeserializer;
+            ^
+  symbol:   class StringToMapDeserializer
+  location: class StringToMapDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:27: error: cannot find symbol
+import com.codepine.api.testrail.internal.ListToCsvSerializer;
+                                         ^
+  symbol:   class ListToCsvSerializer
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:28: error: cannot find symbol
+import com.codepine.api.testrail.internal.UrlConnectionFactory;
+                                         ^
+  symbol:   class UrlConnectionFactory
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Page;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:72: error: cannot find symbol
+    private static final TestRailConfig config = TestRail.builder(TEST_END_POINT, "testUser", "testPassword").build().getConfig();
+                         ^
+  symbol:   class TestRailConfig
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:84: error: cannot find symbol
+    private UrlConnectionFactory mockUrlConnectionFactory;
+            ^
+  symbol:   class UrlConnectionFactory
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:312: error: cannot find symbol
+    @RequiredArgsConstructor
+    ^
+  symbol:   class UrlConnectionFactory
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:365: error: cannot find symbol
+        public static class Get extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:375: error: cannot find symbol
+        public static class List extends Request<java.util.List<Model>> {
+                                         ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:395: error: cannot find symbol
+        public static class ListPaginated extends Request<java.util.List<Model>> {
+                                                  ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                              ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                                                     ^
+  symbol:   class Case
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:434: error: cannot find symbol
+        public static class ListWithAltName extends Request<java.util.List<ModelWithAltName>> {
+                                                    ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:449: error: cannot find symbol
+        public static class Add extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:464: error: cannot find symbol
+        public static class Update extends Request<Model> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:479: error: cannot find symbol
+        public static class Delete extends Request<Void> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:384: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class List
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:404: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListPaginated
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:424: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListCases
+File: /app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/UnixTimestampModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/RequestTest.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRail.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ListToCsvSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CaseModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/CsvToListDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UnixTimestampModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PlanModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/IntToBooleanDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/ResultModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/QueryParameterString.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/StringToMapDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/FieldModule.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/PageDeserializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/UrlConnectionFactory.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/internal/BooleanToIntSerializer.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/Request.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Case.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Run.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Plan.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Status.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/User.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Priority.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Links.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Test.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Section.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Result.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseType.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Milestone.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Suite.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/Page.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Project.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/CaseField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Configuration.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/model/ResultField.java [unchanged]
+File: /app/src/main/java/com/codepine/api/testrail/model/Field.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailConfig.java [delomboked]
+File: /app/src/main/java/com/codepine/api/testrail/TestRailException.java [delomboked]
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:487: warning: Generating equals/hashCode implementation but without a call to superclass, even though this class does not extend java.lang.Object. If this is intentional, add '@EqualsAndHashCode(callSuper=false)' to your type.
+    @Data
+    ^
+/app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Plan;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Result;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.ResultField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:28: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.CaseField;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java:44: error: cannot find symbol
+    private BooleanToIntSerializer booleanToIntSerializer;
+            ^
+  symbol:   class BooleanToIntSerializer
+  location: class BooleanToIntSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java:50: error: cannot find symbol
+    private CsvToListDeserializer csvToListDeserializer;
+            ^
+  symbol:   class CsvToListDeserializer
+  location: class CsvToListDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java:27: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Field;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java:47: error: cannot find symbol
+    private ListToCsvSerializer listToCsvSerializer;
+            ^
+  symbol:   class ListToCsvSerializer
+  location: class ListToCsvSerializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java:46: error: cannot find symbol
+    private IntToBooleanDeserializer intToBooleanDeserializer;
+            ^
+  symbol:   class IntToBooleanDeserializer
+  location: class IntToBooleanDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java:50: error: cannot find symbol
+    private StringToMapDeserializer stringToMapDeserializer;
+            ^
+  symbol:   class StringToMapDeserializer
+  location: class StringToMapDeserializerTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:27: error: cannot find symbol
+import com.codepine.api.testrail.internal.ListToCsvSerializer;
+                                         ^
+  symbol:   class ListToCsvSerializer
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:28: error: cannot find symbol
+import com.codepine.api.testrail.internal.UrlConnectionFactory;
+                                         ^
+  symbol:   class UrlConnectionFactory
+  location: package com.codepine.api.testrail.internal
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:29: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Page;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:30: error: package com.codepine.api.testrail.model does not exist
+import com.codepine.api.testrail.model.Case;
+                                      ^
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:72: error: cannot find symbol
+    private static final TestRailConfig config = TestRail.builder(TEST_END_POINT, "testUser", "testPassword").build().getConfig();
+                         ^
+  symbol:   class TestRailConfig
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:84: error: cannot find symbol
+    private UrlConnectionFactory mockUrlConnectionFactory;
+            ^
+  symbol:   class UrlConnectionFactory
+  location: class RequestTest
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:312: error: cannot find symbol
+    @RequiredArgsConstructor
+    ^
+  symbol:   class UrlConnectionFactory
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:365: error: cannot find symbol
+        public static class Get extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:375: error: cannot find symbol
+        public static class List extends Request<java.util.List<Model>> {
+                                         ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:395: error: cannot find symbol
+        public static class ListPaginated extends Request<java.util.List<Model>> {
+                                                  ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                              ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:415: error: cannot find symbol
+        public static class ListCases extends Request<java.util.List<Case>> {
+                                                                     ^
+  symbol:   class Case
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:434: error: cannot find symbol
+        public static class ListWithAltName extends Request<java.util.List<ModelWithAltName>> {
+                                                    ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:449: error: cannot find symbol
+        public static class Add extends Request<Model> {
+                                        ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:464: error: cannot find symbol
+        public static class Update extends Request<Model> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:479: error: cannot find symbol
+        public static class Delete extends Request<Void> {
+                                           ^
+  symbol:   class Request
+  location: class Models
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:384: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class List
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:404: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListPaginated
+/app/src/test/java/com/codepine/api/testrail/RequestTest.java:424: error: cannot find symbol
+            @JsonSerialize(using = ListToCsvSerializer.class)
+                                   ^
+  symbol:   class ListToCsvSerializer
+  location: class ListCases
+File: /app/src/test/java/com/codepine/api/testrail/internal/PlanModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ResultModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/UnixTimestampModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CaseModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/BooleanToIntSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/CsvToListDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/FieldModuleTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/ListToCsvSerializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/IntToBooleanDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/internal/StringToMapDeserializerTest.java [unchanged]
+File: /app/src/test/java/com/codepine/api/testrail/RequestTest.java [delomboked]

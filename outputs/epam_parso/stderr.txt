@@ -1,0 +1,1442 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy@sha256:d852f567085d2e50c12526fccd4c51b6503eb9f82b2c521b6c6053339f951abd
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:4c34227c0cdf990e52b7bdb3227e6d12bd3386410f2a77b4e50378b96d26c06c done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+[main] ERROR com.epam.parso.SasFileReaderUnitTest - Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+java.io.IOException: Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1917)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:268)
+	at java.net.URL.openStream(URL.java:1093)
+	at com.epam.parso.SasFileReaderUnitTest.testRowsCount(SasFileReaderUnitTest.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 62 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] ERROR com.epam.parso.SasFileReaderUnitTest - Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+java.io.IOException: Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1917)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:268)
+	at java.net.URL.openStream(URL.java:1093)
+	at com.epam.parso.SasFileReaderUnitTest.testColumns(SasFileReaderUnitTest.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[main] ERROR com.epam.parso.SasFileReaderUnitTest - Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+java.io.IOException: Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1917)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:268)
+	at java.net.URL.openStream(URL.java:1093)
+	at com.epam.parso.SasFileReaderUnitTest.testSasFileProperties(SasFileReaderUnitTest.java:230)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 6 ms
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601DT1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601DX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601DZ1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601LX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateFormat - Note that QTR1. format is not yet supported, using DATE. instead.
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [308] ([0.28%]) SAS rounding bugs for [date_format_tod_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [308] ([0.28%]) SAS rounding bugs for [date_format_tod_loop]
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that DTWKDATX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [59] ([0.04%]) SAS rounding bugs for [date_format_hhmm_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [59] ([0.04%]) SAS rounding bugs for [date_format_hhmm_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.0%]) SAS rounding bugs for [date_format_hour_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.0%]) SAS rounding bugs for [date_format_hour_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [5] ([0.0%]) SAS rounding bugs for [date_format_mmss_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [5] ([0.0%]) SAS rounding bugs for [date_format_mmss_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [14] ([0.36%]) SAS rounding bugs for [date_format_time]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [14] ([0.36%]) SAS rounding bugs for [date_format_time]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [43] ([0.02%]) SAS rounding bugs for [date_format_time_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [43] ([0.02%]) SAS rounding bugs for [date_format_time_loop]
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that DATEAMPM1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasTimeFormat - Note that TIMEAMPM1. format is not yet supported, using TIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that MDYAMPM1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601DT1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601DX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601DZ1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601LX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasTimeFormat - Note that E8601LZ1. format is not yet supported, using TIME. instead.
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [10] ([0.51%]) SAS rounding bugs for [date_format_e8601tm]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [10] ([0.51%]) SAS rounding bugs for [date_format_e8601tm]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.02%]) SAS rounding bugs for [date_format_e8601tm_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.02%]) SAS rounding bugs for [date_format_e8601tm_loop]
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted2.sas7bdat
+[main] INFO com.epam.parso.impl.SasFileParser - 1000000001000010000000010000001000000000
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 8 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_no.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 99 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 8 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_fails.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 16 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p857.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 11 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//data_page_with_deleted.sas7bdat
+[main] INFO com.epam.parso.impl.SasFileParser - 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+[main] INFO com.epam.parso.impl.SasFileParser - 192
+[main] INFO com.epam.parso.impl.SasFileParser - 192
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 16 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ywin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 8 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_two.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 14 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//tmp868_14.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 88 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_works.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wvie.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wtur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_grek.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wbal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//almost_rand.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 14 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arom.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p858.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arab.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only_partmissing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 7 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat9.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 6 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ansi.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_misc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 532 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p860.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j932.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 6 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_and_missing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_cyrl.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted.sas7bdat
+[main] INFO com.epam.parso.impl.SasFileParser - 0000000000000010000000000000000000000000
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_agrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wgrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wcyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_yeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat3.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 6 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//time_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p852.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_utf8.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p874.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_longchar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_one.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_partmissing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_missing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arma.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atha.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_big5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aukr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//fileserrors.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 9 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//test-columnar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 11 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j942.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p864.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjis.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//only_datetime.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_keuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjs4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//comp_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat7.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_hebr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_yes.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 86 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//file_with_label.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_uniform.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aice.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_thai.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p862.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//date_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 12 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_gbke.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acro.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] ERROR com.epam.parso.impl.SasFileParser - Page limit (536870912) exceeds maximum: 10000000
+java.io.IOException: Page limit (536870912) exceeds maximum: 10000000
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:366)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testOOM(BugsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 32 to the end of the header, but skipped 9 instead.
+java.io.IOException: Expected to skip 32 to the end of the header, but skipped 9 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.getBytesFromFile(SasFileParser.java:941)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:324)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopOnIncompleteStreamIssue56(BugsTest.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testBrokenFileOnUnbufferedFileInputStreamIssue58(BugsTest.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopBufferedIssue58(BugsTest.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testBrokenFileOnFileChannelIssue58(BugsTest.java:178)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopUnbufferedIssue58(BugsTest.java:214)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 32 to the end of the header, but skipped 0 instead.
+java.io.IOException: Expected to skip 32 to the end of the header, but skipped 0 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.getBytesFromFile(SasFileParser.java:941)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:324)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopOnEmptyStreamIssue56(BugsTest.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testBrokenFileOnBufferedFileInputStreamIssue58(BugsTest.java:188)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_no.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_fails.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p857.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//data_page_with_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ywin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_two.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//tmp868_14.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_works.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wvie.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wtur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_grek.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wbal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//almost_rand.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arom.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p858.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arab.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only_partmissing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat9.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ansi.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_misc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p860.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j932.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_and_missing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_cyrl.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 8 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_agrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wgrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wcyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_yeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat3.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//time_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p852.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_utf8.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p874.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_longchar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_one.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_partmissing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_missing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arma.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atha.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_big5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aukr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//fileserrors.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//test-columnar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j942.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p864.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjis.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//only_datetime.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_keuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjs4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//comp_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat7.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_hebr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_yes.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//file_with_label.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_uniform.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aice.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_thai.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p862.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//date_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_gbke.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acro.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+Dependency org.slf4j:slf4j-simple not found in POM.
+Dependency org.assertj:assertj-core not found in POM.
+Dependency org.slf4j:slf4j-api not found in POM.
+Dependency junit:junit not found in POM.
+[main] ERROR com.epam.parso.SasFileReaderUnitTest - Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+java.io.IOException: Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1917)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:268)
+	at java.net.URL.openStream(URL.java:1093)
+	at com.epam.parso.SasFileReaderUnitTest.testRowsCount(SasFileReaderUnitTest.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 102 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 7 ms
+[main] ERROR com.epam.parso.SasFileReaderUnitTest - Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+java.io.IOException: Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1917)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:268)
+	at java.net.URL.openStream(URL.java:1093)
+	at com.epam.parso.SasFileReaderUnitTest.testColumns(SasFileReaderUnitTest.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[main] ERROR com.epam.parso.SasFileReaderUnitTest - Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+java.io.IOException: Server returned HTTP response code: 403 for URL: https://biostat3.net/download/sas/colon.sas7bdat
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1917)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:268)
+	at java.net.URL.openStream(URL.java:1093)
+	at com.epam.parso.SasFileReaderUnitTest.testSasFileProperties(SasFileReaderUnitTest.java:230)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601DT1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601DX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601DZ1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that B8601LX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateFormat - Note that QTR1. format is not yet supported, using DATE. instead.
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [308] ([0.28%]) SAS rounding bugs for [date_format_tod_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [308] ([0.28%]) SAS rounding bugs for [date_format_tod_loop]
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that DTWKDATX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [59] ([0.04%]) SAS rounding bugs for [date_format_hhmm_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [59] ([0.04%]) SAS rounding bugs for [date_format_hhmm_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.0%]) SAS rounding bugs for [date_format_hour_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.0%]) SAS rounding bugs for [date_format_hour_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [5] ([0.0%]) SAS rounding bugs for [date_format_mmss_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [5] ([0.0%]) SAS rounding bugs for [date_format_mmss_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [14] ([0.36%]) SAS rounding bugs for [date_format_time]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [14] ([0.36%]) SAS rounding bugs for [date_format_time]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [43] ([0.02%]) SAS rounding bugs for [date_format_time_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [43] ([0.02%]) SAS rounding bugs for [date_format_time_loop]
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that DATEAMPM1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasTimeFormat - Note that TIMEAMPM1. format is not yet supported, using TIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that MDYAMPM1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601DT1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601DX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601DZ1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasDateTimeFormat - Note that E8601LX1. format is not yet supported, using DATETIME. instead.
+[main] WARN com.epam.parso.date.SasTimeFormat - Note that E8601LZ1. format is not yet supported, using TIME. instead.
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [10] ([0.51%]) SAS rounding bugs for [date_format_e8601tm]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [10] ([0.51%]) SAS rounding bugs for [date_format_e8601tm]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.02%]) SAS rounding bugs for [date_format_e8601tm_loop]
+[main] WARN com.epam.parso.date.SasDateFormatTest - Ignored [4] ([0.02%]) SAS rounding bugs for [date_format_e8601tm_loop]
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted2.sas7bdat
+[main] INFO com.epam.parso.impl.SasFileParser - 1000000001000010000000010000001000000000
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_no.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 55 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_fails.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p857.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//data_page_with_deleted.sas7bdat
+[main] INFO com.epam.parso.impl.SasFileParser - 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+[main] INFO com.epam.parso.impl.SasFileParser - 192
+[main] INFO com.epam.parso.impl.SasFileParser - 192
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ywin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_two.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//tmp868_14.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 33 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_works.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wvie.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wtur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_grek.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wbal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//almost_rand.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 6 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arom.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p858.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arab.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only_partmissing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat9.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ansi.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_misc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 252 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p860.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j932.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_and_missing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_cyrl.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted.sas7bdat
+[main] INFO com.epam.parso.impl.SasFileParser - 0000000000000010000000000000000000000000
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_agrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wgrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wcyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_yeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat3.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//time_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p852.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_utf8.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p874.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_longchar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_one.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_partmissing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_missing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arma.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atha.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_big5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aukr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//fileserrors.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//test-columnar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 7 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j942.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p864.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjis.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//only_datetime.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_keuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjs4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//comp_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat7.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 4 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_hebr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 3 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_yes.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 61 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//file_with_label.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_uniform.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aice.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_thai.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p862.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//date_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 5 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_gbke.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acro.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 2 ms
+[main] ERROR com.epam.parso.impl.SasFileParser - Page limit (536870912) exceeds maximum: 10000000
+java.io.IOException: Page limit (536870912) exceeds maximum: 10000000
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:366)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testOOM(BugsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 32 to the end of the header, but skipped 9 instead.
+java.io.IOException: Expected to skip 32 to the end of the header, but skipped 9 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.getBytesFromFile(SasFileParser.java:941)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:324)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopOnIncompleteStreamIssue56(BugsTest.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testBrokenFileOnUnbufferedFileInputStreamIssue58(BugsTest.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopBufferedIssue58(BugsTest.java:206)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testBrokenFileOnFileChannelIssue58(BugsTest.java:178)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 285213408 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopUnbufferedIssue58(BugsTest.java:214)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 32 to the end of the header, but skipped 0 instead.
+java.io.IOException: Expected to skip 32 to the end of the header, but skipped 0 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.getBytesFromFile(SasFileParser.java:941)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:324)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testInfinityLoopOnEmptyStreamIssue56(BugsTest.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[Time-limited test] ERROR com.epam.parso.impl.SasFileParser - Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+java.io.IOException: Expected to skip 31838 to the end of the header, but skipped 17120 instead.
+	at com.epam.parso.impl.SasFileParser.skipBytes(SasFileParser.java:413)
+	at com.epam.parso.impl.SasFileParser.processSasFileHeader(SasFileParser.java:381)
+	at com.epam.parso.impl.SasFileParser.getMetadataFromSasFile(SasFileParser.java:297)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:282)
+	at com.epam.parso.impl.SasFileParser.<init>(SasFileParser.java:59)
+	at com.epam.parso.impl.SasFileParser$Builder.build(SasFileParser.java:1367)
+	at com.epam.parso.impl.SasFileReaderImpl.<init>(SasFileReaderImpl.java:69)
+	at com.epam.parso.BugsTest.testBrokenFileOnBufferedFileInputStreamIssue58(BugsTest.java:188)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:288)
+	at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:282)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:750)
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_no.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_fails.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p857.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//data_page_with_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ywin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_two.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//tmp868_14.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//chinese_column_works.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wvie.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wtur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_grek.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wbal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//almost_rand.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arom.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p858.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arab.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//int_only_partmissing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat9.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zwin.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_ansi.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_misc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p860.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j932.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_and_missing.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_cyrl.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 7 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal_with_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_agrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wgrk.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wcyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wara.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_yeuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat3.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//time_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p852.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_utf8.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p874.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atur.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_longchar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_normal.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mixed_data_one.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_zpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_partmissing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//mix_data_with_missing_char.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_arma.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_atha.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_big5.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aukr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//fileserrors.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//doubles2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//test-columnar.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_j942.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p864.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjis.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//only_datetime.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_keuc.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_sjs4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_wlt2.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//comp_deleted.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat7.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_hebr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//extend_yes.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//file_with_label.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//all_rand_uniform.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aice.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_thai.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_p862.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat1.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//date_formats.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acyr.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_gbke.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 1 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_jiso.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_acro.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_aheb.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_lat4.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Processing file sas7bdat//charset_kpce.sas7bdat
+[main] INFO com.epam.parso.SasFileReaderUnitTest - Time passed: 0 ms

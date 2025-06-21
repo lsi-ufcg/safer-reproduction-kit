@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" child.project.url.inherit.append.path="false">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonarsource.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>59.0.29</version>
+  </parent>
+
+  <groupId>org.sonarsource.groovy</groupId>
+  <artifactId>groovy</artifactId>
+  <version>1.9-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Sonar Groovy</name>
+  <description>This plugin enables analysis of Groovy within SonarQube.</description>
+  <url>http://redirect.sonarsource.com/plugins/groovy.html</url>
+  <inceptionYear>2010</inceptionYear>
+  <organization>
+    <name>SonarQube Community</name>
+  </organization>
+  <licenses>
+    <license>
+      <name>GNU LGPL 3</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>TobiX</id>
+      <name>Tobias Gruetzmacher</name>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Patrick Mayweg</name>
+    </contributor>
+    <contributor>
+      <name>Michael Gumowski</name>
+    </contributor>
+    <contributor>
+      <name>Nicolas Peru</name>
+    </contributor>
+  </contributors>
+
+  <modules>
+    <module>sonar-groovy-plugin</module>
+    <module>codenarc-converter</module>
+  </modules>
+
+  <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false">
+    <connection>scm:git:git@github.com:Inform-Software/sonar-groovy.git</connection>
+    <developerConnection>scm:git:git@github.com:Inform-Software/sonar-groovy.git
+    </developerConnection>
+    <url>https://github.com/Inform-Software/sonar-groovy/tree/main</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/Inform-Software/sonar-groovy/issues</url>
+  </issueManagement>
+  <ciManagement>
+    <system>github-actions</system>
+    <url>https://github.com/Inform-Software/sonar-groovy/actions</url>
+  </ciManagement>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/Inform-Software/sonar-groovy</url>
+    </repository>
+  </distributionManagement>
+
+  <properties>
+    <sonar.version>8.0</sonar.version>
+    <orchestrator.version>3.11</orchestrator.version>
+
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.organization>tobix-github</sonar.organization>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.sonarsource.sonarqube</groupId>
+        <artifactId>sonar-plugin-api</artifactId>
+        <version>8.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.sonarsource.sonarqube</groupId>
+        <artifactId>sonar-plugin-api-impl</artifactId>
+        <version>10.4.0.87240</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.codenarc</groupId>
+        <artifactId>CodeNarc</artifactId>
+        <version>2.2.0</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-ant</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.gmetrics</groupId>
+        <artifactId>GMetrics</artifactId>
+        <version>1.1</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-ant</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.11.0</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.6</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.36</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.21.0</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>sonarsource-bintray</id>
+      <name>SonarSource Bintray Release repository</name>
+      <url>https://dl.bintray.com/sonarsource/SonarQube</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.29.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <!-- get better with time -->
+          <ratchetFrom>origin/main</ratchetFrom>
+          <formats>
+            <format>
+              <includes>
+                <include>*.md</include>
+                <include>.gitignore</include>
+              </includes>
+              <trimTrailingWhitespace />
+              <endWithNewline />
+              <indent>
+                <spaces>true</spaces>
+                <spacesPerTab>4</spacesPerTab>
+              </indent>
+            </format>
+          </formats>
+          <java>
+            <licenseHeader>
+              <file>LICENSE-header-java.txt</file>
+            </licenseHeader>
+            <googleJavaFormat />
+          </java>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-license-headers</id>
+            <phase>does-not-exist-to-unbind-plugin</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.9.1.2184</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <tagNameFormat>@{project.version}</tagNameFormat>
+            <goals>install</goals>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
