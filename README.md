@@ -16,6 +16,7 @@ You can use our bash scripts if you are using Ubuntu-based distros and haven't i
 
 ```bash
 ./bash/ubuntu/install-node.sh
+source ~/.bashrc
 nvm use 22.16.0
 ./bash/ubuntu/install-docker.sh
 ./bash/ubuntu/install-maven.sh
@@ -41,7 +42,7 @@ We recommend a number of instances between 2 and 6
 ./run-experiments.sh <num_instances>
 ```
 
-If you want to run only the projects Safer execution succeeded and at the commit hash Safer runned. You should use `run-only-successful-experiments.sh`  
+If you want to run only the projects Safer execution succeeded and at the commit hash Safer runned. You should use `run-only-successful-experiments.sh`
 
 ```bash
 ./run-only-successful-experiments.sh
@@ -68,7 +69,9 @@ You can see the experiment progress in `results/logs.txt` file
 
 ## Post Processing
 
-After we finished the experiments and started to analyse the results, we needed to collect more data to complement our analysis. We extracted these extra data from Safer logs in `outputs/<project_name>/stdout.txt`. The scripts used for this step are stored in `post-processing` folder and described below:
+After we finished the experiments and started to analyse the results, we needed to collect more data to complement our analysis. We extracted these extra data from Safer logs in `outputs/<project_name>/stdout.txt`.  
+You can extract the original logs from our experiment `outputs.zip` in zenodo to this root folder  
+The scripts used for this step are stored in `post-processing` folder and described below:
 
 ### Count Version Changes script
 
@@ -84,17 +87,22 @@ You can find this script and how to execute it in `post-processing/calculate-off
 
 ## Results
 
-After Post Processing step, we have two final datasets
+To analyze the data and generate the charts we used in the paper, we used Google colab
+
+After Post Processing step, we have two final datasets for the Open Source experiment:
 
 -   `results/final-dataset.csv`
 -   `post-processing/calculate-offset-changes/dataset-version-changes.csv`
 
-To generate the charts we used in the paper, we used Jupyter notebooks
+We also have two more datasets for the Industrial case study
 
-The `results/analysis.ipynb` notebook consumes `results/final-dataset.csv`  
-The `results/analysis-rq4.ipynb` notebook consumes `post-processing/calculate-offset-changes/dataset-version-changes.csv`
+-   `results/industrials-dataset.csv`
+-   `semver-industrials-dataset.csv`
 
-You can find instructions and how to execute the notebooks in `results/notebooks/README.md`
+To visualize the charts, you can access our [Google Colab](https://colab.research.google.com/drive/1LnnI6AKJszAQsOSphxJrYRV8Bqst3ZBS?usp=sharing) and run the cells in order  
+When prompted to upload a csv file, read the comment above the line to know which file to choose
+
+We also have the notebook in `results/safer-experiments.ipynb`, if you want to run it locally
 
 # Creating Issues and PRs
 
