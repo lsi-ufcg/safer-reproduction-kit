@@ -16,6 +16,8 @@ dataset_path="results/dataset.csv"
 logs_path="results/logs.txt"
 project_path=$1
 id=$2
+relative_module_path=$3
+relative_submodule_path=$4
 
 project_root_path=$(pwd)/$project_path
 
@@ -25,7 +27,7 @@ cd safer/src
 
 start_time=$(date +%s)
 mkdir -p ../../outputs/$project_name
-PROJECT_ROOT_PATH="$project_root_path" npx tsx script.ts >../../outputs/$project_name/stdout.txt 2>../../outputs/$project_name/stderr.txt
+PROJECT_ROOT_PATH="$project_root_path" RELATIVE_MODULE_PATH="$relative_module_path" RELATIVE_SUBMODULE_PATH="$relative_submodule_path" npx tsx script.ts >../../outputs/$project_name/stdout.txt 2>../../outputs/$project_name/stderr.txt
 cd ../../
 
 end_time=$(date +%s)
