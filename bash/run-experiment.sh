@@ -45,7 +45,7 @@ else
 
   current_path=$(pwd)
   cd $project_root_path
-  cp pom.xml ../../../outputs/$project_name
+  cp pom.xml ../../../${relative_module_path}outputs/$project_name
   commit=$(git rev-parse HEAD)
   if ((low_after * 1 + medium_after * 2 + high_after * 3 + critical_after * 5 < low_before * 1 + medium_before * 2 + high_before * 3 + critical_before * 5)); then
     entire_csv_line="$id,$project_name,$csv_line,open source,$execution_time,$commit,improvement"

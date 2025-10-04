@@ -25,7 +25,7 @@ modules=(
 
 
 projects=(
-  # "druid_spring-boot-starter druid druid-spring-boot-starter ../ druid-spring-boot-starter"
+  "druid_spring-boot-starter druid druid-spring-boot-starter ../ druid-spring-boot-starter"
   "druid_wrapper druid druid-wrapper ../ druid-wrapper"
   "druid_admin druid druid-admin ../ druid-admin"
   "hutool_socket hutool hutool-socket ../ hutool-socket"
