@@ -1,0 +1,1800 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+#1 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+#1 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:8-jdk-jammy
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/eclipse-temurin:8-jdk-jammy
+#4 DONE 0.0s
+
+#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.9/binaries/apache-maven-3.8.9-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+#5 CACHED
+
+#6 [3/3] WORKDIR /app
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 writing image sha256:5d9d9159e69f74ac93de1b5aab67a05fc8087c62748b4f8b3317f6a3e029829a done
+#7 naming to docker.io/library/java-setup-8 done
+#7 DONE 0.0s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
+Target version not found in available versions.  com.alibaba.otter:client-adapter.common:1.1.5
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1860004,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1861539,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1861695,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1861851,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1862017,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1862174,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1862323,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1862421,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1862586,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1862743,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1862899,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1863054,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1863211,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1863373,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1863530,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1863686,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1863843,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1863938,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1864104,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1864250,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1864420,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1864567,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1864731,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1864884,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1865050,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1865195,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1865353,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1865439,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1865614,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1865760,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1865929,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1866077,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1866244,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1866408,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1866566,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1866722,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1866874,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1867003,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1867127,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1867281,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1867436,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1867594,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1867759,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1867915,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1868071,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1868227,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1868383,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1868548,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1868681,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1868793,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1868962,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1869108,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1869283,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1869428,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1869595,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1869741,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1869906,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1870064,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1870190,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1870305,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1870470,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1870615,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1870791,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1870936,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1871097,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1871250,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1871407,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1871566,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1871681,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1871813,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1871969,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1872132,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1872286,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1872443,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1872600,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1872757,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1872925,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1873082,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1873204,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1873331,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1873489,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1873654,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1873812,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1873969,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1874126,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1874283,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1874449,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1874618,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1874743,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1874874,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1875008,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1875184,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1875326,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1875490,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1875637,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1875805,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1875959,
+  stdout: null,
+  stderr: null
+}
+Error executing command: Error: Command failed: /home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh false /home/cristovao/codes/lsi/security/safer-reproduction-kit/workstation/maven/canal/client-adapter/rdb_under_test false client-adapter/rdb
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:882:11)
+    at execSync (node:child_process:954:15)
+    at execCommand (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
+    at Object.runMavenBuild (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
+    at updateDependenciesInPom (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:120:21)
+    at runForMaven (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/runners/maven/script.ts:73:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async main (/home/cristovao/codes/lsi/security/safer-reproduction-kit/safer/src/script.ts:104:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1876126,
+  stdout: null,
+  stderr: null
+}
