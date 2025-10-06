@@ -1,49 +1,40 @@
-#0 building with "default" instance using docker driver
+Error executing mvn command '/home/lsi/Documents/safer-reproduction-kit/safer/mvnw dependency:list -DexcludeTransitive=true'
+[Maven stdout]:
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 6.12
+[INFO] os.detected.version.major: 6
+[INFO] os.detected.version.minor: 12
+[INFO] os.detected.release: pop
+[INFO] os.detected.release.version: 22.04
+[INFO] os.detected.release.like.pop: true
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] 
+[INFO] -----------------< io.netty:netty-testsuite-autobahn >------------------
+[INFO] Building Netty/Testsuite/Autobahn 4.1.69.Final-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for io.netty:netty-common:jar:4.1.69.Final-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for io.netty:netty-buffer:jar:4.1.69.Final-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for io.netty:netty-transport:jar:4.1.69.Final-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for io.netty:netty-codec-http:jar:4.1.69.Final-SNAPSHOT is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.370 s
+[INFO] Finished at: 2025-10-06T12:21:51-03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project netty-testsuite-autobahn: Could not resolve dependencies for project io.netty:netty-testsuite-autobahn:jar:4.1.69.Final-SNAPSHOT: The following artifacts could not be resolved: io.netty:netty-common:jar:4.1.69.Final-SNAPSHOT, io.netty:netty-buffer:jar:4.1.69.Final-SNAPSHOT, io.netty:netty-transport:jar:4.1.69.Final-SNAPSHOT, io.netty:netty-codec-http:jar:4.1.69.Final-SNAPSHOT: Failure to find io.netty:netty-common:jar:4.1.69.Final-SNAPSHOT in https://oss.sonatype.org/content/repositories/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of sonatype-nexus-snapshots has elapsed or updates are forced -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
 
-#1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 790B done
-#1 DONE 0.0s
-
-#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
-#2 DONE 0.2s
-
-#3 [internal] load .dockerignore
-#3 transferring context: 2B done
-#3 DONE 0.0s
-
-#4 [1/3] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:47d330891da01c4b17fb6af5018d9a7bad33f7a252a91dde890c10d4de5ebd33
-#4 DONE 0.0s
-
-#5 [2/3] RUN mkdir -p /usr/share/maven    && curl -fsSL https://dlcdn.apache.org/maven/maven-3/3.8.9/binaries/apache-maven-3.8.9-bin.tar.gz    | tar -xzC /usr/share/maven --strip-components=1    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-#5 CACHED
-
-#6 [3/3] WORKDIR /app
-#6 CACHED
-
-#7 exporting to image
-#7 exporting layers done
-#7 writing image sha256:c1e49a39832e805a3c73086629af664008f4f525a2b2721d6789317cc74d3c01 done
-#7 naming to docker.io/library/java-setup-17 done
-#7 DONE 0.0s
-
- [33m3 warnings found (use docker --debug to expand):
-[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
- - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 6)
- - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 7)
-Error executing command: Error: Command failed: /home/lsi/Documents/safer-reproduction-kit/safer/src/runners/maven/run-maven-build.sh true /home/lsi/Documents/safer-reproduction-kit/workstation/maven/netty/testsuite-autobahn_under_test false
-    at __node_internal_genericNodeError (node:internal/errors:865:15)
-    at checkExecSyncError (node:child_process:890:11)
-    at execSync (node:child_process:962:15)
-    at execCommand (/home/lsi/Documents/safer-reproduction-kit/safer/src/utils/execCommand.ts:7:5)
-    at Object.runMavenBuild (/home/lsi/Documents/safer-reproduction-kit/safer/src/runners/maven/maven-runner.ts:17:5)
-    at runForMaven (/home/lsi/Documents/safer-reproduction-kit/safer/src/runners/maven/script.ts:51:21)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at main (/home/lsi/Documents/safer-reproduction-kit/safer/src/script.ts:104:5) {
-  status: 1,
-  signal: null,
-  output: [ null, null, null ],
-  pid: 2008087,
-  stdout: null,
-  stderr: null
-}
-Error during Maven build.
