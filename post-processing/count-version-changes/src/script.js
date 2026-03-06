@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const inputFile = path.join(__dirname, "../../../results/dataset.csv");
-const outputFile = path.join(__dirname, "../../../results/final-dataset.csv");
+const outputFile = path.join(__dirname, "../../../results/final-dataset-112.csv");
 
 const results = [];
 
@@ -34,7 +34,7 @@ fs.createReadStream(inputFile)
                     encoding: "utf-8",
                 });
             } catch (err) {
-                console.err("Error: Could not read stdout" + err);
+                console.error("Error: Could not read stdout:", err);
                 return {
                     ...result,
                     javaVersion: "-",
@@ -46,10 +46,15 @@ fs.createReadStream(inputFile)
                 };
             }
             const javaVersionMatch = stdout.match(JAVA_VERSION_REGEX);
-            const javaVersion = javaVersionMatch[1];
 
+            let javaVersion = "-";
+            if (javaVersionMatch && javaVersionMatch[1]) {
+                javaVersion = javaVersionMatch[1];
+            } else {
+                console.warn(`Java version not found for ${projectName}`);
+            }
             const versionChangesMatch = stdout.matchAll(
-                /Version: ([^\s]+) ([\[\]A-Z ]+),/g
+                /Version:\s*([^\s]+)\s*(\[(?:NEW|OLD)\](?:\s*\[(?:NEW|OLD)\])?)/g
             );
             let versionsData = [];
             for (const match of versionChangesMatch) {
