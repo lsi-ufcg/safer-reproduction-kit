@@ -1,6 +1,6 @@
 # Safer Reproduction Kit
 
-Here's a detailed step-by-step on how to reproduce the experiments presented in the ICSE 2026 Safer paper.
+Here's a detailed step-by-step on how to reproduce the experiments presented in the ACMSAC 2026 paper.
 
 > OBS: The experiments were conducted on PopOS 22.04 Operating System, which is based on Ubuntu. We cannot ensure the behavior of this Reproduction Kit for others Linux versions
 
