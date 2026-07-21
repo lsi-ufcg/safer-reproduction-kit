@@ -6,7 +6,7 @@ Here's a detailed step-by-step on how to reproduce the experiments presented in 
 
 ## Prerequisites
 
-To run Safer, ensure you have the following installed:
+To run [Safer](https://gitlab.com/lsi-ufcg/vulnerabilidades/safer), ensure you have the following installed:
 
 -   Node.js version 22.16.0
 -   Docker
