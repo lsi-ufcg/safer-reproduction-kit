@@ -55,6 +55,63 @@ Files modified:
 
 ---
 
+## Fixed
+
+### EvoSuite runtime descriptor breaking dependency resolution
+
+`init-java-container.sh` installs `evosuite-standalone-runtime` into the container's local
+repository with `mvn install:install-file`. Since no `-DpomFile` is given, the plugin takes
+the POM embedded in the jar's `META-INF/maven`, and that POM inherits from:
+
+```
+org.evosuite:evosuite:1.1.0
+```
+
+a parent that was never published to Maven Central. Any project that needs to read the
+descriptor of the EvoSuite dependency then fails before compiling anything:
+
+```
+Failed to collect dependencies at org.evosuite:evosuite-standalone-runtime:jar:1.1.0:
+Failed to read artifact descriptor for org.evosuite:evosuite-standalone-runtime:jar:1.1.0:
+Could not find artifact org.evosuite:evosuite:pom:1.1.0 in central
+```
+
+`run-maven-build.sh` now replaces that descriptor with a minimal POM inside the container,
+right before invoking Maven. The jar is shaded and has no transitive dependency, so
+dropping the parent and the dependency list has no side effect.
+
+The replacement is idempotent and guarded by a check for the artifact directory, so it is a
+no-op when the EvoSuite runtime was not installed.
+
+Files modified:
+
+- `run-maven-build.sh`
+
+---
+
+### EvoSuite runtime install reading the project POM
+
+`init-java-container.sh` installs the EvoSuite runtime with `mvn install:install-file`, and
+the container's `WORKDIR` is `/app`. Maven therefore read the project's `pom.xml` before
+installing the jar, which made the installation depend on resolving the project's parent
+POM over the network:
+
+```
+Non-resolvable parent POM ... Could not transfer artifact org.springframework.boot:...
+```
+
+A network hiccup left the container unbuilt, and the project went through the pipeline with
+no filtering at all. In one run this accounted for 71 projects in a row.
+
+The command now runs from `/tmp`, where there is no POM to read. Installing the jar never
+depended on the project in the first place.
+
+Files modified:
+
+- `init-java-container.sh`
+
+---
+
 ## Changed
 
 ### Maven test execution patterns

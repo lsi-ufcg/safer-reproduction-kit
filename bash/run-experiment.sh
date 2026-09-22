@@ -12,12 +12,14 @@ pretty_print() {
   echo -e "${!color_uppercase}${message}${DEFAULT}"
 }
 
-dataset_path="results/dataset.csv"
+# Definido pelo execucao_safer.sh a partir da combinacao em execucao; o padrao
+# vale para quem chamar este script direto.
+dataset_path="${DATASET_PATH:-results/dataset_native_kex.csv}"
 logs_path="results/logs.txt"
 project_path=$1
 id=$2
 
-project_root_path=$(pwd)/$project_path
+project_root_path=$1
 
 project_name=$(basename $project_path)
 echo "Running safer for: $project_path, See outputs/$project_name/stdout.txt"
