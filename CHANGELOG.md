@@ -112,6 +112,38 @@ Files modified:
 
 ---
 
+### junit-vintage-engine version mismatch hiding every test
+
+The generated suites are JUnit 4, so `run-maven-build.sh` injects
+`org.junit.vintage:junit-vintage-engine` for Surefire to discover them. The version was
+fixed at 5.10.0, but many projects manage the JUnit Platform at an older version --
+`spring-boot-starter-test` 2.1, for instance, pins it at 1.3.2. Maven then downgrades the
+Platform that vintage 5.10.0 needs, and discovery dies with:
+
+```
+java.lang.NoClassDefFoundError: org/junit/platform/commons/util/LruCache
+    at org.junit.vintage.engine.descriptor.TestSourceProvider.<init>
+```
+
+Depending on the Surefire version this surfaced as a loud
+`TestEngine with ID 'junit-jupiter' failed to discover tests`, or silently as
+`Tests run: 0` -- and with `-DfailIfNoTests=true` the build failed with
+`No tests were executed!`. In one run this accounted for roughly one project in six.
+
+The version is now aligned with the Platform the project actually resolves: jupiter and
+vintage are released together, so Platform `1.X.Y` corresponds to vintage `5.X.Y`. The
+lookup runs once per project, right after the dependency enters the POM -- the managed
+version is not visible before that.
+
+Measured on `amigoscode_springboot-twilio` (45 generated suites): before, 0 tests executed
+and the build failed; after, 43 tests executed, and the filter converged to 35 green tests.
+
+Files modified:
+
+- `run-maven-build.sh`
+
+---
+
 ## Changed
 
 ### Maven test execution patterns

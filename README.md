@@ -148,9 +148,12 @@ baseline**, and should be filtered out of the analysis:
 -   **Do not run Maven on the host inside the dataset.** Some projects carry
     `git-code-format-maven-plugin`, which installs `pre-commit` hooks into the enclosing git
     repository and can reformat files on commit.
--   **Known limitation.** The vintage engine is injected at a fixed 5.10.0, which conflicts
-    with projects on an older JUnit Platform (`NoClassDefFoundError: LruCache`). Those
-    projects show up as `no_tests_run` or `build_error`.
+-   **JUnit alignment.** The generated suites are JUnit 4, so they need
+    `junit-vintage-engine` for Surefire to discover them. Its version is aligned with the
+    JUnit Platform the project actually resolves (Platform `1.X.Y` ↔ vintage `5.X.Y`),
+    because many projects manage the Platform at an older version and a mismatched vintage
+    fails discovery with `NoClassDefFoundError: LruCache` -- Surefire then finds no test at
+    all and, with `-DfailIfNoTests=true`, the whole build fails.
 
 ### Monitorint the Experiment Execution
 
