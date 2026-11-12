@@ -1,5 +1,77 @@
 # Changelog
 
+## Migration to the new Safer
+
+`safer.zip` now ships the new Safer (a rewrite). Safer itself is used unchanged; everything
+the previous Safer did for this experiment moved into the kit. Results are not comparable
+with the paper's, so they go to `results/v2/` and `outputs/v2/`.
+
+### Added
+
+-   **`bash/prepare-project.sh`** (with `bash/prepare/pom_tools.py`) takes over what the
+    previous `run-maven-build.sh` did: installs the EvoSuite runtime, injects the test
+    dependencies of the generated suites, aligns `junit-vintage-engine` with the project's
+    JUnit Platform and writes the test flags to `.mvn/maven.config`. The `pom.xml` is now
+    edited as text, so only the injected blocks change (ElementTree dropped comments and
+    reformatted the whole file).
+-   **Runtime tree check.** `prepare-project.sh` resolves the runtime tree before and after
+    the injection and records any difference in `results/v2/prepare-project_<combination>.csv`:
+    a direct `test` declaration takes a transitive artifact (typically `junit`) out of the
+    tree Safer scores.
+-   **`libs/evosuite-standalone-runtime-1.1.0.jar`**, checked by SHA-256. It used to ship
+    inside `safer.zip`, and version 1.1.0 is not on Maven Central. It is copied straight into
+    Safer's Maven cache with a minimal POM, so no Maven is needed on the host.
+-   **`bash/report-to-csv.py`** builds the dataset row from Safer's run directory, which
+    replaces the `CSV:` line of the previous Safer. Same 20 columns, plus
+    `Unknown vulnerabilities (Before/After)`, `Rate (Before/After)` and `Tests Executed`.
+    It refuses to append to a CSV with the previous header.
+-   **`safer-config.json`**: Safer's defaults with `projectTests: true`, passed through
+    `SAFER_CONFIG`.
+-   **`post-processing/lib/safer-run.ts`**, shared by both post-processing scripts.
+
+### Changed
+
+-   **`run-test-filtering.sh`** runs Safer's build (`mvn -B clean verify`) in its own
+    container (`java-container-safer-filter-<project>`, started by Safer's
+    `init-java-container.sh`), calls `prepare-project.sh` before the first round and backs
+    up the `pom.xml` after it, so Safer receives the prepared `pom.xml`. The `pom.xml` is no
+    longer restored between rounds (the build does not touch it any more). Default time
+    limit 3600 s, as in Safer. New statuses `prepare_error` and `killed` (Maven killed
+    before the time limit, previously reported as `timeout`). Output paths that did not
+    exist yet resolved to an empty string; fixed with `readlink -m`.
+-   **`bash/test-filtering/safer-java-version.ts`** uses the new Safer's `detectJavaVersion`
+    (raw `pom.xml`, 17 as fallback) instead of the removed `MavenAdapter`.
+-   **`bash/run-experiment.sh`** passes Safer an absolute project path, takes the run
+    directory from the `Safer run dir:` line, moves it to `outputs/v2/<project>/safer-run`
+    (with a `kit.json` holding the row `id`), converts it with `report-to-csv.py`, and exits
+    1 on failure (it always exited 0).
+-   **`execucao_safer.sh`** writes to `results/v2/` and `outputs/v2/`, passes the prepare CSV
+    to the filter and moves `safer-run/` into `execution_<n>/`.
+-   **`post-processing/count-version-changes`** and **`calculate-offset-changes`** read
+    Safer's `decisions.jsonl` and `run.json` instead of the previous stdout text, now in
+    TypeScript (they import Safer's version ordering). They keep every input column, find
+    each row's run by `id` (also across `execution_<n>/`), and the offsets script rewrites its
+    output instead of appending to it.
+-   **`count-version-changes`** adds `countNoChange` (dependencies Safer kept; the column
+    existed in the published datasets but not in the script) and `countOther` (updates that
+    fit no semver category, e.g. `1.9 -> 1.10.0`, which the previous script dropped
+    silently). The semver classification itself is unchanged.
+-   **`calculate-offset-changes`** takes the version list from Safer's `candidates` events,
+    pre-releases included, so `bash/get-dependencies-versions.sh` is no longer needed.
+-   **`setup-safer.sh`** uses `npm ci`: `npm install` could rewrite `package-lock.json`,
+    leaving Safer's repository dirty and every `run.json` with `"dirty": true`.
+
+### Removed
+
+-   The previous Safer's own patches described below (`MavenAdapter` filter,
+    `run-maven-build.sh`, `init-java-container.sh` EvoSuite install): the new Safer skips
+    `test`-scope dependencies by itself, and the rest lives in `prepare-project.sh`.
+-   `post-processing/*/src/script.js`, replaced by `src/script.ts`.
+
+---
+
+# Previous Safer (paper)
+
 ## Added
 
 ### Ignore EvoSuite runtime dependency during dependency analysis
