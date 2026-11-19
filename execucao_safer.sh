@@ -2,10 +2,9 @@
 
 set -u
 
-# Uma instancia por vez. Cada execucao comeca apagando workstation/maven, e os
-# projetos compartilham o nome do container (java-container-safer-<projeto>):
-# duas instancias apagam os projetos e os containers uma da outra, e o Safer
-# falha com "No such container" mesmo quando os testes estao verdes.
+# Uma instancia por vez. Cada execucao comeca apagando workstation/maven, e o
+# filtro usa um container por projeto (java-container-safer-filter-<projeto>):
+# duas instancias apagariam os projetos e os containers uma da outra.
 mkdir -p workstation
 exec 200>"workstation/.execucao_safer.lock"
 if ! flock -n 200; then
@@ -13,8 +12,16 @@ if ! flock -n 200; then
   exit 1
 fi
 
-mkdir -p outputs
-mkdir -p results
+# Resultados do Safer novo, separados dos do Safer antigo (results/*.csv, os
+# numeros do artigo): os dois nao sao comparaveis, e o bash/report-to-csv.py
+# recusa gravar num CSV do formato antigo.
+results_dir="results/v2"
+mkdir -p "$results_dir"
+
+# Saidas por projeto (logs do filtro, do preparo e do Safer), separadas das do
+# Safer antigo pelo mesmo motivo.
+outputs_dir="outputs/v2"
+mkdir -p "$outputs_dir"
 mkdir -p workstation/maven
 
 cd safer || exit 1
@@ -22,7 +29,7 @@ touch .env
 echo "SAFER_ROOT_PATH=$(pwd)" > .env
 cd .. || exit 1
 
-logs_path="results/logs.txt"
+logs_path="$results_dir/logs.txt"
 touch "$logs_path"
 
 # Configuracao local da maquina (caminhos, combinacao). Fica fora do git para
@@ -66,17 +73,21 @@ done
 # todos os projetos de $source_dir que tenham testes nativos em src/test/java e
 # que ainda nao aparecam nesse arquivo, o que permite retomar a execucao de onde
 # parou. Se o arquivo nao existir, nada e pulado.
-completed_csv="results/dataset_${combination_slug}.csv"
+completed_csv="$results_dir/dataset_${combination_slug}.csv"
 
 # O bash/run-experiment.sh grava os resultados do Safer nesse mesmo arquivo.
 export DATASET_PATH="$completed_csv"
 
 # Suites apagadas pelo filtro, uma linha por projeto, com o mesmo id do dataset.
-filter_csv="results/deleted-tests_${combination_slug}.csv"
+filter_csv="$results_dir/deleted-tests_${combination_slug}.csv"
+
+# Preparo de cada projeto (dependencias injetadas, alinhamento do vintage e
+# comparacao da arvore de runtime), uma linha por projeto, com o mesmo id.
+prepare_csv="$results_dir/prepare-project_${combination_slug}.csv"
 
 echo "Combinacao: $COMBINATION"
 echo "Origem: $source_dir"
-echo "Resultados: $completed_csv e $filter_csv"
+echo "Resultados: $completed_csv, $filter_csv e $prepare_csv"
 
 # Número de execuções por projeto
 EXECUTIONS_PER_PROJECT=${2:-1}
@@ -98,9 +109,10 @@ has_native_tests() {
 # Monta, na copia do projeto, exatamente as suites da combinacao em execucao.
 #
 # As geradas entram como subdiretorio de src/test/java (src/test/java/kex-tests,
-# src/test/java/evosuite-tests): e assim que o run-maven-build.sh do Safer
-# reconhece que ha testes gerados e injeta as dependencias que eles precisam. As
-# categorias de fora sao removidas desta copia -- a origem nunca e alterada.
+# src/test/java/evosuite-tests): e assim que o bash/prepare-project.sh (chamado
+# pelo filtro) reconhece que ha testes gerados e injeta as dependencias que eles
+# precisam. As categorias de fora sao removidas desta copia -- a origem nunca e
+# alterada.
 arrange_tests() {
   local project_path="$1"
 
@@ -194,9 +206,9 @@ run_project() {
   repo_name=$(basename "$project_path")
 
   echo "[$id] Running project: $project_path (Execution $execution_num of $EXECUTIONS_PER_PROJECT)"
-  echo "[$id] See outputs/${repo_name}/execution_${execution_num}/stdout.txt"
+  echo "[$id] See $outputs_dir/${repo_name}/execution_${execution_num}/stdout.txt"
 
-  mkdir -p "outputs/${repo_name}/execution_${execution_num}"
+  mkdir -p "$outputs_dir/${repo_name}/execution_${execution_num}"
 
   # A combinacao vem de $COMBINATION; veja arrange_tests.
   arrange_tests "$project_path"
@@ -204,13 +216,14 @@ run_project() {
   # =============================================
   # PRIMEIRO: Filtra as suites que falham
   # =============================================
-  # Roda sobre o projeto ja no layout da combinacao acima, com o mesmo build e o
-  # mesmo JDK do Safer, e apaga desta copia as suites que quebram a build ou
-  # falham. O Safer roda em seguida mesmo que o filtro nao chegue ao verde; o
-  # status de cada projeto fica em $filter_csv.
+  # Roda sobre o projeto ja no layout da combinacao acima: prepara o projeto
+  # (bash/prepare-project.sh) e, com o mesmo build e o mesmo JDK do Safer, apaga
+  # desta copia as suites que quebram a build ou falham. O Safer roda em seguida
+  # mesmo que o filtro nao chegue ao verde; o status de cada projeto fica em
+  # $filter_csv, e o do preparo em $prepare_csv.
   echo "[$id] Filtrando suites que falham..."
-  ./run-test-filtering.sh -o "$filter_csv" --id "$id" \
-    --logs-dir "outputs/${repo_name}/execution_${execution_num}/test-filtering" \
+  ./run-test-filtering.sh -o "$filter_csv" --prepare-csv "$prepare_csv" --id "$id" \
+    --logs-dir "$outputs_dir/${repo_name}/execution_${execution_num}/test-filtering" \
     "$project_path"
 
   # =============================================
@@ -225,14 +238,21 @@ run_project() {
   echo "[$id] run-experiment.sh terminou com código $safer_status"
 
   # Move stdout/stderr se existirem
-  if [ -f "outputs/${repo_name}/stdout.txt" ]; then
-    mv "outputs/${repo_name}/stdout.txt" \
-       "outputs/${repo_name}/execution_${execution_num}/"
+  if [ -f "$outputs_dir/${repo_name}/stdout.txt" ]; then
+    mv "$outputs_dir/${repo_name}/stdout.txt" \
+       "$outputs_dir/${repo_name}/execution_${execution_num}/"
   fi
 
-  if [ -f "outputs/${repo_name}/stderr.txt" ]; then
-    mv "outputs/${repo_name}/stderr.txt" \
-       "outputs/${repo_name}/execution_${execution_num}/"
+  if [ -f "$outputs_dir/${repo_name}/stderr.txt" ]; then
+    mv "$outputs_dir/${repo_name}/stderr.txt" \
+       "$outputs_dir/${repo_name}/execution_${execution_num}/"
+  fi
+
+  # Pasta da execucao do Safer (report.json, run.json, decisions.jsonl, logs).
+  if [ -d "$outputs_dir/${repo_name}/safer-run" ]; then
+    rm -rf "$outputs_dir/${repo_name}/execution_${execution_num}/safer-run"
+    mv "$outputs_dir/${repo_name}/safer-run" \
+       "$outputs_dir/${repo_name}/execution_${execution_num}/"
   fi
 
   if [ "$safer_status" -ne 0 ]; then

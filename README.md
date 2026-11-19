@@ -4,13 +4,30 @@ Here's a detailed step-by-step on how to reproduce the experiments presented in 
 
 > OBS: The experiments were conducted on PopOS 22.04 Operating System, which is based on Ubuntu. We cannot ensure the behavior of this Reproduction Kit for others Linux versions
 
+## Safer version
+
+`safer.zip` now ships the **new Safer** (a rewrite). The paper's numbers were produced with
+the previous Safer, and the two are **not comparable**: the new one scores the whole runtime
+dependency tree, counts distinct vulnerability IDs (aliases merged) and decides with a
+different metric (see [Dataset columns](#dataset-columns)). To keep them apart:
+
+-   new results go to `results/v2/` and per-project outputs to `outputs/v2/`;
+-   the paper's results stay in `results/`, `experiments/` and `outputs.zip`, untouched.
+
+To reproduce the paper exactly, check out this kit at commit `02dc9e6`, which ships the
+previous Safer and the scripts that went with it.
+
 ## Prerequisites
 
 To run Safer, ensure you have the following installed:
 
--   Node.js version 22.16.0
--   Docker
--   Maven 3.6.3
+-   Node.js 20 or newer, with npm (the experiments used 22)
+-   Docker, with `buildx`
+-   Python 3
+-   Git
+
+Maven is **not** needed on the host: Safer and the kit run every Maven command inside
+Safer's Java containers.
 
 You can use our bash scripts if you are using Ubuntu-based distros and haven't installed the Prerequisites
 
@@ -19,16 +36,36 @@ You can use our bash scripts if you are using Ubuntu-based distros and haven't i
 source ~/.bashrc
 nvm use 22.16.0
 ./bash/ubuntu/install-docker.sh
-./bash/ubuntu/install-maven.sh
 ```
 
 ## Safer's Setup and Installation
 
-Unzip Safer and install its dependencies
+Unzip Safer and install its dependencies (`npm ci`, which installs exactly the versions in
+Safer's `package-lock.json`)
 
 ```bash
 ./setup-safer.sh
 ```
+
+When upgrading from the previous Safer, delete the old `safer/` folder first: `unzip` asks
+before overwriting and leaves behind files that are no longer in the zip.
+
+### Safer configuration
+
+The kit runs Safer with `safer-config.json`, which is Safer's default configuration with
+`projectTests: true` (Safer's own default is `false`, and then the tests are not even
+compiled). Use another file with `SAFER_CONFIG`, e.g. to run without tests:
+
+```bash
+SAFER_CONFIG=my-config.json ./execucao_safer.sh
+```
+
+### Nexus
+
+Safer starts a local Nexus (`nexus-safer` container, port 8081) as a cache of Maven Central,
+and leaves it running between executions, so the cache is kept. The first start downloads
+the `sonatype/nexus3` image and can take a few minutes. If Nexus does not come up (port 8081
+taken, for instance), Maven downloads straight from Maven Central.
 
 ## Run Experiments
 
@@ -41,6 +78,8 @@ We recommend a number of instances between 2 and 6
 ```bash
 ./run-experiments.sh <num_instances>
 ```
+
+The rows go to `results/v2/dataset_native_kex.csv` unless `DATASET_PATH` says otherwise.
 
 If you want to run only the projects Safer execution succeeded and at the commit hash Safer runned. You should use `run-only-successful-experiments.sh`
 
@@ -82,7 +121,7 @@ experiment. Three variables:
 | `COMBINATION` | Test categories to run: any comma-separated mix of `native`, `evosuite`, `kex` |
 
 `COMBINATION` is the only thing to change to run another combination. It decides what is
-assembled in each copy and names all three result files. An environment variable still wins
+assembled in each copy and names all the result files. An environment variable still wins
 over the file: `COMBINATION=native,evosuite ./execucao_safer.sh`.
 
 #### Running
@@ -91,38 +130,55 @@ over the file: `COMBINATION=native,evosuite ./execucao_safer.sh`.
 nohup ./execucao_safer.sh >> execucao.log 2>&1 &
 ```
 
-Only one instance runs at a time -- a second one refuses to start. Two instances would
-delete each other's projects and containers, and Safer would fail with "No such container"
-even with green tests. Interrupting and running it again resumes: projects already in
-`results/dataset_<combination>.csv` are skipped.
+Only one instance runs at a time -- a second one refuses to start, since two instances would
+delete each other's projects and containers. Interrupting and running it again resumes:
+projects already in `results/v2/dataset_<combination>.csv` are skipped.
 
 For each project the script copies it from the dataset, assembles the combination in the
-copy, filters the failing suites and only then runs Safer:
+copy, prepares and filters it, and only then runs Safer:
 
 1.  **Assemble** -- generated suites move into `src/test/java/evosuite-tests/` and
     `src/test/java/kex-tests/`; categories outside the combination are removed from the
     copy. The dataset itself is never modified.
-2.  **Filter** -- `run-test-filtering.sh` deletes every suite that breaks the build or
+2.  **Prepare** -- `bash/prepare-project.sh` (called by the filter) does what the previous
+    Safer did by itself:
+    -   installs `libs/evosuite-standalone-runtime-1.1.0.jar` in the Maven cache Safer's
+        containers mount (`~/.cache/safer/m2`); version 1.1.0 is not on Maven Central;
+    -   when there are generated suites, adds to the copy's `pom.xml`, with `test` scope,
+        the dependencies they need and the project does not declare:
+        `org.evosuite:evosuite-standalone-runtime:1.1.0`, `junit:junit:4.13.2` and
+        `org.junit.vintage:junit-vintage-engine`;
+    -   aligns `junit-vintage-engine` with the JUnit Platform the project resolves (see
+        [JUnit alignment](#requirements-and-caveats));
+    -   compares the runtime dependency tree before and after the injection (see
+        [Runtime tree check](#requirements-and-caveats));
+    -   appends to the copy's `.mvn/maven.config` the flags the previous Safer passed on the
+        command line (`-Dtest=*Test,*Tests,*TestCase,*_init_*,*_equals_*,*Utils*,*_*`,
+        `-DfailIfNoTests=true`, `-DskipTests=false`, `-Dmaven.test.skip=false`,
+        `-Dgit.buildhook.skip=true`). Safer reads them too. Without the `-Dtest` pattern
+        the Kex suites, whose names do not end in `Test`, never run.
+3.  **Filter** -- `run-test-filtering.sh` deletes every suite that breaks the build or
     fails, repeating until the build is green or `--max-iterations` is reached. Safer
     decides whether a dependency update is safe by looking at the test results, so a suite
     that was already failing before any update poisons that decision.
-3.  **Safer** -- runs on the filtered copy.
+4.  **Safer** -- runs on the filtered copy, which keeps the injected dependencies (the
+    generated suites need them to compile).
 
-For "green in the filter" to mean "green in Safer", the filter has no build of its own: it
-calls Safer's `run-maven-build.sh`, in the same `java-container-safer-*` container, with the
-Java version Safer itself would pick (computed by Safer's own code over the effective POM,
-see `bash/test-filtering/safer-java-version.ts`). The `pom.xml` is restored before Safer
-starts.
+For "green in the filter" to mean "green in Safer", the filter runs Safer's own build
+(`mvn -B clean verify -Ddependency-check.skip=true`, with the same time limit, 3600 s) in a
+container built by Safer's `init-java-container.sh`, with the Java version Safer itself
+picks (Safer's own function, see `bash/test-filtering/safer-java-version.ts`).
 
 #### Results
 
 | File | Content |
 | --- | --- |
-| `results/dataset_<combination>.csv` | Safer's results, one row per project |
-| `results/deleted-tests_<combination>.csv` | One row per project, with the same `id`: tests deleted per category, totals present, `tests_executed`, rounds and status |
-| `results/deleted-tests_<combination>-detail.csv` | One row per deleted file, with its path, category and reason (`compile_error`, `test_failure`, `test_error`, `crash`) |
-| `results/logs.txt` | Safer outcome per project |
-| `outputs/<project>/execution_<n>/` | Safer logs, plus `test-filtering/` with the Maven log of every round |
+| `results/v2/dataset_<combination>.csv` | Safer's results, one row per project (see [Dataset columns](#dataset-columns)) |
+| `results/v2/deleted-tests_<combination>.csv` | One row per project, with the same `id`: tests deleted per category, totals present, `tests_executed`, rounds and status |
+| `results/v2/deleted-tests_<combination>-detail.csv` | One row per deleted file, with its path, category and reason (`compile_error`, `test_failure`, `test_error`, `crash`, `scaffolding`) |
+| `results/v2/prepare-project_<combination>.csv` | One row per project: dependencies injected, vintage version and the runtime tree check (`same`, `changed` with what was `added`/`removed`, `error`, `not_injected`) |
+| `results/v2/logs.txt` | Safer outcome per project |
+| `outputs/v2/<project>/execution_<n>/` | `stdout.txt`/`stderr.txt` of Safer, `safer-run/` (Safer's run directory: `report.md`, `report.json`, `run.json`, `decisions.jsonl`, build logs), `test-filtering/` with the Maven log of every round and `test-filtering/prepare/` |
 
 A filter status other than `success` means the project reached Safer **without a green
 baseline**, and should be filtered out of the analysis:
@@ -132,19 +188,33 @@ baseline**, and should be filtered out of the analysis:
 | `no_tests_run` | Build passed but no test executed -- usually the test engine failed during discovery |
 | `build_error` | Build fails outside the test suites (`src/main`, a plugin, network) |
 | `container_error` | The container could not be started, after one retry |
-| `jdk_error` | `javac` crashed verifying its own classes: corrupted `java-setup-*` image |
+| `prepare_error` | `bash/prepare-project.sh` failed (see `test-filtering/prepare/`) |
+| `jdk_error` | `javac` crashed verifying its own classes: corrupted `java-setup:<version>` image |
 | `timeout`, `unresolved` | Maven time limit or round limit reached |
+| `killed` | Maven was killed before the time limit, most likely out of memory (each container has 4 GB, `SAFER_CONTAINER_MEMORY`) |
+| `java_version_error` | The Java version could not be detected |
 | `no_tests`, `not_maven` | Nothing to filter in this combination |
+
+Safer aborts when the baseline build fails, so such projects end up as `Failure` in
+`results/v2/logs.txt`, with no dataset row.
 
 #### Requirements and caveats
 
--   **Network for the whole run.** Every project resolves dependencies from Maven Central.
-    An outage in the middle of a run shows up as a streak of `container_error`.
--   **Versions.** Host: Docker 29.6.2, Maven 3.6.3, Node as in the prerequisites above.
-    Containers: `eclipse-temurin` 8/11/17/21 with Maven 3.8.9, built on demand as
-    `java-setup-<version>`. Injected for the generated suites:
-    `org.evosuite:evosuite-standalone-runtime:1.1.0`, `junit:junit:4.13.2` and
-    `org.junit.vintage:junit-vintage-engine:5.10.0`.
+-   **Network for the whole run.** Every project resolves dependencies through Nexus or
+    Maven Central, and Safer queries `central.sonatype.com` and `api.osv.dev`. An outage in
+    the middle of a run shows up as a streak of `container_error` or `Failure`.
+-   **Versions.** Containers: `eclipse-temurin:<version>-jdk-jammy` with Maven 3.9.16,
+    built on demand as `java-setup:<version>`. Safer's build is `mvn clean verify` (the
+    previous one was `mvn clean test`), so packaging and integration tests run too.
+-   **Java version.** Safer reads it from the project's own `pom.xml`
+    (`maven.compiler.release`, `java.version`, `maven.compiler.target`,
+    `maven.compiler.source`) and falls back to 17 when none is there -- e.g. when it comes
+    from a parent POM or only from the `maven-compiler-plugin` configuration. The previous
+    Safer read the effective POM. The `javaVersion` column of the post-processing shows the
+    JDK each project ran on.
+-   **EvoSuite and Java 17.** EvoSuite 1.1.0 cannot instrument Java 17 bytecode (`Unsupported
+    class file major version 61`), and when that happens no JUnit 4 suite is discovered at
+    all, native ones included. Projects compiled for Java 11 or older work, on any JDK.
 -   **Do not run Maven on the host inside the dataset.** Some projects carry
     `git-code-format-maven-plugin`, which installs `pre-commit` hooks into the enclosing git
     repository and can reformat files on commit.
@@ -153,7 +223,38 @@ baseline**, and should be filtered out of the analysis:
     JUnit Platform the project actually resolves (Platform `1.X.Y` ↔ vintage `5.X.Y`),
     because many projects manage the Platform at an older version and a mismatched vintage
     fails discovery with `NoClassDefFoundError: LruCache` -- Surefire then finds no test at
-    all and, with `-DfailIfNoTests=true`, the whole build fails.
+    all and, with `-DfailIfNoTests=true`, the whole build fails. The vintage engine also
+    refuses `junit:junit` older than 4.12; a project that declares an older one keeps it.
+-   **Runtime tree check.** Safer ignores `test`-scope dependencies, but a direct `test`
+    declaration wins over the same artifact reached transitively: if a runtime library
+    brings `junit` in `compile` scope, the injected `junit` takes it out of the runtime tree
+    that Safer scores. `prepare-project_<combination>.csv` records every project where
+    this happened.
+-   **Injected dependencies stay.** When the filter deletes every generated suite, the
+    injected dependencies stay in the `pom.xml`, as in the previous kit (both decide by the
+    `evosuite-tests`/`kex-tests` directories, which the filter leaves in place).
+
+### Dataset columns
+
+`bash/report-to-csv.py` turns each Safer run into a dataset row. The first 20 columns keep
+the names and meaning of the previous kit, so the notebooks still read them:
+
+-   `Tests` is `executions.projectTests` from the configuration, as before.
+-   `Improved` uses the previous formula: `low*1 + medium*2 + high*3 + critical*5` lower
+    after than before.
+-   The vulnerability counts are distinct IDs over the whole runtime tree, and "dependencies
+    with vulnerabilities" are artifacts of that tree with at least one ID.
+
+Five columns are added at the end:
+
+| Column | Meaning |
+| --- | --- |
+| `Unknown vulnerabilities (Before/After)` | Vulnerabilities with no severity; Safer counts them with weight 0 |
+| `Rate (Before/After)` | The metric the new Safer decides with: sum of (CVSS score × severity weight) |
+| `Tests Executed` | Whether the baseline build ran the tests. Safer turns them off by itself when no `@Test` is left (e.g. the filter deleted every suite), even with `projectTests: true` |
+
+`bash/report-to-csv.py` refuses to write into a CSV with the previous header, so old and new
+rows never mix.
 
 ### Monitorint the Experiment Execution
 
@@ -162,34 +263,35 @@ As the Experiment proceeds, some files are modified
 #### Current Executions
 
 The current projects are cloned in `workstation/maven` folder  
-You can see the projects safer is being executed by using `docker ps` and looking for containers named as `java-container-safer-*`
+You can see the projects safer is being executed by using `docker ps` and looking for containers named `java-container-safer-<pid>` (Safer) and `java-container-safer-filter-<project>` (filter)
 
 #### Experiment Progress
 
-You can see the experiment progress in `results/logs.txt` file
+You can see the experiment progress in `results/v2/logs.txt` file
 
-"Failure" means Safer could not be executed in the project. You can see Safer stderr logs in `outputs/<project_name>/stderr.txt`
+"Failure" means Safer could not be executed in the project, or aborted (e.g. a red baseline). You can see Safer's output in `outputs/v2/<project_name>/[execution_<n>/]stdout.txt` and `stderr.txt`, and the reason in `safer-run/run.json`
 
-"Success with no improvement" means Safer executed but could not improve the security of the project, therefore the `pom.xml` file was not changed. You can see the Safer logs in `outputs/<project_name>/stdout.txt` and vulnerabilities information in `results/dataset.csv`
+"Success with no improvement" means Safer executed but could not improve the security of the project, therefore the `pom.xml` file was not changed. You can see Safer's report in `outputs/v2/<project_name>/[execution_<n>/]safer-run/report.md` and the vulnerabilities information in the dataset
 
-"Success with improvement" means Safer executed and reduced vulnerabilities, modifying `pom.xml` file. You can see the Safer logs in `outputs/<project_name>/stdout.txt`, the vulnerabilities reduction in `results/dataset.csv` and the new `pom.xml` file in `outputs/<project_name>/pom.xml`
+"Success with improvement" means Safer executed and reduced vulnerabilities, modifying `pom.xml` file. You can see the report in `safer-run/report.md`, the vulnerabilities reduction in the dataset and the new `pom.xml` file in `outputs/v2/<project_name>/pom.xml`
 
 ## Post Processing
 
-After we finished the experiments and started to analyse the results, we needed to collect more data to complement our analysis. We extracted these extra data from Safer logs in `outputs/<project_name>/stdout.txt`.  
-You can extract the original logs from our experiment `outputs.zip` in zenodo to this root folder  
-The scripts used for this step are stored in `post-processing` folder and described below:
+After we finished the experiments and started to analyse the results, we needed to collect more data to complement our analysis.  
+The scripts used for this step are stored in `post-processing` folder and described below. They now read the new Safer's run directories (`outputs/v2/<project>/.../safer-run`); the paper's logs in `outputs.zip` are in the previous format and need the scripts from commit `02dc9e6`.
 
 ### Count Version Changes script
 
 We used this script to count the sum of update categories according to Semantic Versioning.  
 The data collected was used to plot "Figure 8: Distribution of update categories introduced by Safer." graph.  
+It now also counts the dependencies Safer kept (`countNoChange`) and the updates that fit no category (`countOther`).  
 You can find this script and how to execute it in `post-processing/count-version-changes/README.md`
 
 ### Calculate Offset Changes script
 
 We used this script to calculate the distance between the current version to the version applied by Safer and the distance between the veresion applied by Safer and the newest version of the dependency.  
 The data collected was used to answer "RQ4: Are the automatic suggestions of Safer more compatible with the project’s current state than other tools such as Dependabot?" and display "Table 2: Dependencies of the WepSpa by OWASP"  
+The version list now comes from Safer's own run, so `bash/get-dependencies-versions.sh` is no longer needed.  
 You can find this script and how to execute it in `post-processing/calculate-offset-changes/README.md`
 
 ## Results
@@ -200,6 +302,9 @@ After Post Processing step, we have two final datasets for the Open Source exper
 
 -   `results/final-dataset.csv`
 -   `post-processing/calculate-offset-changes/dataset-version-changes.csv`
+
+With the new Safer, the post-processing writes next to its input instead:
+`results/v2/final-<dataset>.csv` and `results/v2/version-changes-<dataset>.csv`.
 
 We also have two more datasets for the Industrial case study
 
@@ -217,7 +322,7 @@ We also tried to create issues and Pull Requests with the results produced by Sa
 In one day, we opened 1791 Pull Requests, and 15 were accepted
 
 The logs of this execution can be found in `results/artifacts.log`  
-The bash script we used is `create-github-artifacts.sh`
+The bash script we used is `create-github-artifacts.sh`. It reads the previous Safer's output format.
 
 We're trying to contact Github to recover our account and continue the contribution for the 7139 projects improved by Safer.
 
